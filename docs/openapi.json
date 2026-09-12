@@ -1,0 +1,777 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PRISM Phase 1 API",
+    "version": "0.1.0",
+    "description": "Synthetic academic foundation. No model inference or simulation execution in Phase 1."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:5050"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Liveness; does not check external service readiness",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "const": "ok"
+                    },
+                    "phase": {
+                      "const": 1
+                    },
+                    "data_source": {
+                      "const": "synthetic"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Fixture unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/status": {
+      "get": {
+        "summary": "Phase and module ownership/status",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "phase": {
+                      "type": "integer"
+                    },
+                    "modules": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "name",
+                          "owner",
+                          "status",
+                          "description"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "owner": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Fixture unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/grid": {
+      "get": {
+        "summary": "Validated fictional topology; no power-flow results",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data_source": {
+                      "const": "synthetic"
+                    },
+                    "nodes": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Node"
+                      }
+                    },
+                    "edges": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Edge"
+                      }
+                    },
+                    "summary": {
+                      "type": "object",
+                      "properties": {
+                        "nodes": {
+                          "type": "number"
+                        },
+                        "edges": {
+                          "type": "number"
+                        },
+                        "generation_mw": {
+                          "type": "number"
+                        },
+                        "demand_mw": {
+                          "type": "number"
+                        },
+                        "balance_mw": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Fixture unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/measurements": {
+      "get": {
+        "summary": "Latest synthetic historical rows",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data_source": {
+                      "const": "synthetic"
+                    },
+                    "count": {
+                      "type": "integer"
+                    },
+                    "records": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Measurement"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Fixture unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 336,
+              "default": 24
+            }
+          }
+        ]
+      }
+    },
+    "/api/data/quality": {
+      "get": {
+        "summary": "Audit counts may overlap by rejection reason",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "input_rows": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "accepted_rows": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "rejected_rows": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "imputed_rows": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "reasons": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "integer"
+                      }
+                    },
+                    "gaps": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    },
+                    "cadence": {
+                      "const": "hourly"
+                    },
+                    "timezone": {
+                      "const": "UTC"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Fixture unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dispatch/baseline": {
+      "get": {
+        "summary": "Preview only; aggregate reserve check does not establish electrical feasibility",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Baseline"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Fixture unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Preview only; aggregate reserve check does not establish electrical feasibility",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Baseline"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Fixture unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Observation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/forecast": {
+      "get": {
+        "summary": "Planned module: Phase 1 always returns 501",
+        "responses": {
+          "501": {
+            "description": "Not implemented; future model/scenario payloads are not yet stable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dispatch": {
+      "post": {
+        "summary": "Planned module: Phase 1 always returns 501",
+        "responses": {
+          "501": {
+            "description": "Not implemented; future model/scenario payloads are not yet stable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/explain": {
+      "post": {
+        "summary": "Planned module: Phase 1 always returns 501",
+        "responses": {
+          "501": {
+            "description": "Not implemented; future model/scenario payloads are not yet stable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/scenario": {
+      "post": {
+        "summary": "Planned module: Phase 1 always returns 501",
+        "responses": {
+          "501": {
+            "description": "Not implemented; future model/scenario payloads are not yet stable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/openapi.json": {
+      "get": {
+        "summary": "This OpenAPI document",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Fixture unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "error",
+          "message"
+        ],
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Observation": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "demand_mw",
+          "generation_mw",
+          "reserve_mw"
+        ],
+        "properties": {
+          "demand_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "generation_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "reserve_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "battery_soc": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.5
+          },
+          "renewable_trend": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1,
+            "default": 0
+          },
+          "fault_present": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "Node": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "name",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "plant",
+              "substation",
+              "load"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "online",
+              "offline"
+            ]
+          },
+          "capacity_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "output_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "demand_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "voltage_kv": {
+            "type": "number",
+            "minimum": 0
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        }
+      },
+      "Edge": {
+        "type": "object",
+        "required": [
+          "id",
+          "source",
+          "target",
+          "capacity_mw",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "capacity_mw": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      },
+      "Measurement": {
+        "type": "object",
+        "required": [
+          "timestamp",
+          "demand_mw",
+          "solar_mw",
+          "wind_mw",
+          "frequency_hz",
+          "source",
+          "quality_flag"
+        ],
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "demand_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "solar_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "wind_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "frequency_hz": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "quality_flag": {
+            "type": "string"
+          }
+        }
+      },
+      "Baseline": {
+        "type": "object",
+        "required": [
+          "action",
+          "requested_mw",
+          "executable",
+          "feasibility_scope"
+        ],
+        "properties": {
+          "action": {
+            "enum": [
+              "hold",
+              "increase_generation",
+              "decrease_generation",
+              "charge_battery",
+              "discharge_battery",
+              "shed_load"
+            ]
+          },
+          "policy": {
+            "const": "rule_based_prototype"
+          },
+          "requested_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "unmet_gap_mw": {
+            "type": "number",
+            "minimum": 0
+          },
+          "reason": {
+            "type": "string"
+          },
+          "feasible": {
+            "type": "boolean"
+          },
+          "executable": {
+            "const": false
+          },
+          "feasibility_scope": {
+            "const": "aggregate_reserve_only"
+          },
+          "encoded_state": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "minItems": 5,
+            "maxItems": 5
+          },
+          "data_source": {
+            "enum": [
+              "synthetic",
+              "user_supplied"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

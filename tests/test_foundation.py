@@ -1,0 +1,149 @@
+"""Behavioral acceptance checks for Phase 1; run with unittest discover."""
+import json
+import unittest
+from copy import deepcopy
+from pathlib import Path
+from tempfile import TemporaryDirectory
+import pandas as pd
+from prism import create_app
+from prism.config import DATA_DIR
+from prism.data.pipeline import clean_measurements
+from prism.grid.model import synthetic_grid, validate_grid, grid_summary
+from prism.simulation.environment import GridEnvironment, Observation, Action
+from prism.dispatch.baseline import recommend, encode_state
+
+
+class PipelineTests(unittest.TestCase):
+    def setUp(self):
+        self.data=pd.read_csv(DATA_DIR / "raw/synthetic_measurements.csv").head(4)
+
+    def test_sort_and_preserve_source(self):
+        clean,report=clean_measurements(self.data.iloc[::-1])
+        self.assertTrue(clean.timestamp.is_monotonic_increasing)
+        self.assertEqual(report['accepted_rows'],4)
+        self.assertTrue((clean.source=='synthetic_seed_42').all())
+
+    def test_bad_values_rejected_and_gap_reported(self):
+        self.data.loc[1,'demand_mw']=-1
+        self.data.loc[2,'solar_mw']=float('inf')
+        clean,report=clean_measurements(self.data)
+        self.assertEqual(len(clean),2)
+        self.assertEqual(report['rejected_rows'],2)
+        self.assertEqual(report['gaps'][0]['missing_hours'],2)
+        self.assertEqual(report['imputed_rows'],0)
+
+    def test_duplicate_conflicts_all_rejected(self):
+        duplicate=self.data.iloc[[0]].copy()
+        duplicate['demand_mw']=999
+        clean,report=clean_measurements(pd.concat([self.data,duplicate]))
+        self.assertEqual(len(clean),3)
+        self.assertEqual(report['reasons']['duplicate_timestamp'],2)
+
+    def test_naive_and_off_grid_times_rejected(self):
+        self.data.loc[0,'timestamp']='2026-01-01T00:00:00'
+        self.data.loc[1,'timestamp']='2026-01-01T01:30:00Z'
+        clean,report=clean_measurements(self.data)
+        self.assertEqual(len(clean),2)
+
+    def test_missing_column(self):
+        with self.assertRaises(ValueError):
+            clean_measurements(self.data.drop(columns='source'))
+
+
+class GridTests(unittest.TestCase):
+    def test_reference_topology(self):
+        grid=synthetic_grid()
+        graph=validate_grid(grid)
+        self.assertEqual(len(graph),12)
+        self.assertEqual(graph.number_of_edges(),12)
+        self.assertEqual(grid_summary(grid)['balance_mw'],0)
+
+    def test_invalid_endpoint_and_over_capacity(self):
+        grid=synthetic_grid()
+        grid['edges'][0]['target']='missing'
+        with self.assertRaises(ValueError): validate_grid(grid)
+        grid=synthetic_grid()
+        grid['nodes'][0]['output_mw']=999
+        with self.assertRaises(ValueError): validate_grid(grid)
+
+    def test_duplicate_and_disconnected(self):
+        grid=synthetic_grid()
+        grid['nodes'].append(deepcopy(grid['nodes'][0]))
+        with self.assertRaises(ValueError): validate_grid(grid)
+        grid=synthetic_grid()
+        grid['edges']=grid['edges'][1:]
+        with self.assertRaises(ValueError): validate_grid(grid)
+
+    def test_reset_isolation(self):
+        source=synthetic_grid()
+        one,two=GridEnvironment(source),GridEnvironment(source)
+        one.topology['nodes'][0]['output_mw']=0
+        self.assertEqual(two.topology['nodes'][0]['output_mw'],400)
+        self.assertEqual(source['nodes'][0]['output_mw'],400)
+        self.assertEqual(one.reset()['generation_mw'],700)
+        with self.assertRaises(NotImplementedError): one.step(Action.HOLD)
+
+
+class DispatchTests(unittest.TestCase):
+    def test_balanced(self):
+        result=recommend(Observation(700,700,350))
+        self.assertEqual(result['action'],'hold')
+        self.assertFalse(result['executable'])
+
+    def test_insufficient_reserve(self):
+        result=recommend(Observation(900,700,50))
+        self.assertEqual(result['requested_mw'],50)
+        self.assertEqual(result['unmet_gap_mw'],150)
+        self.assertFalse(result['feasible'])
+
+    def test_surplus_requires_checks(self):
+        self.assertFalse(recommend(Observation(500,700,50))['feasible'])
+
+    def test_encoding_and_validation(self):
+        self.assertEqual(encode_state(Observation(700,700,350)),(2,1,1,2,0))
+        with self.assertRaises(ValueError): recommend(Observation(700,700,350,battery_soc=2))
+        with self.assertRaises(ValueError): recommend(Observation(float('nan'),700,350))
+        with self.assertRaises(ValueError): recommend(Observation(True,700,350))
+
+
+class APITests(unittest.TestCase):
+    def setUp(self):
+        self.client=create_app({'TESTING':True}).test_client()
+
+    def test_read_endpoints(self):
+        for route in ['/api/health','/api/grid','/api/status','/api/measurements','/api/data/quality','/api/dispatch/baseline','/api/openapi.json']:
+            with self.subTest(route=route):
+                self.assertEqual(self.client.get(route).status_code,200)
+        self.assertEqual(self.client.get('/api/grid').json['summary']['nodes'],12)
+
+    def test_limits(self):
+        for limit in ['-1','0','337','abc']:
+            self.assertEqual(self.client.get('/api/measurements?limit='+limit).status_code,400)
+        self.assertEqual(self.client.get('/api/measurements?limit=2').json['count'],2)
+
+    def test_post_validation(self):
+        for body in [[],{}, {'demand_mw':'bad','generation_mw':0,'reserve_mw':0}, {'demand_mw':1,'generation_mw':0,'reserve_mw':0,'other':4}]:
+            self.assertEqual(self.client.post('/api/dispatch/baseline',json=body).status_code,400)
+        self.assertEqual(self.client.post('/api/dispatch/baseline',data='no').status_code,415)
+        self.assertEqual(self.client.post('/api/dispatch/baseline',data='{',content_type='application/json').status_code,400)
+        result=self.client.post('/api/dispatch/baseline',json={'demand_mw':800,'generation_mw':700,'reserve_mw':150})
+        self.assertEqual(result.json['requested_mw'],100)
+        self.assertEqual(result.json['data_source'],'user_supplied')
+
+    def test_planned_modules_never_fabricate_results(self):
+        self.assertEqual(self.client.get('/api/forecast').status_code,501)
+        for route in ['/api/dispatch','/api/explain','/api/scenario']:
+            self.assertEqual(self.client.post(route,json={}).status_code,501)
+
+    def test_missing_fixture(self):
+        with TemporaryDirectory() as directory:
+            client=create_app({'TESTING':True,'DATA_DIR':directory}).test_client()
+            self.assertEqual(client.get('/api/grid').status_code,503)
+
+    def test_page_and_unknown_route(self):
+        self.assertEqual(self.client.get('/').status_code,200)
+        self.assertEqual(self.client.get('/api/no-such-route').status_code,404)
+
+
+if __name__=='__main__':
+    unittest.main()

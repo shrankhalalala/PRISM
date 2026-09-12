@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0",
+  "data_source": "synthetic",
+  "description": "Fictional teaching network; not verified Delhi topology.",
+  "nodes": [
+    {
+      "id": "coal",
+      "name": "Thermal One",
+      "kind": "plant",
+      "fuel": "coal",
+      "capacity_mw": 600,
+      "output_mw": 400,
+      "x": 100,
+      "y": 90,
+      "status": "online"
+    },
+    {
+      "id": "gas",
+      "name": "Gas Reserve",
+      "kind": "plant",
+      "fuel": "gas",
+      "capacity_mw": 250,
+      "output_mw": 100,
+      "x": 310,
+      "y": 90,
+      "status": "online"
+    },
+    {
+      "id": "solar",
+      "name": "Solar Park",
+      "kind": "plant",
+      "fuel": "solar",
+      "capacity_mw": 200,
+      "output_mw": 120,
+      "x": 520,
+      "y": 90,
+      "status": "online"
+    },
+    {
+      "id": "wind",
+      "name": "Wind Import",
+      "kind": "plant",
+      "fuel": "wind",
+      "capacity_mw": 150,
+      "output_mw": 80,
+      "x": 730,
+      "y": 90,
+      "status": "online"
+    },
+    {
+      "id": "sub_0",
+      "name": "North Hub",
+      "kind": "substation",
+      "voltage_kv": 220,
+      "x": 100,
+      "y": 250,
+      "status": "online"
+    },
+    {
+      "id": "load_0",
+      "name": "North District",
+      "kind": "load",
+      "demand_mw": 160,
+      "priority": "normal",
+      "x": 100,
+      "y": 410,
+      "status": "online"
+    },
+    {
+      "id": "sub_1",
+      "name": "East Hub",
+      "kind": "substation",
+      "voltage_kv": 220,
+      "x": 310,
+      "y": 250,
+      "status": "online"
+    },
+    {
+      "id": "load_1",
+      "name": "East District",
+      "kind": "load",
+      "demand_mw": 180,
+      "priority": "normal",
+      "x": 310,
+      "y": 410,
+      "status": "online"
+    },
+    {
+      "id": "sub_2",
+      "name": "Central Hub",
+      "kind": "substation",
+      "voltage_kv": 220,
+      "x": 520,
+      "y": 250,
+      "status": "online"
+    },
+    {
+      "id": "load_2",
+      "name": "Central District",
+      "kind": "load",
+      "demand_mw": 200,
+      "priority": "critical",
+      "x": 520,
+      "y": 410,
+      "status": "online"
+    },
+    {
+      "id": "sub_3",
+      "name": "South Hub",
+      "kind": "substation",
+      "voltage_kv": 220,
+      "x": 730,
+      "y": 250,
+      "status": "online"
+    },
+    {
+      "id": "load_3",
+      "name": "South District",
+      "kind": "load",
+      "demand_mw": 160,
+      "priority": "normal",
+      "x": 730,
+      "y": 410,
+      "status": "online"
+    }
+  ],
+  "edges": [
+    {
+      "id": "line_01",
+      "source": "coal",
+      "target": "sub_0",
+      "capacity_mw": 650,
+      "status": "online"
+    },
+    {
+      "id": "line_02",
+      "source": "gas",
+      "target": "sub_1",
+      "capacity_mw": 650,
+      "status": "online"
+    },
+    {
+      "id": "line_03",
+      "source": "solar",
+      "target": "sub_2",
+      "capacity_mw": 650,
+      "status": "online"
+    },
+    {
+      "id": "line_04",
+      "source": "wind",
+      "target": "sub_3",
+      "capacity_mw": 650,
+      "status": "online"
+    },
+    {
+      "id": "line_05",
+      "source": "sub_0",
+      "target": "sub_1",
+      "capacity_mw": 400,
+      "status": "online"
+    },
+    {
+      "id": "line_06",
+      "source": "sub_1",
+      "target": "sub_2",
+      "capacity_mw": 400,
+      "status": "online"
+    },
+    {
+      "id": "line_07",
+      "source": "sub_2",
+      "target": "sub_3",
+      "capacity_mw": 400,
+      "status": "online"
+    },
+    {
+      "id": "line_08",
+      "source": "sub_3",
+      "target": "sub_0",
+      "capacity_mw": 400,
+      "status": "online"
+    },
+    {
+      "id": "line_09",
+      "source": "sub_0",
+      "target": "load_0",
+      "capacity_mw": 300,
+      "status": "online"
+    },
+    {
+      "id": "line_10",
+      "source": "sub_1",
+      "target": "load_1",
+      "capacity_mw": 300,
+      "status": "online"
+    },
+    {
+      "id": "line_11",
+      "source": "sub_2",
+      "target": "load_2",
+      "capacity_mw": 300,
+      "status": "online"
+    },
+    {
+      "id": "line_12",
+      "source": "sub_3",
+      "target": "load_3",
+      "capacity_mw": 300,
+      "status": "online"
+    }
+  ]
+}
