@@ -1,4 +1,4 @@
-# PRISM — Phase 1
+# PRISM (Phase 1)
 
 Power Grid Resilience through Intelligent Smart Management. A runnable academic
 foundation for a four-person project, with Q-learning included in the core design.
