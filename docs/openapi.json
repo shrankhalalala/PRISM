@@ -3,7 +3,7 @@
   "info": {
     "title": "PRISM Phase 2 API",
     "version": "0.2.0",
-    "description": "Synthetic academic prototype with forecasting baselines and constrained scenario simulation. No operational switching."
+    "description": "Completed Phase 2 synthetic prototype with three forecast methods, constrained scenarios, and non-executable Q-learning recommendations. No operational switching."
   },
   "servers": [
     {
@@ -257,7 +257,7 @@
             "schema": {
               "type": "integer",
               "minimum": 1,
-              "maximum": 336,
+              "maximum": 2160,
               "default": 24
             }
           }
@@ -431,7 +431,7 @@
     },
     "/api/forecast": {
       "get": {
-        "summary": "Generate a synthetic persistence or autoregressive forecast",
+        "summary": "Generate a synthetic persistence, autoregressive, or LSTM forecast",
         "parameters": [
           {
             "name": "target",
@@ -445,7 +445,7 @@
             "name": "model",
             "in": "query",
             "schema": {
-              "enum": ["persistence", "autoregressive"],
+              "enum": ["persistence", "autoregressive", "lstm"],
               "default": "persistence"
             }
           },
@@ -486,10 +486,39 @@
     },
     "/api/dispatch": {
       "post": {
-        "summary": "Unavailable until a trained policy artifact is configured",
+        "summary": "Return a non-executable recommendation from the reviewed Phase 2 Q-table",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["demand_mw", "generation_mw", "reserve_mw"],
+                "properties": {
+                  "demand_mw": {"type": "number", "minimum": 0},
+                  "generation_mw": {"type": "number", "minimum": 0},
+                  "reserve_mw": {"type": "number", "minimum": 0},
+                  "battery_soc": {"type": "number", "minimum": 0, "maximum": 1, "default": 0.5},
+                  "renewable_trend": {"type": "number", "minimum": -1, "maximum": 1, "default": 0},
+                  "fault_present": {"type": "boolean", "default": false},
+                  "valid_actions": {"type": "array", "items": {"$ref": "#/components/schemas/Action"}}
+                }
+              }
+            }
+          }
+        },
         "responses": {
-          "501": {
-            "description": "Not implemented; future model/scenario payloads are not yet stable",
+          "200": {
+            "description": "Synthetic recommendation with executable=false",
+            "content": {
+              "application/json": {
+                "schema": {"type": "object"}
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid observation or action mask",
             "content": {
               "application/json": {
                 "schema": {
@@ -544,6 +573,11 @@
                     "items": {
                       "enum": ["hold", "increase_generation", "decrease_generation", "charge_battery", "discharge_battery", "shed_load"]
                     }
+                  },
+                  "policy": {
+                    "enum": ["baseline", "q_learning"],
+                    "default": "baseline",
+                    "description": "Cannot be combined with actions."
                   },
                   "faults": {
                     "type": "array",
@@ -650,6 +684,10 @@
             "type": "string"
           }
         }
+      },
+      "Action": {
+        "type": "string",
+        "enum": ["hold", "increase_generation", "decrease_generation", "charge_battery", "discharge_battery", "shed_load"]
       },
       "Observation": {
         "type": "object",

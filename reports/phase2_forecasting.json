@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0",
+  "data_source": "synthetic_seed_42",
+  "data_sha256": "92a63960622624cd9a2d74aa86d4cd9cb04fdbe74b4d52ee760c5cd34a8336a0",
+  "split": {
+    "method": "chronological_70_15_15",
+    "training_rows": 1512,
+    "validation_rows": 324,
+    "test_rows": 324
+  },
+  "evaluation": "one_step_walk_forward_with_actual_history",
+  "targets": {
+    "demand_mw": {
+      "lstm_artifact": "models/forecasting/demand_mw_lstm.json",
+      "lstm_sha256": "d0175f4d30d1a1a1fbaaeaac99453090ffb41e2f860cf28ffe39ad64f1c0940e",
+      "validation": {
+        "persistence": {
+          "mae": 19.038549,
+          "rmse": 22.584289
+        },
+        "autoregressive": {
+          "mae": 8.735414,
+          "rmse": 10.412745
+        },
+        "lstm": {
+          "mae": 10.777792,
+          "rmse": 13.178815
+        }
+      },
+      "test": {
+        "persistence": {
+          "mae": 18.571543,
+          "rmse": 22.19736
+        },
+        "autoregressive": {
+          "mae": 8.26513,
+          "rmse": 9.95653
+        },
+        "lstm": {
+          "mae": 9.731307,
+          "rmse": 11.909385
+        }
+      },
+      "lstm_training": {
+        "config": {
+          "window": 24,
+          "hidden_size": 8,
+          "epochs": 12,
+          "learning_rate": 0.01,
+          "max_windows_per_epoch": 384,
+          "seed": 42
+        },
+        "final_scaled_mse": 0.02662388
+      }
+    },
+    "solar_mw": {
+      "lstm_artifact": "models/forecasting/solar_mw_lstm.json",
+      "lstm_sha256": "d28b59172179dbff6b424eeb44e15ff3cd81912e3668a64340cebaca2fea7196",
+      "validation": {
+        "persistence": {
+          "mae": 13.43534,
+          "rmse": 21.291702
+        },
+        "autoregressive": {
+          "mae": 2.770526,
+          "rmse": 4.308185
+        },
+        "lstm": {
+          "mae": 8.705048,
+          "rmse": 11.898506
+        }
+      },
+      "test": {
+        "persistence": {
+          "mae": 11.732932,
+          "rmse": 18.712001
+        },
+        "autoregressive": {
+          "mae": 2.424011,
+          "rmse": 3.689745
+        },
+        "lstm": {
+          "mae": 8.649283,
+          "rmse": 11.89134
+        }
+      },
+      "lstm_training": {
+        "config": {
+          "window": 24,
+          "hidden_size": 8,
+          "epochs": 12,
+          "learning_rate": 0.01,
+          "max_windows_per_epoch": 384,
+          "seed": 43
+        },
+        "final_scaled_mse": 0.04299457
+      }
+    },
+    "wind_mw": {
+      "lstm_artifact": "models/forecasting/wind_mw_lstm.json",
+      "lstm_sha256": "571e3e5dce6e109e3806f8b88afa347ee9dd311543ddfa3d78e0ea3e306efa57",
+      "validation": {
+        "persistence": {
+          "mae": 3.375432,
+          "rmse": 4.249141
+        },
+        "autoregressive": {
+          "mae": 2.681112,
+          "rmse": 3.270717
+        },
+        "lstm": {
+          "mae": 3.058634,
+          "rmse": 3.875402
+        }
+      },
+      "test": {
+        "persistence": {
+          "mae": 3.536389,
+          "rmse": 4.284711
+        },
+        "autoregressive": {
+          "mae": 2.683385,
+          "rmse": 3.281302
+        },
+        "lstm": {
+          "mae": 3.01791,
+          "rmse": 3.726737
+        }
+      },
+      "lstm_training": {
+        "config": {
+          "window": 24,
+          "hidden_size": 8,
+          "epochs": 12,
+          "learning_rate": 0.01,
+          "max_windows_per_epoch": 384,
+          "seed": 44
+        },
+        "final_scaled_mse": 0.0523493
+      }
+    }
+  }
+}

@@ -121,10 +121,12 @@ class APITests(unittest.TestCase):
         self.assertEqual(self.client.get('/api/grid').json['summary']['nodes'],12)
         self.assertEqual(self.client.get('/api/health').json['phase'],2)
         self.assertEqual(self.client.get('/api/openapi.json').json['info']['version'],'0.2.0')
-        self.assertTrue(all('owner' not in module for module in self.client.get('/api/status').json['modules']))
+        modules=self.client.get('/api/status').json['modules']
+        self.assertTrue(all('owner' not in module for module in modules))
+        self.assertTrue(all(module['status']=='phase2_complete' for module in modules))
 
     def test_limits(self):
-        for limit in ['-1','0','337','abc']:
+        for limit in ['-1','0','2161','abc']:
             self.assertEqual(self.client.get('/api/measurements?limit='+limit).status_code,400)
         self.assertEqual(self.client.get('/api/measurements?limit=2').json['count'],2)
 
@@ -137,9 +139,12 @@ class APITests(unittest.TestCase):
         self.assertEqual(result.json['requested_mw'],100)
         self.assertEqual(result.json['data_source'],'user_supplied')
 
-    def test_planned_modules_never_fabricate_results(self):
-        for route in ['/api/dispatch','/api/explain']:
-            self.assertEqual(self.client.post(route,json={}).status_code,501)
+    def test_learned_dispatch_and_planned_explanation(self):
+        dispatch=self.client.post('/api/dispatch',json={'demand_mw':800,'generation_mw':700,'reserve_mw':150})
+        self.assertEqual(dispatch.status_code,200)
+        self.assertFalse(dispatch.json['executable'])
+        self.assertIn(dispatch.json['action'],[action.value for action in Action])
+        self.assertEqual(self.client.post('/api/explain',json={}).status_code,501)
 
     def test_phase2_forecast_and_scenario(self):
         forecast=self.client.get('/api/forecast?model=autoregressive&target=solar_mw&horizon=3')
@@ -150,6 +155,9 @@ class APITests(unittest.TestCase):
         self.assertEqual(scenario.json['steps'],3)
         self.assertEqual(len(scenario.json['trajectory']),3)
         self.assertEqual(scenario.json['data_source'],'synthetic')
+        learned=self.client.post('/api/scenario',json={'steps':3,'seed':7,'policy':'q_learning'})
+        self.assertEqual(learned.status_code,200)
+        self.assertEqual(learned.json['policy'],'q_learning_phase2')
 
     def test_phase2_api_validation(self):
         for query in ['horizon=0','horizon=bad','target=bad','model=bad']:
@@ -162,6 +170,8 @@ class APITests(unittest.TestCase):
             {'steps':1,'faults':'bad'},
             {'steps':1,'faults':[{'step':0,'asset_id':'unknown'}]},
             {'steps':1,'unexpected':True},
+            {'steps':1,'policy':'unknown'},
+            {'steps':1,'policy':'baseline','actions':['hold']},
         ]
         for body in invalid_scenarios:
             with self.subTest(body=body):

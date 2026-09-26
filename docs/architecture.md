@@ -83,7 +83,9 @@ flowchart LR
     Forecast --> ForecastAPI[Forecast API]
 ```
 
-Training remains outside Flask request handling. The application may generate a
-development forecast or run a bounded synthetic scenario, but it does not train or
-silently select a learned policy. `/api/dispatch` remains unavailable until a
-reviewed artifact, provenance, and evaluation record are configured.
+Training remains outside Flask request handling. The application loads three
+reviewed LSTM artifacts and the validation-selected Q-table from `models/`; it does
+not train or silently select a policy in an HTTP request. `/api/dispatch` returns a
+non-executable recommendation, while `/api/scenario` requires an explicit baseline
+or Q-learning policy choice. The dashboard adds forecast and scenario workspaces.
+The explanation boundary remains unavailable until Phase 3.

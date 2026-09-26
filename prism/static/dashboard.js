@@ -23,6 +23,17 @@ function updateSidebar(){
   $('sidebar-toggle').setAttribute('aria-label',visible?'Collapse navigation':'Open navigation');
   $('sidebar-backdrop').hidden=!(mobileQuery.matches&&drawerOpen);
 }
+function updateActiveNavigation(){
+  const requested=location.hash.slice(1);
+  const section=document.getElementById(requested)?requested:'overview';
+  document.querySelectorAll('#sidebar nav a').forEach(link=>{
+    const active=link.getAttribute('href')===`#${section}`;
+    link.classList.toggle('active',active);
+    if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');
+  });
+  const current=document.querySelector(`#sidebar nav a[href="#${section}"]`);
+  $('breadcrumb-section').textContent=current?.dataset.navLabel||'Grid overview';
+}
 function closeDrawer(){drawerOpen=false;updateSidebar();$('sidebar-toggle').focus();}
 $('sidebar-toggle').addEventListener('click',()=>{if(mobileQuery.matches){drawerOpen=!drawerOpen;}else{desktopCollapsed=!desktopCollapsed;preferences.set('prism-sidebar-collapsed',String(desktopCollapsed));}updateSidebar();});
 $('sidebar-backdrop').addEventListener('click',closeDrawer);
@@ -30,6 +41,9 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&drawerOpen)
 $('sidebar').querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{if(mobileQuery.matches)closeDrawer();}));
 mobileQuery.addEventListener('change',()=>{drawerOpen=false;updateSidebar();});
 updateSidebar();
+if(!location.hash)history.replaceState(null,'','#overview');
+window.addEventListener('hashchange',updateActiveNavigation);
+updateActiveNavigation();
 const darkQuery=matchMedia('(prefers-color-scheme:dark)');
 let explicitTheme=preferences.get('prism-theme');
 function setTheme(theme){document.documentElement.dataset.theme=theme;const dark=theme==='dark';$('theme-icon').textContent=dark?'☀':'☾';$('theme-label').textContent=dark?'Light':'Dark';$('theme-toggle').setAttribute('aria-label',`Switch to ${dark?'light':'dark'} theme`);}
@@ -78,6 +92,7 @@ function renderGrid(data) {
   $('edges').textContent = `${number(data.summary.edges)} transmission connections`;
   const picker = $('asset-select'); picker.replaceChildren(); picker.disabled = !data.nodes.length;
   data.nodes.forEach(node => { const option=element('option','',`${node.name} · ${node.kind}`);option.value=node.id;picker.append(option); });
+  populateFaultAssets(data);
   const svg = $('network'); svg.replaceChildren();
   if(!data.nodes.length) { svg.append(svgElement('text',{x:380,y:185,'text-anchor':'middle'},'No network nodes available.')); $('node-detail').replaceChildren(element('p','empty','No assets available.'));return; }
   const xs = data.nodes.map(n => Number(n.x)), ys = data.nodes.map(n => Number(n.y));
@@ -166,8 +181,15 @@ document.querySelectorAll('button[data-series]').forEach(button=>button.addEvent
 document.querySelectorAll('button[data-hours]').forEach(button=>button.addEventListener('click',()=>{activeHours=Number(button.dataset.hours);loadMeasurements().catch(()=>{});}));
 async function getJSON(path) {
   const response=await fetch(path,{headers:{Accept:'application/json'},signal:AbortSignal.timeout(10000)});
-  if(!response.ok)throw new Error(`${path} returned ${response.status}`);
-  return response.json();
+  const payload=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(payload.message||`${path} returned ${response.status}`);
+  return payload;
+}
+async function postJSON(path,body){
+  const response=await fetch(path,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(20000)});
+  const payload=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(payload.message||`${path} returned ${response.status}`);
+  return payload;
 }
 async function refresh() {
   $('refresh').disabled=true;$('error').hidden=true;$('load-status').textContent='Loading workspace data…';
@@ -182,3 +204,132 @@ async function refresh() {
 $('asset-select').addEventListener('change',event=>selectNode(event.target.value));
 $('refresh').addEventListener('click',refresh);
 refresh();
+
+const precise=(value,digits=2)=>Number.isFinite(Number(value))?Number(value).toLocaleString('en-IN',{maximumFractionDigits:digits}):'—';
+const modelNames={persistence:'Persistence',autoregressive:'Autoregressive',lstm:'LSTM'};
+function lineChart(svg,series,{xLabels=[],unit='MW',caption=''}={}){
+  svg.replaceChildren();
+  const title=svgElement('title',{},caption||'Line chart');
+  const desc=svgElement('desc',{},`${series.map(item=>item.name).join(' and ')} across ${series[0]?.values.length||0} points, measured in ${unit}.`);
+  svg.append(title,desc);
+  const values=series.flatMap(item=>item.values).map(Number).filter(Number.isFinite);
+  if(!values.length){svg.append(svgElement('text',{x:450,y:130,'text-anchor':'middle',class:'chart-axis'},'No trajectory values available.'));return;}
+  let min=Math.min(...values),max=Math.max(...values);
+  if(min===max){min=Math.max(0,min-1);max+=1;}
+  const margin=(max-min)*.08;
+  min=Math.max(0,min-margin);max+=margin;
+  const count=Math.max(...series.map(item=>item.values.length));
+  const x=index=>65+index/Math.max(1,count-1)*810;
+  const y=value=>205-(Number(value)-min)/(max-min)*165;
+  for(let index=0;index<4;index++){
+    const value=min+(max-min)*index/3,py=y(value);
+    svg.append(svgElement('line',{x1:65,x2:875,y1:py,y2:py,class:'chart-grid'}),svgElement('text',{x:52,y:py+4,'text-anchor':'end',class:'chart-axis'},precise(value,1)));
+  }
+  svg.append(svgElement('text',{x:18,y:18,class:'chart-axis'},unit));
+  series.forEach((item,seriesIndex)=>{
+    const coords=item.values.map((value,index)=>`${x(index)},${y(value)}`).join(' ');
+    if(series.length===1)svg.append(svgElement('polygon',{points:`65,205 ${coords} 875,205`,class:'chart-area lab-area'}));
+    const line=svgElement('polyline',{points:coords,class:`chart-line lab-line series-${seriesIndex}`,'data-series-name':item.name});
+    line.append(svgElement('title',{},item.name));svg.append(line);
+    item.values.forEach((value,index)=>{const point=svgElement('circle',{cx:x(index),cy:y(value),r:3,class:`chart-point lab-point series-${seriesIndex}`});point.append(svgElement('title',{},`${item.name}, ${xLabels[index]||`point ${index+1}`}: ${precise(value)} ${unit}`));svg.append(point);});
+  });
+  [...new Set([0,Math.floor((count-1)/2),count-1])].forEach(index=>svg.append(svgElement('text',{x:x(index),y:238,'text-anchor':index===0?'start':index===count-1?'end':'middle',class:'chart-axis'},xLabels[index]||String(index+1))));
+}
+
+function renderForecast(data){
+  const predictions=Array.isArray(data.predictions)?data.predictions.map(Number):[];
+  if(!predictions.length||predictions.some(value=>!Number.isFinite(value)))throw new Error('The forecast service returned no usable predictions.');
+  const target=data.target||$('forecast-target').value;
+  const model=data.model||$('forecast-model').value;
+  const targetName=seriesNames[target]||target;
+  $('forecast-result-label').textContent=`${predictions.length}-HOUR OUTLOOK`;
+  $('forecast-result-model').textContent=(modelNames[model]||model).toUpperCase();
+  const list=$('forecast-values');list.replaceChildren();
+  predictions.forEach((value,index)=>{const item=element('li');item.append(element('span','',`T + ${String(index+1).padStart(2,'0')} h`),element('strong','',precise(value)));list.append(item);});
+  lineChart($('forecast-chart'),[{name:targetName,values:predictions}],{xLabels:predictions.map((_,index)=>`T+${index+1}h`),unit:'MW',caption:`${targetName} forecast from the ${modelNames[model]||model} model`});
+  const peak=Math.max(...predictions),low=Math.min(...predictions);
+  $('forecast-caption').textContent=`${targetName} · ${modelNames[model]||model} · ${predictions.length} synthetic forecast values · Range ${precise(low)}–${precise(peak)} MW.`;
+  $('forecast-results').hidden=false;
+}
+
+$('forecast-form').addEventListener('submit',async event=>{
+  event.preventDefault();
+  const button=$('forecast-run');button.disabled=true;$('forecast-error').hidden=true;$('forecast-results').hidden=true;
+  $('forecast-status').textContent='Running forecast against synthetic history…';
+  try{
+    const query=new URLSearchParams({target:$('forecast-target').value,model:$('forecast-model').value,horizon:$('forecast-horizon').value});
+    const data=await getJSON(`/api/forecast?${query}`);renderForecast(data);
+    $('forecast-status').textContent=`Forecast ready · ${data.horizon_hours||data.predictions.length} hour horizon · Synthetic data`;
+  }catch(error){$('forecast-error').textContent=`Forecast failed: ${error.message}`;$('forecast-error').hidden=false;$('forecast-status').textContent='Forecast unavailable. Adjust the controls or retry.';
+  }finally{button.disabled=false;}
+});
+
+function populateFaultAssets(data){
+  const select=$('fault-asset');
+  const previous=select.value;
+  select.replaceChildren();
+  const none=element('option','','No injected fault');none.value='';select.append(none);
+  const nodes=(data.nodes||[]).map(item=>({id:item.id,label:`${item.name} · ${item.kind}`}));
+  const edges=(data.edges||[]).map(item=>({id:item.id,label:`${item.id} · transmission line`}));
+  [...nodes,...edges].forEach(asset=>{const option=element('option','',asset.label);option.value=asset.id;select.append(option);});
+  select.disabled=false;
+  if([...select.options].some(option=>option.value===previous))select.value=previous;
+  updateFaultControls();
+}
+function updateFaultControls(){
+  const enabled=Boolean($('fault-asset').value);
+  $('fault-step').disabled=!enabled;$('fault-duration').disabled=!enabled;
+}
+function syncScenarioLimits(){
+  const steps=Math.max(1,Math.min(96,Number($('scenario-steps').value)||1));
+  $('fault-step').max=String(steps-1);
+  $('fault-duration').max=String(steps);
+  if(Number($('fault-step').value)>=steps)$('fault-step').value=String(Math.max(0,steps-1));
+  if(Number($('fault-duration').value)>steps)$('fault-duration').value=String(steps);
+}
+$('fault-asset').addEventListener('change',updateFaultControls);
+$('scenario-steps').addEventListener('input',syncScenarioLimits);
+syncScenarioLimits();
+
+function trajectoryObservation(row){return row.observation||row.state||row.next_observation||{};}
+function trajectoryBalance(row){
+  const observation=trajectoryObservation(row);
+  return Number(observation.generation_mw||0)-Number(observation.demand_mw||0);
+}
+function renderScenario(data){
+  const totals=data.totals||{};
+  $('scenario-return').textContent=precise(totals.return,3);
+  $('scenario-unserved').textContent=precise(totals.unserved_mwh,3);
+  $('scenario-curtailed').textContent=precise(totals.curtailed_mwh,3);
+  $('scenario-cost').textContent=precise(totals.operating_cost,1);
+  $('scenario-emissions').textContent=precise(totals.emissions_kg,1);
+  const trajectory=Array.isArray(data.trajectory)?data.trajectory:[];
+  const demand=trajectory.map(row=>Number(trajectoryObservation(row).demand_mw||0));
+  const generation=trajectory.map(row=>Number(trajectoryObservation(row).generation_mw||0));
+  lineChart($('scenario-chart'),[{name:'Demand',values:demand},{name:'Generation',values:generation}],{xLabels:trajectory.map((_,index)=>`Step ${index}`),unit:'MW',caption:'Demand and generation during the simulated episode'});
+  const selectedPolicy=data.policy||$('scenario-policy').value;
+  $('scenario-caption').textContent=`${trajectory.length} synthetic 15-minute steps · ${String(selectedPolicy).replaceAll('_',' ')} · Demand and generation in MW.`;
+  const body=$('event-rows');body.replaceChildren();
+  trajectory.forEach((row,index)=>{
+    const tr=element('tr');
+    const faults=Array.isArray(row.active_faults)&&row.active_faults.length?`Fault: ${row.active_faults.join(', ')}`:'—';
+    [row.step??index,String(row.action||'hold').replaceAll('_',' '),precise(trajectoryBalance(row)),precise(row.reward),faults].forEach((value,column)=>tr.append(element('td',column===4&&faults!=='—'?'event-alert':'',value)));
+    body.append(tr);
+  });
+  $('event-count').textContent=`${trajectory.length} STEPS`;
+  $('scenario-results').hidden=false;
+}
+
+$('scenario-form').addEventListener('submit',async event=>{
+  event.preventDefault();syncScenarioLimits();
+  const steps=Number($('scenario-steps').value);
+  const body={steps,seed:42,policy:$('scenario-policy').value};
+  if($('fault-asset').value)body.faults=[{step:Number($('fault-step').value),asset_id:$('fault-asset').value,duration_steps:Number($('fault-duration').value)}];
+  const button=$('scenario-run');button.disabled=true;$('scenario-error').hidden=true;$('scenario-results').hidden=true;
+  $('scenario-status').textContent='Running deterministic scenario…';
+  try{
+    const data=await postJSON('/api/scenario',body);renderScenario(data);
+    $('scenario-status').textContent=`Scenario complete · ${data.steps??data.trajectory?.length??steps} steps · Seed ${data.seed??42} · Synthetic simulator`;
+  }catch(error){$('scenario-error').textContent=`Scenario failed: ${error.message}`;$('scenario-error').hidden=false;$('scenario-status').textContent='Scenario unavailable. Review the controls or retry.';
+  }finally{button.disabled=false;}
+});

@@ -33,15 +33,18 @@ All observations remain explicitly synthetic. The interface contains no fake liv
 5. Expand the table, then check a 375px viewport for page overflow.
 6. Block a measurement request and change range; verify the visible failure message and retained chart. Unblock and Refresh data to recover.
 
-## Phase 2 checkpoint
+## Phase 2 completion
 
-The visible phase label now identifies Phase 2 as in progress, and the asset note
-clarifies that the reference schematic does not display the separate scenario
-state. Forecast and scenario APIs are implemented, but this checkpoint does not add
-their controls to the page.
+The Forecast Lab selects demand, solar, or wind; persistence, autoregression, or
+LSTM; and a one-to-24-hour horizon. It renders an SVG result chart and a complete
+numeric prediction list, with loading, validation, and failure announcements.
 
-The next dashboard contribution will add an explicit simulation workspace with
-forecast selection, scenario seed, fault schedule, policy choice, run/reset
-controls, trajectory charts, cumulative metrics, active-fault state, and validation
-errors. It must continue to label outputs synthetic and must not offer learned
-dispatch until a reviewed Q-table is configured by the backend.
+The Scenario Lab selects the rule baseline or reviewed Q-learning policy, one to
+96 steps, and an optional node or line outage with start and duration. Results show
+return, unserved and curtailed energy, synthetic cost, emissions, demand and
+generation trajectories, actions, rewards, and active faults. Policy output remains
+non-operational and the page states the aggregate simulator boundary.
+
+Navigation follows the current hash across Overview, Measurements, Forecast, and
+Scenario sections. Desktop and mobile layouts retain the collapsible sidebar,
+theme preference, keyboard behavior, chart containment, and visible status states.

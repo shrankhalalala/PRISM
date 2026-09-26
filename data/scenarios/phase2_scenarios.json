@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "data_source": "synthetic_seed_42",
+  "scenarios": [
+    {"id": "normal_day", "partition": "train", "start_hour": 168, "steps": 96, "faults": []},
+    {"id": "renewable_ramp", "partition": "train", "start_hour": 720, "steps": 96, "renewable_scale_start": 0.55, "renewable_scale_end": 1.35, "faults": []},
+    {"id": "plant_fault", "partition": "validation", "start_hour": 1200, "steps": 96, "faults": [{"step": 36, "asset_id": "gas", "duration_steps": 16}]},
+    {"id": "line_fault", "partition": "test", "start_hour": 1632, "steps": 96, "faults": [{"step": 40, "asset_id": "line_11", "duration_steps": 12}]},
+    {"id": "concurrent_fault", "partition": "test", "start_hour": 2016, "steps": 96, "faults": [{"step": 32, "asset_id": "gas", "duration_steps": 20}, {"step": 36, "asset_id": "line_10", "duration_steps": 12}]}
+  ]
+}

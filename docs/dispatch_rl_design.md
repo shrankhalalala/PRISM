@@ -94,3 +94,22 @@ establish that the default reward weights are suitable, that the learned policy
 outperforms the baseline, or that 270 states are sufficient. Those questions
 require multi-seed training and held-out scenario evaluation before the policy is
 enabled through the API.
+
+## Phase 2 completion evidence
+
+Five Q-learning runs use seeds 11, 23, 42, 67, and 89 with 500 episodes each.
+Training alternates the normal and renewable-ramp scenarios. The gas-plant fault is
+the validation scenario; line and concurrent faults are held out. The rule and
+learned policies share the same action mask and simulator configuration.
+
+Seed 23 has the best validation return and is the reviewed JSON artifact loaded by
+the API. Across the ten paired held-out seed/scenario results, Q-learning mean
+unserved energy is 743.862043 MWh versus 755.006330 MWh for the baseline. Its mean
+return is worse (-154.285003 versus -120.584628), with substantially greater
+curtailment, cost, and emissions. Both policies record zero constraint violations
+because invalid actions are masked.
+
+These results reject any Phase 2 claim that the learned policy is generally better.
+They validate the experiment path and identify reward/state design as a future
+research issue. The policy is available in `/api/dispatch` and `/api/scenario`,
+always as a non-executable synthetic recommendation.

@@ -226,3 +226,42 @@ fixed seed, optional scheduled faults, and either one supplied action per step o
 the rule-based prototype. The response includes every transition and cumulative
 metrics. Learned dispatch and explanation endpoints continue to return HTTP 501
 until reviewed artifacts are configured.
+
+## 11. Phase 2 completion method: 2026-09-26
+
+The completion run expands the deterministic series to 2,160 hours, covering
+2026-01-01 through 2026-03-31 UTC. The audit accepts all rows with zero gaps or
+imputations. Forecasting uses a fixed chronological 70/15/15 split: 1,512 training,
+324 validation, and 324 untouched test observations.
+
+Persistence, 24-lag ridge autoregression, and a single-layer NumPy LSTM receive the
+same one-step walk-forward history. The LSTM has eight hidden units, a 24-hour
+window, 12 epochs, clipped gradients, and fixed seeds 42–44 by target. Its scaler
+is fitted on training values only. MAE, RMSE, configuration, artifact path, and
+SHA-256 are stored in `reports/phase2_forecasting.json`. The LSTM improves on
+persistence but trails autoregression for all three targets on the test set.
+
+| Test target | Persistence MAE / RMSE | Autoregression MAE / RMSE | LSTM MAE / RMSE |
+|---|---:|---:|---:|
+| Demand (MW) | 18.571543 / 22.197360 | 8.265130 / 9.956530 | 9.731307 / 11.909385 |
+| Solar (MW) | 11.732932 / 18.712001 | 2.424011 / 3.689745 | 8.649283 / 11.891340 |
+| Wind (MW) | 3.536389 / 4.284711 | 2.683385 / 3.281302 | 3.017910 / 3.726737 |
+
+`data/scenarios/phase2_scenarios.json` freezes five 96-step scenarios. Normal and
+renewable-ramp episodes train the policy; the plant outage selects among five
+independent seeds; line and concurrent outages remain held out. Both policies use
+identical profiles, fault timing, seeds, transitions, rewards, and action masks.
+The report retains return, unserved and curtailed energy, synthetic cost, emissions,
+and violations for every seed and scenario.
+
+The selected seed-23 Q-table is loaded by `/api/dispatch` and the optional
+`q_learning` scenario policy. Selection used validation return only. The API marks
+recommendations `executable: false`. Held-out evidence does not show overall
+superiority: mean unserved energy is slightly lower, while return, curtailment,
+cost, and emissions are worse than the rule baseline.
+
+The browser interface exposes all three forecast methods and both scenario
+policies, with fault scheduling, cumulative metrics, trajectories, and event logs.
+These additions complete Phase 2 without changing the simulator's aggregate,
+non-power-flow assurance boundary. The earlier checkpoint descriptions above are
+retained as a construction record and are superseded by this completion section.

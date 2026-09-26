@@ -63,15 +63,30 @@ or extend.
 - Learned dispatch and explanation endpoints remain unavailable until reviewed
   artifacts and comparative evidence are configured.
 
-### Remaining Phase 2 allocation
+### Phase 2 completion record
 
-| Member | Next accountable deliverable | Required evidence |
+| Member | Completed individual contribution | Reviewable evidence |
 |---|---|---|
-| Nishtha Jain | Larger audited dataset and LSTM comparison | Frozen chronological splits, baseline/LSTM metrics, configuration, and model checksum |
-| Himangi Mishra | Multi-seed Q-learning comparison with the rule-based policy | Per-seed returns and operational metrics on identical held-out scenarios |
-| Shrankhala Singh | Versioned scenario suite and simulator sensitivity analysis | Normal, renewable-ramp, plant-fault, line-fault, and concurrent-fault scenarios with assumptions and results |
-| Gaurangi Tyagi | Forecast and simulation dashboard | Accessible controls, trajectory and metric views, fault state, responsive checks, and browser verification |
+| Nishtha Jain | Expanded the deterministic fixture to 2,160 audited hourly rows; implemented and evaluated the NumPy LSTM against persistence and autoregression | Reproduce the 70/15/15 chronological split; inspect validation/test MAE and RMSE, model configurations, and SHA-256 checksums in `reports/phase2_forecasting.json` |
+| Himangi Mishra | Completed five-seed Q-learning training, validation-based artifact selection, and paired comparison with the rule baseline | Reproduce seeds 11, 23, 42, 67, and 89; explain the held-out results in `reports/phase2_dispatch.json`, including why the learned policy remains non-executable |
+| Shrankhala Singh | Defined the versioned normal, renewable-ramp, plant-fault, line-fault, and concurrent-fault suite and verified deterministic simulator behavior | Inspect `data/scenarios/phase2_scenarios.json`; replay both held-out scenarios and explain fault timing, partitioning, assumptions, and aggregate limitations |
+| Gaurangi Tyagi | Completed the forecast and scenario dashboard, policy selection, fault controls, result charts, metric cards, and event log | Demonstrate all three forecasts, both policies, optional faults, responsive layouts, accessible status/error states, and browser verification |
 
-Phase 2 is complete only when all four remaining deliverables have traceable,
-reviewable evidence. Later phases must be appended below this section using the
-same member, contribution, artifact, and evidence structure.
+### Phase 2 completion evidence
+
+- The audited fixture contains 2,160 accepted hourly rows, with zero rejected rows,
+  gaps, or imputations.
+- Forecast artifacts cover all three targets and retain chronological validation
+  and untouched test metrics. The LSTM beats persistence but not autoregression on
+  the current synthetic test set.
+- Five independent Q-learning seeds were compared with the rule baseline on the
+  same held-out line and concurrent-fault scenarios. Q-learning slightly reduced
+  mean unserved energy but produced worse mean return, curtailment, cost, and
+  emissions; these negative findings remain part of the evidence.
+- The selected seed-23 Q-table is available to the API and dashboard only as an
+  experimental recommendation with `executable: false`.
+- The completed suite contains 42 passing automated tests plus JavaScript, API,
+  desktop, and mobile checks recorded in `docs/verification.md`.
+
+Later phases must be appended below this section using the same member,
+contribution, artifact, and evidence structure.

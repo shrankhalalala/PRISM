@@ -266,3 +266,39 @@ specific reviewed artifact is configured.
 - The API cannot silently serve an unreviewed newly trained policy.
 - Large experiment artifacts require an explicit retention and versioning policy
   before repeated studies begin.
+
+## ADR-012: Use a compact NumPy LSTM for the Phase 2 comparison
+
+**Date:** 2026-09-26
+**Status:** Accepted
+
+Phase 2 requires an LSTM comparison, while the reproducibility environment does
+not include TensorFlow or PyTorch. Implement a single-layer univariate LSTM with
+the standard four gates and clipped back-propagation through 24-hour windows in
+NumPy. Fit normalization on training data only and save weights, configuration,
+losses, provenance, and checksums as JSON. This keeps the path inspectable and
+lightweight, although the autoregressive baseline currently performs better on all
+three held-out synthetic targets.
+
+## ADR-013: Freeze a five-scenario suite and retain negative policy results
+
+**Date:** 2026-09-26
+**Status:** Accepted
+
+Version normal-day and renewable-ramp training scenarios, a plant-fault validation
+scenario, and line-fault plus concurrent-fault test scenarios. Train five seeds,
+select the served artifact only by validation return, and publish every paired test
+metric. The selected policy is seed 23. It slightly lowers mean unserved energy but
+has worse mean return, curtailment, cost, and emissions than the baseline, so the
+API labels it non-executable and makes it an explicit user choice.
+
+## ADR-014: Complete Phase 2 with synthetic evidence and defer live data
+
+**Date:** 2026-09-26
+**Status:** Accepted
+
+Complete Phase 2 using a reproducible 90-day generated series and explicit
+synthetic labels. Live or public-data ingestion begins in Phase 3 after source,
+licence, cadence, and quality requirements are recorded. Phase 2 therefore remains
+fully runnable without external services, but its results cannot support real-grid
+accuracy or policy-superiority claims.

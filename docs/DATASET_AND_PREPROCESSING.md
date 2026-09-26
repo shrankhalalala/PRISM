@@ -1,4 +1,4 @@
-# Dataset and Preprocessing: Phase 1
+# Dataset and Preprocessing: Phases 1–2
 
 ## 1. Dataset role
 
@@ -159,3 +159,22 @@ results created from it cannot be described as measurements at 15-minute cadence
 The first forecasting evaluation uses rows 1–288 for training and the final 48 rows
 for testing. It performs no random shuffle. This split validates the experiment
 path but remains too short and too synthetic for a general performance claim.
+
+## 10. Phase 2 modelling fixture
+
+Phase 2 extends the same deterministic generator to 2,160 consecutive hourly rows
+from 2026-01-01 00:00 through 2026-03-31 23:00 UTC. Daily demand and solar cycles
+are supplemented with generated weekly and 90-day demand terms and a slower wind
+term. Seed 42 and source label `synthetic_seed_42` remain unchanged. The audit
+accepts all 2,160 rows with zero rejected rows, detected gaps, or imputations.
+
+The fixed chronological split contains 1,512 training rows, 324 validation rows,
+and 324 untouched test rows. LSTM mean and scale are fitted only on training data.
+Evaluation is one-step walk-forward: after each prediction, the actual observation
+joins the history for the next prediction. The CSV checksum is retained in
+`reports/phase2_forecasting.json`.
+
+This larger fixture is still generated data. It permits executable comparison and
+reproducibility checks but does not represent seasonal coverage, real weather,
+sensor error, or Delhi grid operation. Phase 3 must acquire and audit a permitted
+external or live source before any real-grid forecasting claim.

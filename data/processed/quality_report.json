@@ -1,6 +1,6 @@
 {
-  "input_rows": 336,
-  "accepted_rows": 336,
+  "input_rows": 2160,
+  "accepted_rows": 2160,
   "rejected_rows": 0,
   "reasons": {
     "invalid_timestamp": 0,

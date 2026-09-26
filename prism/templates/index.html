@@ -1,16 +1,103 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>PRISM · Grid overview</title><link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"><script defer src="{{ url_for('static', filename='dashboard.js') }}"></script></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRISM · Grid intelligence workspace</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+  <script defer src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<aside class="sidebar" id="sidebar" aria-label="Workspace navigation"><a class="brand" href="/" aria-label="PRISM home"><span class="brand-mark">◈</span> PRISM<span class="brand-caption">INTELLIGENT GRID SYSTEMS</span></a><div class="nav-label">WORKSPACE</div><nav aria-label="Main navigation"><a class="active" href="#overview"><span>▦</span> Grid overview <span class="nav-arrow">↗</span></a><a href="#measurements"><span>≋</span> Measurements</a></nav><div class="sidebar-foot"><p>From grid visibility<br>to explainable decisions.</p><span class="phase-tag">PHASE 02 · IN PROGRESS</span></div></aside>
-<button id="sidebar-backdrop" class="sidebar-backdrop" aria-label="Close navigation" hidden></button><div class="workspace"><header class="topbar"><div class="topbar-start"><button id="sidebar-toggle" class="icon-button" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="Collapse navigation">☰</button><span class="breadcrumb">Workspace <span class="slash">/</span> Grid overview</span></div><div class="topbar-actions"><span class="source-badge"><i></i> SYNTHETIC DATA</span><button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme"><span id="theme-icon" aria-hidden="true">☾</span><span id="theme-label">Dark</span></button></div></header>
-<main id="main"><section id="overview" aria-labelledby="page-title"><div class="page-heading"><div><p class="eyebrow">OPERATIONS / NETWORK BLUEPRINT</p><h1 id="page-title">Grid overview<span class="orange">.</span></h1><p class="subtitle">A shared foundation for a smarter, more resilient grid.</p></div><button id="refresh" class="refresh" type="button"><span aria-hidden="true">↻</span> Refresh data</button></div>
-<p id="load-status" role="status" aria-live="polite">Loading workspace data…</p>
-<div id="error" class="error" role="alert" hidden></div>
-<div class="metrics" aria-label="Grid totals"><article><span class="metric-label">GENERATION</span><p><strong id="generation">—</strong> <span>MW</span></p><small>Combined plant output</small></article><article><span class="metric-label">DEMAND</span><p><strong id="demand">—</strong> <span>MW</span></p><small>Combined load requirement</small></article><article><span class="metric-label">POWER BALANCE</span><p><strong id="balance">—</strong> <span>MW</span></p><small>Generation minus demand</small></article><article><span class="metric-label">NETWORK SIZE</span><p><strong id="nodes">—</strong> <span>nodes</span></p><small id="edges">— transmission connections</small></article></div>
-<div class="network-layout"><section class="network-panel" aria-labelledby="network-title"><div class="panel-heading"><div><span class="eyebrow">NETWORK / 01</span><h2 id="network-title">Grid topology</h2></div><span class="small-label">ILLUSTRATIVE NETWORK</span></div><div class="network-controls" role="group" aria-label="Highlight asset type"><button type="button" data-kind="all" aria-pressed="true">All assets</button><button type="button" data-kind="plant" aria-pressed="false">Plants</button><button type="button" data-kind="substation" aria-pressed="false">Substations</button><button type="button" data-kind="load" aria-pressed="false">Loads</button></div><div class="mobile-asset-picker"><label for="asset-select">Inspect asset</label><select id="asset-select" disabled><option>Loading assets…</option></select><p>Scroll the schematic horizontally to explore the full network.</p></div><div class="graph-container"><svg id="network" viewBox="0 0 760 370" role="group" aria-label="Synthetic grid topology. Select a node to view its properties."><text x="380" y="185" text-anchor="middle">Loading network…</text></svg></div><div class="network-footer"><div class="legend"><span><i class="plant"></i> Plant</span><span><i class="substation"></i> Substation</span><span><i class="load"></i> Load zone</span></div><span class="small-label">SELECT A NODE TO INSPECT →</span></div></section>
-<aside class="inspector" aria-labelledby="inspector-title"><span class="eyebrow">ASSET INSPECTOR</span><h2 id="inspector-title">Node details</h2><div id="node-detail"><p class="empty">Select a node on the network to explore its properties.</p></div><div class="inspector-note">This schematic shows the reference topology. It does not display electrical line flows or the separate synthetic scenario state.</div></aside></div></section>
-<section id="measurements" class="table-panel" aria-labelledby="measurements-title"><div class="panel-heading"><div><span class="eyebrow">DATA PIPELINE / 02</span><h2 id="measurements-title">Measurement preview</h2></div><span id="record-count" class="small-label">LOADING RECORDS</span></div><div class="chart-controls"><div class="segmented" role="group" aria-label="Measurement series"><button type="button" data-series="demand_mw" aria-pressed="true">Demand</button><button type="button" data-series="solar_mw" aria-pressed="false">Solar</button><button type="button" data-series="wind_mw" aria-pressed="false">Wind</button></div><div class="segmented" role="group" aria-label="Measurement range"><button type="button" data-hours="24" aria-pressed="true">24 hours</button><button type="button" data-hours="168" aria-pressed="false">7 days</button></div></div><p id="chart-status" class="chart-status" role="status" aria-live="polite">Loading measurement series…</p><figure class="measurement-figure"><div class="chart-scroll"><svg id="measurement-chart" viewBox="0 0 900 220" role="img" aria-labelledby="chart-caption"></svg></div><figcaption id="chart-caption">Synthetic hourly observations. Time shown in UTC.</figcaption></figure><details class="measurement-details"><summary>Explore measurement records</summary><div class="table-scroll"><table><thead><tr><th scope="col">TIMESTAMP (UTC)</th><th scope="col">DEMAND · MW</th><th scope="col">SOLAR · MW</th><th scope="col">WIND · MW</th><th scope="col">FREQUENCY · HZ</th><th scope="col">QUALITY</th></tr></thead><tbody id="measurement-rows"><tr><td colspan="6">Loading measurements…</td></tr></tbody></table></div></details><p class="table-note">A labeled synthetic sample for validating the data contract. These are not live grid observations.</p></section>
-<footer class="footer"><span>PRISM <span class="muted">/ Project construction workspace</span></span><span>Phase 02 · Simulation & learning</span></footer></main></div>
-</body></html>
+  <a class="skip" href="#main">Skip to content</a>
+  <aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
+    <a class="brand" href="#overview" aria-label="PRISM overview"><span class="brand-mark">◈</span> PRISM<span class="brand-caption">INTELLIGENT GRID SYSTEMS</span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav aria-label="Main navigation">
+      <a class="active" href="#overview" data-nav-label="Grid overview"><span>▦</span> Grid overview <span class="nav-arrow">↗</span></a>
+      <a href="#measurements" data-nav-label="Measurements"><span>≋</span> Measurements <span class="nav-arrow">↗</span></a>
+      <a href="#forecast" data-nav-label="Forecast lab"><span>⌁</span> Forecast lab <span class="nav-arrow">↗</span></a>
+      <a href="#scenario" data-nav-label="Scenario lab"><span>◇</span> Scenario lab <span class="nav-arrow">↗</span></a>
+    </nav>
+    <div class="sidebar-foot"><p>From grid visibility<br>to explainable decisions.</p><span class="phase-tag">PHASE 02 · COMPLETE</span></div>
+  </aside>
+  <button id="sidebar-backdrop" class="sidebar-backdrop" aria-label="Close navigation" hidden></button>
+
+  <div class="workspace">
+    <header class="topbar">
+      <div class="topbar-start"><button id="sidebar-toggle" class="icon-button" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="Collapse navigation">☰</button><span class="breadcrumb">Workspace <span class="slash">/</span> <span id="breadcrumb-section">Grid overview</span></span></div>
+      <div class="topbar-actions"><span class="source-badge"><i></i> SYNTHETIC DATA</span><button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme"><span id="theme-icon" aria-hidden="true">☾</span><span id="theme-label">Dark</span></button></div>
+    </header>
+
+    <main id="main">
+      <section id="overview" class="workspace-section" aria-labelledby="page-title">
+        <div class="page-heading"><div><p class="eyebrow">OPERATIONS / NETWORK BLUEPRINT</p><h1 id="page-title">Grid overview<span class="orange">.</span></h1><p class="subtitle">A shared foundation for a smarter, more resilient grid.</p></div><button id="refresh" class="refresh" type="button"><span aria-hidden="true">↻</span> Refresh data</button></div>
+        <p id="load-status" role="status" aria-live="polite">Loading workspace data…</p>
+        <div id="error" class="error" role="alert" hidden></div>
+        <div class="metrics" aria-label="Grid totals">
+          <article><span class="metric-label">GENERATION</span><p><strong id="generation">—</strong> <span>MW</span></p><small>Combined plant output</small></article>
+          <article><span class="metric-label">DEMAND</span><p><strong id="demand">—</strong> <span>MW</span></p><small>Combined load requirement</small></article>
+          <article><span class="metric-label">POWER BALANCE</span><p><strong id="balance">—</strong> <span>MW</span></p><small>Generation minus demand</small></article>
+          <article><span class="metric-label">NETWORK SIZE</span><p><strong id="nodes">—</strong> <span>nodes</span></p><small id="edges">— transmission connections</small></article>
+        </div>
+        <div class="network-layout">
+          <section class="network-panel" aria-labelledby="network-title">
+            <div class="panel-heading"><div><span class="eyebrow">NETWORK / 01</span><h2 id="network-title">Grid topology</h2></div><span class="small-label">ILLUSTRATIVE NETWORK</span></div>
+            <div class="network-controls" role="group" aria-label="Highlight asset type"><button type="button" data-kind="all" aria-pressed="true">All assets</button><button type="button" data-kind="plant" aria-pressed="false">Plants</button><button type="button" data-kind="substation" aria-pressed="false">Substations</button><button type="button" data-kind="load" aria-pressed="false">Loads</button></div>
+            <div class="mobile-asset-picker"><label for="asset-select">Inspect asset</label><select id="asset-select" disabled><option>Loading assets…</option></select><p>Scroll the schematic horizontally to explore the full network.</p></div>
+            <div class="graph-container"><svg id="network" viewBox="0 0 760 370" role="group" aria-label="Synthetic grid topology. Select a node to view its properties."><text x="380" y="185" text-anchor="middle">Loading network…</text></svg></div>
+            <div class="network-footer"><div class="legend"><span><i class="plant"></i> Plant</span><span><i class="substation"></i> Substation</span><span><i class="load"></i> Load zone</span></div><span class="small-label">SELECT A NODE TO INSPECT →</span></div>
+          </section>
+          <aside class="inspector" aria-labelledby="inspector-title"><span class="eyebrow">ASSET INSPECTOR</span><h2 id="inspector-title">Node details</h2><div id="node-detail"><p class="empty">Select a node on the network to explore its properties.</p></div><div class="inspector-note">This schematic shows the reference topology. It does not display electrical line flows or the separate synthetic scenario state.</div></aside>
+        </div>
+      </section>
+
+      <section id="measurements" class="table-panel workspace-section" aria-labelledby="measurements-title">
+        <div class="panel-heading"><div><span class="eyebrow">DATA PIPELINE / 02</span><h2 id="measurements-title">Measurement preview</h2></div><span id="record-count" class="small-label">LOADING RECORDS</span></div>
+        <div class="chart-controls"><div class="segmented" role="group" aria-label="Measurement series"><button type="button" data-series="demand_mw" aria-pressed="true">Demand</button><button type="button" data-series="solar_mw" aria-pressed="false">Solar</button><button type="button" data-series="wind_mw" aria-pressed="false">Wind</button></div><div class="segmented" role="group" aria-label="Measurement range"><button type="button" data-hours="24" aria-pressed="true">24 hours</button><button type="button" data-hours="168" aria-pressed="false">7 days</button></div></div>
+        <p id="chart-status" class="chart-status" role="status" aria-live="polite">Loading measurement series…</p>
+        <figure class="measurement-figure"><div class="chart-scroll"><svg id="measurement-chart" viewBox="0 0 900 220" role="img" aria-labelledby="chart-caption"></svg></div><figcaption id="chart-caption">Synthetic hourly observations. Time shown in UTC.</figcaption></figure>
+        <details class="measurement-details"><summary>Explore measurement records</summary><div class="table-scroll"><table><thead><tr><th scope="col">TIMESTAMP (UTC)</th><th scope="col">DEMAND · MW</th><th scope="col">SOLAR · MW</th><th scope="col">WIND · MW</th><th scope="col">FREQUENCY · HZ</th><th scope="col">QUALITY</th></tr></thead><tbody id="measurement-rows"><tr><td colspan="6">Loading measurements…</td></tr></tbody></table></div></details>
+        <p class="table-note">A labeled synthetic sample for validating the data contract. These are not live grid observations.</p>
+      </section>
+
+      <section id="forecast" class="lab-panel workspace-section" aria-labelledby="forecast-title">
+        <div class="lab-heading"><div><span class="eyebrow">MODELLING / 03</span><h2 id="forecast-title">Forecast lab</h2><p>Compare Phase 2 models against the same synthetic history.</p></div><span class="completion-stamp">MODEL BENCH</span></div>
+        <form id="forecast-form" class="control-deck">
+          <label><span>Target</span><select id="forecast-target" name="target"><option value="demand_mw">Demand · MW</option><option value="solar_mw">Solar · MW</option><option value="wind_mw">Wind · MW</option></select></label>
+          <label><span>Model</span><select id="forecast-model" name="model"><option value="persistence">Persistence</option><option value="autoregressive">Autoregressive</option><option value="lstm">LSTM</option></select></label>
+          <label><span>Horizon</span><select id="forecast-horizon" name="horizon"><option value="1">1 hour</option><option value="6">6 hours</option><option value="12">12 hours</option><option value="24" selected>24 hours</option></select></label>
+          <button id="forecast-run" class="run-control" type="submit"><span aria-hidden="true">→</span> Run forecast</button>
+        </form>
+        <div id="forecast-error" class="error" role="alert" hidden></div>
+        <p id="forecast-status" class="lab-status" role="status" aria-live="polite">Choose a target, model, and horizon to begin.</p>
+        <div id="forecast-results" class="result-layout" hidden>
+          <div class="result-primary"><div class="result-kicker"><span id="forecast-result-label">24-HOUR OUTLOOK</span><strong id="forecast-result-model">PERSISTENCE</strong></div><figure class="lab-figure"><div class="lab-chart-scroll"><svg id="forecast-chart" viewBox="0 0 900 260" role="img" aria-labelledby="forecast-caption"></svg></div><figcaption id="forecast-caption">Forecast values from synthetic history.</figcaption></figure></div>
+          <aside class="value-panel" aria-labelledby="forecast-values-title"><div class="value-panel-head"><h3 id="forecast-values-title">Numeric predictions</h3><span>MW</span></div><ol id="forecast-values"></ol></aside>
+        </div>
+        <p class="lab-note">Research prototype output from synthetic history. Forecasts are not operationally validated.</p>
+      </section>
+
+      <section id="scenario" class="lab-panel workspace-section" aria-labelledby="scenario-title">
+        <div class="lab-heading"><div><span class="eyebrow">SIMULATION / 04</span><h2 id="scenario-title">Scenario lab</h2><p>Run identical conditions through the rule baseline or learned Q policy.</p></div><span class="completion-stamp">15-MINUTE STEPS</span></div>
+        <form id="scenario-form" class="scenario-controls">
+          <label><span>Policy</span><select id="scenario-policy" name="policy"><option value="baseline">Rule baseline</option><option value="q_learning">Q-learning</option></select></label>
+          <label><span>Steps</span><input id="scenario-steps" name="steps" type="number" min="1" max="96" value="24" inputmode="numeric"></label>
+          <label class="wide-control"><span>Optional fault asset</span><select id="fault-asset" name="fault_asset" disabled><option value="">Loading assets…</option></select></label>
+          <label><span>Fault step</span><input id="fault-step" name="fault_step" type="number" min="0" max="23" value="4" inputmode="numeric" disabled></label>
+          <label><span>Duration</span><input id="fault-duration" name="fault_duration" type="number" min="1" max="24" value="4" inputmode="numeric" disabled></label>
+          <button id="scenario-run" class="run-control" type="submit"><span aria-hidden="true">▶</span> Run scenario</button>
+        </form>
+        <div id="scenario-error" class="error" role="alert" hidden></div>
+        <p id="scenario-status" class="lab-status" role="status" aria-live="polite">Configure a policy and episode. Fault injection is optional.</p>
+        <div id="scenario-results" hidden>
+          <div class="scenario-metrics" aria-label="Scenario totals"><article><span>RETURN</span><strong id="scenario-return">—</strong><small>cumulative reward</small></article><article><span>UNSERVED</span><strong id="scenario-unserved">—</strong><small>MWh</small></article><article><span>CURTAILED</span><strong id="scenario-curtailed">—</strong><small>MWh</small></article><article><span>COST</span><strong id="scenario-cost">—</strong><small>synthetic units</small></article><article><span>EMISSIONS</span><strong id="scenario-emissions">—</strong><small>kg CO₂e</small></article></div>
+          <div class="scenario-output"><figure class="lab-figure"><div class="lab-chart-scroll"><svg id="scenario-chart" viewBox="0 0 900 280" role="img" aria-labelledby="scenario-caption"></svg></div><figcaption id="scenario-caption">Episode trajectory from the aggregate synthetic simulator.</figcaption></figure><section class="event-log" aria-labelledby="event-log-title"><div class="value-panel-head"><h3 id="event-log-title">Action &amp; event log</h3><span id="event-count">0 STEPS</span></div><div class="event-scroll"><table><thead><tr><th scope="col">STEP</th><th scope="col">ACTION</th><th scope="col">BALANCE · MW</th><th scope="col">REWARD</th><th scope="col">EVENT</th></tr></thead><tbody id="event-rows"></tbody></table></div></section></div>
+        </div>
+        <p class="lab-note">Synthetic aggregate simulation only. It does not represent AC/DC power flow, protection logic, or operational switching.</p>
+      </section>
+
+      <footer class="footer"><span>PRISM <span class="muted">/ Project construction workspace</span></span><span>Phase 02 · Simulation &amp; learning complete</span></footer>
+    </main>
+  </div>
+</body>
+</html>

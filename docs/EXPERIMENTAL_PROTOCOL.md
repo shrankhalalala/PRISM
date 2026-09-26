@@ -203,3 +203,35 @@ Their numerical outputs are implementation evidence only. Phase 2 is not complet
 until LSTM comparison, multiple independent Q-learning seeds, held-out scenario
 evaluation, trained-policy API activation, and dashboard simulation controls have
 been implemented and reviewed.
+
+## 13. Phase 2 completion protocol and results: 2026-09-26
+
+The requirements named at the checkpoint are now implemented. Reproduce the final
+evidence with:
+
+```bash
+python -m scripts.generate_sample
+python -m scripts.prepare_data
+python -m scripts.evaluate_forecasting
+python -m scripts.evaluate_q_learning --episodes 500
+python -m unittest discover -s tests -v
+node --check prism/static/dashboard.js
+```
+
+| ID | Completion criterion | Recorded result |
+|---|---|---|
+| P2-F1 | Larger audited fixture | 2,160/2,160 rows accepted; zero gaps and imputations |
+| P2-F2 | Frozen forecast partitions | Chronological 1,512 train / 324 validation / 324 test |
+| P2-F3 | Three forecast methods | Persistence, 24-lag autoregression, and four-gate NumPy LSTM evaluated with MAE/RMSE |
+| P2-F4 | Multi-seed policy comparison | Five independent seeds; identical validation and held-out test scenarios |
+| P2-F5 | Versioned scenario suite | Normal, renewable ramp, plant fault, line fault, and concurrent fault with SHA-256 |
+| P2-F6 | Reviewed policy activation | Seed 23 selected only on validation return; API output is non-executable |
+| P2-F7 | Interactive application | Forecast and scenario controls, metrics, trajectories, event logs, responsive layouts |
+| P2-F8 | Construction verification | 42 automated tests, Python compilation, JavaScript syntax, API, and browser checks pass |
+
+The LSTM beats persistence but trails autoregression for every target on the test
+partition. Across paired held-out runs, Q-learning slightly reduces mean unserved
+energy (743.862043 versus 755.006330 MWh) but has worse mean return (-154.285003
+versus -120.584628), curtailment, cost, and emissions. These outcomes are retained
+without post-test retuning. Phase 2 therefore demonstrates a complete reproducible
+comparison pipeline, not forecast dominance or dispatch superiority.

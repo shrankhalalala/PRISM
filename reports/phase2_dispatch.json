@@ -1,0 +1,312 @@
+{
+  "schema_version": "1.0",
+  "data_source": "synthetic_seed_42",
+  "scenario_suite": "data/scenarios/phase2_scenarios.json",
+  "scenario_suite_sha256": "15ab399bb9279abe528b9ec846980abcb96b0c4c8c576bf664553aa4a3f54254",
+  "training": {
+    "episodes_per_seed": 500,
+    "seeds": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ],
+    "training_scenarios": [
+      "normal_day",
+      "renewable_ramp"
+    ],
+    "validation_scenarios": [
+      "plant_fault"
+    ],
+    "test_scenarios": [
+      "line_fault",
+      "concurrent_fault"
+    ]
+  },
+  "selection": {
+    "seed": 23,
+    "validation_return": -97.921654,
+    "policy_artifact": "models/q_learning/phase2_policy.json"
+  },
+  "policy_sha256": "4a6c0c00cd6cb25793d11cb6d5269f8eb92a6e41771c958268a1e378ff704fee",
+  "per_seed": [
+    {
+      "seed": 11,
+      "validation_return": -102.69374,
+      "final_training_return": -89.50704075,
+      "test_scenarios": [
+        {
+          "scenario": "line_fault",
+          "baseline": {
+            "return": -113.329232,
+            "unserved_mwh": 668.515179,
+            "curtailed_mwh": 678.588929,
+            "operating_cost": 575162.5,
+            "emissions_kg": 7375500.0,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -125.068171,
+            "unserved_mwh": 549.922054,
+            "curtailed_mwh": 2523.988185,
+            "operating_cost": 643625.0,
+            "emissions_kg": 9597375.0,
+            "constraint_violations": 0.0
+          }
+        },
+        {
+          "scenario": "concurrent_fault",
+          "baseline": {
+            "return": -127.840023,
+            "unserved_mwh": 841.497482,
+            "curtailed_mwh": 698.194982,
+            "operating_cost": 675587.5,
+            "emissions_kg": 9451687.5,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -131.301371,
+            "unserved_mwh": 789.608107,
+            "curtailed_mwh": 1446.347156,
+            "operating_cost": 697075.0,
+            "emissions_kg": 10533375.0,
+            "constraint_violations": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "seed": 23,
+      "validation_return": -97.921654,
+      "final_training_return": -102.67991325,
+      "test_scenarios": [
+        {
+          "scenario": "line_fault",
+          "baseline": {
+            "return": -113.329232,
+            "unserved_mwh": 668.515179,
+            "curtailed_mwh": 678.588929,
+            "operating_cost": 575162.5,
+            "emissions_kg": 7375500.0,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -123.63659,
+            "unserved_mwh": 639.023929,
+            "curtailed_mwh": 1876.4661,
+            "operating_cost": 648293.75,
+            "emissions_kg": 8247937.5,
+            "constraint_violations": 0.0
+          }
+        },
+        {
+          "scenario": "concurrent_fault",
+          "baseline": {
+            "return": -127.840023,
+            "unserved_mwh": 841.497482,
+            "curtailed_mwh": 698.194982,
+            "operating_cost": 675587.5,
+            "emissions_kg": 9451687.5,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -159.210306,
+            "unserved_mwh": 851.141857,
+            "curtailed_mwh": 4152.707778,
+            "operating_cost": 833787.5,
+            "emissions_kg": 12584812.5,
+            "constraint_violations": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "validation_return": -267.366969,
+      "final_training_return": -117.2962908,
+      "test_scenarios": [
+        {
+          "scenario": "line_fault",
+          "baseline": {
+            "return": -113.329232,
+            "unserved_mwh": 668.515179,
+            "curtailed_mwh": 678.588929,
+            "operating_cost": 575162.5,
+            "emissions_kg": 7375500.0,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -125.405195,
+            "unserved_mwh": 797.955295,
+            "curtailed_mwh": 985.570596,
+            "operating_cost": 576200.0,
+            "emissions_kg": 7750125.0,
+            "constraint_violations": 0.0
+          }
+        },
+        {
+          "scenario": "concurrent_fault",
+          "baseline": {
+            "return": -127.840023,
+            "unserved_mwh": 841.497482,
+            "curtailed_mwh": 698.194982,
+            "operating_cost": 675587.5,
+            "emissions_kg": 9451687.5,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -143.520598,
+            "unserved_mwh": 1157.082614,
+            "curtailed_mwh": 479.97125,
+            "operating_cost": 647393.75,
+            "emissions_kg": 9149062.5,
+            "constraint_violations": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "seed": 67,
+      "validation_return": -133.70857,
+      "final_training_return": -107.76057611,
+      "test_scenarios": [
+        {
+          "scenario": "line_fault",
+          "baseline": {
+            "return": -113.329232,
+            "unserved_mwh": 668.515179,
+            "curtailed_mwh": 678.588929,
+            "operating_cost": 575162.5,
+            "emissions_kg": 7375500.0,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -203.668484,
+            "unserved_mwh": 714.023929,
+            "curtailed_mwh": 9395.347679,
+            "operating_cost": 1004587.5,
+            "emissions_kg": 14537812.5,
+            "constraint_violations": 0.0
+          }
+        },
+        {
+          "scenario": "concurrent_fault",
+          "baseline": {
+            "return": -127.840023,
+            "unserved_mwh": 841.497482,
+            "curtailed_mwh": 698.194982,
+            "operating_cost": 675587.5,
+            "emissions_kg": 9451687.5,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -163.767394,
+            "unserved_mwh": 631.669357,
+            "curtailed_mwh": 5833.366857,
+            "operating_cost": 926737.5,
+            "emissions_kg": 14135062.5,
+            "constraint_violations": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "seed": 89,
+      "validation_return": -136.563288,
+      "final_training_return": -110.60652661,
+      "test_scenarios": [
+        {
+          "scenario": "line_fault",
+          "baseline": {
+            "return": -113.329232,
+            "unserved_mwh": 668.515179,
+            "curtailed_mwh": 678.588929,
+            "operating_cost": 575162.5,
+            "emissions_kg": 7375500.0,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -203.122208,
+            "unserved_mwh": 676.523929,
+            "curtailed_mwh": 9692.519554,
+            "operating_cost": 1013437.5,
+            "emissions_kg": 14835937.5,
+            "constraint_violations": 0.0
+          }
+        },
+        {
+          "scenario": "concurrent_fault",
+          "baseline": {
+            "return": -127.840023,
+            "unserved_mwh": 841.497482,
+            "curtailed_mwh": 698.194982,
+            "operating_cost": 675587.5,
+            "emissions_kg": 9451687.5,
+            "constraint_violations": 0.0
+          },
+          "q_learning": {
+            "return": -164.149716,
+            "unserved_mwh": 631.669357,
+            "curtailed_mwh": 5986.757482,
+            "operating_cost": 928062.5,
+            "emissions_kg": 14256562.5,
+            "constraint_violations": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "paired_test_summary": {
+    "baseline_return": {
+      "mean": -120.584628,
+      "standard_deviation_across_training_seeds": 0.0
+    },
+    "q_learning_return": {
+      "mean": -154.285003,
+      "standard_deviation_across_training_seeds": 27.236621
+    },
+    "baseline_unserved_mwh": {
+      "mean": 755.00633,
+      "standard_deviation_across_training_seeds": 0.0
+    },
+    "q_learning_unserved_mwh": {
+      "mean": 743.862043,
+      "standard_deviation_across_training_seeds": 135.266789
+    },
+    "baseline_curtailed_mwh": {
+      "mean": 688.391955,
+      "standard_deviation_across_training_seeds": 0.0
+    },
+    "q_learning_curtailed_mwh": {
+      "mean": 4237.304264,
+      "standard_deviation_across_training_seeds": 3287.484217
+    },
+    "baseline_operating_cost": {
+      "mean": 625375.0,
+      "standard_deviation_across_training_seeds": 0.0
+    },
+    "q_learning_operating_cost": {
+      "mean": 791920.0,
+      "standard_deviation_across_training_seeds": 167316.273167
+    },
+    "baseline_emissions_kg": {
+      "mean": 8413593.75,
+      "standard_deviation_across_training_seeds": 0.0
+    },
+    "q_learning_emissions_kg": {
+      "mean": 11562806.25,
+      "standard_deviation_across_training_seeds": 2731421.971703
+    },
+    "baseline_constraint_violations": {
+      "mean": 0.0,
+      "standard_deviation_across_training_seeds": 0.0
+    },
+    "q_learning_constraint_violations": {
+      "mean": 0.0,
+      "standard_deviation_across_training_seeds": 0.0
+    }
+  },
+  "summary_unit": "Per-seed mean across the two held-out scenarios; dispersion is across five independent training seeds.",
+  "interpretation": "Synthetic aggregate simulation evidence only; the selected policy emits non-executable recommendations."
+}
