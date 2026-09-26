@@ -14,12 +14,18 @@ flowchart LR
     API --> UI[Operator dashboard]
 ```
 
-## Ownership boundaries
+## Component boundaries
 
-- Nishtha owns measurement schema, source assessment and preprocessing.
-- Himangi owns observation encoding, action/reward specification and baseline policy.
-- Shrankhala owns graph validation, Neo4j adapter and environment lifecycle.
-- Gaurangi owns HTTP contracts, frontend interactions and application integration.
+- The data component contains measurement schema, source assessment, preprocessing,
+  and forecasting.
+- The dispatch component contains observation encoding, policy actions, rewards,
+  baseline logic, and Q-learning.
+- The grid and simulation components contain topology validation, Neo4j persistence,
+  environment transitions, and faults.
+- The application component contains HTTP contracts, frontend interactions, and
+  integration.
+
+Individual phase-wise responsibilities are recorded only in `CONTRIBUTIONS.md`.
 
 `GridEnvironment.reset()` returns an independent snapshot. Phase 2 implements
 `step(Action)` with the project-specific `(observation, reward, terminated, info)`

@@ -91,8 +91,8 @@ The five primary, human-readable research documents are:
 
 Supporting specifications remain in `docs/architecture.md`,
 `docs/dispatch_rl_design.md`, `docs/openapi.json`, and `docs/verification.md`.
-Phase-specific ownership is recorded in `docs/phase1_contributions.md` and
-`docs/phase2_contributions.md`.
+All phase-wise individual work is recorded in the single root-level
+[`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
 
 ## Run locally
 
@@ -203,7 +203,7 @@ actions for every requested step.
 
 ## Project status and next phase
 
-See `docs/phase1_contributions.md` for the four module owners and review
+See `CONTRIBUTIONS.md` for the four members' phase-wise work and review
 demonstrations. See `docs/architecture.md` for implementation boundaries,
 `docs/dispatch_rl_design.md` for the detailed RL contract, and
 `docs/dashboard.md` for interface behavior.

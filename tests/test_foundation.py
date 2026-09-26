@@ -121,6 +121,7 @@ class APITests(unittest.TestCase):
         self.assertEqual(self.client.get('/api/grid').json['summary']['nodes'],12)
         self.assertEqual(self.client.get('/api/health').json['phase'],2)
         self.assertEqual(self.client.get('/api/openapi.json').json['info']['version'],'0.2.0')
+        self.assertTrue(all('owner' not in module for module in self.client.get('/api/status').json['modules']))
 
     def test_limits(self):
         for limit in ['-1','0','337','abc']:

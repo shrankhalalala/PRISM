@@ -13,10 +13,10 @@ from prism.simulation import Action, GridEnvironment, Observation, SimulationCon
 from prism.dispatch.baseline import recommend, encode_state
 
 MODULES = [
-    dict(id="data",name="Data & forecasting",owner="Nishtha Jain",status="phase2_in_progress",description="Validated synthetic data, persistence benchmark and autoregressive forecasting baseline. LSTM evaluation remains."),
-    dict(id="dispatch",name="Dispatch, Q-learning & XAI",owner="Himangi Mishra",status="phase2_in_progress",description="Constrained baseline interface and trainable, persistent tabular Q-learning policy. XAI remains."),
-    dict(id="grid",name="Graph & simulation",owner="Shrankhala Singh",status="phase2_core_ready",description="Deterministic 15-minute simulator with generator, battery, load-shedding and scheduled-fault dynamics."),
-    dict(id="api",name="API & dashboard",owner="Gaurangi Tyagi",status="phase2_in_progress",description="Forecast and scenario APIs are available; interactive simulation dashboard work remains."),
+    dict(id="data",name="Data & forecasting",status="phase2_in_progress",description="Validated synthetic data, persistence benchmark and autoregressive forecasting baseline. LSTM evaluation remains."),
+    dict(id="dispatch",name="Dispatch, Q-learning & XAI",status="phase2_in_progress",description="Constrained baseline interface and trainable, persistent tabular Q-learning policy. XAI remains."),
+    dict(id="grid",name="Graph & simulation",status="phase2_core_ready",description="Deterministic 15-minute simulator with generator, battery, load-shedding and scheduled-fault dynamics."),
+    dict(id="api",name="API & dashboard",status="phase2_in_progress",description="Forecast and scenario APIs are available; interactive simulation dashboard work remains."),
 ]
 
 

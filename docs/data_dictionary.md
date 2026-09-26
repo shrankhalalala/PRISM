@@ -1,4 +1,4 @@
-# Data contract — Nishtha Jain
+# Data contract
 
 Phase 1 fixture: 336 hourly observations, 1–14 January 2026 UTC, fixed seed 42.
 These are generated teaching examples, not SLDC measurements, and are insufficient

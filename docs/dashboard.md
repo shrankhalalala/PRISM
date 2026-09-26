@@ -1,7 +1,5 @@
 # Interactive dashboard
 
-Owner: Gaurangi Tyagi — API, dashboard and integration.
-
 The Flask `/` page serves a responsive operator workspace without external assets or a frontend build step. Start the application using the root README and visit `http://localhost:5050`.
 
 ## Navigation and appearance

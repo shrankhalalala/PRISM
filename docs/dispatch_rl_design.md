@@ -1,4 +1,4 @@
-# Dispatch, Q-learning and explainability — Himangi Mishra
+# Dispatch, Q-learning and explainability
 
 ## Phase 1 implementation
 

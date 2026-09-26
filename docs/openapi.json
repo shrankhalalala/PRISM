@@ -61,7 +61,7 @@
     },
     "/api/status": {
       "get": {
-        "summary": "Phase and module ownership/status",
+        "summary": "Phase and module implementation status",
         "responses": {
           "200": {
             "description": "Success",
@@ -80,7 +80,6 @@
                         "required": [
                           "id",
                           "name",
-                          "owner",
                           "status",
                           "description"
                         ],
@@ -89,9 +88,6 @@
                             "type": "string"
                           },
                           "name": {
-                            "type": "string"
-                          },
-                          "owner": {
                             "type": "string"
                           },
                           "status": {
