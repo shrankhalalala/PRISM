@@ -34,3 +34,16 @@ All observations remain explicitly synthetic. The interface contains no fake liv
 4. Switch Demand/Solar/Wind and 24 hours/7 days; compare values and record counts with the corresponding API response.
 5. Expand the table, then check a 375px viewport for page overflow.
 6. Block a measurement request and change range; verify the visible failure message and retained chart. Unblock and Refresh data to recover.
+
+## Phase 2 checkpoint
+
+The visible phase label now identifies Phase 2 as in progress, and the asset note
+clarifies that the reference schematic does not display the separate scenario
+state. Forecast and scenario APIs are implemented, but this checkpoint does not add
+their controls to the page.
+
+The next dashboard contribution will add an explicit simulation workspace with
+forecast selection, scenario seed, fault schedule, policy choice, run/reset
+controls, trajectory charts, cumulative metrics, active-fault state, and validation
+errors. It must continue to label outputs synthetic and must not offer learned
+dispatch until a reviewed Q-table is configured by the backend.

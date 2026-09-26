@@ -192,3 +192,77 @@ evidence separately from future performance results.
 - Phase 1 reports test outcomes and artifact counts only.
 - No forecasting, diagnosis, dispatch, latency, or reliability target is claimed.
 - Later changes to targets must be recorded here and in the experimental protocol.
+
+## ADR-009: Use a deterministic aggregate simulator before adding power flow
+
+**Date:** 2026-09-26
+**Status:** Accepted
+
+### Context
+
+Q-learning needs repeatable transitions, rewards, action constraints, and fault
+scenarios. The Phase 1 network does not include the impedance and electrical data
+needed for a defensible AC or DC power-flow model.
+
+### Decision
+
+Implement a 15-minute aggregate teaching simulator with explicit synthetic
+generator ramp limits, minimum outputs, battery limits, load-shedding eligibility,
+and scheduled asset outages. Use NetworkX connectivity to identify disconnected
+loads. Label every result as synthetic and state that no AC/DC flow is calculated.
+
+### Consequences
+
+- Baseline and learned policies can use the same transition and constraint layer.
+- Scenarios are reproducible from their profile, fault list, configuration, and seed.
+- Simulator outcomes cannot establish voltage, frequency, congestion, or real-grid
+  security.
+
+## ADR-010: Establish transparent forecasting baselines before LSTM training
+
+**Date:** 2026-09-26
+**Status:** Accepted
+
+### Context
+
+A learned forecasting model needs a reference that is easy to reproduce and audit.
+The committed two-week synthetic fixture is too small to support a journal claim
+about general forecasting performance.
+
+### Decision
+
+Implement persistence and ridge-regularized univariate autoregressive models first.
+Evaluate them with chronological splits and MAE/RMSE. Treat their outputs as
+development baselines; add an LSTM only after a larger audited dataset and fixed
+train/validation/test periods are available.
+
+### Consequences
+
+- Forecast APIs and metrics can be tested without a GPU or heavy dependency.
+- Any later LSTM must beat declared simple baselines on identical test windows.
+- Current synthetic metrics remain engineering evidence rather than a research
+  performance result.
+
+## ADR-011: Persist Q-learning policies as reviewed JSON artifacts
+
+**Date:** 2026-09-26
+**Status:** Accepted
+
+### Context
+
+Training a Q-table inside an HTTP request would mix experimentation with serving
+and make model provenance difficult to audit.
+
+### Decision
+
+Train through a separate command, save the action order, state shape,
+hyperparameters, metadata, and all Q-values in a versioned JSON artifact, and
+validate those fields during loading. Keep `/api/dispatch` unavailable until a
+specific reviewed artifact is configured.
+
+### Consequences
+
+- Training is reproducible and policy files remain human-inspectable.
+- The API cannot silently serve an unreviewed newly trained policy.
+- Large experiment artifacts require an explicit retention and versioning policy
+  before repeated studies begin.

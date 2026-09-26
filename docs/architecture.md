@@ -21,11 +21,11 @@ flowchart LR
 - Shrankhala owns graph validation, Neo4j adapter and environment lifecycle.
 - Gaurangi owns HTTP contracts, frontend interactions and application integration.
 
-`GridEnvironment.reset()` returns an independent snapshot. `step(Action)` raises
-NotImplementedError until Phase 2 provides time evolution; callers must not
-interpret a reset as simulation. The future interface is `(observation, reward,
-terminated, info)`; horizon completion is represented by `terminated` in this
-project-specific contract (not a claim of Gymnasium compatibility).
+`GridEnvironment.reset()` returns an independent snapshot. Phase 2 implements
+`step(Action)` with the project-specific `(observation, reward, terminated, info)`
+interface. Horizon completion is represented by `terminated`; this is not a claim
+of Gymnasium compatibility. Runtime fault states may be disconnected and use
+reachability checks instead of the stricter initial-topology validator.
 
 ## Graph schema
 
@@ -60,3 +60,24 @@ structural importance; diagnosis will additionally need observations and event
 timing. Review-II/design-PDF targets conflict (e.g. MAPE 5% vs 7%); keep both as
 unconfirmed targets until the team agrees one evaluation protocol. Performance
 numbers from the PDFs are not application results.
+
+## Phase 2 architecture increment
+
+```mermaid
+flowchart LR
+    Hourly[Validated hourly fixture] --> Profile[15-minute profile adapter]
+    Profile --> Sim[Constrained simulator]
+    Grid[Validated topology] --> Sim
+    Faults[Scheduled asset faults] --> Sim
+    Sim --> Base[Rule-based policy]
+    Sim --> Q[Tabular Q-learning trainer]
+    Q --> Artifact[Versioned JSON Q-table]
+    Hourly --> Forecast[Persistence + autoregression]
+    Sim --> ScenarioAPI[Scenario API]
+    Forecast --> ForecastAPI[Forecast API]
+```
+
+Training remains outside Flask request handling. The application may generate a
+development forecast or run a bounded synthetic scenario, but it does not train or
+silently select a learned policy. `/api/dispatch` remains unavailable until a
+reviewed artifact, provenance, and evaluation record are configured.

@@ -81,7 +81,11 @@ class GridTests(unittest.TestCase):
         self.assertEqual(two.topology['nodes'][0]['output_mw'],400)
         self.assertEqual(source['nodes'][0]['output_mw'],400)
         self.assertEqual(one.reset()['generation_mw'],700)
-        with self.assertRaises(NotImplementedError): one.step(Action.HOLD)
+        observation,reward,terminated,info=one.step(Action.HOLD)
+        self.assertEqual(observation['demand_mw'],700)
+        self.assertIsInstance(reward,float)
+        self.assertFalse(terminated)
+        self.assertEqual(info['action'],'hold')
 
 
 class DispatchTests(unittest.TestCase):
@@ -111,10 +115,12 @@ class APITests(unittest.TestCase):
         self.client=create_app({'TESTING':True}).test_client()
 
     def test_read_endpoints(self):
-        for route in ['/api/health','/api/grid','/api/status','/api/measurements','/api/data/quality','/api/dispatch/baseline','/api/openapi.json']:
+        for route in ['/api/health','/api/grid','/api/status','/api/measurements','/api/data/quality','/api/dispatch/baseline','/api/forecast','/api/openapi.json']:
             with self.subTest(route=route):
                 self.assertEqual(self.client.get(route).status_code,200)
         self.assertEqual(self.client.get('/api/grid').json['summary']['nodes'],12)
+        self.assertEqual(self.client.get('/api/health').json['phase'],2)
+        self.assertEqual(self.client.get('/api/openapi.json').json['info']['version'],'0.2.0')
 
     def test_limits(self):
         for limit in ['-1','0','337','abc']:
@@ -131,9 +137,35 @@ class APITests(unittest.TestCase):
         self.assertEqual(result.json['data_source'],'user_supplied')
 
     def test_planned_modules_never_fabricate_results(self):
-        self.assertEqual(self.client.get('/api/forecast').status_code,501)
-        for route in ['/api/dispatch','/api/explain','/api/scenario']:
+        for route in ['/api/dispatch','/api/explain']:
             self.assertEqual(self.client.post(route,json={}).status_code,501)
+
+    def test_phase2_forecast_and_scenario(self):
+        forecast=self.client.get('/api/forecast?model=autoregressive&target=solar_mw&horizon=3')
+        self.assertEqual(forecast.status_code,200)
+        self.assertEqual(len(forecast.json['predictions']),3)
+        scenario=self.client.post('/api/scenario',json={'steps':3,'seed':7})
+        self.assertEqual(scenario.status_code,200)
+        self.assertEqual(scenario.json['steps'],3)
+        self.assertEqual(len(scenario.json['trajectory']),3)
+        self.assertEqual(scenario.json['data_source'],'synthetic')
+
+    def test_phase2_api_validation(self):
+        for query in ['horizon=0','horizon=bad','target=bad','model=bad']:
+            self.assertEqual(self.client.get('/api/forecast?'+query).status_code,400)
+        invalid_scenarios=[
+            [],
+            {'steps':0},
+            {'steps':2,'actions':['hold']},
+            {'steps':1,'actions':['unknown']},
+            {'steps':1,'faults':'bad'},
+            {'steps':1,'faults':[{'step':0,'asset_id':'unknown'}]},
+            {'steps':1,'unexpected':True},
+        ]
+        for body in invalid_scenarios:
+            with self.subTest(body=body):
+                self.assertEqual(self.client.post('/api/scenario',json=body).status_code,400)
+        self.assertEqual(self.client.post('/api/scenario',data='no').status_code,415)
 
     def test_missing_fixture(self):
         with TemporaryDirectory() as directory:

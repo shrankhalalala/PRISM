@@ -141,3 +141,21 @@ python -m scripts.prepare_data \
 Running sample generation intentionally reproduces the committed deterministic
 fixtures. External data should be stored and versioned according to its licence and
 must not overwrite the synthetic reference without a recorded decision.
+
+## 9. Phase 2 simulation profile adapter
+
+Phase 2 reads the canonical hourly CSV without changing it. For a one-day episode,
+`quarter_hour_profile` selects the most recent 24 rows and linearly interpolates
+demand, solar, and wind at 15-minute boundaries. Each pair of hourly observations
+therefore yields the original value plus values at 25%, 50%, and 75% of the change.
+The final observation is held for three additional quarter-hours because no later
+hour exists.
+
+This derived profile has 96 points and is used only by the synthetic simulator.
+The choice may smooth rapid ramps and does not reconstruct real sub-hourly
+variability. Experiments must identify the adapter and retain the source rows;
+results created from it cannot be described as measurements at 15-minute cadence.
+
+The first forecasting evaluation uses rows 1–288 for training and the final 48 rows
+for testing. It performs no random shuffle. This split validates the experiment
+path but remains too short and too synthetic for a general performance claim.

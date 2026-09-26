@@ -1,9 +1,9 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "PRISM Phase 1 API",
-    "version": "0.1.0",
-    "description": "Synthetic academic foundation. No model inference or simulation execution in Phase 1."
+    "title": "PRISM Phase 2 API",
+    "version": "0.2.0",
+    "description": "Synthetic academic prototype with forecasting baselines and constrained scenario simulation. No operational switching."
   },
   "servers": [
     {
@@ -26,7 +26,7 @@
                       "const": "ok"
                     },
                     "phase": {
-                      "const": 1
+                      "const": 2
                     },
                     "data_source": {
                       "const": "synthetic"
@@ -435,10 +435,48 @@
     },
     "/api/forecast": {
       "get": {
-        "summary": "Planned module: Phase 1 always returns 501",
+        "summary": "Generate a synthetic persistence or autoregressive forecast",
+        "parameters": [
+          {
+            "name": "target",
+            "in": "query",
+            "schema": {
+              "enum": ["demand_mw", "solar_mw", "wind_mw"],
+              "default": "demand_mw"
+            }
+          },
+          {
+            "name": "model",
+            "in": "query",
+            "schema": {
+              "enum": ["persistence", "autoregressive"],
+              "default": "persistence"
+            }
+          },
+          {
+            "name": "horizon",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 24,
+              "default": 1
+            }
+          }
+        ],
         "responses": {
-          "501": {
-            "description": "Not implemented; future model/scenario payloads are not yet stable",
+          "200": {
+            "description": "Synthetic development forecast",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid forecast query",
             "content": {
               "application/json": {
                 "schema": {
@@ -452,7 +490,7 @@
     },
     "/api/dispatch": {
       "post": {
-        "summary": "Planned module: Phase 1 always returns 501",
+        "summary": "Unavailable until a trained policy artifact is configured",
         "responses": {
           "501": {
             "description": "Not implemented; future model/scenario payloads are not yet stable",
@@ -469,7 +507,7 @@
     },
     "/api/explain": {
       "post": {
-        "summary": "Planned module: Phase 1 always returns 501",
+        "summary": "Unavailable until a surrogate explanation model is configured",
         "responses": {
           "501": {
             "description": "Not implemented; future model/scenario payloads are not yet stable",
@@ -486,10 +524,71 @@
     },
     "/api/scenario": {
       "post": {
-        "summary": "Planned module: Phase 1 always returns 501",
+        "summary": "Run a deterministic constrained synthetic scenario",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "steps": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 96,
+                    "default": 8
+                  },
+                  "seed": {
+                    "type": "integer",
+                    "default": 42
+                  },
+                  "actions": {
+                    "type": "array",
+                    "items": {
+                      "enum": ["hold", "increase_generation", "decrease_generation", "charge_battery", "discharge_battery", "shed_load"]
+                    }
+                  },
+                  "faults": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["step", "asset_id"],
+                      "properties": {
+                        "step": {"type": "integer", "minimum": 0},
+                        "asset_id": {"type": "string"},
+                        "duration_steps": {"type": "integer", "minimum": 1, "default": 4}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
-          "501": {
-            "description": "Not implemented; future model/scenario payloads are not yet stable",
+          "200": {
+            "description": "Scenario trajectory and aggregate metrics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid scenario",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "JSON required",
             "content": {
               "application/json": {
                 "schema": {

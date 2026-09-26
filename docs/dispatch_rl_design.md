@@ -33,7 +33,7 @@ discharge_battery, shed_load. Proposed initial command quantum: 25 MW per
 invalid commands are masked during exploration, greedy selection and bootstrap
 maximization. A diagnostic no-feasible-correction condition should be explicit.
 
-## Episodes and reward specification (to implement in Phase 2)
+## Episodes and reward specification (Phase 2 core implemented)
 
 An episode is 96 fifteen-minute steps. The data adapter must explicitly document
 any profile interpolation from hourly input. Seed scenario generation and random
@@ -70,7 +70,27 @@ SHAP explains the surrogate's class score, not the Q-table or physical causality
 Show the Q-learning action, surrogate action, disagreement and any feasibility
 override separately. Never present a surrogate explanation for a different action.
 
-Evaluation: use identical unseen profiles and fault seeds for rule-based and
+Evaluation must use identical unseen profiles and fault seeds for rule-based and
 learned policies; report unserved energy, costs, emissions, violations, returns,
 and variability across training seeds. Synthetic performance is not real-grid
-validation. All rewards and transitions remain Phase 2 work.
+validation.
+
+## Implementation checkpoint: 2026-09-26
+
+The simulator now implements 15-minute transitions, the 25 MW command quantum,
+generator ramp/capacity/minimum limits, battery power/energy/efficiency limits,
+non-critical load shedding, scheduled node/line outages, reachability-based
+disconnected demand, termination, and the provisional normalized reward. Surplus
+energy is included as a curtailment penalty in addition to the originally proposed
+terms.
+
+`QLearningAgent` implements seeded epsilon-greedy training, masking during
+exploration, greedy selection and bootstrap maximization, terminal updates without
+bootstrapping, and JSON policy persistence. The training command uses the committed
+synthetic day profile and an eight-step gas outage by default.
+
+This checkpoint proves that the algorithm and experiment path execute. It does not
+establish that the default reward weights are suitable, that the learned policy
+outperforms the baseline, or that 270 states are sufficient. Those questions
+require multi-seed training and held-out scenario evaluation before the policy is
+enabled through the API.

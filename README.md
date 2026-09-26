@@ -17,6 +17,14 @@ state encoding, an API, a responsive dashboard, and optional Neo4j persistence.
 > operational switching capability. Values shown in the dashboard are development
 > fixtures and must not be interpreted as results for the Delhi or Indian grid.
 
+**Current Phase 2 checkpoint:** the repository now contains deterministic
+15-minute simulator dynamics, constrained generator and battery actions, scheduled
+asset outages, a trainable and persistent tabular Q-learning implementation, and
+persistence/autoregressive forecasting baselines. The simulator remains an
+aggregate teaching model without AC/DC power flow. No trained policy is enabled as
+an application default, and LSTM, XGBoost/SHAP, real-time ingestion, and operational
+control remain unimplemented.
+
 ## Research motivation
 
 Increasing renewable penetration makes grid balancing more dependent on timely
@@ -58,7 +66,7 @@ flowchart LR
     D[Grid JSON] --> E[NetworkX topology]
     D --> F[Optional Neo4j store]
     E --> G[Environment observation]
-    G --> H[Baseline and future Q-learning policy]
+    G --> H[Baseline and trainable Q-learning policy]
     C --> I[Flask API]
     E --> I
     H --> I
@@ -83,6 +91,8 @@ The five primary, human-readable research documents are:
 
 Supporting specifications remain in `docs/architecture.md`,
 `docs/dispatch_rl_design.md`, `docs/openapi.json`, and `docs/verification.md`.
+Phase-specific ownership is recorded in `docs/phase1_contributions.md` and
+`docs/phase2_contributions.md`.
 
 ## Run locally
 
@@ -108,6 +118,18 @@ python -m scripts.generate_sample
 python -m scripts.prepare_data
 python -m unittest discover -s tests -v
 ```
+
+Run the first Phase 2 experiments without enabling them as production models:
+
+```bash
+python -m scripts.evaluate_forecasting
+python -m scripts.train_q_learning --episodes 500
+```
+
+These commands write inspectable JSON artifacts below `artifacts/`. Generated
+artifacts are ignored by Git by default and must be reviewed, identified, and
+promoted deliberately before they are used by an application endpoint or cited in
+a paper.
 
 Generated data: `data/raw/grid.json`, `data/raw/synthetic_measurements.csv`.
 Prepared data and audit: `data/processed/`. The 14-day sample supports pipeline
@@ -150,8 +172,9 @@ afterward. A normal demo database is started separately using Compose above.
 | GET /api/data/quality | Preprocessing audit |
 | GET or POST /api/dispatch/baseline | Non-executable baseline preview |
 | GET /api/openapi.json | OpenAPI contract |
-| GET /api/forecast | 501: planned |
-| POST /api/dispatch, /api/explain, /api/scenario | 501: planned |
+| GET /api/forecast?target=demand_mw&model=persistence&horizon=1 | Synthetic persistence or autoregressive forecast, horizon 1–24 |
+| POST /api/scenario | Run 1–96 constrained synthetic simulation steps with optional actions and faults |
+| POST /api/dispatch, /api/explain | 501 until a reviewed policy or explanation artifact is configured |
 
 Example POST body for `/api/dispatch/baseline`:
 
@@ -161,7 +184,22 @@ Example POST body for `/api/dispatch/baseline`:
 
 The proposal is 50 MW increased generation with 150 MW residual gap and
 `executable: false`. Feasibility describes aggregate reserve only; plant ramp,
-minimum output, battery and network limits arrive with Phase 2 simulation.
+minimum output, battery, and topology availability checks are applied only inside
+the Phase 2 scenario simulator.
+
+Example scenario request:
+
+```json
+{
+  "steps": 4,
+  "seed": 42,
+  "faults": [{"step": 1, "asset_id": "gas", "duration_steps": 2}]
+}
+```
+
+If `actions` is omitted, the scenario uses the rule-based prototype subject to the
+simulator's action mask. Supplying `actions` requires one of the six documented
+actions for every requested step.
 
 ## Project status and next phase
 
@@ -170,16 +208,18 @@ demonstrations. See `docs/architecture.md` for implementation boundaries,
 `docs/dispatch_rl_design.md` for the detailed RL contract, and
 `docs/dashboard.md` for interface behavior.
 
-Phase 2 implements simulator dynamics and faults, baseline constraints, first
-forecasting models, and Q-learning training. Phase 3 integrates streaming,
-background simulation, XGBoost/SHAP and the full operator flow. Phase 4 evaluates
-all modules and assembles final evidence. No accuracy or latency target is reported
-as achieved by this foundation.
+Phase 2 is in progress. Its simulation core, forecasting baselines, and tabular
+Q-learning trainer are implemented. Remaining Phase 2 work includes an LSTM
+comparison, multi-seed policy evaluation against the baseline, trained-policy API
+activation, and dashboard simulation controls. Phase 3 integrates real-time
+streaming, background simulation, XGBoost/SHAP and the full operator flow. Phase 4
+evaluates all modules and assembles final evidence. No accuracy or latency target is
+reported as achieved by the current checkpoint.
 
 ## Verification environment
 
 The local `.venv` was created with access to existing system packages to reuse
-available dependencies. Editable installation and all 19 tests passed there.
+available dependencies. Editable installation and all 37 tests passed there.
 `requirements-tested.txt` records the core versions used; the commands above
 create an isolated environment on a new machine. See docs/verification.md for
 the final validation record. Restart the server after template changes when

@@ -43,3 +43,26 @@ across reload, eight dimmed nodes for the Plants filter, 168 observations for th
 The previous contribution section, PBL-II label, and foundation banner remain
 removed. Theme/sidebar preferences are local to the browser. No real-time data was
 introduced by this interface update.
+
+## Phase 2 implementation checkpoint
+
+Verified 2026-09-26 on the same local Python 3.12 environment.
+
+| Check | Result |
+|---|---|
+| Full automated suite | 37 passed (`python -m unittest discover -s tests -v`) |
+| Python compilation | Passed for `prism`, `scripts`, and `tests` |
+| Scenario profile | Hourly-to-quarter-hour interpolation and input isolation passed |
+| Simulator dynamics | Generator, battery, shedding, faults, disconnection, reset, and termination checks passed |
+| Q-learning | Reproducible seeded training, action masking, update, and JSON round trip passed |
+| Q-learning training command | Default 500 episodes completed and wrote a temporary Q-table |
+| Forecasting | Persistence, autoregression, validation, MAE, and RMSE checks passed |
+| Forecast evaluation command | Chronological 288-row train / 48-row test run completed |
+| Phase 2 APIs | Forecast, scenario execution, validation, and retained 501 model guards passed |
+| OpenAPI JSON | Parsed successfully after Phase 2 route update |
+
+Temporary smoke artifacts were written outside the repository and are not treated
+as approved models. The reported forecasting values are derived from the synthetic
+fixture and are not journal results. The template phase label and inspector wording
+were updated, while JavaScript behavior was unchanged. Interactive simulation
+controls and a new browser verification pass remain pending.

@@ -151,3 +151,78 @@ electrical impedances, voltage, reactive power, protection behavior, and operato
 decisions. Consequently, no numerical Phase 1 result can be generalized to Delhi
 or the Indian grid. Later experiments must retain this distinction and compare
 methods using audited real or explicitly synthetic datasets.
+
+## 10. Phase 2 implementation checkpoint: 2026-09-26
+
+Phase 2 extends rather than replaces the Phase 1 methods above. The first
+implementation checkpoint adds three executable research components.
+
+### 10.1 Scenario construction
+
+The adapter in `prism/simulation/scenario.py` selects up to 24 hourly validated
+observations and linearly interpolates demand, solar, and wind at quarter-hour
+boundaries. The final hourly value is held for its remaining three quarter-hours.
+This interpolation creates a simulation profile; it does not modify or impute the
+canonical measurement dataset.
+
+### 10.2 Aggregate simulator
+
+`GridEnvironment.step()` now returns `(observation, reward, terminated, info)`.
+The default episode contains 96 fifteen-minute steps and uses a 25 MW action
+quantum. Synthetic configuration assumptions are:
+
+| Parameter | Current value |
+|---|---:|
+| Battery energy capacity | 100 MWh |
+| Battery power limit | 50 MW |
+| Initial battery state of charge | 0.50 |
+| Charge/discharge efficiency | 0.95 |
+| Coal ramp per step | 20 MW |
+| Gas ramp per step | 40 MW |
+| Coal minimum output | 40% of capacity |
+| Gas minimum output | 20% of capacity |
+
+Generator commands are clipped by ramp, capacity, and minimum-output constraints.
+Battery commands are clipped by power, energy, and efficiency constraints. Load
+shedding uses non-critical loads only. Scheduled node or line outages change asset
+availability for a declared number of steps; NetworkX reachability identifies load
+with no path to an online plant.
+
+The reward records unserved energy, surplus energy treated as curtailment,
+synthetic operating cost, and synthetic emissions. It heavily penalizes unserved
+energy and any unexpected constraint violation. The cost and emission factors are
+simulation assumptions, not observed plant data. The model does not calculate
+voltage, reactive power, frequency dynamics, line loading, or feasible electrical
+power flow.
+
+### 10.3 Tabular Q-learning
+
+The Q-learning implementation uses the Phase 1 270-state encoding and six-action
+vocabulary. Exploration and greedy selection are restricted to the environment's
+current valid actions. Terminal transitions do not bootstrap. The default training
+configuration uses 500 episodes, learning rate 0.1, discount 0.99, and linear
+epsilon decay from 1.0 to 0.05.
+
+`scripts/train_q_learning.py` trains outside the web request path. The saved JSON
+contains the state shape, action order, training configuration, metadata, and 270 ×
+6 Q-values. Loading rejects incompatible action orders, state shapes, and non-finite
+tables. A trained artifact is not yet configured as the application dispatch
+policy; multi-seed comparison against the baseline remains required.
+
+### 10.4 Forecasting baselines
+
+Persistence repeats the most recent value. The autoregressive baseline fits a
+ridge-regularized univariate linear model to the previous 24 hourly values and
+generates recursive forecasts. `scripts/evaluate_forecasting.py` reserves the final
+48 observations as a chronological test period and reports MAE and RMSE for demand,
+solar, and wind. This is a pipeline check on synthetic data, not a claim of expected
+performance on real measurements.
+
+### 10.5 Phase 2 API boundary
+
+`GET /api/forecast` exposes the two development forecasting methods for horizons
+from one to 24 hours. `POST /api/scenario` runs one to 96 synthetic steps with a
+fixed seed, optional scheduled faults, and either one supplied action per step or
+the rule-based prototype. The response includes every transition and cumulative
+metrics. Learned dispatch and explanation endpoints continue to return HTTP 501
+until reviewed artifacts are configured.

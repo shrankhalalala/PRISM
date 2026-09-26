@@ -172,3 +172,34 @@ two consecutive Neo4j imports without duplication, and the documented dashboard
 checks. These results demonstrate a reproducible project foundation. They are not
 evidence that PRISM has yet achieved its proposed forecasting, dispatch,
 explainability, or diagnosis objectives.
+
+## 12. Phase 2 checkpoint protocol: 2026-09-26
+
+The first Phase 2 increment implements the simulator, forecasting baselines, and
+tabular Q-learning trainer. Construction acceptance for this checkpoint is:
+
+| ID | Check | Acceptance criterion |
+|---|---|---|
+| P2-C1 | Profile adapter | Two hourly rows produce eight ordered quarter-hour points without modifying input |
+| P2-C2 | Generator dynamics | Dispatch respects the 25 MW command quantum and configured ramp/capacity/minimum limits |
+| P2-C3 | Battery dynamics | Charge and discharge respect energy, power, efficiency, and state-of-charge bounds |
+| P2-C4 | Fault dynamics | Scheduled outages activate and restore at deterministic steps; disconnected demand is reported |
+| P2-C5 | Episode lifecycle | Termination occurs exactly at the configured horizon and post-terminal steps are rejected |
+| P2-C6 | Q-learning | Seeded training is reproducible, updates the table, masks invalid actions, and round-trips through JSON |
+| P2-C7 | Forecasting | Persistence and autoregression return finite nonnegative forecasts; MAE/RMSE are reproducible |
+| P2-C8 | API integration | Forecast and scenario routes validate inputs and return explicitly synthetic results |
+
+Run the checkpoint with:
+
+```bash
+python -m unittest discover -s tests -v
+python -m scripts.evaluate_forecasting
+python -m scripts.train_q_learning --episodes 500
+```
+
+The automated suite currently contains 37 passing tests. The default 500-episode
+training command and the chronological forecasting evaluation have also completed.
+Their numerical outputs are implementation evidence only. Phase 2 is not complete
+until LSTM comparison, multiple independent Q-learning seeds, held-out scenario
+evaluation, trained-policy API activation, and dashboard simulation controls have
+been implemented and reviewed.
