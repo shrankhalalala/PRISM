@@ -1,0 +1,194 @@
+# PRISM Decision Record
+
+This document records decisions that materially affect the scientific claims,
+architecture, or reproducibility of PRISM. It is written for team members,
+reviewers, and future authors of the project paper. A decision describes what was
+chosen and why; it does not imply that all later implementation has been completed.
+
+## Status vocabulary
+
+- **Accepted:** used by the current implementation or approved design.
+- **Proposed:** intended for a later phase and still open to evidence-based change.
+- **Superseded:** retained for traceability but replaced by a later decision.
+
+## ADR-001: Build a modular research prototype before model training
+
+**Date:** 2026-09-12
+**Status:** Accepted
+
+### Context
+
+Forecasting, reinforcement learning, graph diagnosis, and the dashboard depend on
+shared definitions of measurements, grid assets, actions, and API payloads. Training
+models before these contracts exist would make comparisons difficult to reproduce.
+
+### Decision
+
+Phase 1 implements the common data contracts, topology validator, environment
+interface, deterministic baseline interface, API, dashboard, and verification
+suite. Model training and dynamic simulation begin only after these boundaries are
+testable.
+
+### Consequences
+
+- The repository is runnable before learned models are available.
+- Planned model endpoints return HTTP 501 rather than fabricated predictions.
+- Phase 1 demonstrates construction quality, not model accuracy.
+
+## ADR-002: Use clearly labelled synthetic fixtures in Phase 1
+
+**Date:** 2026-09-12
+**Status:** Accepted
+
+### Context
+
+The proposed public sources differ in geography, sampling resolution, access
+method, and completeness. Their suitability for hourly Delhi-level modelling has
+not yet been established.
+
+### Decision
+
+Use deterministic synthetic measurements and a fictional Delhi-inspired teaching
+network to validate software behavior. Preserve a `data_source` field and label the
+dashboard as synthetic. Do not use the fixtures as evidence of real-grid accuracy.
+
+### Consequences
+
+- Any contributor can reproduce the initial dataset using seed 42.
+- Tests do not depend on an external service.
+- Real-data claims remain prohibited until provenance and coverage are audited.
+
+## ADR-003: Reject questionable observations instead of silently repairing them
+
+**Date:** 2026-09-12
+**Status:** Accepted
+
+### Context
+
+Silent interpolation, timezone assumptions, or arbitrary duplicate selection can
+hide data-quality problems and produce optimistic forecasting results.
+
+### Decision
+
+Require explicit timezone offsets and hourly timestamps. Reject all rows in a
+duplicate timestamp group, non-finite values, negative power values, missing source
+labels, off-hour timestamps, and frequencies outside the ingestion sanity range.
+Report gaps without filling them.
+
+### Consequences
+
+- Preprocessing produces a machine-readable audit.
+- Missing periods remain visible to later modelling stages.
+- Imputation, if later required, must be a documented experimental decision.
+
+## ADR-004: Separate topology representation from electrical simulation
+
+**Date:** 2026-09-12
+**Status:** Accepted
+
+### Context
+
+A connected graph supports asset relationships and tracing, but it does not by
+itself calculate voltage, frequency, or feasible power flow.
+
+### Decision
+
+Use an undirected NetworkX graph for Phase 1 topology validation and Neo4j as an
+optional persistence layer. Treat edge capacities as schema fields, not calculated
+flows. Do not infer grid stability from aggregate generation-demand balance.
+
+### Consequences
+
+- The current graph can support interface and persistence tests.
+- Future fault diagnosis must combine topology with observations and event timing.
+- Dispatch claims require a later constraint layer and power-flow validation.
+
+## ADR-005: Make Q-learning a core method and share its feasibility layer
+
+**Date:** 2026-09-12
+**Status:** Accepted for architecture; training is not implemented
+
+### Context
+
+The project requires reinforcement learning as a central contribution. Learned and
+rule-based policies must be compared under the same constraints to avoid giving one
+method an artificial advantage.
+
+### Decision
+
+Define a common `Observation` contract, six action categories, and a 270-state
+tabular encoding in Phase 1. In later phases, apply the same asset-level feasibility
+checks to rule-based, exploratory, greedy, and surrogate actions.
+
+### Consequences
+
+- Phase 1 can validate state encoding without claiming a trained policy.
+- Action masking and constraint handling become part of the evaluation method.
+- State aliasing is a known risk that must be examined experimentally.
+
+## ADR-006: Explain a frozen Q-learning policy through an XGBoost surrogate
+
+**Date:** 2026-09-12
+**Status:** Proposed
+
+### Context
+
+TreeSHAP is well suited to tree models but does not directly explain a Q-table.
+Operators need local explanations, while reviewers need clarity about what those
+explanations represent.
+
+### Decision
+
+After Q-learning training, generate an independent state-action dataset from the
+frozen policy and train XGBoost as a surrogate. Use SHAP to explain the surrogate's
+class score. Display policy disagreement and feasibility overrides explicitly.
+
+### Consequences
+
+- SHAP explanations must never be described as direct explanations of Q-learning.
+- Surrogate agreement, per-action errors, and operating outcomes must be reported.
+- A surrogate explanation is invalid when it corresponds to a different action.
+
+## ADR-007: Use Flask with browser-native frontend code for the first prototype
+
+**Date:** 2026-09-12
+**Status:** Accepted
+
+### Context
+
+The team needs a reproducible interface with minimal build tooling while backend,
+simulation, and model contracts are still evolving.
+
+### Decision
+
+Use a Flask application factory and local HTML, CSS, and JavaScript. Keep the API
+contract explicit through OpenAPI. Defer adoption of a larger frontend framework
+until application complexity demonstrates a need.
+
+### Consequences
+
+- The dashboard runs after installing the Python project.
+- There is no separate Node build process in Phase 1.
+- Frontend migration remains possible without changing the API boundary.
+
+## ADR-008: Separate planned targets from measured results
+
+**Date:** 2026-09-12
+**Status:** Accepted
+
+### Context
+
+The source design documents contain differing proposed targets, including forecast
+MAPE thresholds. Presenting these values as achieved results would be misleading.
+
+### Decision
+
+Treat all numerical targets as provisional until one experimental protocol is
+approved and the corresponding experiment is run. Store verified construction
+evidence separately from future performance results.
+
+### Consequences
+
+- Phase 1 reports test outcomes and artifact counts only.
+- No forecasting, diagnosis, dispatch, latency, or reliability target is claimed.
+- Later changes to targets must be recorded here and in the experimental protocol.

@@ -1,9 +1,88 @@
-# PRISM (Phase 1)
+# PRISM: Power Grid Resilience through Intelligent Smart Management
 
-Power Grid Resilience through Intelligent Smart Management. A runnable academic
-foundation for a four-person project, with Q-learning included in the core design.
-**All bundled grid assets and measurements are synthetic.** No live grid feed,
-trained policy, forecasting model, or operational switching is connected.
+PRISM is an academic decision-support prototype for studying resilient power-grid
+operation under changing demand, renewable generation, and equipment faults. The
+intended system combines time-series forecasting, constraint-aware dispatch,
+Q-learning, explainable machine learning, and graph-based fault diagnosis in one
+operator-facing workflow.
+
+Phase 1 establishes the reproducible software and research foundation on which
+those models will be evaluated. It provides validated data contracts, a synthetic
+grid topology, a baseline dispatch interface, the proposed reinforcement-learning
+state encoding, an API, a responsive dashboard, and optional Neo4j persistence.
+
+> **Research status:** all bundled measurements and grid assets are synthetic.
+> Phase 1 contains no live grid feed, trained forecasting model, trained Q-learning
+> policy, SHAP explanation, dynamic fault simulation, power-flow solver, or
+> operational switching capability. Values shown in the dashboard are development
+> fixtures and must not be interpreted as results for the Delhi or Indian grid.
+
+## Research motivation
+
+Increasing renewable penetration makes grid balancing more dependent on timely
+forecasts, rapid diagnosis, and dispatch decisions that operators can understand.
+PRISM investigates whether a digital-twin-style environment can connect these
+functions while keeping the recommendation process observable and reproducible.
+
+The project is guided by four questions:
+
+1. How accurately can demand and renewable generation be forecast at a useful
+   operational horizon?
+2. Can a Q-learning policy improve simulated dispatch outcomes relative to a
+   deterministic baseline while respecting shared feasibility constraints?
+3. Can an explainable surrogate reproduce the learned policy closely enough to
+   provide useful local explanations without misrepresenting the policy?
+4. Can graph topology, observed events, and event timing identify likely fault
+   origins quickly and consistently in controlled scenarios?
+
+Phase 1 does not answer these questions. It defines the interfaces and evidence
+needed to test them in subsequent phases.
+
+## Phase 1 contributions
+
+| Area | Implemented contribution |
+|---|---|
+| Data | Strict hourly schema, validation, rejection audit, gap reporting, reproducible 336-row synthetic fixture |
+| Grid model | Validated 12-node, 12-edge teaching topology using NetworkX, plus optional idempotent Neo4j persistence |
+| Dispatch and RL | Validated observation contract, six-action vocabulary, 270-state encoding, and non-executable aggregate baseline recommendation |
+| Simulation | Isolated resettable environment skeleton; dynamics are deliberately unimplemented |
+| Application | Flask API, OpenAPI document, responsive dashboard, asset inspection, filters, sample charts, and explicit planned-endpoint responses |
+| Verification | 19 automated tests, JavaScript syntax check, live Neo4j import test, and desktop/mobile dashboard checks |
+
+## System overview
+
+```mermaid
+flowchart LR
+    A[Synthetic or future public data] --> B[Validation and quality audit]
+    B --> C[Canonical measurements]
+    D[Grid JSON] --> E[NetworkX topology]
+    D --> F[Optional Neo4j store]
+    E --> G[Environment observation]
+    G --> H[Baseline and future Q-learning policy]
+    C --> I[Flask API]
+    E --> I
+    H --> I
+    I --> J[Operator dashboard]
+```
+
+The Phase 1 dashboard reads validated JSON and CSV fixtures. Neo4j is an optional
+persistence target and is not required to run the dashboard.
+
+## Documentation
+
+The five primary, human-readable research documents are:
+
+- [`README.md`](README.md): project entry point, status, setup, and navigation.
+- [`DECISIONS.md`](DECISIONS.md): accepted technical and research decisions.
+- [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md): implemented Phase 1 methods and
+  the boundaries of planned methods.
+- [`docs/DATASET_AND_PREPROCESSING.md`](docs/DATASET_AND_PREPROCESSING.md): data
+  provenance, schema, validation, and limitations.
+- [`docs/EXPERIMENTAL_PROTOCOL.md`](docs/EXPERIMENTAL_PROTOCOL.md): Phase 1
+  verification protocol and preregistered principles for later evaluation.
+
+Supporting specifications remain in `docs/architecture.md`,
+`docs/dispatch_rl_design.md`, `docs/openapi.json`, and `docs/verification.md`.
 
 ## Run locally
 
@@ -84,11 +163,12 @@ The proposal is 50 MW increased generation with 150 MW residual gap and
 `executable: false`. Feasibility describes aggregate reserve only; plant ramp,
 minimum output, battery and network limits arrive with Phase 2 simulation.
 
-## Team and next phase
+## Project status and next phase
 
-See docs/phase1_contributions.md for the four owners and individual demonstrations.
-See docs/architecture.md for boundaries, docs/dispatch_rl_design.md for the RL
-contract, and docs/dashboard.md for the interface.
+See `docs/phase1_contributions.md` for the four module owners and review
+demonstrations. See `docs/architecture.md` for implementation boundaries,
+`docs/dispatch_rl_design.md` for the detailed RL contract, and
+`docs/dashboard.md` for interface behavior.
 
 Phase 2 implements simulator dynamics and faults, baseline constraints, first
 forecasting models, and Q-learning training. Phase 3 integrates streaming,
