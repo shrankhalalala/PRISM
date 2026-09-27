@@ -1,5 +1,14 @@
 # PRISM: Power Grid Resilience through Intelligent Smart Management
 
+[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Flask 3.1](https://img.shields.io/badge/Flask-3.1-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![NumPy 1.26](https://img.shields.io/badge/NumPy-1.26-013243?logo=numpy&logoColor=white)](https://numpy.org/)
+[![pandas 2.2](https://img.shields.io/badge/pandas-2.2-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NetworkX 3.3](https://img.shields.io/badge/NetworkX-3.3-2C5BB4)](https://networkx.org/)
+[![Neo4j 5.26](https://img.shields.io/badge/Neo4j-5.26-4581C3?logo=neo4j&logoColor=white)](https://neo4j.com/)
+[![Docker Compose](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+[![HTML5, CSS3, JavaScript](https://img.shields.io/badge/Frontend-HTML5%20%7C%20CSS3%20%7C%20JavaScript-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web)
+
 PRISM is an academic decision-support prototype for studying resilient power-grid
 operation under changing demand, renewable generation, and equipment faults. The
 intended system combines time-series forecasting, constraint-aware dispatch,
@@ -23,6 +32,19 @@ selectable, non-executable recommendation policy. On held-out synthetic scenario
 it did not improve overall reward over the rule baseline; the complete positive
 and negative results remain in `reports/phase2_dispatch.json`. Real-time ingestion
 and XGBoost/SHAP begin in Phase 3.
+
+## Technology stack
+
+| Technology | Role in PRISM |
+|---|---|
+| [Python](https://www.python.org/) | Application, simulation, forecasting, Q-learning, scripts, and tests |
+| [Flask](https://flask.palletsprojects.com/) | Local web application and JSON API |
+| [NumPy](https://numpy.org/) | Numerical operations, Q-table storage, metrics, and the compact LSTM |
+| [pandas](https://pandas.pydata.org/) | Measurement validation, chronological datasets, and scenario profiles |
+| [NetworkX](https://networkx.org/) | Topology validation, connectivity, and fault reachability |
+| [Neo4j](https://neo4j.com/) | Optional graph persistence and import verification |
+| [HTML, CSS, and JavaScript](https://developer.mozilla.org/en-US/docs/Web) | Responsive dashboard, charts, themes, and interactions |
+| [Docker Compose](https://docs.docker.com/compose/) | Optional local Neo4j service |
 
 ## Research motivation
 
@@ -102,6 +124,9 @@ Supporting specifications remain in `docs/architecture.md`,
 `docs/dispatch_rl_design.md`, `docs/openapi.json`, and `docs/verification.md`.
 All phase-wise individual work is recorded in the single root-level
 [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
+
+For installation, platform-specific commands, verification, and troubleshooting,
+see [`INSTRUCTIONS.md`](INSTRUCTIONS.md).
 
 ## Run locally
 
