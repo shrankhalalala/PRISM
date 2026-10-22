@@ -131,6 +131,8 @@ Supporting specifications remain in `docs/architecture.md`,
 `docs/dispatch_rl_design.md`, `docs/openapi.json`, and `docs/verification.md`.
 The Review II-IV Phase 3 checklist, gaps, evaluation targets, and ordered
 completion gates are in [`docs/PHASE3_REQUIREMENTS.md`](docs/PHASE3_REQUIREMENTS.md).
+The Delhi 400/220 kV boundary, source dates, inclusion rules, and acquisition
+gaps are specified in [`docs/DELHI_TOPOLOGY_SCOPE.md`](docs/DELHI_TOPOLOGY_SCOPE.md).
 All phase-wise individual work is recorded in the single root-level
 [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
 

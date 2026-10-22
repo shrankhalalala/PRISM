@@ -302,3 +302,38 @@ synthetic labels. Live or public-data ingestion begins in Phase 3 after source,
 licence, cadence, and quality requirements are recorded. Phase 2 therefore remains
 fully runnable without external services, but its results cannot support real-grid
 accuracy or policy-superiority claims.
+
+## ADR-015: Define a source-dated Delhi EHV reference boundary before graph expansion
+
+**Date:** 2026-10-22
+**Status:** Accepted for reference-data acquisition; actual inventory verification pending
+
+### Context
+
+Review III proposes at least 50 Delhi nodes and 500+ scalability; Review IV records
+the existing 12-node teaching network and defers a larger real-data-based graph.
+The public sources inspected have different dates and coverage, so replacing
+the fixture with an allegedly current complete network would overstate evidence.
+
+### Decision
+
+Use the scope in `docs/DELHI_TOPOLOGY_SCOPE.md`: Delhi's 400/220 kV transmission
+network with verified generation interfaces and immediate external supply
+endpoints. Include relevant other-owner assets; do not recursively expand the
+national network or model complete lower-voltage distribution feeders.
+
+Add official DTL sources to the report's CEA/NPP candidates. Select the June 2019
+existing-network material in DTL's October 2019 Rev-02 plan as a historical
+connectivity anchor and separately reconcile the later station/circuit tables.
+Planning symbols, webpage dates and aggregate live measurements do not establish
+current asset status. Preserve provenance and unresolved differences.
+
+### Consequences
+
+- Count physical facilities separately from voltage/bus vertices and aliases.
+  Track the 50-node goal without inventing assets; test 500+ scalability separately.
+- The result is a source-dated reference graph until current coverage/status is
+  verified. Owner, location, ratings, telemetry and simulation eligibility remain
+  distinct properties; unknown values are not filled with fixture assumptions.
+- Retain the reproducible synthetic dataset and its experimental results. Source
+  acquisition, inventory, reconciliation, import and display remain separate gates.

@@ -124,3 +124,22 @@ does not claim that any missing module has been implemented.
 
 These are assigned review responsibilities; individual review is not asserted as
 completed. Step 1 changes documentation only on the dedicated Phase 3 branch.
+
+### Phase 3 Step 2: Delhi topology scope and source selection — 2026-10-22
+
+`docs/DELHI_TOPOLOGY_SCOPE.md` defines the 400/220 kV Delhi reference boundary,
+other-owner and external-supply inclusion rules, source dates and remaining
+acquisition gaps. `DECISIONS.md` records ADR-015. Official DTL station/circuit
+pages and its dated existing/planned maps were inspected; no real graph was
+imported and no runtime behavior changed.
+
+| Member | Continuing review responsibility | Reviewable artifact and evidence |
+|---|---|---|
+| Nishtha Jain | Source dates, field provenance and acquisition/telemetry limitations | Audited source register and distinction between source date and measurement freshness |
+| Himangi Mishra | Boundary and unknown-parameter implications for policy inputs | Separation of real asset identity, telemetry and simulation eligibility |
+| Shrankhala Singh | Station/line boundary, circuit identity and completeness rules | Scope specification, historical/planned-map distinction, unresolved identity issues and ADR-015 |
+| Gaurangi Tyagi | How the eventual reference graph will be labeled and inspected | Display scope and source/status requirements; existing synthetic dashboard remains unchanged |
+
+Step 2 establishes the scope and source-selection gate. It does not claim the
+50-node goal, complete inventories, electrical validation, or individual review
+completion. Source archiving and inventory construction are subsequent steps.

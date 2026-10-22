@@ -58,3 +58,21 @@ No explicit reuse licence or published API access policy was established in this
 check. `/robots.txt` returned the site's HTML shell, rather than a crawl policy.
 Public accessibility does not establish redistribution or training rights; retain
 source attribution and verify terms before publication or dataset redistribution.
+
+## Phase 3 Step 2: topology source selection — 2026-10-22
+
+The full audited source register, date hierarchy and Delhi 400/220 kV inclusion
+rules are in [DELHI_TOPOLOGY_SCOPE.md](DELHI_TOPOLOGY_SCOPE.md). DTL's official
+station directory and circuit tables are selected as primary acquisition sources
+alongside its dated reference maps. This supplements the report's CEA/NPP routes;
+the exact legacy CEA map link redirected to login and NPP did not expose a verified
+Delhi station/edge export in this check.
+
+The selected DTL planning PDF was published in October 2019. Its existing-network
+map is dated June 2019, distinct from its later planning-map section. The station
+directory has a May 2025 content date and circuit tables a September 2024 date.
+These sources are not a single verified 2026 operating snapshot. Use field-level
+dates and retain unresolved differences in subsequent inventory work.
+
+Step 2 selected and inspected sources; it did not replace the synthetic grid,
+import official assets, establish electrical parameters, or map live telemetry.

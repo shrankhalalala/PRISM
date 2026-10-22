@@ -31,7 +31,8 @@ Sections 2-5 trace the original Review II baseline unless a report is explicitly
 named. Section 9 adds the Review III/IV requirements and cross-report review.
 Existing repository decisions explain implementation history; they do not silently
 replace report requirements. Verified topology remains the first implementation
-priority. This report update does not begin Step 2 or change application behavior.
+priority. The report cross-check changed documentation only; Step 2's scope and
+source specification is now recorded in [DELHI_TOPOLOGY_SCOPE.md](DELHI_TOPOLOGY_SCOPE.md).
 
 Statuses describe the requirement as a whole:
 
@@ -71,7 +72,7 @@ not silently enter simulation as fully specified equipment.
 
 ### Topology completion gate
 
-- [ ] T01 boundary and reference source versions are recorded.
+- [x] T01 boundary and reference source versions are recorded in the Step 2 scope specification; inventory completeness remains pending.
 - [ ] Every plant/substation in that reference boundary is reconciled to a stable ID.
 - [ ] Every documented connection is represented or explicitly listed as unresolved.
 - [ ] Circuit identity, aliases, duplicate records, and endpoint consistency are audited.
@@ -182,7 +183,7 @@ change their order. A checkpoint is checked only after its evidence is saved.
 
 - [x] **Step 1:** report-to-code checklist, target register, gaps and dependencies
   documented here. No source acquisitions or runtime changes required.
-- [ ] **Step 2:** define Delhi scope, voltage levels, source boundary and dates (T01).
+- [x] **Step 2:** define Delhi scope, voltage levels, source boundary and dates (T01); see [DELHI_TOPOLOGY_SCOPE.md](DELHI_TOPOLOGY_SCOPE.md). This does not complete the real asset inventory or the 50-node goal.
 - [ ] **Step 3:** acquire/audit topology references and preserve provenance.
 - [ ] **Step 4:** build and reconcile the complete node inventory (T02).
 - [ ] **Step 5:** build and verify edge/circuit inventory (T03).
