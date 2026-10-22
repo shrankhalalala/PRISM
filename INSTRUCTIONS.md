@@ -86,6 +86,13 @@ python -m prism
 Open [http://127.0.0.1:5050](http://127.0.0.1:5050) in a browser. Keep the terminal
 running while using the dashboard. Stop the server with **Ctrl+C**.
 
+For the Phase 3 live-data increment, install the updated requirements and restart
+Flask, then select **Delhi live grid** in the sidebar. Internet access to
+`https://delhisldc.org/api/dynamic-data` is required for this panel. It refreshes
+every minute while the page is visible. Source timestamps appear in IST. Old
+readings and connection failures are labeled; the remaining synthetic labs work
+offline. No API key or additional background service is required.
+
 Always open PRISM through the Flask address above. Opening
 `prism/templates/index.html` directly with a `file://` address bypasses Flask, so
 styles, scripts, and API data will not load correctly.

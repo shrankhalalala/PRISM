@@ -14,6 +14,7 @@
     <div class="nav-label">WORKSPACE</div>
     <nav aria-label="Main navigation">
       <a class="active" href="#overview" data-nav-label="Grid overview"><span>▦</span> Grid overview <span class="nav-arrow">↗</span></a>
+      <a href="#live-grid" data-nav-label="Delhi live grid"><span>◉</span> Delhi live grid <span class="nav-arrow">↗</span></a>
       <a href="#measurements" data-nav-label="Measurements"><span>≋</span> Measurements <span class="nav-arrow">↗</span></a>
       <a href="#forecast" data-nav-label="Forecast lab"><span>⌁</span> Forecast lab <span class="nav-arrow">↗</span></a>
       <a href="#scenario" data-nav-label="Scenario lab"><span>◇</span> Scenario lab <span class="nav-arrow">↗</span></a>
@@ -25,12 +26,12 @@
   <div class="workspace">
     <header class="topbar">
       <div class="topbar-start"><button id="sidebar-toggle" class="icon-button" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="Collapse navigation">☰</button><span class="breadcrumb">Workspace <span class="slash">/</span> <span id="breadcrumb-section">Grid overview</span></span></div>
-      <div class="topbar-actions"><span class="source-badge"><i></i> SYNTHETIC DATA</span><button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme"><span id="theme-icon" aria-hidden="true">☾</span><span id="theme-label">Dark</span></button></div>
+      <div class="topbar-actions"><span class="source-badge"><i></i> RESEARCH WORKSPACE</span><button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme"><span id="theme-icon" aria-hidden="true">☾</span><span id="theme-label">Dark</span></button></div>
     </header>
 
     <main id="main">
       <section id="overview" class="workspace-section" aria-labelledby="page-title">
-        <div class="page-heading"><div><p class="eyebrow">OPERATIONS / NETWORK BLUEPRINT</p><h1 id="page-title">Grid overview<span class="orange">.</span></h1><p class="subtitle">A shared foundation for a smarter, more resilient grid.</p></div><button id="refresh" class="refresh" type="button"><span aria-hidden="true">↻</span> Refresh data</button></div>
+        <div class="page-heading"><div><p class="eyebrow">OPERATIONS / SYNTHETIC NETWORK BLUEPRINT</p><h1 id="page-title">Grid overview<span class="orange">.</span></h1><p class="subtitle">Synthetic reference network for grid resilience research.</p></div><button id="refresh" class="refresh" type="button"><span aria-hidden="true">↻</span> Refresh data</button></div>
         <p id="load-status" role="status" aria-live="polite">Loading workspace data…</p>
         <div id="error" class="error" role="alert" hidden></div>
         <div class="metrics" aria-label="Grid totals">
@@ -49,6 +50,19 @@
           </section>
           <aside class="inspector" aria-labelledby="inspector-title"><span class="eyebrow">ASSET INSPECTOR</span><h2 id="inspector-title">Node details</h2><div id="node-detail"><p class="empty">Select a node on the network to explore its properties.</p></div><div class="inspector-note">This schematic shows the reference topology. It does not display electrical line flows or the separate synthetic scenario state.</div></aside>
         </div>
+      </section>
+
+      <section id="live-grid" class="lab-panel workspace-section" aria-labelledby="live-title">
+        <div class="lab-heading"><div><span class="eyebrow">DELHI SLDC / PUBLIC MEASUREMENTS</span><h2 id="live-title">Delhi live grid</h2><p>Latest published demand, frequency, and power drawal from Grid Watch.</p></div><button id="live-refresh" class="refresh" type="button">↻ Refresh readings</button></div>
+        <p id="live-status" class="lab-status" role="status" aria-live="polite">Connecting to Delhi SLDC…</p>
+        <div class="metrics live-metrics" aria-label="Delhi SLDC measurements">
+          <article><span class="metric-label">DELHI DEMAND</span><p><strong id="live-demand">—</strong> <span>MW</span></p><small>Published current load</small></article>
+          <article><span class="metric-label">FREQUENCY</span><p><strong id="live-frequency">—</strong> <span>Hz</span></p><small>Published grid frequency</small></article>
+          <article><span class="metric-label">DRAWAL</span><p><strong id="live-drawal">—</strong> <span>MW</span></p><small>Published current drawal</small></article>
+          <article><span class="metric-label">SCHEDULE</span><p><strong id="live-schedule">—</strong> <span>MW</span></p><small>Published current schedule</small></article>
+        </div>
+        <p id="live-timestamp" class="lab-status">Source timestamp: awaiting a valid reading.</p>
+        <p class="lab-note">Source: <a href="https://delhisldc.org/grid-watch/" target="_blank" rel="noopener noreferrer">Delhi SLDC Grid Watch ↗</a> · Checks every 60 seconds while this page is open. Readings older than five minutes are marked stale. The topology, forecast lab, and scenario lab use separate synthetic research data.</p>
       </section>
 
       <section id="measurements" class="table-panel workspace-section" aria-labelledby="measurements-title">

@@ -90,3 +90,17 @@ The final evidence is committed under `reports/`, `models/`, and
 the report preserves this negative result. Every learned action is marked
 non-executable. Real-time ingestion, electrical power flow, XGBoost/SHAP, and
 operational control remain outside Phase 2.
+# Phase 3 live Grid Watch increment — 2026-10-22
+
+- All 51 automated tests pass; `node --check prism/static/dashboard.js` and
+  `git diff --check` pass.
+- New tests cover field mapping, source timestamps, malformed/partial responses,
+  finite measurements, per-process cache concurrency, retry throttling, stale
+  records, timestamp regression, outage recovery, HTTP 503, and TLS verification.
+- A live Flask test-client request to `/api/live/gridwatch` returned HTTP 200 with
+  Delhi SLDC source time, demand, frequency, drawal, schedule, and freshness.
+- The browser displayed the Delhi panel with live values and IST source time;
+  its refresh control returned the latest cached snapshot. The preview viewport
+  used the responsive narrow layout. Existing synthetic measurements still load.
+- Public endpoint access was observed; a reuse licence, historical completeness,
+  operational accuracy, and a service availability guarantee remain unverified.

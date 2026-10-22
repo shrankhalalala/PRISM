@@ -6,6 +6,7 @@ import pandas as pd
 from flask import Flask, jsonify, render_template, request
 from werkzeug.exceptions import HTTPException
 from prism.config import DATA_DIR, ROOT
+from prism.data.gridwatch import GridWatchClient
 from prism.grid.model import load_grid, grid_summary
 from prism.forecasting import AutoregressiveForecaster, LSTMForecaster, persistence_forecast
 from prism.forecasting.models import TARGETS
@@ -28,6 +29,16 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.config.update(DATA_DIR=DATA_DIR, MAX_CONTENT_LENGTH=16384)
     if test_config:
         app.config.update(test_config)
+
+    app.extensions["gridwatch"] = app.config.get("GRIDWATCH_CLIENT") or GridWatchClient()
+
+    @app.get("/api/live/gridwatch")
+    def live_gridwatch():
+        snapshot = app.extensions["gridwatch"].snapshot()
+        response = jsonify(snapshot)
+        response.status_code = 503 if snapshot["status"] == "unavailable" else 200
+        response.headers["Cache-Control"] = "no-store"
+        return response
 
     model_root = ROOT / "models"
 

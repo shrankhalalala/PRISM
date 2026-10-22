@@ -33,6 +33,13 @@ it did not improve overall reward over the rule baseline; the complete positive
 and negative results remain in `reports/phase2_dispatch.json`. Real-time ingestion
 and XGBoost/SHAP begin in Phase 3.
 
+**Phase 3 live-data increment:** the dashboard now includes a separate **Delhi live
+grid** panel backed by the public Delhi SLDC Grid Watch JSON feed. It displays
+current demand, frequency, drawal, and schedule, checks once per minute while the
+page is visible, shows the source timestamp in IST, and marks old or unavailable
+readings explicitly. The topology, forecast models, and scenario simulator still
+use the synthetic Phase 2 dataset.
+
 ## Technology stack
 
 | Technology | Role in PRISM |
@@ -122,6 +129,8 @@ The five primary, human-readable research documents are:
 
 Supporting specifications remain in `docs/architecture.md`,
 `docs/dispatch_rl_design.md`, `docs/openapi.json`, and `docs/verification.md`.
+The Review II-IV Phase 3 checklist, gaps, evaluation targets, and ordered
+completion gates are in [`docs/PHASE3_REQUIREMENTS.md`](docs/PHASE3_REQUIREMENTS.md).
 All phase-wise individual work is recorded in the single root-level
 [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
 
@@ -203,6 +212,7 @@ afterward. A normal demo database is started separately using Compose above.
 | GET /api/grid | Validated grid with aggregate summary |
 | GET /api/measurements?limit=24 | Latest sample rows; limit 1–2160 |
 | GET /api/data/quality | Preprocessing audit |
+| GET /api/live/gridwatch | Latest Delhi SLDC public reading with source timestamp, freshness, and 60-second process cache; 503 if no valid reading exists |
 | GET or POST /api/dispatch/baseline | Non-executable baseline preview |
 | GET /api/openapi.json | OpenAPI contract |
 | GET /api/forecast?target=demand_mw&model=lstm&horizon=1 | Synthetic persistence, autoregressive, or LSTM forecast; horizon 1–24 |

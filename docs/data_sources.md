@@ -16,3 +16,45 @@ known units and cadence, suitable geographic aggregation, permitted reuse,
 provenance and coverage audit. For real topology: asset identifiers, verified
 connectivity, ratings, and (before power-flow analysis) electrical parameters.
 Until then, use the committed synthetic fixtures, clearly labeled in the UI.
+
+## Phase 3 Grid Watch display adapter — verified 2026-10-22
+
+The public Grid Watch frontend calls `https://delhisldc.org/api/dynamic-data` and
+refreshes its dynamic readings every 60 seconds. Direct requests returned JSON
+without authentication during this check. PRISM uses this same read-only endpoint
+instead of scraping rendered HTML. This is an observed website endpoint, not a
+documented, versioned API with an availability guarantee.
+
+| Source field | PRISM field | Interpretation |
+|---|---|---|
+| `DD_DATE` | `observed_at` | Source ISO timestamp; preserve its explicit UTC offset and display IST in the UI |
+| `DD_CURR_LOAD` | `demand_mw` | Delhi current load, MW |
+| `DD_FREQUENCY` | `frequency_hz` | Published frequency, Hz |
+| `DD_DRAWAL` | `drawal_mw` | Current drawal, MW; not total local generation |
+| `DD_CURR_SCHEDULE` | `schedule_mw` | Current schedule, MW |
+
+`GET /api/live/gridwatch` validates a complete finite record, rejects naive or
+implausibly future timestamps and timestamp regressions, and caches successful
+and failed fetch attempts for 60 seconds per Flask process. Requests use an
+eight-second timeout, a bounded response size, and native OS certificate
+verification through `truststore`. TLS verification remains enabled.
+
+Readings older than 300 seconds are stale even if the HTTP request succeeds. A
+failed fetch retains the last good reading and labels it stale; without a previous
+reading the API returns HTTP 503 and `status: unavailable`. The browser also ages
+its last reading if PRISM becomes unreachable. Cache contents are transient and
+reset when the application restarts. Polling occurs on dashboard/API requests;
+there is no unattended historical collector. Multiple Flask processes have
+independent caches; a shared collector/cache is needed before scaling deployment.
+
+The response includes source URL, feed URL, source time, successful retrieval time,
+age, and availability. Source timing and accuracy are reported as published, not
+independently certified. The synthetic measurement history is never overwritten,
+and these readings are not passed into the existing forecasting or dispatch models.
+This feed does not provide the audited solar/wind history or topology needed to
+replace those model inputs.
+
+No explicit reuse licence or published API access policy was established in this
+check. `/robots.txt` returned the site's HTML shell, rather than a crawl policy.
+Public accessibility does not establish redistribution or training rights; retain
+source attribution and verify terms before publication or dataset redistribution.

@@ -3,7 +3,7 @@
   "info": {
     "title": "PRISM Phase 2 API",
     "version": "0.2.0",
-    "description": "Completed Phase 2 synthetic prototype with three forecast methods, constrained scenarios, and non-executable Q-learning recommendations. No operational switching."
+    "description": "Completed Phase 2 synthetic prototype with three forecast methods, constrained scenarios, and non-executable Q-learning recommendations. No operational switching. Phase 3 increment: read-only Delhi SLDC public measurements with freshness metadata."
   },
   "servers": [
     {
@@ -11,6 +11,34 @@
     }
   ],
   "paths": {
+    "/api/live/gridwatch": {
+      "get": {
+        "summary": "Latest Delhi SLDC reading, cached for 60 seconds per application process",
+        "description": "Read-only public-source adapter. Synthetic model and scenario endpoints remain separate. Records older than 300 seconds, or retained after a fetch failure, are stale. Cache is in memory; this endpoint does not build historical training data.",
+        "responses": {
+          "200": {
+            "description": "Live or stale last-good reading",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GridWatchSnapshot"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "No valid source reading available",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GridWatchSnapshot"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/health": {
       "get": {
         "summary": "Liveness; does not check external service readiness",
@@ -670,6 +698,111 @@
   },
   "components": {
     "schemas": {
+      "GridWatchSnapshot": {
+        "type": "object",
+        "required": [
+          "data_source",
+          "source_url",
+          "feed_url",
+          "status",
+          "reading",
+          "fetched_at",
+          "checked_at",
+          "age_seconds",
+          "refresh_seconds",
+          "stale_after_seconds",
+          "error"
+        ],
+        "properties": {
+          "data_source": {
+            "const": "delhi_sldc"
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "feed_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "status": {
+            "enum": [
+              "live",
+              "stale",
+              "unavailable"
+            ]
+          },
+          "reading": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "observed_at",
+                  "demand_mw",
+                  "frequency_hz",
+                  "drawal_mw",
+                  "schedule_mw"
+                ],
+                "properties": {
+                  "observed_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "demand_mw": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "frequency_hz": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "drawal_mw": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "schedule_mw": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                }
+              }
+            ]
+          },
+          "fetched_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "age_seconds": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "refresh_seconds": {
+            "const": 60
+          },
+          "stale_after_seconds": {
+            "const": 300
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
       "Error": {
         "type": "object",
         "required": [

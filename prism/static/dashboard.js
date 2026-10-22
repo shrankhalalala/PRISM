@@ -1,6 +1,48 @@
 'use strict';
 const $ = id => document.getElementById(id);
 const number = value => Number.isFinite(Number(value)) ? Number(value).toLocaleString('en-IN', {maximumFractionDigits: 1}) : '—';
+let liveRequestPending = false;
+let lastLiveSnapshot = null;
+let lastLiveReceivedAt = 0;
+let liveRequestFailed = false;
+function renderLiveGrid() {
+  const data = lastLiveSnapshot;
+  const reading = data?.reading;
+  [['demand','demand_mw'],['frequency','frequency_hz'],['drawal','drawal_mw'],['schedule','schedule_mw']].forEach(([id,key]) => {
+    const value = reading?.[key];
+    $(`live-${id}`).textContent = typeof value === 'number' && Number.isFinite(value)
+      ? value.toLocaleString('en-IN', {maximumFractionDigits: id === 'frequency' ? 3 : 1}) : '—';
+  });
+  const age = data?.age_seconds == null ? null : data.age_seconds + (Date.now()-lastLiveReceivedAt)/1000;
+  const stale = liveRequestFailed || data?.status !== 'live' || age > 300;
+  $('live-status').textContent = !reading
+    ? 'Unavailable · Delhi SLDC could not be reached or has no valid reading. Retrying every minute.'
+    : stale ? 'Stale · Last available Delhi SLDC reading. Waiting for a fresh source update.'
+    : 'Live · Latest published Delhi SLDC reading. Refreshes every minute.';
+  $('live-status').dataset.state = !reading ? 'unavailable' : stale ? 'stale' : 'live';
+  $('live-timestamp').textContent = reading
+    ? `Source timestamp: ${new Date(reading.observed_at).toLocaleString('en-IN', {timeZone:'Asia/Kolkata',hour12:false})} IST · Reading age: ${Math.floor(age)} seconds`
+    : 'Source timestamp: no valid reading received.';
+}
+async function loadLiveGrid() {
+  if (liveRequestPending || document.hidden) return;
+  liveRequestPending = true;
+  $('live-refresh').disabled = true;
+  try {
+    const response = await fetch('/api/live/gridwatch', {signal:AbortSignal.timeout(12000),cache:'no-store'});
+    const data = await response.json();
+    if (!['live','stale','unavailable'].includes(data.status) || (!response.ok && response.status !== 503)) throw new Error('Invalid live response');
+    lastLiveSnapshot = data;
+    lastLiveReceivedAt = Date.now();
+    liveRequestFailed = false;
+  } catch {
+    liveRequestFailed = true;
+  } finally {
+    renderLiveGrid();
+    liveRequestPending = false;
+    $('live-refresh').disabled = false;
+  }
+}
 let grid = null;
 let selectedId = null;
 let activeKind = 'all';
@@ -173,7 +215,7 @@ async function loadMeasurements(){
     if(request!==measurementRequest)return;
     renderMeasurements(data);
     document.querySelectorAll('button[data-hours]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.hours)===activeHours)));
-    $('chart-status').textContent='Sample loaded · Select a series to explore · No live feed';
+    $('chart-status').textContent='Synthetic history loaded · Select a series to explore';
   }catch(error){if(request===measurementRequest)$('chart-status').textContent='Measurements could not be loaded. Previous chart, if present, is unchanged. Use Refresh data to retry.';throw error;
   }finally{if(request===measurementRequest){document.querySelectorAll('button[data-hours]').forEach(button=>button.disabled=false);$('measurement-chart').setAttribute('aria-busy','false');}}
 }
@@ -198,7 +240,7 @@ async function refresh() {
   const failures=results.flatMap((result,index)=>result.status==='rejected'?[resources[index][0]]:[]);
   if(failures.length){
     $('error').textContent=`Could not load ${failures.join(', ')}. Check that the Flask service is running and try Refresh data. Any previously loaded values may be out of date.`;$('error').hidden=false;$('load-status').textContent='Workspace partially unavailable · Refresh to retry';
-  }else{$('load-status').textContent=`Sample data loaded · ${new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})} local time · No live feed`;}
+  }else{$('load-status').textContent=`Synthetic reference data loaded · ${new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})} local time`;}
   $('refresh').disabled=false;
 }
 $('asset-select').addEventListener('change',event=>selectNode(event.target.value));
@@ -333,3 +375,9 @@ $('scenario-form').addEventListener('submit',async event=>{
   }catch(error){$('scenario-error').textContent=`Scenario failed: ${error.message}`;$('scenario-error').hidden=false;$('scenario-status').textContent='Scenario unavailable. Review the controls or retry.';
   }finally{button.disabled=false;}
 });
+
+$('live-refresh').addEventListener('click',loadLiveGrid);
+loadLiveGrid();
+setInterval(loadLiveGrid,60000);
+setInterval(()=>{if (!document.hidden && lastLiveSnapshot) renderLiveGrid();},10000);
+document.addEventListener('visibilitychange',()=>{if (!document.hidden) loadLiveGrid();});

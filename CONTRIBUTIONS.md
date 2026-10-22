@@ -5,9 +5,8 @@ contributions. Technical documents describe the system without attaching a team
 member's name to their title or content. New phases should be appended here rather
 than creating separate contribution files.
 
-The implementation was scaffolded with Codex assistance. The tables assign
-accountability for understanding, reviewing, improving, testing, and presenting
-the work; they do not claim unaided individual authorship. Each member should keep
+The tables record responsibilities for understanding, reviewing, improving,
+testing, and presenting the work. Each member should keep
 their own commit history and experimental evidence for work they personally review
 or extend.
 
@@ -90,3 +89,38 @@ or extend.
 
 Later phases must be appended below this section using the same member,
 contribution, artifact, and evidence structure.
+
+## Phase 3: integration — live-data increment
+
+The following extends the team's continuing responsibilities and records the
+artifacts and demonstrations for individual review.
+
+| Member | Contribution and artifacts | Individual review demonstration |
+|---|---|---|
+| Nishtha Jain | Delhi SLDC field mapping, validation, provenance and source limitations in `prism/data/gridwatch.py` and `docs/data_sources.md` | Explain source timestamps, missing-data rejection, and why this feed does not replace the synthetic training history |
+| Himangi Mishra | Integration boundary for the existing policy and forecast artifacts | Show that live readings are not silently supplied to models trained on synthetic data; XGBoost/SHAP remains pending |
+| Shrankhala Singh | Separation of published Delhi measurements from the teaching topology and scenario state | Explain why drawal is not total generation and why the synthetic topology is not a Delhi network model |
+| Gaurangi Tyagi | `/api/live/gridwatch`, minute cache, outage handling, IST timestamps and Delhi dashboard panel | Demonstrate real readings, manual refresh, stale/unavailable states, and unchanged synthetic workflows |
+
+Verification: 51 automated tests and JavaScript syntax checks pass. A direct live
+API smoke test returned HTTP 200 with validated source measurements. The dashboard
+was checked in a browser against the live feed. This completes the read-only
+display adapter, not the full Phase 3 integration or a historical-data collector.
+
+### Phase 3 Step 1: report requirements audit — 2026-10-22
+
+The requirements audit is recorded in `docs/PHASE3_REQUIREMENTS.md`, referencing
+Review II, III and IV physical pages and report checksums. It maps the topology, data,
+forecasting, dispatch, explanations, diagnosis, simulation, deployment and final
+evidence requirements to current code and unmet acceptance criteria. This step
+does not claim that any missing module has been implemented.
+
+| Member | Assigned review responsibility | Reviewable artifact and evidence |
+|---|---|---|
+| Nishtha Jain | Review source eligibility, historical storage, 24-hour forecasting and retraining gaps | Data/forecast requirements, source checklist and forecast metric definitions |
+| Himangi Mishra | Review XGBoost/Q-learning roles, objective definitions and SHAP evaluation gaps | Policy/explanation requirements and unresolved design/metric definitions |
+| Shrankhala Singh | Review topology coverage, graph-schema limitations, diagnosis and simulation prerequisites | Topology completion gate and graph/simulation requirements |
+| Gaurangi Tyagi | Review streaming/API/dashboard/deployment and system evaluation gaps | Integration requirements, ordered checkpoints and latency/throughput evidence criteria |
+
+These are assigned review responsibilities; individual review is not asserted as
+completed. Step 1 changes documentation only on the dedicated Phase 3 branch.
