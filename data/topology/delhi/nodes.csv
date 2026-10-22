@@ -1,0 +1,65 @@
+id,name,kind,scope_role,boundary_classification,identity_status,source_reported_voltage_kv,source_reported_owners,operational_status,open_issues
+candidate-ballabhgarh-400,Ballabhgarh (400 kV endpoint unresolved),unresolved_asset,unresolved_endpoint,unresolved,unresolved_endpoint,400,,unknown,IDENTITY-CANDIDATE-BALLABHGARH-400
+candidate-dwarka,Dwarka (circuit site unresolved),unresolved_asset,unresolved_endpoint,unresolved,unresolved_endpoint,220,,unknown,IDENTITY-CANDIDATE-DWARKA
+plant-gtps,Gas Turbine Power Station (GTPS),plant,generation,unresolved,source_referenced,,IPGCL,unknown,NODE-PLANT-TERMINALS
+plant-jhajjar,Jhajjar (generation interface),plant,generation_interface,unresolved,source_referenced,400,,unknown,NODE-PLANT-TERMINALS
+plant-pps1,Pragati Power Station-I (PPS-I),plant,generation,unresolved,source_referenced,,PPCL,unknown,NODE-PLANT-TERMINALS
+plant-pps3-bawana,Pragati-III / Bawana power station,plant,generation,unresolved,source_referenced,,PPCL,unknown,NODE-PLANT-TERMINALS
+ss-bamnauli,Bamnauli,substation,dtl_directory,internal,source_referenced,220;400,DTL,unknown,
+ss-bawana-dtl,Bawana,substation,dtl_directory,internal,source_referenced,66;220;400,DTL,unknown,
+ss-btps,BTPS,substation,dtl_directory,internal,source_referenced,220,DTL,unknown,
+ss-budella,Budella,substation,circuit_endpoint,unresolved,source_referenced,220,,unknown,NODE-BUDELLA-STATUS
+ss-dadri-pgcil,Dadri (PGCIL interface),substation,supply_interface,unresolved,source_referenced,400,PGCIL,unknown,
+ss-dev-nagar,Dev Nagar,substation,dtl_directory,internal,source_referenced,220,DTL,unknown,
+ss-dial,DIAL,substation,dtl_directory,internal,source_referenced,66;220,DTL,unknown,
+ss-dsidc-bawana,DSIDC Bawana,substation,dtl_directory,internal,source_referenced,66;220,DTL,unknown,
+ss-dwarka-sector-5,"Dwarka, Sec-05",substation,dtl_directory,internal,source_referenced,220,DTL,unknown,
+ss-electric-lane,Electric Lane,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,
+ss-gazipur,Gazipur,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,
+ss-geeta-colony,Geeta Colony,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,
+ss-gopalpur,Gopalpur,substation,dtl_directory,internal,source_referenced,11;33;66;220,DTL,unknown,
+ss-harsh-vihar,Harsh Vihar,substation,dtl_directory,internal,source_referenced,66;220;400,DTL,unknown,
+ss-indraprastha,Indraprastha,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,
+ss-jhatikara-pgcil,Jhatikara (PGCIL),substation,supply_interface,unresolved,source_referenced,400;765,PGCIL,unknown,
+ss-kanjhawala,Khanjawala,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,
+ss-kashmere-gate,Kashmere Gate,substation,dtl_directory,internal,source_referenced,11;33;220,DTL,unknown,
+ss-lodhi-road,Lodhi Road,substation,dtl_directory,internal,source_referenced,11;33;220,DTL,unknown,
+ss-maharani-bagh,Maharani Bagh,substation,dtl_directory,internal,source_referenced,220;400,DTL;PGCIL,unknown,
+ss-mandola-pgcil,Mandola (PGCIL),substation,supply_interface,unresolved,source_referenced,220;400,PGCIL,unknown,
+ss-masjid-moth,Masjid Moth,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,
+ss-mehrauli,Mehrauli,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,
+ss-najafgarh,Najafgarh,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,
+ss-naraina,Naraina,substation,dtl_directory,internal,source_referenced,11;33;220,DTL,unknown,
+ss-narela-bbmb,Narela (BBMB),substation,delhi_other_owner,unresolved,source_referenced,132;220,BBMB,unknown,NODE-NARELA-SITES
+ss-narela-dtl,Narela,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,NODE-NARELA-SITES
+ss-noida,Noida (map endpoint),substation,supply_interface,unresolved,source_referenced,220,,unknown,
+ss-noida-62,Noida 62 (map endpoint),substation,supply_interface,unresolved,source_referenced,220,,unknown,
+ss-okhla,Okhla,substation,dtl_directory,internal,source_referenced,11;33;66;220,DTL,unknown,
+ss-panipat-bbmb,Panipat (BBMB),substation,supply_interface,unresolved,source_referenced,220;400,BBMB,unknown,
+ss-pappankalan-1,Pappankalan-I,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,
+ss-pappankalan-2,Pappankalan-II,substation,dtl_directory,internal,source_referenced,66;220,DTL,unknown,
+ss-pappankalan-3,Pappankalan-III,substation,dtl_directory,internal,source_referenced,66;220,DTL,unknown,
+ss-park-street,Park Street,substation,dtl_directory,internal,source_referenced,33;66;220,DTL,unknown,
+ss-patparganj,Patparganj,substation,dtl_directory,internal,source_referenced,11;33;66;220,DTL,unknown,
+ss-peeragarhi,Peeragarhi,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,
+ss-pragati,Pragati,substation,dtl_directory,internal,source_referenced,66;220,DTL,unknown,
+ss-preet-vihar,Preet Vihar,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,
+ss-rajghat,Rajghat Power House,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,
+ss-ridge-valley,Ridge Valley,substation,dtl_directory,internal,source_referenced,66;220,DTL,unknown,
+ss-rk-puram,R. K. Puram,substation,dtl_directory,internal,source_referenced,33;66;220,DTL,unknown,
+ss-rohini-1,Rohini-I,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,
+ss-rohini-2,Rohini-II,substation,dtl_directory,internal,source_referenced,66;220,DTL,unknown,
+ss-rohtak-road-bbmb,Rohtak Road (BBMB),substation,delhi_other_owner,unresolved,source_referenced,33;220,BBMB,unknown,
+ss-samaypur-pgcil,Samaypur (PGCIL),substation,supply_interface,unresolved,source_referenced,220;400,PGCIL,unknown,
+ss-sarita-vihar,Sarita Vihar,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,
+ss-sgtn,Sanjay Gandhi Transport Nagar,substation,dtl_directory,internal,source_referenced,220,DTL,unknown,
+ss-shalimar-bagh,Shalimar Bagh,substation,dtl_directory,internal,source_referenced,11;33;66;220,DTL,unknown,
+ss-south-of-wazirabad,South of Wazirabad,substation,dtl_directory,internal,source_referenced,220,DTL,unknown,TRANSFORM-SRC-06-35;NODE-WAZIRABAD-SITES
+ss-subzi-mandi,Subzi Mandi,substation,dtl_directory,internal,source_referenced,11;33;220,DTL,unknown,
+ss-tikri-kalan,Tikri Kalan (Mundka),substation,dtl_directory,internal,source_referenced,66;220;400,DTL,unknown,
+ss-timarpur,Timarpur,substation,dtl_directory,internal,source_referenced,,DTL,unknown,NODE-TIMARPUR-VOLTAGE
+ss-trauma-centre,Trauma Centre,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,
+ss-tughlakabad,Tughlakabad,substation,dtl_directory,internal,source_referenced,66;220;400,DTL;PGCIL,unknown,
+ss-vasant-kunj,Vasant Kunj,substation,dtl_directory,internal,source_referenced,11;66;220,DTL,unknown,
+ss-wazirabad,Wazirabad (historical station),substation,historical_station,unresolved,source_referenced,66;220,DTL,unknown,NODE-WAZIRABAD-SITES
+ss-wazirpur,Wazirpur,substation,dtl_directory,internal,source_referenced,33;220,DTL,unknown,

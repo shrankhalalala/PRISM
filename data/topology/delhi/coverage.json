@@ -1,0 +1,18 @@
+{
+  "directory_rows": 47,
+  "directory_rows_accounted": 47,
+  "inventory_records": 64,
+  "records_by_kind": {
+    "substation": 58,
+    "unresolved_asset": 2,
+    "plant": 4
+  },
+  "transformer_rows": 46,
+  "transformer_rows_assigned": 45,
+  "current_circuit_source_rows": 129,
+  "endpoint_occurrences": 258,
+  "unresolved_endpoint_occurrences": 12,
+  "physical_sites_independently_verified": null,
+  "goal_50_verified_nodes_achieved": false,
+  "note": "Record IDs and source row coverage are not verified unique physical site counts. Step 5 edges and Step 6 completeness remain pending."
+}

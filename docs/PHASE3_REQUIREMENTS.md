@@ -184,8 +184,8 @@ change their order. A checkpoint is checked only after its evidence is saved.
 - [x] **Step 1:** report-to-code checklist, target register, gaps and dependencies
   documented here. No source acquisitions or runtime changes required.
 - [x] **Step 2:** define Delhi scope, voltage levels, source boundary and dates (T01); see [DELHI_TOPOLOGY_SCOPE.md](DELHI_TOPOLOGY_SCOPE.md). This does not complete the real asset inventory or the 50-node goal.
-- [ ] **Step 3:** acquire/audit topology references and preserve provenance.
-- [ ] **Step 4:** build and reconcile the complete node inventory (T02).
+- [x] **Step 3:** acquire/audit topology references and preserve provenance; see the [source archive](../data/sources/delhi/README.md). All required DTL captures succeeded; optional access/coverage gaps remain recorded. This does not complete the asset inventories.
+- [x] **Step 4:** build the source-referenced node inventory (T02); see the [node inventory](../data/topology/delhi/README.md). All 47 directory rows and 258 endpoint occurrences are accounted for; unresolved identities remain explicit for Steps 5-6. No full current-Delhi completeness or 50-node verification claim.
 - [ ] **Step 5:** build and verify edge/circuit inventory (T03).
 - [ ] **Step 6:** audit completeness/uncertainty before further model integration.
 - [ ] **Step 7:** adapt schema/validation and import the Delhi graph into Neo4j (T04).

@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "reviewed_on": "2026-10-22",
+  "sources": [
+    {
+      "source_id": "SRC-01",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Planning works are not operating assets. Preserve the June 2019 reference date."
+    },
+    {
+      "source_id": "SRC-02",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Table ordinals are one-based in the captured HTML. A directory listing is not operating-status evidence."
+    },
+    {
+      "source_id": "SRC-03",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Lengths may describe DTL portions only; not thermal limits in MW."
+    },
+    {
+      "source_id": "SRC-04",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Repeated labels and spellings require reconciliation; preserve serials unchanged."
+    },
+    {
+      "source_id": "SRC-05",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Historical MVA ratings are not available generation MW."
+    },
+    {
+      "source_id": "SRC-06",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Canonical URL recovered via official navigation; original print-link retrieval had failed."
+    },
+    {
+      "source_id": "SRC-07",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Aggregate counts are as of March 2023, not a 2026 inventory."
+    },
+    {
+      "source_id": "SRC-08",
+      "capture_status": "captured",
+      "assessment": "access_evidence_only",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "A captured login/redirect page is not a usable map. No authentication or CAPTCHA completion."
+    },
+    {
+      "source_id": "SRC-09",
+      "capture_status": "captured",
+      "assessment": "access_evidence_only",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "A captured application shell does not establish a Delhi endpoint-level export."
+    },
+    {
+      "source_id": "SRC-10A",
+      "capture_status": "failed",
+      "assessment": "unavailable",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Candidate metadata portal; no verified plant export."
+    },
+    {
+      "source_id": "SRC-10B",
+      "capture_status": "failed",
+      "assessment": "unavailable",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Candidate metadata portal; no verified plant export."
+    },
+    {
+      "source_id": "SRC-11",
+      "capture_status": "captured",
+      "assessment": "access_evidence_only",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Frontend shell only. Existing measurement API is separate and is not topology evidence."
+    },
+    {
+      "source_id": "SRC-12",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Capture original material without alteration. Broad redistribution rights are not established."
+    },
+    {
+      "source_id": "SRC-13",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Find physical PDF pages for Narela/Rohtak Road after capture; report-year evidence is not live status."
+    },
+    {
+      "source_id": "SRC-14",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Upload dates and tariff periods are distinct from current output or commissioning dates."
+    },
+    {
+      "source_id": "SRC-15",
+      "capture_status": "captured",
+      "assessment": "reference_evidence",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Petition is a party filing, not a final regulatory order or live telemetry."
+    },
+    {
+      "source_id": "SRC-16",
+      "capture_status": "failed",
+      "assessment": "unavailable",
+      "scope_assurance": "Does not certify current operational status or inventory completeness",
+      "notes": "Use for plant identity/metadata with page locators; does not by itself establish grid wiring."
+    }
+  ],
+  "open_items": [
+    {
+      "id": "GAP-01",
+      "sources": [
+        "SRC-08"
+      ],
+      "issue": "CEA legacy link redirects to login; public current replacement map not established.",
+      "next_action": "Continue with dated DTL references; retain the CEA gap instead of attempting login/CAPTCHA."
+    },
+    {
+      "id": "GAP-02",
+      "sources": [
+        "SRC-10A",
+        "SRC-10B"
+      ],
+      "issue": "Native TLS hostname verification failed; no bypass used.",
+      "next_action": "Use verified official alternatives; revisit corrected canonical links if published."
+    },
+    {
+      "id": "GAP-03",
+      "sources": [
+        "SRC-16"
+      ],
+      "issue": "PPS-III response exceeded 64 MiB capture cap; no partial file retained.",
+      "next_action": "Use captured petition index for provenance; obtain a smaller official document or explicitly plan large-file handling if required."
+    },
+    {
+      "id": "GAP-04",
+      "sources": [
+        "SRC-01",
+        "SRC-13"
+      ],
+      "issue": "Current POWERGRID circuit/commissioning coverage remains incomplete.",
+      "next_action": "Reconcile historical DTL other-owner references and BBMB evidence; seek current official records for unresolved fields."
+    },
+    {
+      "id": "GAP-05",
+      "sources": [
+        "SRC-15"
+      ],
+      "issue": "PPS-I PDF is scanned; ordinary text extraction does not yield plant fields.",
+      "next_action": "Use verified physical page locators; OCR/visual validation in inventory extraction."
+    },
+    {
+      "id": "GAP-06",
+      "sources": [
+        "SRC-02",
+        "SRC-04"
+      ],
+      "issue": "Timarpur voltage text and repeated circuit label require reconciliation.",
+      "next_action": "Carry both into the inventory unresolved-items register; no automatic correction."
+    },
+    {
+      "id": "GAP-07",
+      "sources": [
+        "SRC-01",
+        "SRC-02",
+        "SRC-03",
+        "SRC-04",
+        "SRC-13",
+        "SRC-15"
+      ],
+      "issue": "Different source dates; no single 2026 operating snapshot.",
+      "next_action": "Retain field-level source dates and status uncertainty."
+    },
+    {
+      "id": "GAP-08",
+      "sources": [
+        "SRC-12"
+      ],
+      "issue": "General redistribution licence not established.",
+      "next_action": "Keep untouched source originals local; publish only reviewed project records until reuse conditions are established."
+    }
+  ]
+}

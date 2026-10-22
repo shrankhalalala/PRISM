@@ -133,6 +133,10 @@ The Review II-IV Phase 3 checklist, gaps, evaluation targets, and ordered
 completion gates are in [`docs/PHASE3_REQUIREMENTS.md`](docs/PHASE3_REQUIREMENTS.md).
 The Delhi 400/220 kV boundary, source dates, inclusion rules, and acquisition
 gaps are specified in [`docs/DELHI_TOPOLOGY_SCOPE.md`](docs/DELHI_TOPOLOGY_SCOPE.md).
+The dated acquisition manifest, source locators, access gaps and local-archive
+verification commands are in [`data/sources/delhi/README.md`](data/sources/delhi/README.md).
+The source-referenced node inventory, coverage counts and open identity issues
+are in [`data/topology/delhi/README.md`](data/topology/delhi/README.md).
 All phase-wise individual work is recorded in the single root-level
 [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
 

@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "snapshot": "2026-10-22",
+  "numbering": "HTML tables/TR rows are one-based in saved HTML; serials are source first-column values. PDF pages are physical one-based pages, not necessarily printed page labels.",
+  "locators": [
+    {
+      "id": "SRC-02-TABLE-1",
+      "source_id": "SRC-02",
+      "source_path": "raw/SRC-02.html",
+      "source_sha256": "42804e21018739814b651770f49cc95de5bca162b3095ca7205abfe0c4361dc3",
+      "kind": "html_table",
+      "table_ordinal": 1,
+      "heading": "400 kV stations",
+      "raw_tr_count": 5,
+      "serial_row_count": 4,
+      "first_serial": 1,
+      "last_serial": 4,
+      "count_assurance": "Unreconciled source rows, not verified unique physical assets/circuits"
+    },
+    {
+      "id": "SRC-02-TABLE-2",
+      "source_id": "SRC-02",
+      "source_path": "raw/SRC-02.html",
+      "source_sha256": "42804e21018739814b651770f49cc95de5bca162b3095ca7205abfe0c4361dc3",
+      "kind": "html_table",
+      "table_ordinal": 2,
+      "heading": "220 kV stations",
+      "raw_tr_count": 44,
+      "serial_row_count": 43,
+      "first_serial": 1,
+      "last_serial": 43,
+      "count_assurance": "Unreconciled source rows, not verified unique physical assets/circuits"
+    },
+    {
+      "id": "SRC-03-TABLE-1",
+      "source_id": "SRC-03",
+      "source_path": "raw/SRC-03.html",
+      "source_sha256": "ab77ebfdeb481db02ea4f14065e2d89f278166476ea442ae8f0aa8a6b3a8c79c",
+      "kind": "html_table",
+      "table_ordinal": 1,
+      "heading": "400 kV circuits",
+      "raw_tr_count": 18,
+      "serial_row_count": 14,
+      "first_serial": 1,
+      "last_serial": 14,
+      "count_assurance": "Unreconciled source rows, not verified unique physical assets/circuits"
+    },
+    {
+      "id": "SRC-04-TABLE-1",
+      "source_id": "SRC-04",
+      "source_path": "raw/SRC-04.html",
+      "source_sha256": "e6bd5a094f26a88407b4e6713311aac186c94f034178c29dbac5d031b5c7b76a",
+      "kind": "html_table",
+      "table_ordinal": 1,
+      "heading": "220 kV circuits",
+      "raw_tr_count": 119,
+      "serial_row_count": 115,
+      "first_serial": 1,
+      "last_serial": 115,
+      "count_assurance": "Unreconciled source rows, not verified unique physical assets/circuits"
+    },
+    {
+      "id": "SRC-05-TABLE-1",
+      "source_id": "SRC-05",
+      "source_path": "raw/SRC-05.html",
+      "source_sha256": "5a11ef36f682e225af214b42c997b54d834e0debfbf52ccedaa59fe46b17953a",
+      "kind": "html_table",
+      "table_ordinal": 1,
+      "heading": "400 kV transformation",
+      "raw_tr_count": 5,
+      "serial_row_count": 4,
+      "first_serial": 1,
+      "last_serial": 4,
+      "count_assurance": "Unreconciled source rows, not verified unique physical assets/circuits"
+    },
+    {
+      "id": "SRC-06-TABLE-1",
+      "source_id": "SRC-06",
+      "source_path": "raw/SRC-06.html",
+      "source_sha256": "8740b4cc866fa8d835d947ff1f3295f5706df1146a8fc5e6963c2cf9c635638c",
+      "kind": "html_table",
+      "table_ordinal": 1,
+      "heading": "220 kV transformation",
+      "raw_tr_count": 43,
+      "serial_row_count": 42,
+      "first_serial": 1,
+      "last_serial": 42,
+      "count_assurance": "Unreconciled source rows, not verified unique physical assets/circuits"
+    },
+    {
+      "id": "SRC-01-EXISTING",
+      "source_id": "SRC-01",
+      "source_path": "raw/SRC-01.pdf",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "kind": "pdf_pages",
+      "physical_pages": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "reference_date": "2019-06",
+      "purpose": "Existing network narrative/map, circuit tables and transformation metadata"
+    },
+    {
+      "id": "SRC-01-OWNER-CHECK",
+      "source_id": "SRC-01",
+      "source_path": "raw/SRC-01.pdf",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "kind": "pdf_pages",
+      "physical_pages": [
+        12,
+        13,
+        29,
+        33,
+        34,
+        35
+      ],
+      "purpose": "DTL/PGCIL/BBMB ownership and boundary interfaces; retain historical dates"
+    },
+    {
+      "id": "SRC-01-PLANNING",
+      "source_id": "SRC-01",
+      "source_path": "raw/SRC-01.pdf",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "kind": "pdf_pages",
+      "physical_pages": [
+        130
+      ],
+      "purpose": "Mixed existing/proposed planning map; inspect legend before classifying assets"
+    },
+    {
+      "id": "SRC-13-BBMB-INTERFACE",
+      "source_id": "SRC-13",
+      "source_path": "raw/SRC-13.pdf",
+      "source_sha256": "9f113df2e693052546e47679e71bc0e312124b8842d9fbd593399a0fdcfb4b06",
+      "kind": "pdf_page",
+      "physical_pages": [
+        86
+      ],
+      "printed_page": "78",
+      "section": "J. Miscellaneous Works, items I-II, English column",
+      "text_anchors": [
+        "Panipat-Narela",
+        "Narela-Rohtak Road"
+      ],
+      "purpose": "2024-25 maintenance evidence for BBMB interface circuits, not complete connectivity"
+    },
+    {
+      "id": "SRC-15-PPSI-IDENTITY",
+      "source_id": "SRC-15",
+      "source_path": "raw/SRC-15.pdf",
+      "source_sha256": "23376f91d4aa894bd00b72af91826c09ea4c3979be92fc7e9e5fe78e434da6ea",
+      "kind": "pdf_pages",
+      "physical_pages": [
+        1,
+        2
+      ],
+      "document_date": "2026-01-30",
+      "index_upload_date": "2026-02-05",
+      "text_extraction": "Scanned pages; visually checked cover and memo. OCR needed for further field extraction.",
+      "purpose": "PPS-I petitioner identity and tariff periods; not a final regulatory order or dispatch label"
+    },
+    {
+      "id": "SRC-14-PETITIONS",
+      "source_id": "SRC-14",
+      "source_path": "raw/SRC-14.html",
+      "source_sha256": "be9f8f5b972e95dc73fc8df185e97d3010a9142b48be3b84fd96473248919471",
+      "kind": "html_text",
+      "text_anchors": [
+        "Uploaded on 05/02/2026",
+        "Uploaded on 12/06/2026"
+      ],
+      "purpose": "Reference index for newer plant filings; referenced PDFs have separate capture outcomes"
+    },
+    {
+      "id": "SRC-04-REPEATED-CIRCUIT",
+      "source_id": "SRC-04",
+      "source_path": "raw/SRC-04.html",
+      "source_sha256": "e6bd5a094f26a88407b4e6713311aac186c94f034178c29dbac5d031b5c7b76a",
+      "kind": "html_table_serials",
+      "table_ordinal": 1,
+      "serials": [
+        88,
+        89
+      ],
+      "purpose": "Repeated circuit-I descriptor; do not silently correct the second label"
+    },
+    {
+      "id": "SRC-02-TIMARPUR",
+      "source_id": "SRC-02",
+      "source_path": "raw/SRC-02.html",
+      "source_sha256": "42804e21018739814b651770f49cc95de5bca162b3095ca7205abfe0c4361dc3",
+      "kind": "html_table_serials",
+      "table_ordinal": 2,
+      "serials": [
+        39
+      ],
+      "purpose": "Voltage inconsistency in address field; resolve before electrical use"
+    },
+    {
+      "id": "SRC-08-ACCESS",
+      "source_id": "SRC-08",
+      "source_path": "raw/SRC-08.html",
+      "source_sha256": "cb7042ee2d79a30d1cb115b4e89586d175d0e2842de0b1897815ccfa86ca3189",
+      "kind": "access_evidence",
+      "suitability": "login/access evidence only",
+      "final_url": "https://cea.nic.in/loginPage"
+    },
+    {
+      "id": "SRC-09-ACCESS",
+      "source_id": "SRC-09",
+      "source_path": "raw/SRC-09.html",
+      "source_sha256": "77e3b8495244eff93ba0de31b0dcc53aeb30c1ee87074d9cc259a50d7c7da2a8",
+      "kind": "access_evidence",
+      "suitability": "portal-shell access evidence only",
+      "final_url": "https://npp.gov.in/dashBoard/trans-map-dashboard"
+    },
+    {
+      "id": "SRC-11-ACCESS",
+      "source_id": "SRC-11",
+      "source_path": "raw/SRC-11.html",
+      "source_sha256": "31c0d90df5a1561a65520d94bbf2d511cf5511c73dc3a13d885db00e1b5c144f",
+      "kind": "access_evidence",
+      "suitability": "JavaScript frontend-shell access evidence only",
+      "final_url": "https://delhisldc.org/grid-watch/"
+    }
+  ]
+}

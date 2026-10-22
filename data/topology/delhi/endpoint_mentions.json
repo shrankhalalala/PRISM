@@ -1,0 +1,2585 @@
+{
+  "scope": "delhi_ehv_reference_v1",
+  "mentions": [
+    {
+      "source_id": "SRC-03",
+      "source_serial": 1,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-6cd78cfcfdd650b7",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 1,
+      "endpoint_position": 2,
+      "raw_label": "Tughlaqabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-f8231e29ef8b5260",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 2,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-d0b3611827bdb568",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 2,
+      "endpoint_position": 2,
+      "raw_label": "Tughlaqabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-1ec00d06cb5ce18d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 3,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-b8ff18d723e130b4",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 3,
+      "endpoint_position": 2,
+      "raw_label": "Jhatikara",
+      "node_id": "ss-jhatikara-pgcil",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-73c8ad4e262e43f2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 4,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-2d2cdefd8328a782",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 4,
+      "endpoint_position": 2,
+      "raw_label": "Jhatikara",
+      "node_id": "ss-jhatikara-pgcil",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-4ad73a5e11e015c5",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 5,
+      "endpoint_position": 1,
+      "raw_label": "Maharanibagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-68f3e0ea26e46ce4",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 5,
+      "endpoint_position": 2,
+      "raw_label": "Mandola",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-219e48a7a09d5a52",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 6,
+      "endpoint_position": 1,
+      "raw_label": "Maharanibagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-1e6c97ac9c844f74",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 6,
+      "endpoint_position": 2,
+      "raw_label": "Mandola",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-53aa2a925d8823cb",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 7,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-a2e362d13eb9edbf",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 7,
+      "endpoint_position": 2,
+      "raw_label": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-51ad7611f01f897d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 8,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-5e0012b038bab359",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 8,
+      "endpoint_position": 2,
+      "raw_label": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-28d9e176aa06ba05",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 9,
+      "endpoint_position": 1,
+      "raw_label": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-d488f43f8ec55471",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 9,
+      "endpoint_position": 2,
+      "raw_label": "Jhatikara",
+      "node_id": "ss-jhatikara-pgcil",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-eadd1f2f961cb565",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 10,
+      "endpoint_position": 1,
+      "raw_label": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-ddccf73f4ddb2572",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 10,
+      "endpoint_position": 2,
+      "raw_label": "Jhatikara",
+      "node_id": "ss-jhatikara-pgcil",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-7e96f673c304f3a4",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 11,
+      "endpoint_position": 1,
+      "raw_label": "Tughlaqabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-8b63f045341a36e2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 11,
+      "endpoint_position": 2,
+      "raw_label": "Ballabhgarh",
+      "node_id": "candidate-ballabhgarh-400",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-534de506bda85984",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 12,
+      "endpoint_position": 1,
+      "raw_label": "Tughlaqabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-eb531dd2fc18d25b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 12,
+      "endpoint_position": 2,
+      "raw_label": "Ballabhgarh",
+      "node_id": "candidate-ballabhgarh-400",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-2e0b500b36ae6f2b",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 13,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-99351055fc1f8d6f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 13,
+      "endpoint_position": 2,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-b2736f7a16a0f003",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 14,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-0ed7688e019822df",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-03",
+      "source_serial": 14,
+      "endpoint_position": 2,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 400,
+      "evidence_id": "ev-65ae568cc095b532",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 1,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-9901d7f1569a3da1",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 1,
+      "endpoint_position": 2,
+      "raw_label": "DIAL",
+      "node_id": "ss-dial",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-19ba1ea96516bfca",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 2,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-33dd77894aa32a5b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 2,
+      "endpoint_position": 2,
+      "raw_label": "DIAL",
+      "node_id": "ss-dial",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-8da226c3fdf0b958",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 3,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a3edab3e48977252",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 3,
+      "endpoint_position": 2,
+      "raw_label": "Najafgarh",
+      "node_id": "ss-najafgarh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-4e38b5ecbb5ef3b9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 4,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c3456f9158025a40",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 4,
+      "endpoint_position": 2,
+      "raw_label": "Najafgarh",
+      "node_id": "ss-najafgarh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-00d2aa8e8e111ee6",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 5,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d1a288e0b0f3784f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 5,
+      "endpoint_position": 2,
+      "raw_label": "Papankalan -I",
+      "node_id": "ss-pappankalan-1",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-ce61fc2cfc83f07e",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 6,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e0074c1591a07f57",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 6,
+      "endpoint_position": 2,
+      "raw_label": "Papankalan -I",
+      "node_id": "ss-pappankalan-1",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-33411e00fe5e435e",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 7,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-08dd4d091b33729c",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 7,
+      "endpoint_position": 2,
+      "raw_label": "Papankalan-II",
+      "node_id": "ss-pappankalan-2",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-0b053f99c66f6a4c",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 8,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d7ec62c935d8a02f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 8,
+      "endpoint_position": 2,
+      "raw_label": "Papankalan-II",
+      "node_id": "ss-pappankalan-2",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-45cdf6fdb495ca90",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 9,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-3cca835906439226",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 9,
+      "endpoint_position": 2,
+      "raw_label": "Papankalan-III",
+      "node_id": "ss-pappankalan-3",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-1efac08f4b163a36",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 10,
+      "endpoint_position": 1,
+      "raw_label": "Bamnauli",
+      "node_id": "ss-bamnauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-1fd9b5cf0deb3af9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 10,
+      "endpoint_position": 2,
+      "raw_label": "Papankalan-III",
+      "node_id": "ss-pappankalan-3",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-db72943f59742521",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 11,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d4a59a5512b79edf",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 11,
+      "endpoint_position": 2,
+      "raw_label": "DSIDC Bawana",
+      "node_id": "ss-dsidc-bawana",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6e07e34523c64920",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 12,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d72a5dfe0e117465",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 12,
+      "endpoint_position": 2,
+      "raw_label": "DSIDC Bawana",
+      "node_id": "ss-dsidc-bawana",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-4229d73e3cfb7958",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 13,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-10c122cb0bed9c0e",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 13,
+      "endpoint_position": 2,
+      "raw_label": "Kanjhawala",
+      "node_id": "ss-kanjhawala",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a9e3b4019b4e86b6",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 14,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7d2c28d094fa0724",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 14,
+      "endpoint_position": 2,
+      "raw_label": "Kanjhawala",
+      "node_id": "ss-kanjhawala",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-ffb1dac1f4484b89",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 15,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-83eb636eae351d46",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 15,
+      "endpoint_position": 2,
+      "raw_label": "Rohini-I",
+      "node_id": "ss-rohini-1",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-faed4549c187a491",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 16,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-61a9766e796d9b40",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 16,
+      "endpoint_position": 2,
+      "raw_label": "Rohini-I",
+      "node_id": "ss-rohini-1",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-204959a04c93cc33",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 17,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e24c5c1748f4b3a9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 17,
+      "endpoint_position": 2,
+      "raw_label": "Rohini-II",
+      "node_id": "ss-rohini-2",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-3b42c8b4c613c2ad",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 18,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-579799555df5e6e1",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 18,
+      "endpoint_position": 2,
+      "raw_label": "Rohini-II",
+      "node_id": "ss-rohini-2",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-8f98f4006cf738b5",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 19,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c6e817ad3e027a12",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 19,
+      "endpoint_position": 2,
+      "raw_label": "Shalimarbagh",
+      "node_id": "ss-shalimar-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-1c9b85d0017c74e7",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 20,
+      "endpoint_position": 1,
+      "raw_label": "Bawana",
+      "node_id": "ss-bawana-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-caa185561559aeed",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 20,
+      "endpoint_position": 2,
+      "raw_label": "Shalimarbagh",
+      "node_id": "ss-shalimar-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6467aaf0fbcb1866",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 21,
+      "endpoint_position": 1,
+      "raw_label": "DIAL",
+      "node_id": "ss-dial",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-49442176cf7f8767",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 21,
+      "endpoint_position": 2,
+      "raw_label": "Mehrauli",
+      "node_id": "ss-mehrauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a8ebddf5ab5f300d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 22,
+      "endpoint_position": 1,
+      "raw_label": "DIAL",
+      "node_id": "ss-dial",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-37a98749fc4d985a",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 22,
+      "endpoint_position": 2,
+      "raw_label": "Mehrauli",
+      "node_id": "ss-mehrauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a8ed48a9c302e138",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 23,
+      "endpoint_position": 1,
+      "raw_label": "DSIDC Bawana",
+      "node_id": "ss-dsidc-bawana",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f66e1f40269b49ad",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 23,
+      "endpoint_position": 2,
+      "raw_label": "Narela",
+      "node_id": "ss-narela-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2f8556fd28d4b2be",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 24,
+      "endpoint_position": 1,
+      "raw_label": "DSIDC Bawana",
+      "node_id": "ss-dsidc-bawana",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-52605cdfe9637fe5",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 24,
+      "endpoint_position": 2,
+      "raw_label": "Narela",
+      "node_id": "ss-narela-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-1a03afad4651608d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 25,
+      "endpoint_position": 1,
+      "raw_label": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-94c552285471c08b",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 25,
+      "endpoint_position": 2,
+      "raw_label": "Budella",
+      "node_id": "ss-budella",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6c3b5dd1ea86880f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 26,
+      "endpoint_position": 1,
+      "raw_label": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-300515a5763722c1",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 26,
+      "endpoint_position": 2,
+      "raw_label": "Budella",
+      "node_id": "ss-budella",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6f6ba3414ed83d4b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 27,
+      "endpoint_position": 1,
+      "raw_label": "Gazipur",
+      "node_id": "ss-gazipur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-9d8c17b04854cd59",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 27,
+      "endpoint_position": 2,
+      "raw_label": "Patparganj",
+      "node_id": "ss-patparganj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-8c7719c7b11be7c9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 28,
+      "endpoint_position": 1,
+      "raw_label": "Geeta Colony",
+      "node_id": "ss-geeta-colony",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-4ef90c15c78c3a20",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 28,
+      "endpoint_position": 2,
+      "raw_label": "Patparganj",
+      "node_id": "ss-patparganj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-4da0fc3a94386d92",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 29,
+      "endpoint_position": 1,
+      "raw_label": "Geeta Colony",
+      "node_id": "ss-geeta-colony",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-646a12801676be4d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 29,
+      "endpoint_position": 2,
+      "raw_label": "Patparganj",
+      "node_id": "ss-patparganj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-fc5117ffaaf92310",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 30,
+      "endpoint_position": 1,
+      "raw_label": "Gopalpur",
+      "node_id": "ss-gopalpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7f350ceeba40626f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 30,
+      "endpoint_position": 2,
+      "raw_label": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c69a58c92a2319c0",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 31,
+      "endpoint_position": 1,
+      "raw_label": "Gopalpur",
+      "node_id": "ss-gopalpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-3996b81163fde1d8",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 31,
+      "endpoint_position": 2,
+      "raw_label": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-19a380d4f6a4d5e9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 32,
+      "endpoint_position": 1,
+      "raw_label": "Gopalpur",
+      "node_id": "ss-gopalpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a557380fba49b327",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 32,
+      "endpoint_position": 2,
+      "raw_label": "Sabzi Mandi",
+      "node_id": "ss-subzi-mandi",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d219f917bda73b81",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 33,
+      "endpoint_position": 1,
+      "raw_label": "Gopalpur",
+      "node_id": "ss-gopalpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-70bfd0f500cb0414",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 33,
+      "endpoint_position": 2,
+      "raw_label": "Sabzi Mandi",
+      "node_id": "ss-subzi-mandi",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-572edbc3ff0804b7",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 34,
+      "endpoint_position": 1,
+      "raw_label": "Gopalpur",
+      "node_id": "ss-gopalpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-8f6aea40777a95f2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 34,
+      "endpoint_position": 2,
+      "raw_label": "South Of Wazirabad",
+      "node_id": "ss-south-of-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2d7f5effdcb711c1",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 35,
+      "endpoint_position": 1,
+      "raw_label": "Gopalpur",
+      "node_id": "ss-gopalpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-8341ee4dd32f9208",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 35,
+      "endpoint_position": 2,
+      "raw_label": "South Of Wazirabad",
+      "node_id": "ss-south-of-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-99369f800d9dfc2e",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 36,
+      "endpoint_position": 1,
+      "raw_label": "Harsh Vihar",
+      "node_id": "ss-harsh-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-3f13747cd89c63fe",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 36,
+      "endpoint_position": 2,
+      "raw_label": "Preet Vihar",
+      "node_id": "ss-preet-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-dce536f0d417ecea",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 37,
+      "endpoint_position": 1,
+      "raw_label": "Harsh Vihar",
+      "node_id": "ss-harsh-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-914397fcfebb32c9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 37,
+      "endpoint_position": 2,
+      "raw_label": "Preet Vihar",
+      "node_id": "ss-preet-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d1097ba3b446646a",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 38,
+      "endpoint_position": 1,
+      "raw_label": "IP Stn.",
+      "node_id": "ss-indraprastha",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d3eff1b3c1190c2e",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 38,
+      "endpoint_position": 2,
+      "raw_label": "Rajghat Power House",
+      "node_id": "ss-rajghat",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2999c52d7354029d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 39,
+      "endpoint_position": 1,
+      "raw_label": "IP Stn.",
+      "node_id": "ss-indraprastha",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2ea7044952a66c5f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 39,
+      "endpoint_position": 2,
+      "raw_label": "Rajghat Power House",
+      "node_id": "ss-rajghat",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-17131d9743f733ff",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 40,
+      "endpoint_position": 1,
+      "raw_label": "Kanjhawala",
+      "node_id": "ss-kanjhawala",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a69540891715e3d9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 40,
+      "endpoint_position": 2,
+      "raw_label": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-b1fa809a36d8076c",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 41,
+      "endpoint_position": 1,
+      "raw_label": "Kanjhawala",
+      "node_id": "ss-kanjhawala",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-3086815a0f4cbe7c",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 41,
+      "endpoint_position": 2,
+      "raw_label": "Najafgarh",
+      "node_id": "ss-najafgarh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-97666fb8a3b912a4",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 42,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e6abd65e4a63bc74",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 42,
+      "endpoint_position": 2,
+      "raw_label": "Electric Lane",
+      "node_id": "ss-electric-lane",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f68b2337318add3b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 43,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-025f76b4df936e22",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 43,
+      "endpoint_position": 2,
+      "raw_label": "Electric Lane",
+      "node_id": "ss-electric-lane",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d2db3ed739e332a4",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 44,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d7ef6839e14597cf",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 44,
+      "endpoint_position": 2,
+      "raw_label": "Gazipur",
+      "node_id": "ss-gazipur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-27c8dc0f30430a54",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 45,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-1df5e25dc0b5f47d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 45,
+      "endpoint_position": 2,
+      "raw_label": "Gazipur",
+      "node_id": "ss-gazipur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f9d530e890257afc",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 46,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c67ddcd7067b2f0f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 46,
+      "endpoint_position": 2,
+      "raw_label": "Lodhi Road",
+      "node_id": "ss-lodhi-road",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c41b819608510f27",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 47,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c889215bc665cb5d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 47,
+      "endpoint_position": 2,
+      "raw_label": "Lodhi Road",
+      "node_id": "ss-lodhi-road",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7c05315c978b8a96",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 48,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-fce5ebd803d686ad",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 48,
+      "endpoint_position": 2,
+      "raw_label": "Masjid Moth",
+      "node_id": "ss-masjid-moth",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-ef0435c27c5c5362",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 49,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2514fc8316cbb973",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 49,
+      "endpoint_position": 2,
+      "raw_label": "Masjid Moth",
+      "node_id": "ss-masjid-moth",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c1646b94132c8fc9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 50,
+      "endpoint_position": 1,
+      "raw_label": "M. Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-dd19d6cc839b8272",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 50,
+      "endpoint_position": 2,
+      "raw_label": "Trauma Centre",
+      "node_id": "ss-trauma-centre",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2e1b9ee7127e529a",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 51,
+      "endpoint_position": 1,
+      "raw_label": "M. Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-14d054b9fda05adf",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 51,
+      "endpoint_position": 2,
+      "raw_label": "Trauma Centre",
+      "node_id": "ss-trauma-centre",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-29ce3a3c1b5ea5fa",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 52,
+      "endpoint_position": 1,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-ae984cbf602e1ac3",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 52,
+      "endpoint_position": 2,
+      "raw_label": "Sarita Vihar",
+      "node_id": "ss-sarita-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-de591d93552e0b15",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 53,
+      "endpoint_position": 1,
+      "raw_label": "Mehrauli",
+      "node_id": "ss-mehrauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-50e117299daf9063",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 53,
+      "endpoint_position": 2,
+      "raw_label": "Tughlaqabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-b6b32e1db765028f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 54,
+      "endpoint_position": 1,
+      "raw_label": "Mehrauli",
+      "node_id": "ss-mehrauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-ab8864bd8d0f3e07",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 54,
+      "endpoint_position": 2,
+      "raw_label": "Tughlaqabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-96f2d763a7e522ae",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 55,
+      "endpoint_position": 1,
+      "raw_label": "Mehrauli",
+      "node_id": "ss-mehrauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a6701530a9b14cb2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 55,
+      "endpoint_position": 2,
+      "raw_label": "Vasant Kunj",
+      "node_id": "ss-vasant-kunj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-eaa82107185351bf",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 56,
+      "endpoint_position": 1,
+      "raw_label": "Mehrauli",
+      "node_id": "ss-mehrauli",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f4d81811f5f4358b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 56,
+      "endpoint_position": 2,
+      "raw_label": "Vasant Kunj",
+      "node_id": "ss-vasant-kunj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f73e45b3496fd237",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 57,
+      "endpoint_position": 1,
+      "raw_label": "Naraina",
+      "node_id": "ss-naraina",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-690c706a5d7a5515",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 57,
+      "endpoint_position": 2,
+      "raw_label": "Ridge Valley",
+      "node_id": "ss-ridge-valley",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-66b6ca8fd8979f01",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 58,
+      "endpoint_position": 1,
+      "raw_label": "Naraina",
+      "node_id": "ss-naraina",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-5823a5257507e6db",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 58,
+      "endpoint_position": 2,
+      "raw_label": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a2dcefcc09f77bed",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 59,
+      "endpoint_position": 1,
+      "raw_label": "Naraina",
+      "node_id": "ss-naraina",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-bd41d3dbf53bb4d3",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 59,
+      "endpoint_position": 2,
+      "raw_label": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2eaa628c51f6b59f",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 60,
+      "endpoint_position": 1,
+      "raw_label": "Narela",
+      "node_id": "ss-narela-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-9b1c41754a7cf977",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 60,
+      "endpoint_position": 2,
+      "raw_label": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-da53ee57afb6f6e9",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 61,
+      "endpoint_position": 1,
+      "raw_label": "Narela",
+      "node_id": "ss-narela-dtl",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6927566e78b0d4f3",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 61,
+      "endpoint_position": 2,
+      "raw_label": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c2f147fd2a7d4914",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 62,
+      "endpoint_position": 1,
+      "raw_label": "Okhla",
+      "node_id": "ss-okhla",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f467f05bcc6e07c3",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 62,
+      "endpoint_position": 2,
+      "raw_label": "BTPS",
+      "node_id": "ss-btps",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e13e85af6cc5202b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 63,
+      "endpoint_position": 1,
+      "raw_label": "Okhla",
+      "node_id": "ss-okhla",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2936a9f6d5c247b0",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 63,
+      "endpoint_position": 2,
+      "raw_label": "BTPS",
+      "node_id": "ss-btps",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-17b13bdbad4c581f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 64,
+      "endpoint_position": 1,
+      "raw_label": "Pappankalan-I",
+      "node_id": "ss-pappankalan-1",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d33989a87bf44650",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 64,
+      "endpoint_position": 2,
+      "raw_label": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f9d4bc47af0f810e",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 65,
+      "endpoint_position": 1,
+      "raw_label": "Pappankalan-I",
+      "node_id": "ss-pappankalan-1",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2aa7ed9975c7a3e0",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 65,
+      "endpoint_position": 2,
+      "raw_label": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-5d67b605805f1f12",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 66,
+      "endpoint_position": 1,
+      "raw_label": "Pappankalan-III",
+      "node_id": "ss-pappankalan-3",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-32c40fa93aad3f79",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 66,
+      "endpoint_position": 2,
+      "raw_label": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f34460ec7e539515",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 67,
+      "endpoint_position": 1,
+      "raw_label": "Pappankalan-III",
+      "node_id": "ss-pappankalan-3",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c50afb19fa8940b1",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 67,
+      "endpoint_position": 2,
+      "raw_label": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-844817228f558f3e",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 68,
+      "endpoint_position": 1,
+      "raw_label": "Patparganj",
+      "node_id": "ss-patparganj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-59c5d7db1d302f31",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 68,
+      "endpoint_position": 2,
+      "raw_label": "IP",
+      "node_id": "ss-indraprastha",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-966958be8b6bb214",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 69,
+      "endpoint_position": 1,
+      "raw_label": "Patparganj",
+      "node_id": "ss-patparganj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c5a117e33eebafeb",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 69,
+      "endpoint_position": 2,
+      "raw_label": "IP",
+      "node_id": "ss-indraprastha",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-ac48fec596c7be0b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 70,
+      "endpoint_position": 1,
+      "raw_label": "Peeragarhi",
+      "node_id": "ss-peeragarhi",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a5a3cb1c2993033d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 70,
+      "endpoint_position": 2,
+      "raw_label": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-b22e7777f3890d64",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 71,
+      "endpoint_position": 1,
+      "raw_label": "Peeragarhi",
+      "node_id": "ss-peeragarhi",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e5c13bef319d7e0e",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 71,
+      "endpoint_position": 2,
+      "raw_label": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d4398c2808624385",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 72,
+      "endpoint_position": 1,
+      "raw_label": "Peeragarhi",
+      "node_id": "ss-peeragarhi",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-46eb4964613c35b0",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 72,
+      "endpoint_position": 2,
+      "raw_label": "Wazirpur",
+      "node_id": "ss-wazirpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e604c2e0ec1e5cae",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 73,
+      "endpoint_position": 1,
+      "raw_label": "Peeragarhi",
+      "node_id": "ss-peeragarhi",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-14ffeef9f07e6dd8",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 73,
+      "endpoint_position": 2,
+      "raw_label": "Wazirpur",
+      "node_id": "ss-wazirpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-043dc02e7e25b4ef",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 74,
+      "endpoint_position": 1,
+      "raw_label": "Pragati",
+      "node_id": "ss-pragati",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-08d9cb9a2b77f2cb",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 74,
+      "endpoint_position": 2,
+      "raw_label": "IP",
+      "node_id": "ss-indraprastha",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-974375866a0764a4",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 75,
+      "endpoint_position": 1,
+      "raw_label": "Pragati",
+      "node_id": "ss-pragati",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6697b280f94c2199",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 75,
+      "endpoint_position": 2,
+      "raw_label": "IP",
+      "node_id": "ss-indraprastha",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6f553a5f2b398d08",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 76,
+      "endpoint_position": 1,
+      "raw_label": "Pragati",
+      "node_id": "ss-pragati",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a1e7fca3677a3532",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 76,
+      "endpoint_position": 2,
+      "raw_label": "GTPS",
+      "node_id": "plant-gtps",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-b6470ab279869a88",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 77,
+      "endpoint_position": 1,
+      "raw_label": "Pragati",
+      "node_id": "ss-pragati",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-b52d6d93a1676475",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 77,
+      "endpoint_position": 2,
+      "raw_label": "GTPS",
+      "node_id": "plant-gtps",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-cffb0ab0949643b7",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 78,
+      "endpoint_position": 1,
+      "raw_label": "Pragati",
+      "node_id": "ss-pragati",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6f2a6cb93ba9b30e",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 78,
+      "endpoint_position": 2,
+      "raw_label": "Park Street",
+      "node_id": "ss-park-street",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-1165c0221b8ab8d5",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 79,
+      "endpoint_position": 1,
+      "raw_label": "Pragati",
+      "node_id": "ss-pragati",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-5fbdc7c2cb5a47ed",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 79,
+      "endpoint_position": 2,
+      "raw_label": "Park Street",
+      "node_id": "ss-park-street",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-0f6fe87db6e9b717",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 80,
+      "endpoint_position": 1,
+      "raw_label": "Pragati",
+      "node_id": "ss-pragati",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-25199cd89c2f3418",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 80,
+      "endpoint_position": 2,
+      "raw_label": "Sarita Vihar",
+      "node_id": "ss-sarita-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-b02e4211a3d626d5",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 81,
+      "endpoint_position": 1,
+      "raw_label": "Pragati",
+      "node_id": "ss-pragati",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e0e1748875c301c5",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 81,
+      "endpoint_position": 2,
+      "raw_label": "Maharani Bagh",
+      "node_id": "ss-maharani-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-261cbc5cca3d5d78",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 82,
+      "endpoint_position": 1,
+      "raw_label": "Preet Vihar",
+      "node_id": "ss-preet-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-8b4a6f970328d673",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 82,
+      "endpoint_position": 2,
+      "raw_label": "Patparganj",
+      "node_id": "ss-patparganj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-1c7a013b70264484",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 83,
+      "endpoint_position": 1,
+      "raw_label": "Preet Vihar",
+      "node_id": "ss-preet-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d1910a1d0a56f7ba",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 83,
+      "endpoint_position": 2,
+      "raw_label": "Patparganj",
+      "node_id": "ss-patparganj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-6071a8b96e41cd25",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 84,
+      "endpoint_position": 1,
+      "raw_label": "Rohini-I",
+      "node_id": "ss-rohini-1",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-fed9b58653fcbab3",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 84,
+      "endpoint_position": 2,
+      "raw_label": "Shalimarbagh",
+      "node_id": "ss-shalimar-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-cfdb0619e48d3c04",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 85,
+      "endpoint_position": 1,
+      "raw_label": "Rohini-I",
+      "node_id": "ss-rohini-1",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-80a11d9a2696ca64",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 85,
+      "endpoint_position": 2,
+      "raw_label": "Shalimarbagh",
+      "node_id": "ss-shalimar-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-69746fc98fd42085",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 86,
+      "endpoint_position": 1,
+      "raw_label": "R.K. Puram",
+      "node_id": "ss-rk-puram",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-bc8a114c24d3e180",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 86,
+      "endpoint_position": 2,
+      "raw_label": "Ridge Valley",
+      "node_id": "ss-ridge-valley",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-9c3470e2538e0290",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 87,
+      "endpoint_position": 1,
+      "raw_label": "R.K. Puram",
+      "node_id": "ss-rk-puram",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f1a26bf804d820a2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 87,
+      "endpoint_position": 2,
+      "raw_label": "Ridge Valley",
+      "node_id": "ss-ridge-valley",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f8c44657909367bb",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 88,
+      "endpoint_position": 1,
+      "raw_label": "R.K. Puram",
+      "node_id": "ss-rk-puram",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-36d9f2fe7297e896",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 88,
+      "endpoint_position": 2,
+      "raw_label": "Trauma Centre",
+      "node_id": "ss-trauma-centre",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c3f9abd69c1bd877",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 89,
+      "endpoint_position": 1,
+      "raw_label": "R.K. Puram",
+      "node_id": "ss-rk-puram",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-3dae4fe840aeb160",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 89,
+      "endpoint_position": 2,
+      "raw_label": "Trauma Centre",
+      "node_id": "ss-trauma-centre",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-11d7ce283315dcdc",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 90,
+      "endpoint_position": 1,
+      "raw_label": "Shalimar Bagh",
+      "node_id": "ss-shalimar-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-25ae2b998376dbd2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 90,
+      "endpoint_position": 2,
+      "raw_label": "Wazirpur",
+      "node_id": "ss-wazirpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7cf99466e96fe64d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 91,
+      "endpoint_position": 1,
+      "raw_label": "Shalimar Bagh",
+      "node_id": "ss-shalimar-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-09ce499f0d655ef7",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 91,
+      "endpoint_position": 2,
+      "raw_label": "Wazirpur",
+      "node_id": "ss-wazirpur",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-3ae9ee94d03d1e80",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 92,
+      "endpoint_position": 1,
+      "raw_label": "SMB",
+      "node_id": "ss-shalimar-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-0238ccbdbd92f92b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 92,
+      "endpoint_position": 2,
+      "raw_label": "SGTN",
+      "node_id": "ss-sgtn",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-d6c268a44b372d76",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 93,
+      "endpoint_position": 1,
+      "raw_label": "SMB",
+      "node_id": "ss-shalimar-bagh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-4bc2177fedb62661",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 93,
+      "endpoint_position": 2,
+      "raw_label": "SGTN",
+      "node_id": "ss-sgtn",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f85075d8feb54be6",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 94,
+      "endpoint_position": 1,
+      "raw_label": "Sarita Vihar",
+      "node_id": "ss-sarita-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7867bddead4b2fb0",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 94,
+      "endpoint_position": 2,
+      "raw_label": "BTPS",
+      "node_id": "ss-btps",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-abe2db217e839234",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 95,
+      "endpoint_position": 1,
+      "raw_label": "Sarita Vihar",
+      "node_id": "ss-sarita-vihar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2ebf860e304e4e4e",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 95,
+      "endpoint_position": 2,
+      "raw_label": "BTPS",
+      "node_id": "ss-btps",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-f72bf5635c08110c",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 96,
+      "endpoint_position": 1,
+      "raw_label": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7203763b809ff051",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 96,
+      "endpoint_position": 2,
+      "raw_label": "Najafgarh",
+      "node_id": "ss-najafgarh",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-10db9d806e692bcb",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 97,
+      "endpoint_position": 1,
+      "raw_label": "Tughlakabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a704b9e2ecc82c4c",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 97,
+      "endpoint_position": 2,
+      "raw_label": "Okhla",
+      "node_id": "ss-okhla",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-746e048ddffd934b",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 98,
+      "endpoint_position": 1,
+      "raw_label": "Tughlakabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-665df482b3ef5f52",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 98,
+      "endpoint_position": 2,
+      "raw_label": "Okhla",
+      "node_id": "ss-okhla",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e4cbe43df117e0fa",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 99,
+      "endpoint_position": 1,
+      "raw_label": "Tughlakabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-5390bc92f5045c12",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 99,
+      "endpoint_position": 2,
+      "raw_label": "BTPS",
+      "node_id": "ss-btps",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-33af20ada601bd9f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 100,
+      "endpoint_position": 1,
+      "raw_label": "Tughlakabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-04872cd2f086f2d4",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 100,
+      "endpoint_position": 2,
+      "raw_label": "BTPS",
+      "node_id": "ss-btps",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-37e9c6970c39198c",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 101,
+      "endpoint_position": 1,
+      "raw_label": "Vasant Kunj",
+      "node_id": "ss-vasant-kunj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-cf0b798ac7987c50",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 101,
+      "endpoint_position": 2,
+      "raw_label": "R. K. Puram",
+      "node_id": "ss-rk-puram",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e9639407e7045036",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 102,
+      "endpoint_position": 1,
+      "raw_label": "Vasant Kunj",
+      "node_id": "ss-vasant-kunj",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-57e67af452831512",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 102,
+      "endpoint_position": 2,
+      "raw_label": "R. K. Puram",
+      "node_id": "ss-rk-puram",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2d5f682e363efde2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 103,
+      "endpoint_position": 1,
+      "raw_label": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7f32a8ae8dc78cb1",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 103,
+      "endpoint_position": 2,
+      "raw_label": "Geeta Colony",
+      "node_id": "ss-geeta-colony",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7b5e8fd4013b6dad",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 104,
+      "endpoint_position": 1,
+      "raw_label": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-5c50e85fa6038c07",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 104,
+      "endpoint_position": 2,
+      "raw_label": "Geeta Colony",
+      "node_id": "ss-geeta-colony",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-8384245c41858b1a",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 105,
+      "endpoint_position": 1,
+      "raw_label": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c6d1a710b48da518",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 105,
+      "endpoint_position": 2,
+      "raw_label": "K. Gate",
+      "node_id": "ss-kashmere-gate",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-acb0171617dc5d8a",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 106,
+      "endpoint_position": 1,
+      "raw_label": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2823136be9d3a1fe",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 106,
+      "endpoint_position": 2,
+      "raw_label": "K. Gate",
+      "node_id": "ss-kashmere-gate",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-edfad2f7bfd63bfa",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 107,
+      "endpoint_position": 1,
+      "raw_label": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-ed25d57387635c41",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 107,
+      "endpoint_position": 2,
+      "raw_label": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-c41828eb385c8d0f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 108,
+      "endpoint_position": 1,
+      "raw_label": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-22822dfe5f820e80",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 108,
+      "endpoint_position": 2,
+      "raw_label": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-beaf562b10cd511d",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 109,
+      "endpoint_position": 1,
+      "raw_label": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-7d40b8d87a00e314",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 109,
+      "endpoint_position": 2,
+      "raw_label": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-b3ebca519488fec6",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 110,
+      "endpoint_position": 1,
+      "raw_label": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-2536ca90fc60347f",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 110,
+      "endpoint_position": 2,
+      "raw_label": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-9faf7fee47090379",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 111,
+      "endpoint_position": 1,
+      "raw_label": "PPK-II",
+      "node_id": "ss-pappankalan-2",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-38215cb496cf62a2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 111,
+      "endpoint_position": 2,
+      "raw_label": "DWK",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-28885eab078b49a7",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 112,
+      "endpoint_position": 1,
+      "raw_label": "PPK-II",
+      "node_id": "ss-pappankalan-2",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-72b5e05d699659e2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 112,
+      "endpoint_position": 2,
+      "raw_label": "DWK",
+      "node_id": "candidate-dwarka",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-920832daf61871e1",
+      "identity_status": "unresolved_endpoint"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 113,
+      "endpoint_position": 1,
+      "raw_label": "R.K.Puram",
+      "node_id": "ss-rk-puram",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-e90c27a429a073f2",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 113,
+      "endpoint_position": 2,
+      "raw_label": "Tughlakabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-bb86578f8355d5ea",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 114,
+      "endpoint_position": 1,
+      "raw_label": "R.K.Puram",
+      "node_id": "ss-rk-puram",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-46626302cbc6b870",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 114,
+      "endpoint_position": 2,
+      "raw_label": "Tughlakabad",
+      "node_id": "ss-tughlakabad",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a03aa2098e948781",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 115,
+      "endpoint_position": 1,
+      "raw_label": "Dev Nagar",
+      "node_id": "ss-dev-nagar",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-a6745d35449eb80a",
+      "identity_status": "source_referenced"
+    },
+    {
+      "source_id": "SRC-04",
+      "source_serial": 115,
+      "endpoint_position": 2,
+      "raw_label": "Park Street",
+      "node_id": "ss-park-street",
+      "circuit_voltage_kv": 220,
+      "evidence_id": "ev-ebfeac5a7d53c129",
+      "identity_status": "source_referenced"
+    }
+  ]
+}

@@ -143,3 +143,40 @@ imported and no runtime behavior changed.
 Step 2 establishes the scope and source-selection gate. It does not claim the
 50-node goal, complete inventories, electrical validation, or individual review
 completion. Source archiving and inventory construction are subsequent steps.
+
+### Phase 3 Step 3: source acquisition and evidence preservation — 2026-10-22
+
+The dated local archive in `data/sources/delhi/2026-10-22` records original-source
+fingerprints, retrieval metadata, source locators and explicit failed/access-only
+outcomes. `scripts/acquire_topology_sources.py` captures into new directories and
+verifies existing archives offline. Original files remain local; the project
+records document acquisition and reuse limitations. The runtime grid is unchanged.
+
+| Member | Continuing review responsibility | Reviewable artifact and evidence |
+|---|---|---|
+| Nishtha Jain | Source capture, provenance, access failures and historical date handling | Catalog, manifest, acquisition script and offline integrity checks |
+| Himangi Mishra | Suitability limits for plant/policy metadata | Filing/index references and distinction between real observations and counterfactual policy inputs |
+| Shrankhala Singh | Map/table/circuit evidence and other-owner interface references | Seventeen extraction locators, BBMB page reference and unresolved connectivity/identity register |
+| Gaurangi Tyagi | Reproducible acquisition setup and source/application separation | Archive guide, snapshot protection and structured capture failure handling |
+
+Verification includes 58 passing automated tests and offline checks of the saved
+files/locators. This records a source-evidence milestone, not completed inventories,
+50 verified nodes, resolved optional-source gaps, or individual review completion.
+
+### Phase 3 Step 4: source-referenced node inventory — 2026-10-22
+
+`data/topology/delhi` records 64 inventory entries with stable project IDs and
+source-qualified identity rules. All 47 DTL directory rows, 46 transformation
+observations and 258 endpoint occurrences are retained. Uncertain site identities,
+historical/proposed status and an unassigned SOW observation remain explicit.
+
+| Member | Continuing review responsibility | Reviewable artifact and evidence |
+|---|---|---|
+| Nishtha Jain | Source encodings, dates, provenance and missing-value handling | Source-bound evidence records and deterministic JSON/CSV extraction |
+| Himangi Mishra | Keep operating/model inputs separate from inventory metadata | Unknown available MW/output, simulation eligibility and plant/substation distinctions |
+| Shrankhala Singh | Identity reconciliation, multi-owner records and node coverage | Stable-ID rules, 47-row coverage, supplemental records and eight open node issues |
+| Gaurangi Tyagi | Inspectable inventory artifacts and reproducible commands | Inventory guide, CSV, coverage summary, rebuild/check command and contract tests |
+
+The full suite passes 67 tests, and inventory regeneration matches the saved
+outputs. This step does not claim 64 distinct verified sites, 50 verified nodes,
+validated circuits, individual review completion, or a changed live dashboard.

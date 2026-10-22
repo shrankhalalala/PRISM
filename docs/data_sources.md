@@ -76,3 +76,37 @@ dates and retain unresolved differences in subsequent inventory work.
 
 Step 2 selected and inspected sources; it did not replace the synthetic grid,
 import official assets, establish electrical parameters, or map live telemetry.
+
+## Phase 3 Step 3: dated local source archive — 2026-10-22
+
+[The source archive](../data/sources/delhi/README.md) records 17 public-source
+attempts: 14 captures and three failures. All eight required DTL references/policy
+files succeeded, including the canonical 220 kV transformation page. The captured
+CEA login, NPP shell and SLDC frontend remain access-only evidence. NPP capacity
+and ICED failed TLS hostname checks; the PPS-III PDF exceeded the 64 MiB cap.
+
+Raw originals are retained locally and excluded from Git pending review of source
+redistribution conditions. Catalogs, checksums, response metadata, 17 extraction
+locators and a manual review/gap register are project records. The acquisition
+command refuses to overwrite snapshots and supports offline integrity checking.
+
+New supporting references are BBMB's 2024-25 annual report, with the relevant
+interface evidence on physical page 86 (printed 78), and IPGCL/PPCL's tariff index
+and PPS-I filing. The filing is scanned and needs visual/OCR validation before
+further metadata extraction. No asset identities/edges have been inferred or
+imported, and current POWERGRID coverage remains an explicit gap.
+
+## Phase 3 Step 4: source-referenced node inventory — 2026-10-22
+
+[The node inventory](../data/topology/delhi/README.md) retains all 47 directory
+rows and 46 transformation observations from the archived DTL sources. It adds
+documented other-owner, generation and endpoint candidates, producing 64 records
+with 258 circuit-endpoint occurrences accounted for. Forty-five transformation
+observations are assigned; the SOW label remains unassigned pending identity
+confirmation. Site/owner/date ambiguities remain open, so 64 records do not mean
+64 distinct verified physical facilities or completion of the 50-node goal.
+
+Rules and evidence bind each record to the saved-source checksum and locator.
+Historical MVA metadata is separate from current MW, coordinates and operational
+status. No new source download, runtime topology replacement or electrical
+validation was performed during this offline inventory step.

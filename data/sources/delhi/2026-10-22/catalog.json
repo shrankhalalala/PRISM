@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0",
+  "scope": "delhi_ehv_reference_v1",
+  "sources": [
+    {
+      "id": "SRC-01",
+      "title": "DTL 13th Plan Rev-02",
+      "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+      "format": "pdf",
+      "source_date": "2019-10",
+      "role": "historical_connectivity",
+      "required": true,
+      "extraction_locators": [
+        {
+          "physical_pages": [
+            1,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            130
+          ],
+          "purpose": "Cover; existing June 2019 network, circuits and transformation; planning map separately"
+        }
+      ],
+      "limitations": "Planning works are not operating assets. Preserve the June 2019 reference date."
+    },
+    {
+      "id": "SRC-02",
+      "title": "DTL List of Substations",
+      "url": "https://dtl.gov.in/content/326_1_ListofSubstations.aspx",
+      "format": "html",
+      "source_date": "2025-05-14",
+      "role": "station_directory",
+      "required": true,
+      "extraction_locators": [
+        {
+          "table": 1,
+          "heading": "400 KV Sub Stations"
+        },
+        {
+          "table": 2,
+          "heading": "220 KV Sub Stations"
+        }
+      ],
+      "limitations": "Table ordinals are one-based in the captured HTML. A directory listing is not operating-status evidence."
+    },
+    {
+      "id": "SRC-03",
+      "title": "DTL 400 kV circuits",
+      "url": "https://dtl.gov.in/content/160_1_Lines400KV.aspx",
+      "format": "html",
+      "source_date": "2024-09-18",
+      "role": "circuit_table",
+      "required": true,
+      "extraction_locators": [
+        {
+          "table": 1,
+          "heading": "DTL Transmission Lines 400 KV"
+        }
+      ],
+      "limitations": "Lengths may describe DTL portions only; not thermal limits in MW."
+    },
+    {
+      "id": "SRC-04",
+      "title": "DTL 220 kV circuits",
+      "url": "https://dtl.gov.in/content/159_1_TransmissionLines220KV.aspx",
+      "format": "html",
+      "source_date": "2024-09-18",
+      "role": "circuit_table",
+      "required": true,
+      "extraction_locators": [
+        {
+          "table": 1,
+          "heading": "DTL Transmission Lines - 220 KV"
+        }
+      ],
+      "limitations": "Repeated labels and spellings require reconciliation; preserve serials unchanged."
+    },
+    {
+      "id": "SRC-05",
+      "title": "DTL 400 kV transformation",
+      "url": "https://dtl.gov.in/content/177_1_Substation400KV.aspx",
+      "format": "html",
+      "source_date": "2020-03-04",
+      "role": "transformer_metadata",
+      "required": true,
+      "extraction_locators": [
+        {
+          "table": 1,
+          "heading": "Transformation Capacity - 400 KV Level"
+        }
+      ],
+      "limitations": "Historical MVA ratings are not available generation MW."
+    },
+    {
+      "id": "SRC-06",
+      "title": "DTL 220 kV transformation",
+      "url": "https://dtl.gov.in/content/178_1_Substation220KV.aspx",
+      "format": "html",
+      "source_date": "2020-03-04",
+      "role": "transformer_metadata",
+      "required": true,
+      "extraction_locators": [
+        {
+          "table": 1,
+          "heading": "Transformation Capacity - 220 KV Level"
+        }
+      ],
+      "limitations": "Canonical URL recovered via official navigation; original print-link retrieval had failed."
+    },
+    {
+      "id": "SRC-07",
+      "title": "DTL network overview",
+      "url": "https://dtl.gov.in/Content/18_1_OurBusiness.aspx?format=Print",
+      "format": "html",
+      "source_date": "2024-09-18",
+      "role": "historical_summary",
+      "required": true,
+      "extraction_locators": [
+        {
+          "heading": "Efficient & Reliable Transmission Network (as on 31.03.2023)"
+        }
+      ],
+      "limitations": "Aggregate counts are as of March 2023, not a 2026 inventory."
+    },
+    {
+      "id": "SRC-08",
+      "title": "CEA legacy map route",
+      "url": "https://cea.nic.in/old/powermaps.html",
+      "format": "html",
+      "source_date": null,
+      "role": "access_probe",
+      "required": false,
+      "extraction_locators": [],
+      "limitations": "A captured login/redirect page is not a usable map. No authentication or CAPTCHA completion."
+    },
+    {
+      "id": "SRC-09",
+      "title": "NPP transmission dashboard",
+      "url": "https://npp.gov.in/dashBoard/trans-map-dashboard",
+      "format": "html",
+      "source_date": null,
+      "role": "access_probe",
+      "required": false,
+      "extraction_locators": [],
+      "limitations": "A captured application shell does not establish a Delhi endpoint-level export."
+    },
+    {
+      "id": "SRC-10A",
+      "title": "NPP capacity dashboard",
+      "url": "https://www.npp.gov.in/dashBoard/cp-map-dashboard",
+      "format": "html",
+      "source_date": null,
+      "role": "access_probe",
+      "required": false,
+      "extraction_locators": [],
+      "limitations": "Candidate metadata portal; no verified plant export."
+    },
+    {
+      "id": "SRC-10B",
+      "title": "ICED energy portal",
+      "url": "https://www.iced.niti.gov.in/energy/",
+      "format": "html",
+      "source_date": null,
+      "role": "access_probe",
+      "required": false,
+      "extraction_locators": [],
+      "limitations": "Candidate metadata portal; no verified plant export."
+    },
+    {
+      "id": "SRC-11",
+      "title": "Delhi SLDC Grid Watch",
+      "url": "https://delhisldc.org/grid-watch/",
+      "format": "html",
+      "source_date": null,
+      "role": "access_probe",
+      "required": false,
+      "extraction_locators": [],
+      "limitations": "Frontend shell only. Existing measurement API is separate and is not topology evidence."
+    },
+    {
+      "id": "SRC-12",
+      "title": "DTL copyright policy",
+      "url": "https://dtl.gov.in/content/14_2_CopyrightPolicy.aspx",
+      "format": "html",
+      "source_date": "2014-12-19",
+      "role": "source_policy",
+      "required": true,
+      "extraction_locators": [
+        {
+          "heading": "Copyright Policy"
+        }
+      ],
+      "limitations": "Capture original material without alteration. Broad redistribution rights are not established."
+    },
+    {
+      "id": "SRC-13",
+      "title": "BBMB Annual Report 2024-25",
+      "url": "https://bbmb.gov.in/writereaddata/Portal/Reports/30_1_BBMB_ANNUAL_REPORT_2024-25.pdf",
+      "format": "pdf",
+      "source_date": "2024-25",
+      "role": "other_owner_evidence",
+      "required": false,
+      "extraction_locators": [],
+      "limitations": "Find physical PDF pages for Narela/Rohtak Road after capture; report-year evidence is not live status."
+    },
+    {
+      "id": "SRC-14",
+      "title": "IPGCL/PPCL tariff petition index",
+      "url": "https://www.ipgcl-ppcl.gov.in/tariffpetition.htm",
+      "format": "html",
+      "source_date": null,
+      "role": "generation_reference_index",
+      "required": false,
+      "extraction_locators": [
+        {
+          "text_anchor": "Uploaded on 05/02/2026"
+        },
+        {
+          "text_anchor": "Uploaded on 12/06/2026"
+        }
+      ],
+      "limitations": "Upload dates and tariff periods are distinct from current output or commissioning dates."
+    },
+    {
+      "id": "SRC-15",
+      "title": "PPS-I true-up and tariff petition",
+      "url": "https://www.ipgcl-ppcl.gov.in/documents/petition/2026_02_05_petition_tariff_trueup_fy_2024_25_2026_27_PPSI.pdf",
+      "format": "pdf",
+      "source_date": "2026-02-05 (index upload)",
+      "role": "generation_reference",
+      "required": false,
+      "extraction_locators": [],
+      "limitations": "Petition is a party filing, not a final regulatory order or live telemetry."
+    },
+    {
+      "id": "SRC-16",
+      "title": "PPS-III tariff petition 2024-29",
+      "url": "https://www.ipgcl-ppcl.gov.in/documents/petition/2026_02_05_petition_tariff_fy_2024_29_PPSIII.pdf",
+      "format": "pdf",
+      "source_date": "2026-02-05 (index upload)",
+      "role": "generation_reference",
+      "required": false,
+      "extraction_locators": [],
+      "limitations": "Use for plant identity/metadata with page locators; does not by itself establish grid wiring."
+    }
+  ]
+}

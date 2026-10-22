@@ -1,0 +1,1269 @@
+{
+  "schema_version": "1.0",
+  "scope": "delhi_ehv_reference_v1",
+  "directory": [
+    {
+      "table": 1,
+      "serial": 1,
+      "id": "ss-bawana-dtl",
+      "expected_name": "Bawana"
+    },
+    {
+      "table": 1,
+      "serial": 2,
+      "id": "ss-bamnauli",
+      "expected_name": "Bamnauli"
+    },
+    {
+      "table": 1,
+      "serial": 3,
+      "id": "ss-harsh-vihar",
+      "expected_name": "Harsh Vihar"
+    },
+    {
+      "table": 1,
+      "serial": 4,
+      "id": "ss-tikri-kalan",
+      "expected_name": "Tikri Kalan (Mundka)"
+    },
+    {
+      "table": 2,
+      "serial": 1,
+      "id": "ss-btps",
+      "expected_name": "BTPS"
+    },
+    {
+      "table": 2,
+      "serial": 2,
+      "id": "ss-dev-nagar",
+      "expected_name": "Dev Nagar"
+    },
+    {
+      "table": 2,
+      "serial": 3,
+      "id": "ss-dsidc-bawana",
+      "expected_name": "DSIDC Bawana"
+    },
+    {
+      "table": 2,
+      "serial": 4,
+      "id": "ss-dial",
+      "expected_name": "DIAL"
+    },
+    {
+      "table": 2,
+      "serial": 5,
+      "id": "ss-dwarka-sector-5",
+      "expected_name": "Dwarka, Sec-05"
+    },
+    {
+      "table": 2,
+      "serial": 6,
+      "id": "ss-electric-lane",
+      "expected_name": "Electric Lane"
+    },
+    {
+      "table": 2,
+      "serial": 7,
+      "id": "ss-geeta-colony",
+      "expected_name": "Geeta Colony"
+    },
+    {
+      "table": 2,
+      "serial": 8,
+      "id": "ss-gazipur",
+      "expected_name": "Gazipur"
+    },
+    {
+      "table": 2,
+      "serial": 9,
+      "id": "ss-gopalpur",
+      "expected_name": "Gopalpur"
+    },
+    {
+      "table": 2,
+      "serial": 10,
+      "id": "ss-indraprastha",
+      "expected_name": "Indraprastha"
+    },
+    {
+      "table": 2,
+      "serial": 11,
+      "id": "ss-kanjhawala",
+      "expected_name": "Khanjawala"
+    },
+    {
+      "table": 2,
+      "serial": 12,
+      "id": "ss-kashmere-gate",
+      "expected_name": "Kashmere Gate"
+    },
+    {
+      "table": 2,
+      "serial": 13,
+      "id": "ss-lodhi-road",
+      "expected_name": "Lodhi Road"
+    },
+    {
+      "table": 2,
+      "serial": 14,
+      "id": "ss-maharani-bagh",
+      "expected_name": "Maharani Bagh"
+    },
+    {
+      "table": 2,
+      "serial": 15,
+      "id": "ss-masjid-moth",
+      "expected_name": "Masjid Moth"
+    },
+    {
+      "table": 2,
+      "serial": 16,
+      "id": "ss-mehrauli",
+      "expected_name": "Mehrauli"
+    },
+    {
+      "table": 2,
+      "serial": 17,
+      "id": "ss-najafgarh",
+      "expected_name": "Najafgarh"
+    },
+    {
+      "table": 2,
+      "serial": 18,
+      "id": "ss-naraina",
+      "expected_name": "Naraina"
+    },
+    {
+      "table": 2,
+      "serial": 19,
+      "id": "ss-narela-dtl",
+      "expected_name": "Narela"
+    },
+    {
+      "table": 2,
+      "serial": 20,
+      "id": "ss-okhla",
+      "expected_name": "Okhla"
+    },
+    {
+      "table": 2,
+      "serial": 21,
+      "id": "ss-pappankalan-1",
+      "expected_name": "Pappankalan-I"
+    },
+    {
+      "table": 2,
+      "serial": 22,
+      "id": "ss-pappankalan-2",
+      "expected_name": "Pappankalan-II"
+    },
+    {
+      "table": 2,
+      "serial": 23,
+      "id": "ss-pappankalan-3",
+      "expected_name": "Pappankalan-III"
+    },
+    {
+      "table": 2,
+      "serial": 24,
+      "id": "ss-park-street",
+      "expected_name": "Park Street"
+    },
+    {
+      "table": 2,
+      "serial": 25,
+      "id": "ss-patparganj",
+      "expected_name": "Patparganj"
+    },
+    {
+      "table": 2,
+      "serial": 26,
+      "id": "ss-peeragarhi",
+      "expected_name": "Peeragarhi"
+    },
+    {
+      "table": 2,
+      "serial": 27,
+      "id": "ss-pragati",
+      "expected_name": "Pragati"
+    },
+    {
+      "table": 2,
+      "serial": 28,
+      "id": "ss-preet-vihar",
+      "expected_name": "Preet Vihar"
+    },
+    {
+      "table": 2,
+      "serial": 29,
+      "id": "ss-rajghat",
+      "expected_name": "Rajghat Power House"
+    },
+    {
+      "table": 2,
+      "serial": 30,
+      "id": "ss-ridge-valley",
+      "expected_name": "Ridge Valley"
+    },
+    {
+      "table": 2,
+      "serial": 31,
+      "id": "ss-rohini-1",
+      "expected_name": "Rohini-I"
+    },
+    {
+      "table": 2,
+      "serial": 32,
+      "id": "ss-rohini-2",
+      "expected_name": "Rohini-II"
+    },
+    {
+      "table": 2,
+      "serial": 33,
+      "id": "ss-rk-puram",
+      "expected_name": "R. K. Puram"
+    },
+    {
+      "table": 2,
+      "serial": 34,
+      "id": "ss-sgtn",
+      "expected_name": "Sanjay Gandhi Transport Nagar"
+    },
+    {
+      "table": 2,
+      "serial": 35,
+      "id": "ss-sarita-vihar",
+      "expected_name": "Sarita Vihar"
+    },
+    {
+      "table": 2,
+      "serial": 36,
+      "id": "ss-shalimar-bagh",
+      "expected_name": "Shalimar Bagh"
+    },
+    {
+      "table": 2,
+      "serial": 37,
+      "id": "ss-south-of-wazirabad",
+      "expected_name": "South of Wazirabad"
+    },
+    {
+      "table": 2,
+      "serial": 38,
+      "id": "ss-subzi-mandi",
+      "expected_name": "Subzi Mandi"
+    },
+    {
+      "table": 2,
+      "serial": 39,
+      "id": "ss-timarpur",
+      "expected_name": "Timarpur"
+    },
+    {
+      "table": 2,
+      "serial": 40,
+      "id": "ss-trauma-centre",
+      "expected_name": "Trauma Centre"
+    },
+    {
+      "table": 2,
+      "serial": 41,
+      "id": "ss-tughlakabad",
+      "expected_name": "Tughlakabad"
+    },
+    {
+      "table": 2,
+      "serial": 42,
+      "id": "ss-vasant-kunj",
+      "expected_name": "Vasant Kunj"
+    },
+    {
+      "table": 2,
+      "serial": 43,
+      "id": "ss-wazirpur",
+      "expected_name": "Wazirpur"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "Mundka",
+      "node_id": "ss-tikri-kalan",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Tikri Kalan",
+      "node_id": "ss-tikri-kalan",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Tikri Kalan(Mundka)",
+      "node_id": "ss-tikri-kalan",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "DSIIDC Bawana",
+      "node_id": "ss-dsidc-bawana",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "DSIIDC-I",
+      "node_id": "ss-dsidc-bawana",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Kanjhawala",
+      "node_id": "ss-kanjhawala",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Maharanibagh",
+      "node_id": "ss-maharani-bagh",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "M. Bagh",
+      "node_id": "ss-maharani-bagh",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Tughlaqabad",
+      "node_id": "ss-tughlakabad",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Tuglakhabad",
+      "node_id": "ss-tughlakabad",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Tuglakabad",
+      "node_id": "ss-tughlakabad",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "IP",
+      "node_id": "ss-indraprastha",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "IP Stn.",
+      "node_id": "ss-indraprastha",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "K. Gate",
+      "node_id": "ss-kashmere-gate",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Kashmiri Gate",
+      "node_id": "ss-kashmere-gate",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Rohini",
+      "node_id": "ss-rohini-1",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Papankalan-I",
+      "node_id": "ss-pappankalan-1",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Papankalan -I",
+      "node_id": "ss-pappankalan-1",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "PPK-I",
+      "node_id": "ss-pappankalan-1",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Papankalan-II",
+      "node_id": "ss-pappankalan-2",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "PPK-II",
+      "node_id": "ss-pappankalan-2",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Papankalan-III",
+      "node_id": "ss-pappankalan-3",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "PPK-III",
+      "node_id": "ss-pappankalan-3",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Rajghat",
+      "node_id": "ss-rajghat",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Sabzi Mandi",
+      "node_id": "ss-subzi-mandi",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "AIIMS",
+      "node_id": "ss-trauma-centre",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Trauma Center",
+      "node_id": "ss-trauma-centre",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "SMB",
+      "node_id": "ss-shalimar-bagh",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-04",
+        "physical_pages": [],
+        "table": 1,
+        "source_serials": [
+          92,
+          93
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "SGTN",
+      "node_id": "ss-sgtn",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-04",
+        "physical_pages": [],
+        "table": 1,
+        "source_serials": [
+          92,
+          93
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Jhatikara",
+      "node_id": "ss-jhatikara-pgcil",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Jhatikalan",
+      "node_id": "ss-jhatikara-pgcil",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Mandola",
+      "node_id": "ss-mandola-pgcil",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Mandaula",
+      "node_id": "ss-mandola-pgcil",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Wazirabad",
+      "node_id": "ss-wazirabad",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Budella",
+      "node_id": "ss-budella",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-04",
+        "physical_pages": [],
+        "table": 1,
+        "source_serials": [
+          25,
+          26
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Dwarka",
+      "node_id": "candidate-dwarka",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-04",
+        "physical_pages": [],
+        "table": 1,
+        "source_serials": [
+          25,
+          26,
+          58,
+          59,
+          64,
+          65,
+          66,
+          67,
+          111,
+          112
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "DWK",
+      "node_id": "candidate-dwarka",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-04",
+        "physical_pages": [],
+        "table": 1,
+        "source_serials": [
+          25,
+          26,
+          58,
+          59,
+          64,
+          65,
+          66,
+          67,
+          111,
+          112
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "Ballabhgarh",
+      "node_id": "candidate-ballabhgarh-400",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-03",
+        "physical_pages": [],
+        "table": 1,
+        "source_serials": [
+          11,
+          12
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    },
+    {
+      "name": "GTPS",
+      "node_id": "plant-gtps",
+      "status": "reviewed_project_mapping",
+      "basis": {
+        "source_id": "SRC-04",
+        "physical_pages": [],
+        "table": 1,
+        "source_serials": [
+          76,
+          77
+        ]
+      },
+      "rationale": "Manual, source-qualified label reconciliation for the archived DTL tables; not a universal official ID. Unresolved target identities remain unresolved."
+    }
+  ],
+  "supplemental_nodes": [
+    {
+      "id": "ss-jhatikara-pgcil",
+      "name": "Jhatikara (PGCIL)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        765,
+        400
+      ],
+      "owner": "PGCIL",
+      "scope_role": "supply_interface",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          12,
+          29
+        ]
+      },
+      "historical_status": "existing_as_of_2019_06",
+      "notes": "765 kV upstream network excluded; geographic boundary requires reconciliation."
+    },
+    {
+      "id": "ss-mandola-pgcil",
+      "name": "Mandola (PGCIL)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        400,
+        220
+      ],
+      "owner": "PGCIL",
+      "scope_role": "supply_interface",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          12,
+          13,
+          34
+        ]
+      },
+      "historical_status": "existing_as_of_2019_06",
+      "notes": ""
+    },
+    {
+      "id": "ss-samaypur-pgcil",
+      "name": "Samaypur (PGCIL)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        400,
+        220
+      ],
+      "owner": "PGCIL",
+      "scope_role": "supply_interface",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          13,
+          34
+        ]
+      },
+      "historical_status": "existing_as_of_source",
+      "notes": "Do not automatically merge with BBMB Ballabgarh or the 400 kV feeder label."
+    },
+    {
+      "id": "ss-rohtak-road-bbmb",
+      "name": "Rohtak Road (BBMB)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        220,
+        33
+      ],
+      "owner": "BBMB",
+      "scope_role": "delhi_other_owner",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          13,
+          33,
+          35
+        ]
+      },
+      "historical_status": "existing_as_of_2019_06",
+      "notes": ""
+    },
+    {
+      "id": "ss-narela-bbmb",
+      "name": "Narela (BBMB)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        220,
+        132
+      ],
+      "owner": "BBMB",
+      "scope_role": "delhi_other_owner",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-13",
+        "physical_pages": [
+          82,
+          87
+        ]
+      },
+      "historical_status": "maintenance_report_2024_25",
+      "notes": "Distinct owner-qualified record; physical co-location/site relationship to DTL Narela unresolved."
+    },
+    {
+      "id": "ss-panipat-bbmb",
+      "name": "Panipat (BBMB)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        400,
+        220
+      ],
+      "owner": "BBMB",
+      "scope_role": "supply_interface",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-13",
+        "physical_pages": [
+          82,
+          86
+        ]
+      },
+      "historical_status": "maintenance_report_2024_25",
+      "notes": ""
+    },
+    {
+      "id": "ss-dadri-pgcil",
+      "name": "Dadri (PGCIL interface)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        400
+      ],
+      "owner": "PGCIL",
+      "scope_role": "supply_interface",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          13,
+          29
+        ]
+      },
+      "historical_status": "existing_as_of_2019_06",
+      "notes": "Interface identity; not a generating station merely because of the shared place name."
+    },
+    {
+      "id": "ss-noida",
+      "name": "Noida (map endpoint)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        220
+      ],
+      "owner": null,
+      "scope_role": "supply_interface",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30
+        ]
+      },
+      "historical_status": "existing_symbol_2019_map",
+      "notes": "Owner and geographic classification require confirmation."
+    },
+    {
+      "id": "ss-noida-62",
+      "name": "Noida 62 (map endpoint)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        220
+      ],
+      "owner": null,
+      "scope_role": "supply_interface",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30
+        ]
+      },
+      "historical_status": "existing_symbol_2019_map",
+      "notes": "Keep separate from Noida; owner/geography unresolved."
+    },
+    {
+      "id": "ss-wazirabad",
+      "name": "Wazirabad (historical station)",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        220,
+        66
+      ],
+      "owner": "DTL",
+      "scope_role": "historical_station",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30,
+          34,
+          35
+        ]
+      },
+      "historical_status": "existing_as_of_2019_06",
+      "notes": "Keep separate from South of Wazirabad; no retirement/rename decision established."
+    },
+    {
+      "id": "ss-budella",
+      "name": "Budella",
+      "kind": "substation",
+      "voltage_levels_kv": [
+        220
+      ],
+      "owner": null,
+      "scope_role": "circuit_endpoint",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          130
+        ]
+      },
+      "historical_status": "planned_or_spillover_2019_map",
+      "notes": "Named in later circuit table; current commissioning evidence still missing."
+    },
+    {
+      "id": "candidate-dwarka",
+      "name": "Dwarka (circuit site unresolved)",
+      "kind": "unresolved_asset",
+      "voltage_levels_kv": [
+        220
+      ],
+      "owner": null,
+      "scope_role": "unresolved_endpoint",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-04",
+        "table": 1,
+        "serials": [
+          25,
+          26,
+          58,
+          59,
+          64,
+          65,
+          66,
+          67,
+          111,
+          112
+        ]
+      },
+      "historical_status": null,
+      "notes": "Not merged with directory Dwarka Sector-05 or planned ISTS Dwarka."
+    },
+    {
+      "id": "candidate-ballabhgarh-400",
+      "name": "Ballabhgarh (400 kV endpoint unresolved)",
+      "kind": "unresolved_asset",
+      "voltage_levels_kv": [
+        400
+      ],
+      "owner": null,
+      "scope_role": "unresolved_endpoint",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-03",
+        "table": 1,
+        "serials": [
+          11,
+          12
+        ]
+      },
+      "historical_status": null,
+      "notes": "Samaypur/PGCIL versus Ballabgarh/BBMB nomenclature must be reconciled before physical counting."
+    },
+    {
+      "id": "plant-gtps",
+      "name": "Gas Turbine Power Station (GTPS)",
+      "kind": "plant",
+      "voltage_levels_kv": [],
+      "owner": "IPGCL",
+      "scope_role": "generation",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-14",
+        "text_anchor": "Gas Turbine Power Station (GTPS) of Indraprastha Power Generation Company Limited"
+      },
+      "historical_status": null,
+      "notes": "Generation/circuit terminal details and current output unknown."
+    },
+    {
+      "id": "plant-pps1",
+      "name": "Pragati Power Station-I (PPS-I)",
+      "kind": "plant",
+      "voltage_levels_kv": [],
+      "owner": "PPCL",
+      "scope_role": "generation",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-15",
+        "physical_pages": [
+          1,
+          2
+        ]
+      },
+      "historical_status": null,
+      "notes": "Separate from Pragati substation; scanned cover/memo visually reviewed; no capacity inferred."
+    },
+    {
+      "id": "plant-pps3-bawana",
+      "name": "Pragati-III / Bawana power station",
+      "kind": "plant",
+      "voltage_levels_kv": [],
+      "owner": "PPCL",
+      "scope_role": "generation",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-14",
+        "text_anchor": "PPS-III, Bawana"
+      },
+      "historical_status": null,
+      "notes": "Index supports identity, not output or wiring. Large petition PDF capture failed."
+    },
+    {
+      "id": "plant-jhajjar",
+      "name": "Jhajjar (generation interface)",
+      "kind": "plant",
+      "voltage_levels_kv": [
+        400
+      ],
+      "owner": null,
+      "scope_role": "generation_interface",
+      "boundary_classification": "unresolved",
+      "basis": {
+        "source_id": "SRC-01",
+        "physical_pages": [
+          30
+        ]
+      },
+      "historical_status": "generation_symbol_2019_map",
+      "notes": "Owner and exact plant identity require verification; no fuel/capacity inferred from map text placement."
+    }
+  ],
+  "unassigned_aliases": [
+    {
+      "name": "SOW",
+      "candidate_node_ids": [
+        "ss-south-of-wazirabad"
+      ],
+      "reason": "Potential abbreviation, not independently confirmed. Preserve SRC-06 row 35 as unassigned evidence."
+    }
+  ],
+  "shared_site_claims": [
+    {
+      "node_id": "ss-maharani-bagh",
+      "owner": "PGCIL",
+      "voltage_levels_kv": [
+        400,
+        220
+      ],
+      "source_id": "SRC-01",
+      "physical_pages": [
+        12,
+        13,
+        34
+      ]
+    },
+    {
+      "node_id": "ss-tughlakabad",
+      "owner": "PGCIL",
+      "voltage_levels_kv": [
+        400,
+        220
+      ],
+      "source_id": "SRC-01",
+      "physical_pages": [
+        12,
+        13,
+        34
+      ]
+    }
+  ],
+  "excluded_context": [
+    {
+      "source_id": "SRC-01",
+      "physical_pages": [
+        29
+      ],
+      "names": [
+        "Bhiwani",
+        "Meerut",
+        "Agra",
+        "Kanpur"
+      ],
+      "reason": "Upstream 765 kV context beyond the direct Delhi EHV boundary; no nodes added."
+    },
+    {
+      "source_id": "SRC-01",
+      "physical_pages": [
+        130
+      ],
+      "names": [
+        "Tikri Khurd",
+        "Zakhira",
+        "Sarojini Nagar",
+        "Nehru Place",
+        "Bhartal"
+      ],
+      "reason": "Planning/spillover map labels without selected directory/current circuit-table corroboration. Not promoted to operating inventory assets."
+    }
+  ]
+}

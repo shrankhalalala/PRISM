@@ -104,3 +104,33 @@ operational control remain outside Phase 2.
   used the responsive narrow layout. Existing synthetic measurements still load.
 - Public endpoint access was observed; a reuse licence, historical completeness,
   operational accuracy, and a service availability guarantee remain unverified.
+
+## Phase 3 Step 3 source evidence — 2026-10-22
+
+- The full automated suite passes 58 tests. New archive tests exercise untouched
+  byte capture, verified TLS, HTML-as-PDF rejection, size/time failures, modified
+  and missing files, catalog completeness, path boundaries and snapshot protection.
+- The dated archive has 17 attempts, 14 captured originals, three explicit failures
+  and 17 source-bound extraction locators. All eight required DTL captures passed.
+- Offline verification checks catalog/source sets, file sizes, SHA-256 values,
+  PDF signatures and locator fingerprints without external requests.
+- Table counts were checked against captured HTML. BBMB physical page 86 and
+  PPS-I physical pages 1-2 were visually inspected; the latter is scanned and
+  requires further visual/OCR extraction. PDF page counts were inspected locally.
+- Raw originals stay local and are ignored by Git. No runtime grid, measurement
+  fixture, forecast/policy model, API behavior or dashboard was changed by Step 3.
+
+## Phase 3 Step 4 node inventory — 2026-10-22
+
+- All 67 tests pass. New checks cover typography versus identity, alias conflicts,
+  Roman-suffix endpoint parsing, physical table-row positions, declared character
+  encodings, evidence hashes, complete selected-source coverage, separated site
+  identities and unverified operating parameters.
+- All 47 directory rows and 258 endpoint occurrences from 129 circuit source rows
+  are represented. All 46 transformation observations are retained, including
+  the unassigned SOW row. Eight node-level issues remain explicitly open.
+- `python -m scripts.build_delhi_node_inventory --check` regenerates matching
+  JSON/CSV without writing. Archive integrity checks precede extraction.
+- The 64 record IDs are not certified as 64 unique operating sites. The 50-node
+  goal remains unverified; edge and completeness validation remain later gates.
+- Runtime grid bytes, models, API and dashboard are unchanged by Step 4.

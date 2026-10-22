@@ -1,0 +1,134 @@
+{
+  "issues": [
+    {
+      "id": "NODE-TIMARPUR-VOLTAGE",
+      "node_ids": [
+        "ss-timarpur"
+      ],
+      "status": "open",
+      "reason": "220 kV heading conflicts with 20/33kV address text; no correction inferred.",
+      "evidence_ids": [
+        "ev-36c79a1e12acd0df"
+      ],
+      "resolution": null
+    },
+    {
+      "id": "IDENTITY-CANDIDATE-DWARKA",
+      "node_ids": [
+        "candidate-dwarka"
+      ],
+      "status": "open",
+      "reason": "Not merged with directory Dwarka Sector-05 or planned ISTS Dwarka.",
+      "evidence_ids": [
+        "ev-a6b93c1e9e558380"
+      ],
+      "resolution": null
+    },
+    {
+      "id": "IDENTITY-CANDIDATE-BALLABHGARH-400",
+      "node_ids": [
+        "candidate-ballabhgarh-400"
+      ],
+      "status": "open",
+      "reason": "Samaypur/PGCIL versus Ballabgarh/BBMB nomenclature must be reconciled before physical counting.",
+      "evidence_ids": [
+        "ev-de29ea7086b7d56b"
+      ],
+      "resolution": null
+    },
+    {
+      "id": "TRANSFORM-SRC-06-35",
+      "node_ids": [
+        "ss-south-of-wazirabad"
+      ],
+      "status": "open",
+      "reason": "Potential abbreviation, not independently confirmed. Preserve SRC-06 row 35 as unassigned evidence.",
+      "evidence_ids": [
+        "ev-e4d725c80d7115f8"
+      ],
+      "resolution": null
+    },
+    {
+      "id": "NODE-NARELA-SITES",
+      "node_ids": [
+        "ss-narela-dtl",
+        "ss-narela-bbmb"
+      ],
+      "status": "open",
+      "reason": "DTL and BBMB owner-qualified identities remain separate; distinct physical-site/co-location relationship is not established.",
+      "evidence_ids": [
+        "ev-8df4b68d6f6f696b"
+      ],
+      "resolution": null
+    },
+    {
+      "id": "NODE-WAZIRABAD-SITES",
+      "node_ids": [
+        "ss-wazirabad",
+        "ss-south-of-wazirabad"
+      ],
+      "status": "open",
+      "reason": "Do not merge Wazirabad with South of Wazirabad or infer retirement/renaming; independent site reconciliation required.",
+      "evidence_ids": [
+        "ev-777e235fa0d6c017"
+      ],
+      "resolution": null
+    },
+    {
+      "id": "NODE-BUDELLA-STATUS",
+      "node_ids": [
+        "ss-budella"
+      ],
+      "status": "open",
+      "reason": "Planning/spillover map reference and later circuit mentions do not establish a commissioning date or current online status.",
+      "evidence_ids": [
+        "ev-f018b07f241447fe"
+      ],
+      "resolution": null
+    },
+    {
+      "id": "NODE-PLANT-TERMINALS",
+      "node_ids": [
+        "plant-gtps",
+        "plant-pps1",
+        "plant-pps3-bawana",
+        "plant-jhajjar"
+      ],
+      "status": "open",
+      "reason": "Plant identities are distinct from substations; terminal wiring, current availability and some geographic/owner fields remain unknown.",
+      "evidence_ids": [
+        "ev-9d2571b5eb51c650"
+      ],
+      "resolution": null
+    }
+  ],
+  "excluded_context": [
+    {
+      "source_id": "SRC-01",
+      "physical_pages": [
+        29
+      ],
+      "names": [
+        "Bhiwani",
+        "Meerut",
+        "Agra",
+        "Kanpur"
+      ],
+      "reason": "Upstream 765 kV context beyond the direct Delhi EHV boundary; no nodes added."
+    },
+    {
+      "source_id": "SRC-01",
+      "physical_pages": [
+        130
+      ],
+      "names": [
+        "Tikri Khurd",
+        "Zakhira",
+        "Sarojini Nagar",
+        "Nehru Place",
+        "Bhartal"
+      ],
+      "reason": "Planning/spillover map labels without selected directory/current circuit-table corroboration. Not promoted to operating inventory assets."
+    }
+  ]
+}

@@ -164,10 +164,15 @@ separate simulation-eligibility flag once the required parameters are available.
 - [x] Canonical station/circuit sources selected; report-source access gaps recorded.
 - [x] Physical-asset counting and 50/500+ target treatment defined.
 - [x] Dated-reference versus current-operating-network claims separated.
-- [ ] Archive/revalidate source snapshots and resolve missing source routes (Step 3).
+- [x] Archive/revalidate selected source snapshots and record unresolved access gaps (Step 3); see the [source archive](../data/sources/delhi/README.md). Missing public routes remain explicit gaps, not completed source coverage.
 - [ ] Produce and reconcile all node and edge inventories (Steps 4-6).
 - [ ] Import or display the verified real network (Steps 7-8).
 
 The synthetic 12-node dataset, simulation, models and dashboard behavior are
 unchanged. No 50-node completeness, current operating status, electrical
 feasibility, or telemetry coverage has been established by this scope document.
+
+Step 4 follow-up: the [node inventory](../data/topology/delhi/README.md) now
+accounts for every selected DTL directory row and circuit endpoint occurrence.
+Its unresolved site identities are retained explicitly. Edge inventory and the
+combined completeness audit remain pending; the gate above is not yet complete.
