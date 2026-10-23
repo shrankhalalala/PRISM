@@ -11,6 +11,7 @@ from prism.data.stations import StationClient
 from prism.streaming.api import api as durable_api
 from prism.forecasting.real_api import api as real_forecast_api
 from prism.dispatch.api import api as surrogate_api
+from prism.explain.api import api as explanation_api
 from prism.grid.model import load_grid, grid_summary
 from prism.grid.presentation import reference_view
 from prism.forecasting import AutoregressiveForecaster, LSTMForecaster, persistence_forecast
@@ -38,6 +39,7 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.register_blueprint(durable_api)
     app.register_blueprint(real_forecast_api)
     app.register_blueprint(surrogate_api)
+    app.register_blueprint(explanation_api)
 
     app.extensions["gridwatch"] = app.config.get("GRIDWATCH_CLIENT") or GridWatchClient()
 
@@ -283,10 +285,6 @@ def create_app(test_config: dict | None = None) -> Flask:
         except (TypeError,ValueError) as error:
             return jsonify(error="invalid_request",message=str(error)),400
         return jsonify(policy="q_learning_phase2",action=action.value,state_index=state_index(observation),valid_actions=[item.value for item in valid],data_source="user_supplied",executable=False,assurance="Reviewed synthetic Phase 2 artifact; recommendation only, without power-flow validation.")
-
-    @app.post("/api/explain")
-    def planned_explanation():
-        return jsonify(error="not_implemented",phase=3,message="Explainability is scheduled for Phase 3."),501
 
     @app.get("/api/openapi.json")
     def openapi():

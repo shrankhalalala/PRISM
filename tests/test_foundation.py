@@ -144,7 +144,7 @@ class APITests(unittest.TestCase):
         self.assertEqual(dispatch.status_code,200)
         self.assertFalse(dispatch.json['executable'])
         self.assertIn(dispatch.json['action'],[action.value for action in Action])
-        self.assertEqual(self.client.post('/api/explain',json={}).status_code,501)
+        self.assertEqual(self.client.post('/api/explain',json={}).status_code,400)
 
     def test_phase2_forecast_and_scenario(self):
         forecast=self.client.get('/api/forecast?model=autoregressive&target=solar_mw&horizon=3')

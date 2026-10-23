@@ -1,0 +1,108 @@
+{
+  "attribution": {
+    "samples": 100,
+    "background_samples": 100,
+    "response_cache": false,
+    "cold_ms": 1401.0133750271052,
+    "warm_uncached_ms": {
+      "p50": 15.287374961189926,
+      "p95": 18.7775417114608,
+      "max": 21.69295900966972
+    },
+    "max_additivity_residual": 1.0068485378766923e-06,
+    "policy_disagreements": 0,
+    "scope": "actual surrogate prediction + 100-background interventional TreeSHAP + formatting; first call includes lazy model/explainer initialization"
+  },
+  "diagnosis": {
+    "cases": [
+      {
+        "hidden_fixture_source": "coal",
+        "source_not_passed_to_engine": true,
+        "top1": false,
+        "top3": true,
+        "elapsed_ms": 1.2642079964280128
+      },
+      {
+        "hidden_fixture_source": "gas",
+        "source_not_passed_to_engine": true,
+        "top1": false,
+        "top3": true,
+        "elapsed_ms": 0.96820795442909
+      },
+      {
+        "hidden_fixture_source": "solar",
+        "source_not_passed_to_engine": true,
+        "top1": false,
+        "top3": true,
+        "elapsed_ms": 0.8667919901199639
+      },
+      {
+        "hidden_fixture_source": "wind",
+        "source_not_passed_to_engine": true,
+        "top1": false,
+        "top3": true,
+        "elapsed_ms": 0.8559170528315008
+      },
+      {
+        "hidden_fixture_source": "sub_0",
+        "source_not_passed_to_engine": true,
+        "top1": true,
+        "top3": true,
+        "elapsed_ms": 1.2435830431059003
+      },
+      {
+        "hidden_fixture_source": "load_0",
+        "source_not_passed_to_engine": true,
+        "top1": false,
+        "top3": true,
+        "elapsed_ms": 0.8458330412395298
+      },
+      {
+        "hidden_fixture_source": "sub_1",
+        "source_not_passed_to_engine": true,
+        "top1": true,
+        "top3": true,
+        "elapsed_ms": 1.221542013809085
+      },
+      {
+        "hidden_fixture_source": "load_1",
+        "source_not_passed_to_engine": true,
+        "top1": false,
+        "top3": true,
+        "elapsed_ms": 0.8445829735137522
+      },
+      {
+        "hidden_fixture_source": "sub_2",
+        "source_not_passed_to_engine": true,
+        "top1": true,
+        "top3": true,
+        "elapsed_ms": 1.2288750149309635
+      },
+      {
+        "hidden_fixture_source": "load_2",
+        "source_not_passed_to_engine": true,
+        "top1": false,
+        "top3": true,
+        "elapsed_ms": 0.8812500163912773
+      },
+      {
+        "hidden_fixture_source": "sub_3",
+        "source_not_passed_to_engine": true,
+        "top1": true,
+        "top3": true,
+        "elapsed_ms": 1.2470829533413053
+      },
+      {
+        "hidden_fixture_source": "load_3",
+        "source_not_passed_to_engine": true,
+        "top1": false,
+        "top3": true,
+        "elapsed_ms": 0.8383750100620091
+      }
+    ],
+    "top1_rate": 0.3333333333333333,
+    "top3_rate": 1.0,
+    "fixture": "Synthetic graph-distance alarm fixtures with hidden source excluded from input. No physical propagation or real failure ground truth.",
+    "causal_accuracy_established": false
+  }
+}

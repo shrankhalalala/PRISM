@@ -291,3 +291,13 @@ operator agreement and dispatch effectiveness. Paired baseline/Q/surrogate
 simulation outcomes and all class support/confusion counts are retained.
 The same source/electrical/coverage/integration review responsibilities continue;
 real-grid eligibility and policy improvement remain unestablished.
+
+### Phase 3 Step 13: attribution and graph investigation — 2026-10-23
+
+Interventional TreeSHAP uses 100 training-only background samples and verifies
+additivity against the actual surrogate raw score. Warm uncached p95 is 18.78 ms;
+cold initialization is 1.40 s and remains separately reported. Graph investigation
+uses evidence paths, a declared timing heuristic and ten PageRank iterations with
+convergence residuals. Procedural fixtures do not establish real causal accuracy.
+All 104 tests pass. Existing four-member review responsibilities continue; no
+operator trust, physical propagation or live switching validation is claimed.

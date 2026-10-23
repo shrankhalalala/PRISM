@@ -601,17 +601,16 @@
     },
     "/api/explain": {
       "post": {
-        "summary": "Unavailable until a surrogate explanation model is configured",
+        "summary": "Actual surrogate TreeSHAP attribution with policy-agreement boundary",
         "responses": {
-          "501": {
-            "description": "Not implemented; future model/scenario payloads are not yet stable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
+          "200": {
+            "description": "100-background raw-score attribution"
+          },
+          "400": {
+            "description": "Invalid observation/mask"
+          },
+          "503": {
+            "description": "Explanation model unavailable"
           }
         }
       }
@@ -910,6 +909,19 @@
           },
           "503": {
             "description": "Model/dependencies unavailable"
+          }
+        }
+      }
+    },
+    "/api/diagnose": {
+      "post": {
+        "summary": "Topology/time investigation hypotheses, not verified physical causes",
+        "responses": {
+          "200": {
+            "description": "Ranked hypotheses with evidence paths and timing/convergence limits"
+          },
+          "400": {
+            "description": "Invalid alarms or dataset"
           }
         }
       }
