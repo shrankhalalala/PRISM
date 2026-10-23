@@ -1,0 +1,650 @@
+{
+  "features": [
+    "demand_mw",
+    "generation_mw",
+    "reserve_mw",
+    "battery_soc",
+    "renewable_trend",
+    "fault_present",
+    "imbalance_mw",
+    "generation_demand_ratio",
+    "reserve_demand_ratio",
+    "valid_action_mask"
+  ],
+  "actions": [
+    "hold",
+    "increase_generation",
+    "decrease_generation",
+    "charge_battery",
+    "discharge_battery",
+    "shed_load"
+  ],
+  "q_policy_sha256": "4a6c0c00cd6cb25793d11cb6d5269f8eb92a6e41771c958268a1e378ff704fee",
+  "model_sha256": "8a6d9168b03e535f8868e0bdcd69b8f66043933cbefddf695437e4433780babb",
+  "source": "synthetic_seed_42",
+  "seed": 42,
+  "max_depth": 5,
+  "rounds": 53,
+  "split": "63/13/14 complete chronological day episodes; seeds 5000..5089; no overlapping episodes/windows",
+  "threshold": 0.75,
+  "calibration": "uncalibrated softprob score; abstain below threshold",
+  "feature_limit": "Six observed fields plus imbalance, generation/demand ratio, reserve/demand ratio and supplied valid-action bitmask. Does not invent coal/gas available MW.",
+  "training_rows": 6048,
+  "validation_rows": 1248,
+  "test_rows": 1344,
+  "fidelity": {
+    "train": {
+      "agreement": 0.9978505291005291,
+      "accepted_fraction": 0.9877645502645502,
+      "accepted_agreement": 0.9998326079678608,
+      "action_support": {
+        "hold": 856,
+        "increase_generation": 1617,
+        "decrease_generation": 1051,
+        "charge_battery": 965,
+        "discharge_battery": 1498,
+        "shed_load": 61
+      },
+      "confusion_matrix": [
+        [
+          856,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1613,
+          2,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1049,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          961,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          1495,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          61
+        ]
+      ]
+    },
+    "validation": {
+      "agreement": 0.938301282051282,
+      "accepted_fraction": 0.9415064102564102,
+      "accepted_agreement": 0.9744680851063829,
+      "action_support": {
+        "hold": 197,
+        "increase_generation": 314,
+        "decrease_generation": 113,
+        "charge_battery": 376,
+        "discharge_battery": 243,
+        "shed_load": 5
+      },
+      "confusion_matrix": [
+        [
+          178,
+          6,
+          0,
+          0,
+          13,
+          0
+        ],
+        [
+          3,
+          297,
+          0,
+          10,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          112,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          0,
+          372,
+          0,
+          0
+        ],
+        [
+          0,
+          28,
+          6,
+          2,
+          207,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ]
+      ]
+    },
+    "test": {
+      "agreement": 0.9761904761904762,
+      "accepted_fraction": 0.9627976190476191,
+      "accepted_agreement": 0.9945904173106646,
+      "action_support": {
+        "hold": 216,
+        "increase_generation": 386,
+        "decrease_generation": 101,
+        "charge_battery": 335,
+        "discharge_battery": 294,
+        "shed_load": 12
+      },
+      "confusion_matrix": [
+        [
+          207,
+          2,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          386,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          101,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          0,
+          329,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12,
+          3,
+          278,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          11
+        ]
+      ]
+    }
+  },
+  "paired_test_episodes": [
+    {
+      "day": 76,
+      "seed": 5076,
+      "outcomes": {
+        "baseline": {
+          "return": -91.451071,
+          "unserved_mwh": 302.6325,
+          "curtailed_mwh": 303.82625,
+          "operating_cost": 596593.75,
+          "emissions_kg": 8135437.5,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -127.485537,
+          "unserved_mwh": 781.515,
+          "curtailed_mwh": 1097.577171,
+          "operating_cost": 618912.5,
+          "emissions_kg": 8362125.0,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -103.561754,
+          "unserved_mwh": 382.543958,
+          "curtailed_mwh": 1066.580505,
+          "operating_cost": 635250.0,
+          "emissions_kg": 8700750.0,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 77,
+      "seed": 5077,
+      "outcomes": {
+        "baseline": {
+          "return": -128.75589,
+          "unserved_mwh": 841.881071,
+          "curtailed_mwh": 861.872321,
+          "operating_cost": 676237.5,
+          "emissions_kg": 8352000.0,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -137.607037,
+          "unserved_mwh": 790.528571,
+          "curtailed_mwh": 2107.888242,
+          "operating_cost": 736206.25,
+          "emissions_kg": 9581062.5,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -135.463613,
+          "unserved_mwh": 737.496071,
+          "curtailed_mwh": 2221.105742,
+          "operating_cost": 743375.0,
+          "emissions_kg": 9736312.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 78,
+      "seed": 5078,
+      "outcomes": {
+        "baseline": {
+          "return": -80.576113,
+          "unserved_mwh": 145.306875,
+          "curtailed_mwh": 153.103125,
+          "operating_cost": 667250.0,
+          "emissions_kg": 8317125.0,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -85.547343,
+          "unserved_mwh": 31.25,
+          "curtailed_mwh": 1406.414671,
+          "operating_cost": 731962.5,
+          "emissions_kg": 9580500.0,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -85.4441,
+          "unserved_mwh": 30.47375,
+          "curtailed_mwh": 1415.638421,
+          "operating_cost": 731381.25,
+          "emissions_kg": 9608062.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 79,
+      "seed": 5079,
+      "outcomes": {
+        "baseline": {
+          "return": -105.499893,
+          "unserved_mwh": 487.63125,
+          "curtailed_mwh": 290.33125,
+          "operating_cost": 666850.0,
+          "emissions_kg": 9038250.0,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -128.820008,
+          "unserved_mwh": 278.4175,
+          "curtailed_mwh": 4205.985921,
+          "operating_cost": 854243.75,
+          "emissions_kg": 12808687.5,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -114.630082,
+          "unserved_mwh": 542.68375,
+          "curtailed_mwh": 1002.752171,
+          "operating_cost": 696643.75,
+          "emissions_kg": 9716062.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 80,
+      "seed": 5080,
+      "outcomes": {
+        "baseline": {
+          "return": -127.114382,
+          "unserved_mwh": 854.727857,
+          "curtailed_mwh": 848.835357,
+          "operating_cost": 647137.5,
+          "emissions_kg": 7990875.0,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -138.494923,
+          "unserved_mwh": 755.405357,
+          "curtailed_mwh": 2703.131278,
+          "operating_cost": 742293.75,
+          "emissions_kg": 9708750.0,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -136.715355,
+          "unserved_mwh": 739.270982,
+          "curtailed_mwh": 2587.571695,
+          "operating_cost": 737381.25,
+          "emissions_kg": 9628312.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 81,
+      "seed": 5081,
+      "outcomes": {
+        "baseline": {
+          "return": -84.165422,
+          "unserved_mwh": 147.74875,
+          "curtailed_mwh": 145.7325,
+          "operating_cost": 653906.25,
+          "emissions_kg": 8161875.0,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -91.807621,
+          "unserved_mwh": 19.455,
+          "curtailed_mwh": 1748.557171,
+          "operating_cost": 736018.75,
+          "emissions_kg": 9734062.5,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -89.41704,
+          "unserved_mwh": 3.6025,
+          "curtailed_mwh": 1562.604255,
+          "operating_cost": 727768.75,
+          "emissions_kg": 9594000.0,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 82,
+      "seed": 5082,
+      "outcomes": {
+        "baseline": {
+          "return": -97.25253,
+          "unserved_mwh": 351.65,
+          "curtailed_mwh": 304.27625,
+          "operating_cost": 618781.25,
+          "emissions_kg": 8388000.0,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -109.458752,
+          "unserved_mwh": 416.6575,
+          "curtailed_mwh": 1217.902171,
+          "operating_cost": 664681.25,
+          "emissions_kg": 9102937.5,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -106.970449,
+          "unserved_mwh": 383.055,
+          "curtailed_mwh": 1135.449255,
+          "operating_cost": 662918.75,
+          "emissions_kg": 9053437.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 83,
+      "seed": 5083,
+      "outcomes": {
+        "baseline": {
+          "return": -128.842846,
+          "unserved_mwh": 839.451785,
+          "curtailed_mwh": 885.344285,
+          "operating_cost": 659250.0,
+          "emissions_kg": 8236687.5,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -145.367538,
+          "unserved_mwh": 771.266785,
+          "curtailed_mwh": 3134.527706,
+          "operating_cost": 768118.75,
+          "emissions_kg": 10329750.0,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -136.499748,
+          "unserved_mwh": 728.574285,
+          "curtailed_mwh": 2371.73479,
+          "operating_cost": 735806.25,
+          "emissions_kg": 9682312.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 84,
+      "seed": 5084,
+      "outcomes": {
+        "baseline": {
+          "return": -85.436936,
+          "unserved_mwh": 145.430625,
+          "curtailed_mwh": 133.378125,
+          "operating_cost": 714025.0,
+          "emissions_kg": 8984250.0,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -94.442973,
+          "unserved_mwh": 25.0,
+          "curtailed_mwh": 1894.065921,
+          "operating_cost": 798981.25,
+          "emissions_kg": 10761750.0,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -92.995368,
+          "unserved_mwh": 0.0,
+          "curtailed_mwh": 1871.565921,
+          "operating_cost": 801375.0,
+          "emissions_kg": 10722937.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 85,
+      "seed": 5085,
+      "outcomes": {
+        "baseline": {
+          "return": -99.578519,
+          "unserved_mwh": 441.364375,
+          "curtailed_mwh": 327.420625,
+          "operating_cost": 667393.75,
+          "emissions_kg": 9109687.5,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -101.47251,
+          "unserved_mwh": 318.3725,
+          "curtailed_mwh": 1335.547171,
+          "operating_cost": 722412.5,
+          "emissions_kg": 10143562.5,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -110.466728,
+          "unserved_mwh": 544.64,
+          "curtailed_mwh": 958.064671,
+          "operating_cost": 694587.5,
+          "emissions_kg": 9612000.0,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 86,
+      "seed": 5086,
+      "outcomes": {
+        "baseline": {
+          "return": -132.812534,
+          "unserved_mwh": 898.536608,
+          "curtailed_mwh": 882.587858,
+          "operating_cost": 727075.0,
+          "emissions_kg": 9234562.5,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -178.168359,
+          "unserved_mwh": 971.672858,
+          "curtailed_mwh": 5539.342529,
+          "operating_cost": 935737.5,
+          "emissions_kg": 13406625.0,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -140.604993,
+          "unserved_mwh": 771.672858,
+          "curtailed_mwh": 2564.342529,
+          "operating_cost": 809831.25,
+          "emissions_kg": 10927687.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 87,
+      "seed": 5087,
+      "outcomes": {
+        "baseline": {
+          "return": -82.551013,
+          "unserved_mwh": 145.8875,
+          "curtailed_mwh": 143.22375,
+          "operating_cost": 684056.25,
+          "emissions_kg": 8412187.5,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -145.833575,
+          "unserved_mwh": 318.75,
+          "curtailed_mwh": 6170.854256,
+          "operating_cost": 948481.25,
+          "emissions_kg": 13756500.0,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -86.007349,
+          "unserved_mwh": 6.11625,
+          "curtailed_mwh": 1384.470506,
+          "operating_cost": 744537.5,
+          "emissions_kg": 9777375.0,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 88,
+      "seed": 5088,
+      "outcomes": {
+        "baseline": {
+          "return": -103.430841,
+          "unserved_mwh": 442.913125,
+          "curtailed_mwh": 344.860625,
+          "operating_cost": 649862.5,
+          "emissions_kg": 8858812.5,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -133.194982,
+          "unserved_mwh": 895.550625,
+          "curtailed_mwh": 814.191338,
+          "operating_cost": 654075.0,
+          "emissions_kg": 8902687.5,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -113.986779,
+          "unserved_mwh": 507.4075,
+          "curtailed_mwh": 1156.048213,
+          "operating_cost": 687237.5,
+          "emissions_kg": 9554062.5,
+          "constraint_violations": 0.0
+        }
+      }
+    },
+    {
+      "day": 89,
+      "seed": 5089,
+      "outcomes": {
+        "baseline": {
+          "return": -129.979889,
+          "unserved_mwh": 851.465444,
+          "curtailed_mwh": 837.170444,
+          "operating_cost": 667575.0,
+          "emissions_kg": 8264250.0,
+          "constraint_violations": 0.0
+        },
+        "q_learning": {
+          "return": -137.935419,
+          "unserved_mwh": 796.071069,
+          "curtailed_mwh": 1999.14449,
+          "operating_cost": 726381.25,
+          "emissions_kg": 9377437.5,
+          "constraint_violations": 0.0
+        },
+        "surrogate": {
+          "return": -139.125793,
+          "unserved_mwh": 735.217319,
+          "curtailed_mwh": 2531.365532,
+          "operating_cost": 752412.5,
+          "emissions_kg": 9924187.5,
+          "constraint_violations": 0.0
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 2.107382707996294,
+  "limitation": "Synthetic aggregate dynamics only; no real-grid electrical eligibility. Policy performance and surrogate fidelity are separate. Missing action support is not evidence for that class. No claim of improved Phase 2 Q-policy."
+}

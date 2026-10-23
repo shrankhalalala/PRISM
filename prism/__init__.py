@@ -10,6 +10,7 @@ from prism.data.gridwatch import GridWatchClient
 from prism.data.stations import StationClient
 from prism.streaming.api import api as durable_api
 from prism.forecasting.real_api import api as real_forecast_api
+from prism.dispatch.api import api as surrogate_api
 from prism.grid.model import load_grid, grid_summary
 from prism.grid.presentation import reference_view
 from prism.forecasting import AutoregressiveForecaster, LSTMForecaster, persistence_forecast
@@ -36,6 +37,7 @@ def create_app(test_config: dict | None = None) -> Flask:
 
     app.register_blueprint(durable_api)
     app.register_blueprint(real_forecast_api)
+    app.register_blueprint(surrogate_api)
 
     app.extensions["gridwatch"] = app.config.get("GRIDWATCH_CLIENT") or GridWatchClient()
 

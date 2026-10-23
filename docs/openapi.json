@@ -897,6 +897,22 @@
           }
         }
       }
+    },
+    "/api/dispatch/surrogate": {
+      "post": {
+        "summary": "Advisory six-action surrogate, Q-policy fidelity, masks and provenance",
+        "responses": {
+          "200": {
+            "description": "Advisory comparison, uncalibrated scores and abstention"
+          },
+          "400": {
+            "description": "Invalid observation or action mask"
+          },
+          "503": {
+            "description": "Model/dependencies unavailable"
+          }
+        }
+      }
     }
   },
   "components": {

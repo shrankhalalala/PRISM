@@ -281,3 +281,13 @@ is selected; LSTM underperformance and empirical interval coverage are retained.
 The same four source/electrical/coverage/integration review responsibilities apply.
 Ninety-eight tests pass, and real forecast/cache/stale-origin checks pass. No real
 solar/wind eligibility, complete two-year measurements or operational validity is claimed.
+
+### Phase 3 Step 12: six-action policy surrogate — 2026-10-23
+
+XGBoost now imitates the frozen Q-policy with explicit ten-feature semantics,
+whole-episode chronological separation, validation selection, six output classes,
+masking and score-based abstention. Held-out fidelity is 97.62%, distinct from
+operator agreement and dispatch effectiveness. Paired baseline/Q/surrogate
+simulation outcomes and all class support/confusion counts are retained.
+The same source/electrical/coverage/integration review responsibilities continue;
+real-grid eligibility and policy improvement remain unestablished.

@@ -1,0 +1,32 @@
+{
+  "features": [
+    "demand_mw",
+    "generation_mw",
+    "reserve_mw",
+    "battery_soc",
+    "renewable_trend",
+    "fault_present",
+    "imbalance_mw",
+    "generation_demand_ratio",
+    "reserve_demand_ratio",
+    "valid_action_mask"
+  ],
+  "actions": [
+    "hold",
+    "increase_generation",
+    "decrease_generation",
+    "charge_battery",
+    "discharge_battery",
+    "shed_load"
+  ],
+  "q_policy_sha256": "4a6c0c00cd6cb25793d11cb6d5269f8eb92a6e41771c958268a1e378ff704fee",
+  "model_sha256": "8a6d9168b03e535f8868e0bdcd69b8f66043933cbefddf695437e4433780babb",
+  "source": "synthetic_seed_42",
+  "seed": 42,
+  "max_depth": 5,
+  "rounds": 53,
+  "split": "63/13/14 complete chronological day episodes; seeds 5000..5089; no overlapping episodes/windows",
+  "threshold": 0.75,
+  "calibration": "uncalibrated softprob score; abstain below threshold",
+  "feature_limit": "Six observed fields plus imbalance, generation/demand ratio, reserve/demand ratio and supplied valid-action bitmask. Does not invent coal/gas available MW."
+}
