@@ -269,3 +269,15 @@ retention and real station history. The labeled 200-event synthetic benchmark
 measures 543.7 events/s and 2.69 ms p95 locally; this is not upstream performance.
 The same source/electrical/mapping/integration review responsibilities continue.
 Ninety-five tests pass. Long-term uptime and deployment durability remain unmeasured.
+
+### Phase 3 Step 11: audited real demand forecasting — 2026-10-23
+
+The 730-day requested range yields 720 captured days and 203,870 valid five-minute
+observations after bounded retries. Hourly means preserve 555 missing/ineligible
+hours; PostgreSQL verifies all 17,520 calendar rows. Models cannot bridge timestamp
+gaps. Frozen 24-hour forecasts use 70/15/15 calendar splits, training-only LSTM
+normalization, validation selection and independent test origins. Autoregression
+is selected; LSTM underperformance and empirical interval coverage are retained.
+The same four source/electrical/coverage/integration review responsibilities apply.
+Ninety-eight tests pass, and real forecast/cache/stale-origin checks pass. No real
+solar/wind eligibility, complete two-year measurements or operational validity is claimed.

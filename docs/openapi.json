@@ -881,6 +881,22 @@
           }
         ]
       }
+    },
+    "/api/forecast/real": {
+      "get": {
+        "summary": "Audited real Delhi demand 24-hour forecasts with explicit age and source eligibility",
+        "responses": {
+          "200": {
+            "description": "24-hour historical/recent preview with provenance"
+          },
+          "422": {
+            "description": "Real renewable history unavailable"
+          },
+          "503": {
+            "description": "History/model artifact or complete input unavailable"
+          }
+        }
+      }
     }
   },
   "components": {

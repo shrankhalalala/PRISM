@@ -1,0 +1,33 @@
+{
+  "source": "delhi_sldc",
+  "target": "demand_mw",
+  "geography": "Delhi system aggregate",
+  "source_url": "https://delhisldc.org/api/load-curve-discom",
+  "timezone_assumption": "Asia/Kolkata for FORDATE/TIMESLOT",
+  "manifest_sha256": "1257332e3945b19905196289ed0bccce5c532fcf192f610975fdd1375cb781f3",
+  "requested_start": "2024-10-22",
+  "requested_end": "2026-10-21",
+  "requested_days": 730,
+  "acquisition_status": "captured_with_gaps",
+  "day_statuses": {
+    "captured": 720,
+    "failed": 10
+  },
+  "raw_rows": 203870,
+  "valid_unique_5min_observations": 203870,
+  "invalid_rows": 0,
+  "conflicting_timestamps": 0,
+  "expected_hours": 17520,
+  "eligible_hours": 16965,
+  "missing_hours": 555,
+  "minimum_samples_per_hour": 10,
+  "expected_samples_per_hour": 12,
+  "imputation": false,
+  "renewable_history": {
+    "solar_mw": "unavailable: no audited two-year source",
+    "wind_mw": "unavailable: no audited two-year source"
+  },
+  "limitation": "Two-year requested range does not mean complete measurements. Hourly means require at least 10 distinct five-minute observations; gaps remain missing.",
+  "hourly_sha256": "7f23141a127b95eb40724a441d0bf74d982fcd40b419a80245b2f6dccdaab556",
+  "postgres_verified_rows": 17520
+}

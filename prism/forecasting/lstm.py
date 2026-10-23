@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from prism.forecasting.models import _validated_series
+from prism.forecasting.models import _validated_series, contiguous_endpoints, require_recent_window
 
 
 @dataclass(frozen=True)
@@ -70,7 +70,8 @@ class LSTMForecaster:
         self.mean = float(values.mean())
         self.scale = float(values.std()) or 1.0
         scaled = (values - self.mean) / self.scale
-        starts = np.arange(self.config.window, len(scaled))
+        starts = contiguous_endpoints(frame, self.config.window)
+        if not len(starts):raise ValueError('No contiguous training windows')
         rng = np.random.default_rng(self.config.seed)
         self.loss_history = []
         for _ in range(self.config.epochs):
@@ -147,6 +148,7 @@ class LSTMForecaster:
         values = _validated_series(history, self.target).tolist()
         if len(values) < self.config.window:
             raise ValueError(f"At least {self.config.window} history observations are required")
+        require_recent_window(history, self.config.window)
         predictions: list[float] = []
         for _ in range(horizon):
             sequence = (np.asarray(values[-self.config.window :]) - self.mean) / self.scale

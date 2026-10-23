@@ -24,6 +24,26 @@ def _validated_series(frame: pd.DataFrame, target: str) -> np.ndarray:
     return values
 
 
+
+def contiguous_endpoints(frame: pd.DataFrame, window: int, include_target: bool = True) -> np.ndarray:
+    """Return positional windows; timestamp gaps may never become adjacent samples."""
+    end = len(frame) if include_target else len(frame)+1
+    starts = np.arange(window, end)
+    if 'timestamp' not in frame:
+        return starts
+    times = pd.to_datetime(frame['timestamp'], utc=True, errors='raise')
+    if times.isna().any() or times.duplicated().any() or not times.is_monotonic_increasing:
+        raise ValueError('Timestamps must be unique and ordered')
+    return np.asarray([i for i in starts if all(
+        (times.iloc[j]-times.iloc[j-1]) == pd.Timedelta(hours=1)
+        for j in range(i-window+1, i+1 if include_target else i))], dtype=int)
+
+
+def require_recent_window(frame: pd.DataFrame, window: int) -> None:
+    if len(frame) < window or len(frame) not in contiguous_endpoints(frame, window, False):
+        raise ValueError('Latest input window is incomplete or contains timestamp gaps')
+
+
 def persistence_forecast(frame: pd.DataFrame, target: str, horizon: int = 1) -> list[float]:
     """Repeat the latest observation as a transparent benchmark forecast."""
 
@@ -52,10 +72,10 @@ class AutoregressiveForecaster:
         values = _validated_series(frame, target)
         if len(values) <= self.lags:
             raise ValueError(f"At least {self.lags + 1} observations are required")
-        features = np.asarray(
-            [values[index - self.lags : index] for index in range(self.lags, len(values))]
-        )
-        response = values[self.lags :]
+        endpoints = contiguous_endpoints(frame, self.lags)
+        if not len(endpoints):raise ValueError('No contiguous training windows')
+        features = np.asarray([values[index-self.lags:index] for index in endpoints])
+        response = values[endpoints]
         design = np.column_stack([np.ones(len(features)), features])
         penalty = np.eye(design.shape[1]) * self.ridge
         penalty[0, 0] = 0.0
@@ -71,6 +91,7 @@ class AutoregressiveForecaster:
         values = _validated_series(history, self.target).tolist()
         if len(values) < self.lags:
             raise ValueError(f"At least {self.lags} history observations are required")
+        require_recent_window(history, self.lags)
         predictions: list[float] = []
         for _ in range(horizon):
             features = np.asarray([1.0, *values[-self.lags :]])
