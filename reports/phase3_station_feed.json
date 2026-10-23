@@ -1,0 +1,1318 @@
+{
+  "readings": [
+    {
+      "asset_id": "ss-btps",
+      "source_label": "Badarpur",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 0.0,
+      "mvar": 0.0,
+      "voltage_kv": 228.940933,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-17b13bdbad4c581f",
+        "ev-33af20ada601bd9f",
+        "ev-37e9c6970c39198c",
+        "ev-47952d16303db487",
+        "ev-5604308d3c52fb6a",
+        "ev-abe2db217e839234",
+        "ev-e13e85af6cc5202b",
+        "ev-f72bf5635c08110c"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-bamnauli",
+      "source_label": "Bamnauli",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 333.419647,
+      "mvar": -45.6870384,
+      "voltage_kv": 409.631317,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-08dd4d091b33729c",
+        "ev-1fd9b5cf0deb3af9",
+        "ev-2d2cdefd8328a782",
+        "ev-33dd77894aa32a5b",
+        "ev-3cca835906439226",
+        "ev-6cd78cfcfdd650b7",
+        "ev-6e8488996cfdde61",
+        "ev-9901d7f1569a3da1",
+        "ev-a3edab3e48977252",
+        "ev-b290e2bf6639e1fc",
+        "ev-b8ff18d723e130b4",
+        "ev-c3456f9158025a40",
+        "ev-d0b3611827bdb568",
+        "ev-d1a288e0b0f3784f",
+        "ev-d7ec62c935d8a02f",
+        "ev-e0074c1591a07f57"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-bawana-dtl",
+      "source_label": "Bawana",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 822.018188,
+      "mvar": -66.7826767,
+      "voltage_kv": 410.252258,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-0603a7ea735b3257",
+        "ev-0ed7688e019822df",
+        "ev-10c122cb0bed9c0e",
+        "ev-579799555df5e6e1",
+        "ev-5e0012b038bab359",
+        "ev-61a9766e796d9b40",
+        "ev-7d2c28d094fa0724",
+        "ev-83eb636eae351d46",
+        "ev-88d8265700e0d576",
+        "ev-99351055fc1f8d6f",
+        "ev-a2e362d13eb9edbf",
+        "ev-ae936b8c0858aa1e",
+        "ev-c6e817ad3e027a12",
+        "ev-caa185561559aeed",
+        "ev-d4a59a5512b79edf",
+        "ev-d72a5dfe0e117465",
+        "ev-e24c5c1748f4b3a9"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "plant-pps3-bawana",
+      "source_label": "CCGT-Bawana",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 264.983887,
+      "mvar": -25.8513584,
+      "voltage_kv": 411.595764,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-94dec863439961d7"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-dev-nagar",
+      "source_label": "DEV NAGAR",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 104.1871866379,
+      "mvar": 0.63798936049,
+      "voltage_kv": 230.619919,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-a224bc4480d4d968",
+        "ev-a6745d35449eb80a"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-dial",
+      "source_label": "DIAL",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 64.6804123,
+      "mvar": 1.16243052,
+      "voltage_kv": 227.904968,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19ba1ea96516bfca",
+        "ev-37a98749fc4d985a",
+        "ev-42daf430e0457758",
+        "ev-49442176cf7f8767",
+        "ev-8da226c3fdf0b958",
+        "ev-cf7966c2c8b5dac7"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-dsidc-bawana",
+      "source_label": "DSIDC",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 230.177612,
+      "mvar": 5.14651108,
+      "voltage_kv": 228.329803,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-4229d73e3cfb7958",
+        "ev-52605cdfe9637fe5",
+        "ev-6e07e34523c64920",
+        "ev-9e09d50236ecd42e",
+        "ev-c984e0c58de09788",
+        "ev-f66e1f40269b49ad"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-dwarka-sector-5",
+      "source_label": "Dwarka",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 404.799988,
+      "mvar": -52.8727264,
+      "voltage_kv": 225.866776,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-14387d564064d2ad",
+        "ev-28885eab078b49a7",
+        "ev-2eaa628c51f6b59f",
+        "ev-300515a5763722c1",
+        "ev-5d67b605805f1f12",
+        "ev-844817228f558f3e",
+        "ev-920832daf61871e1",
+        "ev-94c552285471c08b",
+        "ev-a2dcefcc09f77bed",
+        "ev-a6b93c1e9e558380",
+        "ev-a87700041fe11c91",
+        "ev-f34460ec7e539515",
+        "ev-f9d4bc47af0f810e",
+        "identity-ev-1126767e1eb99fef937b",
+        "identity-ev-6fa7e9bdfddf6fe618bb",
+        "identity-ev-7a1954f6506302a932ea",
+        "identity-ev-86592e28cefc444b86a1"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-gazipur",
+      "source_label": "Gazipur",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 79.6661835,
+      "mvar": 5.37200356,
+      "voltage_kv": 220.090652,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-27c8dc0f30430a54",
+        "ev-682832c012fffc72",
+        "ev-8770212a6780e86b",
+        "ev-9d8c17b04854cd59",
+        "ev-f9d530e890257afc"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-geeta-colony",
+      "source_label": "Geeta Colony",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 95.0976105,
+      "mvar": 8.71004295,
+      "voltage_kv": 219.749588,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-130a8b731fbb25e7",
+        "ev-4ef90c15c78c3a20",
+        "ev-646a12801676be4d",
+        "ev-7b5e8fd4013b6dad",
+        "ev-8384245c41858b1a",
+        "ev-b7cb9185355447bc"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-gopalpur",
+      "source_label": "GopalPur",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 111.561775,
+      "mvar": -22.3850155,
+      "voltage_kv": 223.182968,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-3996b81163fde1d8",
+        "ev-70bfd0f500cb0414",
+        "ev-75c9a13fc7cf7722",
+        "ev-7f350ceeba40626f",
+        "ev-8341ee4dd32f9208",
+        "ev-8f6aea40777a95f2",
+        "ev-a557380fba49b327",
+        "ev-b502e8ddb2ae39ae"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-electric-lane",
+      "source_label": "HCM Lane",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 60.0,
+      "mvar": 13.1632328,
+      "voltage_kv": 130.9599,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-435b58d21ee4071c",
+        "ev-9ccfa939de42d6e3",
+        "ev-d2db3ed739e332a4",
+        "ev-f68b2337318add3b"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-harsh-vihar",
+      "source_label": "Harsh Vihar",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 328.926697,
+      "mvar": 5.09375572,
+      "voltage_kv": 402.306976,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-3f13747cd89c63fe",
+        "ev-6cb874c0f2889a37",
+        "ev-80f037456429815d",
+        "ev-914397fcfebb32c9",
+        "ev-f1ac2c19d721ad76"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-indraprastha",
+      "source_label": "IP Power",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 116.20813,
+      "mvar": 9.419214249,
+      "voltage_kv": 208.285294,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-2ea7044952a66c5f",
+        "ev-6f553a5f2b398d08",
+        "ev-7c5c0aed51f948a5",
+        "ev-853b2646c19cae1c",
+        "ev-966958be8b6bb214",
+        "ev-974375866a0764a4",
+        "ev-ac48fec596c7be0b",
+        "ev-d3eff1b3c1190c2e"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-kanjhawala",
+      "source_label": "Kanjhawla",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 89.7668228,
+      "mvar": -6.65207124,
+      "voltage_kv": 226.738129,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-3086815a0f4cbe7c",
+        "ev-587f7c57ce08e0d3",
+        "ev-9297d69eda442148",
+        "ev-a69540891715e3d9",
+        "ev-a9e3b4019b4e86b6",
+        "ev-ffb1dac1f4484b89"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-kashmere-gate",
+      "source_label": "Kashmiri Gate",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 79.4748993,
+      "mvar": 8.815312142,
+      "voltage_kv": 224.564163,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-027e1fe35720936c",
+        "ev-19b8ec7717dfcfc6",
+        "ev-acb0171617dc5d8a",
+        "ev-c479d46916588704",
+        "ev-edfad2f7bfd63bfa"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-lodhi-road",
+      "source_label": "Lodhi Rd",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 137.768524,
+      "mvar": 1.16243052,
+      "voltage_kv": 229.852005,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-361ba013b945638f",
+        "ev-7c05315c978b8a96",
+        "ev-c41b819608510f27",
+        "ev-c499a218c03507f2"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-maharani-bagh",
+      "source_label": "Maharanibagh",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 763.0,
+      "mvar": -327.0,
+      "voltage_kv": 229.0,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-025f76b4df936e22",
+        "ev-14d054b9fda05adf",
+        "ev-19b8ec7717dfcfc6",
+        "ev-1df5e25dc0b5f47d",
+        "ev-1e6c97ac9c844f74",
+        "ev-2514fc8316cbb973",
+        "ev-261cbc5cca3d5d78",
+        "ev-4c483ab9d4638934",
+        "ev-65ae568cc095b532",
+        "ev-68f3e0ea26e46ce4",
+        "ev-ae984cbf602e1ac3",
+        "ev-af82a2a6fe13b025",
+        "ev-b2736f7a16a0f003",
+        "ev-c67ddcd7067b2f0f",
+        "ev-c889215bc665cb5d",
+        "ev-d7ef6839e14597cf",
+        "ev-dd19d6cc839b8272",
+        "ev-e41bbf56f1cd960d",
+        "ev-e6abd65e4a63bc74",
+        "ev-fce5ebd803d686ad"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-mandola-pgcil",
+      "source_label": "Mandaula",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 892.54692,
+      "mvar": 13.78161073,
+      "voltage_kv": 409.431732,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19a380d4f6a4d5e9",
+        "ev-19b8ec7717dfcfc6",
+        "ev-219e48a7a09d5a52",
+        "ev-53aa2a925d8823cb",
+        "ev-5f3ee6e30855c9a9",
+        "ev-9faf7fee47090379",
+        "ev-b3ebca519488fec6",
+        "ev-beaf562b10cd511d",
+        "ev-c2f147fd2a7d4914",
+        "ev-c41828eb385c8d0f",
+        "ev-c69a58c92a2319c0",
+        "ev-da53ee57afb6f6e9"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-masjid-moth",
+      "source_label": "Masjid Moth",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 44.5371437,
+      "mvar": 0.0,
+      "voltage_kv": 0.0,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-26e6275d4bdeab66",
+        "ev-47fed3d08240b7ec",
+        "ev-c1646b94132c8fc9",
+        "ev-ef0435c27c5c5362"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-mehrauli",
+      "source_label": "Mehrauli",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 230.416519,
+      "mvar": 0.0,
+      "voltage_kv": 0.0,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-50e117299daf9063",
+        "ev-7e7f2fe206069cb0",
+        "ev-9420dba9f3c944a0",
+        "ev-a6701530a9b14cb2",
+        "ev-a8ebddf5ab5f300d",
+        "ev-a8ed48a9c302e138",
+        "ev-ab8864bd8d0f3e07",
+        "ev-f4d81811f5f4358b"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-tikri-kalan",
+      "source_label": "Mundka",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 429.822388,
+      "mvar": 2.17092597,
+      "voltage_kv": 412.231842,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-28d9e176aa06ba05",
+        "ev-29afdc38c5cf76b6",
+        "ev-3460388203c6fbb4",
+        "ev-51ad7611f01f897d",
+        "ev-7203763b809ff051",
+        "ev-b1fa809a36d8076c",
+        "ev-b22e7777f3890d64",
+        "ev-bc686324794d9978",
+        "ev-d4398c2808624385",
+        "ev-d488f43f8ec55471",
+        "ev-ddccf73f4ddb2572"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-najafgarh",
+      "source_label": "Najafgarh",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 157.704529,
+      "mvar": 14.25225759,
+      "voltage_kv": 225.57312,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-00d2aa8e8e111ee6",
+        "ev-10db9d806e692bcb",
+        "ev-4e38b5ecbb5ef3b9",
+        "ev-6356edaa7ba7b852",
+        "ev-97666fb8a3b912a4",
+        "ev-e39db4ba6bd77254"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-naraina",
+      "source_label": "Naraina",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 88.6788025,
+      "mvar": 13.57779145,
+      "voltage_kv": 226.803741,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-0edf897595f28b50",
+        "ev-482b714351a322c1",
+        "ev-5823a5257507e6db",
+        "ev-690c706a5d7a5515",
+        "ev-bd41d3dbf53bb4d3"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-narela-dtl",
+      "source_label": "Narela",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 165.988556,
+      "mvar": 9.824071893,
+      "voltage_kv": 222.660782,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-1193ce7156ab9959",
+        "ev-1a03afad4651608d",
+        "ev-2f8556fd28d4b2be",
+        "ev-6927566e78b0d4f3",
+        "ev-9b1c41754a7cf977",
+        "ev-fd59a623dd943b4f"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-okhla",
+      "source_label": "Okhla",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 135.0318805,
+      "mvar": 7.86852193,
+      "voltage_kv": 229.163834,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-2936a9f6d5c247b0",
+        "ev-746e048ddffd934b",
+        "ev-9c8a864a5e9a40c0",
+        "ev-c07f51b9843ad0e9",
+        "ev-e4cbe43df117e0fa",
+        "ev-f467f05bcc6e07c3"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-pappankalan-1",
+      "source_label": "Papankalan-1",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 126.967598,
+      "mvar": 0.0,
+      "voltage_kv": 228.464798,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-2611e4e770022c93",
+        "ev-2aa7ed9975c7a3e0",
+        "ev-33411e00fe5e435e",
+        "ev-c76a106bcbcbe0b3",
+        "ev-ce61fc2cfc83f07e",
+        "ev-d33989a87bf44650"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-pappankalan-2",
+      "source_label": "Papankalan-2",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 192.274353,
+      "mvar": 1.16243052,
+      "voltage_kv": 232.102097,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-0b053f99c66f6a4c",
+        "ev-19b8ec7717dfcfc6",
+        "ev-270c8d6eb7f235cc",
+        "ev-38215cb496cf62a2",
+        "ev-45cdf6fdb495ca90",
+        "ev-72b5e05d699659e2",
+        "ev-da9a6f1032958f64"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-pappankalan-3",
+      "source_label": "Papankalan-3",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 114.9746285,
+      "mvar": -27.3197279,
+      "voltage_kv": 225.787308,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-1efac08f4b163a36",
+        "ev-32c40fa93aad3f79",
+        "ev-5e21c3f970236328",
+        "ev-c50afb19fa8940b1",
+        "ev-db72943f59742521",
+        "ev-fe1e2a6b50fab211"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-park-street",
+      "source_label": "Park Street",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 106.844498,
+      "mvar": -4.99162293,
+      "voltage_kv": 229.021103,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-0f6fe87db6e9b717",
+        "ev-1165c0221b8ab8d5",
+        "ev-16c651c821b537a7",
+        "ev-a1d2d3420d3865d0",
+        "ev-ebfeac5a7d53c129"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-patparganj",
+      "source_label": "Patparganj",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 138.607605,
+      "mvar": -13.26370739,
+      "voltage_kv": 227.697388,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-1c7a013b70264484",
+        "ev-4ac3052ac679c895",
+        "ev-4da0fc3a94386d92",
+        "ev-59c5d7db1d302f31",
+        "ev-6071a8b96e41cd25",
+        "ev-8c7719c7b11be7c9",
+        "ev-c5a117e33eebafeb",
+        "ev-fb7dc4fe8993cb12",
+        "ev-fc5117ffaaf92310"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-peeragarhi",
+      "source_label": "Peera Garhi",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 105.249184,
+      "mvar": 2.124000074,
+      "voltage_kv": 223.766006,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-1344e77a8aa58664",
+        "ev-14ffeef9f07e6dd8",
+        "ev-46eb4964613c35b0",
+        "ev-773a63976d597a2a",
+        "ev-a5a3cb1c2993033d",
+        "ev-e5c13bef319d7e0e"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-pragati",
+      "source_label": "Pragati",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 68.478302,
+      "mvar": -9.79745388,
+      "voltage_kv": 219.08075,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-08d9cb9a2b77f2cb",
+        "ev-25199cd89c2f3418",
+        "ev-529cbb65ceb3a21a",
+        "ev-5fbdc7c2cb5a47ed",
+        "ev-6697b280f94c2199",
+        "ev-6f2a6cb93ba9b30e",
+        "ev-8c92900afd74f0d8",
+        "ev-a1e7fca3677a3532",
+        "ev-b52d6d93a1676475",
+        "ev-e0e1748875c301c5"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-preet-vihar",
+      "source_label": "Preet Vihar",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 45.9608346,
+      "mvar": 4.37919998,
+      "voltage_kv": 222.666122,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-8b4a6f970328d673",
+        "ev-99024d69d919f6f8",
+        "ev-c40a2f9a6a7fa876",
+        "ev-d1097ba3b446646a",
+        "ev-d1910a1d0a56f7ba",
+        "ev-dce536f0d417ecea"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-rajghat",
+      "source_label": "Rajghat",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 38.7345848,
+      "mvar": 0.0,
+      "voltage_kv": 225.329697,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-17131d9743f733ff",
+        "ev-19b8ec7717dfcfc6",
+        "ev-2999c52d7354029d",
+        "ev-538306a92b45cf45",
+        "ev-c89aa2f3fb193062"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-ridge-valley",
+      "source_label": "Ridge Valley",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 74.2258987,
+      "mvar": 0.774789036,
+      "voltage_kv": 228.71109,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-5ca30f24d088d8dc",
+        "ev-66b6ca8fd8979f01",
+        "ev-9c3470e2538e0290",
+        "ev-c0b58bc27fddab96",
+        "ev-f8c44657909367bb"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-rk-puram",
+      "source_label": "Rkpuram",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 69.1913796,
+      "mvar": -9.80225727,
+      "voltage_kv": 230.817703,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-24294c6c55b70a95",
+        "ev-2d5f682e363efde2",
+        "ev-36d9f2fe7297e896",
+        "ev-3dae4fe840aeb160",
+        "ev-46626302cbc6b870",
+        "ev-bc8a114c24d3e180",
+        "ev-d953beb036c6e5c3",
+        "ev-e90c27a429a073f2",
+        "ev-e9639407e7045036",
+        "ev-f1a26bf804d820a2"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-rohini-2",
+      "source_label": "Rohini-II",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 113.784973,
+      "mvar": 60.4805984,
+      "voltage_kv": 233.594101,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-3b42c8b4c613c2ad",
+        "ev-889f47102dfc94e2",
+        "ev-8f98f4006cf738b5",
+        "ev-f985afe133ab46bc"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-rohini-1",
+      "source_label": "Rohini1",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 142.836502,
+      "mvar": -4.52612972,
+      "voltage_kv": 227.896439,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-204959a04c93cc33",
+        "ev-32191964a3538199",
+        "ev-682b558e4a2fce6e",
+        "ev-80a11d9a2696ca64",
+        "ev-faed4549c187a491",
+        "ev-fed9b58653fcbab3"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-sgtn",
+      "source_label": "SGT Nagar",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 125.809479,
+      "mvar": -16.9031086,
+      "voltage_kv": 228.038284,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-2669c58cdf8807cd",
+        "ev-a6ceb4074f672818",
+        "ev-d6c268a44b372d76",
+        "ev-f85075d8feb54be6"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-sarita-vihar",
+      "source_label": "Sarita Vihar",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 91.4766388,
+      "mvar": 3.11693435,
+      "voltage_kv": 247.278778,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-0edb396ca6fc4b85",
+        "ev-2ebf860e304e4e4e",
+        "ev-7867bddead4b2fb0",
+        "ev-b02e4211a3d626d5",
+        "ev-de591d93552e0b15",
+        "ev-f693f4cce8f11872"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-shalimar-bagh",
+      "source_label": "Shalimar Bagh",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 113.772408,
+      "mvar": 5.9924736,
+      "voltage_kv": 227.716873,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-0238ccbdbd92f92b",
+        "ev-09ce499f0d655ef7",
+        "ev-1c9b85d0017c74e7",
+        "ev-25ae2b998376dbd2",
+        "ev-4bc2177fedb62661",
+        "ev-6467aaf0fbcb1866",
+        "ev-69746fc98fd42085",
+        "ev-8ef76f76d0624a3d",
+        "ev-a6ceb4074f672818",
+        "ev-cfdb0619e48d3c04",
+        "ev-f0c36a101b766ac7"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-subzi-mandi",
+      "source_label": "Subzi Mandi",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 76.2463379,
+      "mvar": -3.74679327,
+      "voltage_kv": 224.39772,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-4bf5173e7cb856b0",
+        "ev-572edbc3ff0804b7",
+        "ev-b4844674dc37f63c",
+        "ev-d219f917bda73b81"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-timarpur",
+      "source_label": "TIMARPUR",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 21.6638832,
+      "mvar": -0.307085991,
+      "voltage_kv": 232.204483,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-36c79a1e12acd0df"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-trauma-centre",
+      "source_label": "Trauma centre",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 61.3042984,
+      "mvar": 8.48895311,
+      "voltage_kv": 230.414169,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-11d7ce283315dcdc",
+        "ev-29ce3a3c1b5ea5fa",
+        "ev-2e1b9ee7127e529a",
+        "ev-36b8e67ecb5bf173",
+        "ev-a0c35b0c5a28acc6",
+        "ev-c3f9abd69c1bd877",
+        "ev-c93f2e86b18a94eb"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-tughlakabad",
+      "source_label": "Tuglakabad",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 585.018174,
+      "mvar": -233.8181725,
+      "voltage_kv": 229.164932,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-04872cd2f086f2d4",
+        "ev-19b8ec7717dfcfc6",
+        "ev-1ec00d06cb5ce18d",
+        "ev-5390bc92f5045c12",
+        "ev-665df482b3ef5f52",
+        "ev-86d74dad897f4786",
+        "ev-8b63f045341a36e2",
+        "ev-96f2d763a7e522ae",
+        "ev-a03aa2098e948781",
+        "ev-a704b9e2ecc82c4c",
+        "ev-af82a2a6fe13b025",
+        "ev-b6b32e1db765028f",
+        "ev-bb86578f8355d5ea",
+        "ev-d14af5b8bc29e5ed",
+        "ev-eb531dd2fc18d25b",
+        "ev-f8231e29ef8b5260"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-vasant-kunj",
+      "source_label": "Vasant Kunj",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 44.9939003,
+      "mvar": -0.42720675,
+      "voltage_kv": 227.894379,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-1c781aa8189a0bd2",
+        "ev-541547f7c41134e4",
+        "ev-57e67af452831512",
+        "ev-cf0b798ac7987c50",
+        "ev-eaa82107185351bf",
+        "ev-f73e45b3496fd237"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-south-of-wazirabad",
+      "source_label": "Wazirabad",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 173.05983,
+      "mvar": 8.447231173,
+      "voltage_kv": 223.330994,
+      "source_status_raw": 1,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-22822dfe5f820e80",
+        "ev-2536ca90fc60347f",
+        "ev-2823136be9d3a1fe",
+        "ev-2d7f5effdcb711c1",
+        "ev-3dfb71002fac1f54",
+        "ev-5c50e85fa6038c07",
+        "ev-777e235fa0d6c017",
+        "ev-7d40b8d87a00e314",
+        "ev-7f32a8ae8dc78cb1",
+        "ev-99369f800d9dfc2e",
+        "ev-c6d1a710b48da518",
+        "ev-ed25d57387635c41",
+        "identity-ev-5d39db69aa83df6c3c90",
+        "identity-ev-9301aa1a0e13f329ce7a",
+        "identity-ev-ec57c9bcb729fcea921e"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    },
+    {
+      "asset_id": "ss-wazirpur",
+      "source_label": "Wazirpur",
+      "observed_at": "2026-10-23T09:14:58+00:00",
+      "mw": 99.8943939,
+      "mvar": -10.52290166,
+      "voltage_kv": 227.217926,
+      "source_status_raw": 0,
+      "measurement_role": "station_loading",
+      "source_url": "https://delhisldc.org/api/grid-loading",
+      "mapping_evidence": [
+        "ev-043dc02e7e25b4ef",
+        "ev-356c78996a296b6b",
+        "ev-3ae9ee94d03d1e80",
+        "ev-7cf99466e96fe64d",
+        "ev-9feb8384617d4715",
+        "ev-e604c2e0ec1e5cae"
+      ],
+      "quality_flags": [
+        "undocumented_rtu_status",
+        "power_sign_convention_unverified"
+      ],
+      "age_seconds": 68.2,
+      "status": "live"
+    }
+  ],
+  "rejected_labels": [],
+  "unmatched_labels": [],
+  "expected_source_stations": 49,
+  "source_rows": 49,
+  "status": "live",
+  "checked_at": "2026-10-23T09:16:06.164418+00:00",
+  "error": null,
+  "refresh_seconds": 60,
+  "source_url": "https://delhisldc.org/api/grid-loading",
+  "data_source": "delhi_sldc",
+  "limitation": "Station MW is not plant generation, line flow, available capacity or a verified electrical operating state."
+}

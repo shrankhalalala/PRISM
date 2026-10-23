@@ -1,0 +1,676 @@
+{
+  "source_url": "https://delhisldc.org/api/grid-loading",
+  "reference_dataset": "delhi_reference_52179cc8a9312e8ff6141ef29fba0fa5829764be815c1b50b51d801370ea55e9",
+  "review_date": "2026-10-23",
+  "mappings": {
+    "Badarpur": {
+      "asset_id": "ss-btps",
+      "evidence": [
+        "ev-17b13bdbad4c581f",
+        "ev-33af20ada601bd9f",
+        "ev-37e9c6970c39198c",
+        "ev-47952d16303db487",
+        "ev-5604308d3c52fb6a",
+        "ev-abe2db217e839234",
+        "ev-e13e85af6cc5202b",
+        "ev-f72bf5635c08110c"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Bamnauli": {
+      "asset_id": "ss-bamnauli",
+      "evidence": [
+        "ev-08dd4d091b33729c",
+        "ev-1fd9b5cf0deb3af9",
+        "ev-2d2cdefd8328a782",
+        "ev-33dd77894aa32a5b",
+        "ev-3cca835906439226",
+        "ev-6cd78cfcfdd650b7",
+        "ev-6e8488996cfdde61",
+        "ev-9901d7f1569a3da1",
+        "ev-a3edab3e48977252",
+        "ev-b290e2bf6639e1fc",
+        "ev-b8ff18d723e130b4",
+        "ev-c3456f9158025a40",
+        "ev-d0b3611827bdb568",
+        "ev-d1a288e0b0f3784f",
+        "ev-d7ec62c935d8a02f",
+        "ev-e0074c1591a07f57"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Bawana": {
+      "asset_id": "ss-bawana-dtl",
+      "evidence": [
+        "ev-0603a7ea735b3257",
+        "ev-0ed7688e019822df",
+        "ev-10c122cb0bed9c0e",
+        "ev-579799555df5e6e1",
+        "ev-5e0012b038bab359",
+        "ev-61a9766e796d9b40",
+        "ev-7d2c28d094fa0724",
+        "ev-83eb636eae351d46",
+        "ev-88d8265700e0d576",
+        "ev-99351055fc1f8d6f",
+        "ev-a2e362d13eb9edbf",
+        "ev-ae936b8c0858aa1e",
+        "ev-c6e817ad3e027a12",
+        "ev-caa185561559aeed",
+        "ev-d4a59a5512b79edf",
+        "ev-d72a5dfe0e117465",
+        "ev-e24c5c1748f4b3a9"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "CCGT-Bawana": {
+      "asset_id": "plant-pps3-bawana",
+      "evidence": [
+        "ev-94dec863439961d7"
+      ],
+      "match_rule": "reviewed_exact_source_label",
+      "scope": "Station/switchyard loading; not gross generation"
+    },
+    "DEV NAGAR": {
+      "asset_id": "ss-dev-nagar",
+      "evidence": [
+        "ev-a224bc4480d4d968",
+        "ev-a6745d35449eb80a"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "DIAL": {
+      "asset_id": "ss-dial",
+      "evidence": [
+        "ev-19ba1ea96516bfca",
+        "ev-37a98749fc4d985a",
+        "ev-42daf430e0457758",
+        "ev-49442176cf7f8767",
+        "ev-8da226c3fdf0b958",
+        "ev-cf7966c2c8b5dac7"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "DSIDC": {
+      "asset_id": "ss-dsidc-bawana",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-4229d73e3cfb7958",
+        "ev-52605cdfe9637fe5",
+        "ev-6e07e34523c64920",
+        "ev-9e09d50236ecd42e",
+        "ev-c984e0c58de09788",
+        "ev-f66e1f40269b49ad"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Dwarka": {
+      "asset_id": "ss-dwarka-sector-5",
+      "evidence": [
+        "ev-14387d564064d2ad",
+        "ev-28885eab078b49a7",
+        "ev-2eaa628c51f6b59f",
+        "ev-300515a5763722c1",
+        "ev-5d67b605805f1f12",
+        "ev-844817228f558f3e",
+        "ev-920832daf61871e1",
+        "ev-94c552285471c08b",
+        "ev-a2dcefcc09f77bed",
+        "ev-a6b93c1e9e558380",
+        "ev-a87700041fe11c91",
+        "ev-f34460ec7e539515",
+        "ev-f9d4bc47af0f810e",
+        "identity-ev-1126767e1eb99fef937b",
+        "identity-ev-6fa7e9bdfddf6fe618bb",
+        "identity-ev-7a1954f6506302a932ea",
+        "identity-ev-86592e28cefc444b86a1"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Gazipur": {
+      "asset_id": "ss-gazipur",
+      "evidence": [
+        "ev-27c8dc0f30430a54",
+        "ev-682832c012fffc72",
+        "ev-8770212a6780e86b",
+        "ev-9d8c17b04854cd59",
+        "ev-f9d530e890257afc"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Geeta Colony": {
+      "asset_id": "ss-geeta-colony",
+      "evidence": [
+        "ev-130a8b731fbb25e7",
+        "ev-4ef90c15c78c3a20",
+        "ev-646a12801676be4d",
+        "ev-7b5e8fd4013b6dad",
+        "ev-8384245c41858b1a",
+        "ev-b7cb9185355447bc"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "GopalPur": {
+      "asset_id": "ss-gopalpur",
+      "evidence": [
+        "ev-3996b81163fde1d8",
+        "ev-70bfd0f500cb0414",
+        "ev-75c9a13fc7cf7722",
+        "ev-7f350ceeba40626f",
+        "ev-8341ee4dd32f9208",
+        "ev-8f6aea40777a95f2",
+        "ev-a557380fba49b327",
+        "ev-b502e8ddb2ae39ae"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "HCM Lane": {
+      "asset_id": "ss-electric-lane",
+      "evidence": [
+        "ev-435b58d21ee4071c",
+        "ev-9ccfa939de42d6e3",
+        "ev-d2db3ed739e332a4",
+        "ev-f68b2337318add3b"
+      ],
+      "match_rule": "reviewed_exact_source_label",
+      "locator": "DTL directory SRC02 row 6: Electric Lane, HCM Lane, behind BSNL Building, Janpath"
+    },
+    "Harsh Vihar": {
+      "asset_id": "ss-harsh-vihar",
+      "evidence": [
+        "ev-3f13747cd89c63fe",
+        "ev-6cb874c0f2889a37",
+        "ev-80f037456429815d",
+        "ev-914397fcfebb32c9",
+        "ev-f1ac2c19d721ad76"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "IP Power": {
+      "asset_id": "ss-indraprastha",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-2ea7044952a66c5f",
+        "ev-6f553a5f2b398d08",
+        "ev-7c5c0aed51f948a5",
+        "ev-853b2646c19cae1c",
+        "ev-966958be8b6bb214",
+        "ev-974375866a0764a4",
+        "ev-ac48fec596c7be0b",
+        "ev-d3eff1b3c1190c2e"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Kanjhawla": {
+      "asset_id": "ss-kanjhawala",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-3086815a0f4cbe7c",
+        "ev-587f7c57ce08e0d3",
+        "ev-9297d69eda442148",
+        "ev-a69540891715e3d9",
+        "ev-a9e3b4019b4e86b6",
+        "ev-ffb1dac1f4484b89"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Kashmiri Gate": {
+      "asset_id": "ss-kashmere-gate",
+      "evidence": [
+        "ev-027e1fe35720936c",
+        "ev-19b8ec7717dfcfc6",
+        "ev-acb0171617dc5d8a",
+        "ev-c479d46916588704",
+        "ev-edfad2f7bfd63bfa"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Lodhi Rd": {
+      "asset_id": "ss-lodhi-road",
+      "evidence": [
+        "ev-361ba013b945638f",
+        "ev-7c05315c978b8a96",
+        "ev-c41b819608510f27",
+        "ev-c499a218c03507f2"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Maharanibagh": {
+      "asset_id": "ss-maharani-bagh",
+      "evidence": [
+        "ev-025f76b4df936e22",
+        "ev-14d054b9fda05adf",
+        "ev-19b8ec7717dfcfc6",
+        "ev-1df5e25dc0b5f47d",
+        "ev-1e6c97ac9c844f74",
+        "ev-2514fc8316cbb973",
+        "ev-261cbc5cca3d5d78",
+        "ev-4c483ab9d4638934",
+        "ev-65ae568cc095b532",
+        "ev-68f3e0ea26e46ce4",
+        "ev-ae984cbf602e1ac3",
+        "ev-af82a2a6fe13b025",
+        "ev-b2736f7a16a0f003",
+        "ev-c67ddcd7067b2f0f",
+        "ev-c889215bc665cb5d",
+        "ev-d7ef6839e14597cf",
+        "ev-dd19d6cc839b8272",
+        "ev-e41bbf56f1cd960d",
+        "ev-e6abd65e4a63bc74",
+        "ev-fce5ebd803d686ad"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Mandaula": {
+      "asset_id": "ss-mandola-pgcil",
+      "evidence": [
+        "ev-19a380d4f6a4d5e9",
+        "ev-19b8ec7717dfcfc6",
+        "ev-219e48a7a09d5a52",
+        "ev-53aa2a925d8823cb",
+        "ev-5f3ee6e30855c9a9",
+        "ev-9faf7fee47090379",
+        "ev-b3ebca519488fec6",
+        "ev-beaf562b10cd511d",
+        "ev-c2f147fd2a7d4914",
+        "ev-c41828eb385c8d0f",
+        "ev-c69a58c92a2319c0",
+        "ev-da53ee57afb6f6e9"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Masjid Moth": {
+      "asset_id": "ss-masjid-moth",
+      "evidence": [
+        "ev-26e6275d4bdeab66",
+        "ev-47fed3d08240b7ec",
+        "ev-c1646b94132c8fc9",
+        "ev-ef0435c27c5c5362"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Mehrauli": {
+      "asset_id": "ss-mehrauli",
+      "evidence": [
+        "ev-50e117299daf9063",
+        "ev-7e7f2fe206069cb0",
+        "ev-9420dba9f3c944a0",
+        "ev-a6701530a9b14cb2",
+        "ev-a8ebddf5ab5f300d",
+        "ev-a8ed48a9c302e138",
+        "ev-ab8864bd8d0f3e07",
+        "ev-f4d81811f5f4358b"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Mundka": {
+      "asset_id": "ss-tikri-kalan",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-28d9e176aa06ba05",
+        "ev-29afdc38c5cf76b6",
+        "ev-3460388203c6fbb4",
+        "ev-51ad7611f01f897d",
+        "ev-7203763b809ff051",
+        "ev-b1fa809a36d8076c",
+        "ev-b22e7777f3890d64",
+        "ev-bc686324794d9978",
+        "ev-d4398c2808624385",
+        "ev-d488f43f8ec55471",
+        "ev-ddccf73f4ddb2572"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Najafgarh": {
+      "asset_id": "ss-najafgarh",
+      "evidence": [
+        "ev-00d2aa8e8e111ee6",
+        "ev-10db9d806e692bcb",
+        "ev-4e38b5ecbb5ef3b9",
+        "ev-6356edaa7ba7b852",
+        "ev-97666fb8a3b912a4",
+        "ev-e39db4ba6bd77254"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Naraina": {
+      "asset_id": "ss-naraina",
+      "evidence": [
+        "ev-0edf897595f28b50",
+        "ev-482b714351a322c1",
+        "ev-5823a5257507e6db",
+        "ev-690c706a5d7a5515",
+        "ev-bd41d3dbf53bb4d3"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Narela": {
+      "asset_id": "ss-narela-dtl",
+      "evidence": [
+        "ev-1193ce7156ab9959",
+        "ev-1a03afad4651608d",
+        "ev-2f8556fd28d4b2be",
+        "ev-6927566e78b0d4f3",
+        "ev-9b1c41754a7cf977",
+        "ev-fd59a623dd943b4f"
+      ],
+      "match_rule": "reviewed_exact_source_label",
+      "scope": "DTL station measurement; not duplicated onto BBMB owner portion"
+    },
+    "Okhla": {
+      "asset_id": "ss-okhla",
+      "evidence": [
+        "ev-2936a9f6d5c247b0",
+        "ev-746e048ddffd934b",
+        "ev-9c8a864a5e9a40c0",
+        "ev-c07f51b9843ad0e9",
+        "ev-e4cbe43df117e0fa",
+        "ev-f467f05bcc6e07c3"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Papankalan-1": {
+      "asset_id": "ss-pappankalan-1",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-2611e4e770022c93",
+        "ev-2aa7ed9975c7a3e0",
+        "ev-33411e00fe5e435e",
+        "ev-c76a106bcbcbe0b3",
+        "ev-ce61fc2cfc83f07e",
+        "ev-d33989a87bf44650"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Papankalan-2": {
+      "asset_id": "ss-pappankalan-2",
+      "evidence": [
+        "ev-0b053f99c66f6a4c",
+        "ev-19b8ec7717dfcfc6",
+        "ev-270c8d6eb7f235cc",
+        "ev-38215cb496cf62a2",
+        "ev-45cdf6fdb495ca90",
+        "ev-72b5e05d699659e2",
+        "ev-da9a6f1032958f64"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Papankalan-3": {
+      "asset_id": "ss-pappankalan-3",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-1efac08f4b163a36",
+        "ev-32c40fa93aad3f79",
+        "ev-5e21c3f970236328",
+        "ev-c50afb19fa8940b1",
+        "ev-db72943f59742521",
+        "ev-fe1e2a6b50fab211"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Park Street": {
+      "asset_id": "ss-park-street",
+      "evidence": [
+        "ev-0f6fe87db6e9b717",
+        "ev-1165c0221b8ab8d5",
+        "ev-16c651c821b537a7",
+        "ev-a1d2d3420d3865d0",
+        "ev-ebfeac5a7d53c129"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Patparganj": {
+      "asset_id": "ss-patparganj",
+      "evidence": [
+        "ev-1c7a013b70264484",
+        "ev-4ac3052ac679c895",
+        "ev-4da0fc3a94386d92",
+        "ev-59c5d7db1d302f31",
+        "ev-6071a8b96e41cd25",
+        "ev-8c7719c7b11be7c9",
+        "ev-c5a117e33eebafeb",
+        "ev-fb7dc4fe8993cb12",
+        "ev-fc5117ffaaf92310"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Peera Garhi": {
+      "asset_id": "ss-peeragarhi",
+      "evidence": [
+        "ev-1344e77a8aa58664",
+        "ev-14ffeef9f07e6dd8",
+        "ev-46eb4964613c35b0",
+        "ev-773a63976d597a2a",
+        "ev-a5a3cb1c2993033d",
+        "ev-e5c13bef319d7e0e"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Pragati": {
+      "asset_id": "ss-pragati",
+      "evidence": [
+        "ev-08d9cb9a2b77f2cb",
+        "ev-25199cd89c2f3418",
+        "ev-529cbb65ceb3a21a",
+        "ev-5fbdc7c2cb5a47ed",
+        "ev-6697b280f94c2199",
+        "ev-6f2a6cb93ba9b30e",
+        "ev-8c92900afd74f0d8",
+        "ev-a1e7fca3677a3532",
+        "ev-b52d6d93a1676475",
+        "ev-e0e1748875c301c5"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Preet Vihar": {
+      "asset_id": "ss-preet-vihar",
+      "evidence": [
+        "ev-8b4a6f970328d673",
+        "ev-99024d69d919f6f8",
+        "ev-c40a2f9a6a7fa876",
+        "ev-d1097ba3b446646a",
+        "ev-d1910a1d0a56f7ba",
+        "ev-dce536f0d417ecea"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Rajghat": {
+      "asset_id": "ss-rajghat",
+      "evidence": [
+        "ev-17131d9743f733ff",
+        "ev-19b8ec7717dfcfc6",
+        "ev-2999c52d7354029d",
+        "ev-538306a92b45cf45",
+        "ev-c89aa2f3fb193062"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Ridge Valley": {
+      "asset_id": "ss-ridge-valley",
+      "evidence": [
+        "ev-5ca30f24d088d8dc",
+        "ev-66b6ca8fd8979f01",
+        "ev-9c3470e2538e0290",
+        "ev-c0b58bc27fddab96",
+        "ev-f8c44657909367bb"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Rkpuram": {
+      "asset_id": "ss-rk-puram",
+      "evidence": [
+        "ev-24294c6c55b70a95",
+        "ev-2d5f682e363efde2",
+        "ev-36d9f2fe7297e896",
+        "ev-3dae4fe840aeb160",
+        "ev-46626302cbc6b870",
+        "ev-bc8a114c24d3e180",
+        "ev-d953beb036c6e5c3",
+        "ev-e90c27a429a073f2",
+        "ev-e9639407e7045036",
+        "ev-f1a26bf804d820a2"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Rohini-II": {
+      "asset_id": "ss-rohini-2",
+      "evidence": [
+        "ev-3b42c8b4c613c2ad",
+        "ev-889f47102dfc94e2",
+        "ev-8f98f4006cf738b5",
+        "ev-f985afe133ab46bc"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Rohini1": {
+      "asset_id": "ss-rohini-1",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-204959a04c93cc33",
+        "ev-32191964a3538199",
+        "ev-682b558e4a2fce6e",
+        "ev-80a11d9a2696ca64",
+        "ev-faed4549c187a491",
+        "ev-fed9b58653fcbab3"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "SGT Nagar": {
+      "asset_id": "ss-sgtn",
+      "evidence": [
+        "ev-2669c58cdf8807cd",
+        "ev-a6ceb4074f672818",
+        "ev-d6c268a44b372d76",
+        "ev-f85075d8feb54be6"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Sarita Vihar": {
+      "asset_id": "ss-sarita-vihar",
+      "evidence": [
+        "ev-0edb396ca6fc4b85",
+        "ev-2ebf860e304e4e4e",
+        "ev-7867bddead4b2fb0",
+        "ev-b02e4211a3d626d5",
+        "ev-de591d93552e0b15",
+        "ev-f693f4cce8f11872"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Shalimar Bagh": {
+      "asset_id": "ss-shalimar-bagh",
+      "evidence": [
+        "ev-0238ccbdbd92f92b",
+        "ev-09ce499f0d655ef7",
+        "ev-1c9b85d0017c74e7",
+        "ev-25ae2b998376dbd2",
+        "ev-4bc2177fedb62661",
+        "ev-6467aaf0fbcb1866",
+        "ev-69746fc98fd42085",
+        "ev-8ef76f76d0624a3d",
+        "ev-a6ceb4074f672818",
+        "ev-cfdb0619e48d3c04",
+        "ev-f0c36a101b766ac7"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Subzi Mandi": {
+      "asset_id": "ss-subzi-mandi",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-4bf5173e7cb856b0",
+        "ev-572edbc3ff0804b7",
+        "ev-b4844674dc37f63c",
+        "ev-d219f917bda73b81"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "TIMARPUR": {
+      "asset_id": "ss-timarpur",
+      "evidence": [
+        "ev-36c79a1e12acd0df"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Trauma centre": {
+      "asset_id": "ss-trauma-centre",
+      "evidence": [
+        "ev-11d7ce283315dcdc",
+        "ev-29ce3a3c1b5ea5fa",
+        "ev-2e1b9ee7127e529a",
+        "ev-36b8e67ecb5bf173",
+        "ev-a0c35b0c5a28acc6",
+        "ev-c3f9abd69c1bd877",
+        "ev-c93f2e86b18a94eb"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Tuglakabad": {
+      "asset_id": "ss-tughlakabad",
+      "evidence": [
+        "ev-04872cd2f086f2d4",
+        "ev-19b8ec7717dfcfc6",
+        "ev-1ec00d06cb5ce18d",
+        "ev-5390bc92f5045c12",
+        "ev-665df482b3ef5f52",
+        "ev-86d74dad897f4786",
+        "ev-8b63f045341a36e2",
+        "ev-96f2d763a7e522ae",
+        "ev-a03aa2098e948781",
+        "ev-a704b9e2ecc82c4c",
+        "ev-af82a2a6fe13b025",
+        "ev-b6b32e1db765028f",
+        "ev-bb86578f8355d5ea",
+        "ev-d14af5b8bc29e5ed",
+        "ev-eb531dd2fc18d25b",
+        "ev-f8231e29ef8b5260"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Vasant Kunj": {
+      "asset_id": "ss-vasant-kunj",
+      "evidence": [
+        "ev-1c781aa8189a0bd2",
+        "ev-541547f7c41134e4",
+        "ev-57e67af452831512",
+        "ev-cf0b798ac7987c50",
+        "ev-eaa82107185351bf",
+        "ev-f73e45b3496fd237"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Wazirabad": {
+      "asset_id": "ss-south-of-wazirabad",
+      "evidence": [
+        "ev-19b8ec7717dfcfc6",
+        "ev-22822dfe5f820e80",
+        "ev-2536ca90fc60347f",
+        "ev-2823136be9d3a1fe",
+        "ev-2d7f5effdcb711c1",
+        "ev-3dfb71002fac1f54",
+        "ev-5c50e85fa6038c07",
+        "ev-777e235fa0d6c017",
+        "ev-7d40b8d87a00e314",
+        "ev-7f32a8ae8dc78cb1",
+        "ev-99369f800d9dfc2e",
+        "ev-c6d1a710b48da518",
+        "ev-ed25d57387635c41",
+        "identity-ev-5d39db69aa83df6c3c90",
+        "identity-ev-9301aa1a0e13f329ce7a",
+        "identity-ev-ec57c9bcb729fcea921e"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    },
+    "Wazirpur": {
+      "asset_id": "ss-wazirpur",
+      "evidence": [
+        "ev-043dc02e7e25b4ef",
+        "ev-356c78996a296b6b",
+        "ev-3ae9ee94d03d1e80",
+        "ev-7cf99466e96fe64d",
+        "ev-9feb8384617d4715",
+        "ev-e604c2e0ec1e5cae"
+      ],
+      "match_rule": "reviewed_exact_source_label"
+    }
+  }
+}

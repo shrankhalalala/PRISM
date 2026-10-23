@@ -7,6 +7,7 @@ from flask import Flask, jsonify, render_template, request
 from werkzeug.exceptions import HTTPException
 from prism.config import DATA_DIR, ROOT
 from prism.data.gridwatch import GridWatchClient
+from prism.data.stations import StationClient
 from prism.grid.model import load_grid, grid_summary
 from prism.grid.presentation import reference_view
 from prism.forecasting import AutoregressiveForecaster, LSTMForecaster, persistence_forecast
@@ -39,6 +40,39 @@ def create_app(test_config: dict | None = None) -> Flask:
         response = jsonify(snapshot)
         response.status_code = 503 if snapshot["status"] == "unavailable" else 200
         response.headers["Cache-Control"] = "no-store"
+        return response
+
+    app.extensions['stations'] = app.config.get('STATION_CLIENT') or StationClient()
+
+    @app.get('/api/live/stations')
+    def live_stations():
+        snapshot = app.extensions['stations'].snapshot()
+        try:
+            assets = reference_payload()['assets']
+        except (OSError, ValueError, TypeError, KeyError):
+            return jsonify(error='reference_data_unavailable'), 503
+        known = {a['id'] for a in assets}
+        mapped = {r['asset_id'] for r in snapshot['readings']} & known
+        snapshot['coverage'] = dict(reference_assets=len(known), measured_assets=len(mapped),
+            unavailable_asset_ids=sorted(known-mapped))
+        response = jsonify(snapshot)
+        response.headers['Cache-Control'] = 'no-store'
+        return response, 503 if snapshot['status'] == 'unavailable' else 200
+
+    @app.get('/api/live/assets/<identifier>')
+    def live_asset(identifier):
+        try:
+            assets = reference_payload()['assets']
+        except (OSError, ValueError, TypeError, KeyError):
+            return jsonify(error='reference_data_unavailable'), 503
+        if identifier not in {a['id'] for a in assets}:
+            return jsonify(error='not_found'), 404
+        snapshot = app.extensions['stations'].snapshot()
+        reading = next((r for r in snapshot['readings'] if r['asset_id'] == identifier), None)
+        response = jsonify(asset_id=identifier, status=reading['status'] if reading else 'unavailable',
+            reading=reading, source_url=snapshot['source_url'], error=snapshot['error'],
+            limitation=snapshot['limitation'])
+        response.headers['Cache-Control'] = 'no-store'
         return response
 
     model_root = ROOT / "models"

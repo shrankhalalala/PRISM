@@ -4,7 +4,7 @@
   if (!root) return;
   const el = id => document.getElementById(id);
   const ns = 'http://www.w3.org/2000/svg';
-  const state = {data:null, assets:new Map(), connections:new Map(), selected:null, request:0, view:{x:-60,y:-50,w:1120,h:800}, drag:null};
+  const state = {data:null, assets:new Map(), connections:new Map(), selected:null, request:0, view:{x:-60,y:-50,w:1120,h:800}, drag:null, telemetry:{snapshot:null,receivedAt:0,error:null,pending:false,nextFetch:0}};
   const controls = ['ref-search','ref-kind','ref-boundary','ref-classification','ref-period','ref-connection-search'];
   const words = value => String(value ?? '').replaceAll('_',' ');
   const shown = value => value === null || value === undefined || value === '' ? 'Unknown' : String(value);
@@ -29,7 +29,7 @@
     const angle=2*Math.PI*index/Math.max(1,state.data.assets.length);
     return {x:500+400*Math.cos(angle),y:350+280*Math.sin(angle)};
   }
-  function view() {const v=state.view;el('ref-network').setAttribute('viewBox',`${v.x} ${v.y} ${v.w} ${v.h}`);}
+  function view() {const v=state.view;el('ref-network').setAttribute('viewBox',`${v.x} ${v.y} ${v.w} ${v.h}`);labelLayout();}
   function zoom(factor) {
     const v=state.view;const w=Math.max(180,Math.min(2500,v.w*factor));const h=w*800/1120;
     state.view={x:v.x+(v.w-w)/2,y:v.y+(v.h-h)/2,w,h};view();
@@ -39,8 +39,10 @@
     if(!(type==='asset'?state.assets:state.connections).has(id))return;
     state.selected={type,id};renderSelection();renderInspector();
     const selected=type==='asset'?state.assets.get(id):null;
-    if(selected)el('ref-status').textContent=`Inspecting ${selected.name}. Source-reported metadata; current measurements are unknown.`;
+    if(selected)el('ref-status').textContent=`Inspecting ${selected.name}. Source-reported metadata with separate published station loading below.`;
     else el('ref-status').textContent=`Inspecting connection record ${id}. Dated source evidence; no operating flow is inferred.`;
+    el('ref-evidence-jump').hidden=false;
+    labelLayout();
     if(focusInspector){el('ref-inspector-title').setAttribute('tabindex','-1');el('ref-inspector-title').focus({preventScroll:true});}
   }
   function renderSelection() {
@@ -73,8 +75,32 @@
       const shape=a.kind==='plant'?svgNode('rect',{x:-8,y:-8,width:16,height:16,class:'ref-node-shape'}):svgNode('circle',{r:7,class:'ref-node-shape'});
       g.append(shape,svgNode('text',{x:11,y:4,class:'ref-node-label'},a.name.replace(/ \([^)]*\)/g,'').replace('Power Station','PS')));
       g.append(svgNode('title',{},`${a.name} · ${a.id}`));
-      g.addEventListener('click',()=>select('asset',a.id));g.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();select('asset',a.id);}});layer.append(g);
+      g.addEventListener('pointerenter',labelLayout);g.addEventListener('pointerleave',labelLayout);g.addEventListener('focus',labelLayout);g.addEventListener('blur',labelLayout);g.addEventListener('click',()=>select('asset',a.id));g.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();select('asset',a.id);}});layer.append(g);
     });svg.append(layer);view();el('ref-no-graph').hidden=assets.length>0;
+  }
+  function labelLayout() {
+    if(!state.data)return;
+    const svg=el('ref-network'),rect=svg.getBoundingClientRect();
+    if(!rect.width||!rect.height)return;
+    const scale=Math.min(rect.width/state.view.w,rect.height/state.view.h);
+    const selected=state.selected?.type==='asset'?state.selected.id:null;
+    const groups=[...svg.querySelectorAll('.ref-node')];
+    const boxes=[];
+    groups.sort((a,b)=>Number(b.dataset.refAsset===selected)-Number(a.dataset.refAsset===selected));
+    for(const g of groups){
+      const text=g.querySelector('text');if(!text)continue;
+      const active=g.dataset.refAsset===selected||g.matches(':hover')||g===document.activeElement;
+      const readable=rect.width>=600||active||state.view.w<500;
+      const fontSize=(active?12:10)/Math.max(scale,.08);
+      text.style.fontSize=`${fontSize}px`;
+      text.setAttribute('x',String(11/Math.max(scale,.2)));
+      text.style.display=readable?'':'none';
+      if(!readable)continue;
+      const box=text.getBoundingClientRect();
+      const overlaps=boxes.some(b=>box.left<b.right+5&&box.right+5>b.left&&box.top<b.bottom+3&&box.bottom+3>b.top);
+      if(!active&&overlaps){text.style.display='none';continue;}
+      boxes.push(box);
+    }
   }
   function option(value,text) {const o=node('option',null,text);o.value=value;return o;}
   function recordButton(type,id,title,caption) {
@@ -121,6 +147,7 @@
       const owners=[...new Set([a.reference_owner,...(a.ownership_assertions||[]).map(v=>v.owner)].filter(Boolean))];
       const aliases=[...new Set([...(a.aliases||[]).map(v=>typeof v==='string'?v:v.name),...(a.merged_inventory_ids||[])].filter(Boolean))];
       addFields(panel,[['Boundary',words(a.boundary_classification)],['Source-reported voltage',voltages.length?`${voltages.join(' / ')} kV`:'Unknown'],['Source-reported ownership',owners.length?owners.join(' / '):'Unknown'],['Current operating state','Unknown'],['Measured output',a.current_output_mw==null?'Unknown':`${a.current_output_mw} MW`],['Available capacity',a.available_capacity_mw==null?'Unknown':`${a.available_capacity_mw} MW`],['Coordinates','Unknown · schematic positions only'],['Source aliases / merged IDs',aliases.length?aliases.join('; '):'None recorded'],['Reference grouping',a.reference_site_group||'None recorded']]);
+      renderStationReading(panel,a);
       if(planned(a))panel.append(node('p','ref-warning','Budella is classified as planned/under tendering in the June 2025 source. Named cable observations do not establish current commissioning.'));
       if(a.voltage_owner_note)panel.append(node('p',null,a.voltage_owner_note));
       const issues=a.open_issue_ids||[];if(issues.length)panel.append(node('p','ref-warning',`Open source flags: ${issues.join(', ')}`));
@@ -140,6 +167,67 @@
       linkedButton(panel,`Inspect ${name(c.source)}`,'asset',c.source);linkedButton(panel,`Inspect ${name(c.target)}`,'asset',c.target);addSources(panel,c.evidence_ids);
     }
   }
+  const measurement = value => typeof value==='number'&&Number.isFinite(value) ? value.toLocaleString('en-IN',{maximumFractionDigits:3}) : 'Unknown';
+  function stationAge(reading) {
+    return typeof reading.age_seconds==='number' ? Math.max(0,reading.age_seconds+(Date.now()-state.telemetry.receivedAt)/1000) : null;
+  }
+  function readingState(reading) {
+    return state.telemetry.error||reading.status!=='live'||stationAge(reading)>300 ? 'stale' : 'live';
+  }
+  function stationSummary() {
+    const telemetry=state.telemetry,snapshot=telemetry.snapshot;
+    if(!snapshot){el('ref-telemetry-status').textContent=telemetry.error?'Station loading unavailable · no valid station reading received. Checks once per minute.':'Station loading · connecting to the published SLDC station feed…';return;}
+    const readings=snapshot.readings||[];
+    const stale=telemetry.error||readings.some(r=>readingState(r)==='stale');
+    const count=snapshot.coverage?.measured_assets??new Set(readings.map(r=>r.asset_id)).size;
+    el('ref-telemetry-status').textContent=`${stale?'Stale published':'Published'} station loading · ${count} / ${snapshot.coverage?.reference_assets??state.data?.assets.length??'—'} reference assets have source readings. Inspect an asset for source time and quality flags. Checks once per minute.`;
+  }
+  function renderStationReading(parent,asset) {
+    const section=node('section','ref-station-reading');section.setAttribute('aria-label','Published SLDC station loading');
+    section.append(node('h5',null,'Published station loading'));
+    const telemetry=state.telemetry;
+    const readings=(telemetry.snapshot?.readings||[]).filter(r=>r.asset_id===asset.id&&r.measurement_role==='station_loading');
+    if(!readings.length){
+      section.append(node('p','ref-station-empty',telemetry.snapshot?'Unknown · no eligible published station reading is mapped to this asset.':telemetry.error?'Unknown · station source unavailable.':'Checking published station readings…'));
+      section.append(node('p','ref-station-note','No station value is inferred from Delhi-wide demand, a nearby asset or a reference rating.'));
+    }else readings.forEach(reading=>{
+      const status=readingState(reading),badge=node('span',`ref-station-freshness ${status}`,status==='live'?'Fresh source reading':'Stale source reading');
+      section.append(badge,node('p','ref-source-label',`SLDC label: ${shown(reading.source_label)}`));
+      const values=node('div','ref-station-values');
+      for(const [label,value,unit] of [['Station loading',reading.mw,'MW'],['Reactive power',reading.mvar,'MVAr'],['Measured voltage',reading.voltage_kv,'kV']]){
+        const item=node('div');item.append(node('span',null,label),node('strong',null,measurement(value)),node('small',null,unit));values.append(item);
+      }
+      section.append(values);
+      let time='Unknown';
+      const date=new Date(reading.observed_at);if(reading.observed_at&&Number.isFinite(date.getTime()))time=`${date.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',hour12:false})} IST`;
+      const age=stationAge(reading);
+      section.append(node('p','ref-station-time',`Source time: ${time}${age===null?'':` · age ${Math.floor(age)}s`}`));
+      section.append(node('p','ref-station-note',`Source status (uninterpreted): ${shown(reading.source_status_raw)}`));
+      if(reading.quality_flags?.length)section.append(node('p','ref-station-note',`Quality flags: ${reading.quality_flags.map(words).join('; ')}.`));
+    });
+    section.append(node('p','ref-station-note','Station MW is loading, not generator output, available capacity or a line thermal limit. The sign convention and RTU status are unverified.'));
+    parent.append(section);
+  }
+  function updateStationAge() {
+    stationSummary();
+    if(state.selected?.type==='asset'&&state.data){
+      const previous=el('ref-detail').querySelector('.ref-station-reading');
+      if(previous){const holder=node('div');renderStationReading(holder,state.assets.get(state.selected.id));previous.replaceWith(holder.firstElementChild);}
+    }
+  }
+  async function loadStations() {
+    const telemetry=state.telemetry;
+    if(telemetry.pending||document.hidden||Date.now()<telemetry.nextFetch)return;
+    telemetry.pending=true;telemetry.nextFetch=Date.now()+60000;
+    try {
+      const response=await fetch('/api/live/stations',{signal:AbortSignal.timeout(15000),cache:'no-store'});
+      const data=await response.json();
+      if(!['live','stale','unavailable'].includes(data.status)||!Array.isArray(data.readings)||(!response.ok&&response.status!==503))throw new Error('Invalid station response');
+      if(data.status==='unavailable'||!data.readings.length){telemetry.error=data.error||'Station source unavailable.';}
+      else{telemetry.snapshot=data;telemetry.receivedAt=Date.now();telemetry.error=null;}
+    }catch{telemetry.error='Station source unavailable or returned an invalid response.';}
+    finally{telemetry.pending=false;updateStationAge();}
+  }
   async function load() {
     const request=++state.request;el('ref-retry').disabled=true;el('ref-error').hidden=true;el('ref-status').textContent='Loading the saved Delhi reference inventory…';
     try {
@@ -157,7 +245,7 @@
       else {state.selected=null;renderInspector();}
       const questions=el('ref-field-questions');questions.replaceChildren();(data.coverage?.field_questions||[]).forEach(q=>questions.append(node('li',null,`${q.id}: ${q.reason}`)));
       el('ref-dataset').textContent=`Version: ${data.dataset}`;
-      el('ref-status').textContent=`Reference inventory ready · ${data.assets.length} assets and ${data.connections.length} individually inspectable evidence records. Current readings remain unknown.`;
+      el('ref-status').textContent=`Reference inventory ready · ${data.assets.length} assets and ${data.connections.length} individually inspectable evidence records. Mapped live station loading is shown separately in the inspector.`;
     } catch(error) {
       if(request!==state.request)return;
       el('ref-content').hidden=true;el('ref-error').hidden=false;el('ref-error').textContent=error.name==='TimeoutError'?'The reference request timed out. Use Reload reference to retry.':`${error.message} Use Reload reference to retry.`;el('ref-status').textContent='Reference inventory unavailable. The separate synthetic workflows remain available.';
@@ -166,7 +254,8 @@
   controls.forEach(id=>el(id).addEventListener(id==='ref-search'||id==='ref-connection-search'?'input':'change',renderFiltered));
   el('ref-asset-select').addEventListener('change',event=>{if(event.target.value)select('asset',event.target.value);});
   el('ref-connection-select').addEventListener('change',event=>{if(event.target.value)select('connection',event.target.value);});
-  el('ref-reset').addEventListener('click',()=>{controls.forEach(id=>{el(id).value=id==='ref-search'||id==='ref-connection-search'?'':'all';});state.selected=null;fit();renderFiltered();renderInspector();el('ref-status').textContent='Filters reset. All reference assets and evidence records are available.';});
+  el('ref-reset').addEventListener('click',()=>{controls.forEach(id=>{el(id).value=id==='ref-search'||id==='ref-connection-search'?'':'all';});state.selected=null;el('ref-evidence-jump').hidden=true;fit();renderFiltered();renderInspector();el('ref-status').textContent='Filters reset. All reference assets and evidence records are available.';});
+  el('ref-evidence-jump').addEventListener('click',event=>{event.preventDefault();el('ref-inspector-title').focus();el('ref-inspector-title').scrollIntoView({block:'start'});});
   el('ref-retry').addEventListener('click',load);el('ref-fit').addEventListener('click',fit);el('ref-zoom-in').addEventListener('click',()=>zoom(.8));el('ref-zoom-out').addEventListener('click',()=>zoom(1.25));
   const svg=el('ref-network');
   svg.addEventListener('keydown',event=>{
@@ -177,4 +266,9 @@
   svg.addEventListener('pointermove',event=>{if(!state.drag||state.drag.id!==event.pointerId)return;const rect=svg.getBoundingClientRect();state.view.x=state.drag.view.x-(event.clientX-state.drag.x)*state.view.w/rect.width;state.view.y=state.drag.view.y-(event.clientY-state.drag.y)*state.view.h/rect.height;view();});
   const endPan=()=>{state.drag=null;svg.classList.remove('is-panning');};svg.addEventListener('pointerup',endPan);svg.addEventListener('pointercancel',endPan);svg.addEventListener('lostpointercapture',endPan);
   load();
+  loadStations();
+  setInterval(loadStations,60000);
+  setInterval(updateStationAge,15000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)loadStations();});
+  new ResizeObserver(labelLayout).observe(svg);
 })();

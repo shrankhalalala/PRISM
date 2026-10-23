@@ -800,6 +800,42 @@
           }
         }
       }
+    },
+    "/api/live/stations": {
+      "get": {
+        "summary": "Source-qualified station loading with freshness and mapping coverage",
+        "responses": {
+          "200": {
+            "description": "Source-qualified data or explicit unavailable asset measurement"
+          },
+          "503": {
+            "description": "Source or reference export unavailable"
+          }
+        }
+      }
+    },
+    "/api/live/assets/{identifier}": {
+      "get": {
+        "summary": "Eligible station measurement for a reference asset",
+        "responses": {
+          "200": {
+            "description": "Source-qualified data or explicit unavailable asset measurement"
+          },
+          "503": {
+            "description": "Source or reference export unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
     }
   },
   "components": {
