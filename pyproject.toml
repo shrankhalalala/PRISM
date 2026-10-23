@@ -11,6 +11,7 @@ dependencies = ["Flask>=3.1,<4", "networkx>=3.3,<4", "pandas>=2.2,<3", "numpy>=1
 
 [project.optional-dependencies]
 neo4j = ["neo4j>=5.20,<7"]
+phase3 = ["redis>=5,<7", "psycopg[binary]>=3.2,<4", "celery[redis]>=5.4,<6", "gunicorn>=23,<24", "xgboost>=2,<4", "shap>=0.46,<1", "scikit-learn>=1.5,<2"]
 
 [tool.setuptools.packages.find]
 include = ["prism*"]

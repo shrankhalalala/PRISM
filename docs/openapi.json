@@ -836,6 +836,51 @@
           }
         ]
       }
+    },
+    "/api/ingestion/health": {
+      "get": {
+        "summary": "Durable ingestion health",
+        "responses": {
+          "200": {
+            "description": "Durable service result"
+          },
+          "503": {
+            "description": "Infrastructure unavailable"
+          }
+        }
+      }
+    },
+    "/api/history/{asset_id}": {
+      "get": {
+        "summary": "Immutable durable event history",
+        "responses": {
+          "200": {
+            "description": "Durable service result"
+          },
+          "503": {
+            "description": "Infrastructure unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "asset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            }
+          }
+        ]
+      }
     }
   },
   "components": {

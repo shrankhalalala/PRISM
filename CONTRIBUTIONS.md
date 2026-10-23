@@ -259,3 +259,13 @@ raw RTU status, quality limits and stale/unavailable handling. Source identity,
 electrical interpretation, mapping coverage and integration remain the same four
 members' respective review responsibilities. All 93 Step 9 tests and independent
 browser review pass. Station loading does not establish plant output or line limits.
+
+### Phase 3 Step 10: durable ingestion — 2026-10-23
+
+Redis Streams and PostgreSQL now retain validated immutable observations with
+content identity, context, recovery and commit-before-ack behavior. Local live
+verification covers duplicates, crash replay, quarantine, protected pending/unread
+retention and real station history. The labeled 200-event synthetic benchmark
+measures 543.7 events/s and 2.69 ms p95 locally; this is not upstream performance.
+The same source/electrical/mapping/integration review responsibilities continue.
+Ninety-five tests pass. Long-term uptime and deployment durability remain unmeasured.

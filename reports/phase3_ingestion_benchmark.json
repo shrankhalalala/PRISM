@@ -1,0 +1,13 @@
+{
+  "data_source": "synthetic_benchmark",
+  "events": 200,
+  "seconds": 0.3678778750472702,
+  "events_per_second": 543.6586801375352,
+  "update_latency_ms": {
+    "p50": 1.6871669795364141,
+    "p95": 2.687312150374055,
+    "max": 7.408374978695065
+  },
+  "upstream_polling_increased": false,
+  "scope": "local serial publish + PostgreSQL commit + acknowledgement"
+}

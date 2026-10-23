@@ -1,0 +1,27 @@
+{
+  "unread_retention_protected": true,
+  "pending_retention_protected": true,
+  "acknowledged_expiry_verified": true,
+  "duplicate_same_stream_id": true,
+  "committed_before_ack": true,
+  "pending_after_simulated_crash": 1,
+  "recovery_rows": 1,
+  "replay_idempotent": true,
+  "invalid_event_quarantined": true,
+  "health": {
+    "status": "ok",
+    "pending": 0,
+    "unread": 0,
+    "stream_length": 2,
+    "retention_seconds": 3600,
+    "dedup_ttl_seconds": 86400,
+    "acknowledgement": "after_postgres_commit"
+  },
+  "persisted_counts_by_source": {
+    "delhi_sldc": 100,
+    "synthetic_benchmark": 202
+  },
+  "health_api_status": 200,
+  "station_history_api_status": 200,
+  "station_history_records": 2
+}
