@@ -239,3 +239,13 @@ Delhi asset identities without aliases, the extra Narela portion or external ass
 All 87 tests pass. The corrected local Neo4j version was imported twice and the
 prior version verified unchanged. Individual review completion, complete current
 operating coverage and real electrical model readiness are not claimed.
+
+### Phase 3 Step 8: reference-grid inspection — 2026-10-23
+
+The dashboard now exposes the complete reviewed reference snapshot: 66 assets,
+245 circuit observations and 16 interface assertions. Search, filters, pan/zoom,
+asset and connection ledgers preserve provenance and unknown operating values.
+Nishtha's source-date review, Himangi's electrical eligibility review, Shrankhala's
+identity/coverage review and Gaurangi's integration/reproducibility review remain
+individual review responsibilities. Ninety tests pass; desktop/mobile inspection
+and independent interface review passed. This does not certify operating topology.

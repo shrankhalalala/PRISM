@@ -78,7 +78,7 @@ not silently enter simulation as fully specified equipment.
 - [x] Circuit identity, aliases, duplicate records, and endpoint consistency are audited for the inventoried table rows; unresolved findings are preserved in the [audit](../data/topology/delhi/AUDIT.md). Full map/terminal reconciliation remains open.
 - [x] Missing values and uncertainty remain visible in the node/circuit inventories; no inferred live ratings or operating states are supplied.
 - [x] The versioned reference import reproduces asset/circuit observation records and preserves other datasets; exact properties and endpoint references verified twice in live Neo4j. This does not certify complete electrical topology.
-- [ ] Every imported asset and connection is accessible in the dashboard.
+- [x] Every imported reference asset and connection is accessible in the separate dashboard view; Step 8 browser/API checks are recorded in PHASE3_PROGRESS.md.
 - [x] Coverage counts, unresolved items, source checksums, and inventory verification evidence are saved. This records coverage gaps; it does not certify complete topology.
 
 An inventory with unresolved connections may be a reviewable partial milestone;

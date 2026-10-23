@@ -465,7 +465,11 @@
             "name": "target",
             "in": "query",
             "schema": {
-              "enum": ["demand_mw", "solar_mw", "wind_mw"],
+              "enum": [
+                "demand_mw",
+                "solar_mw",
+                "wind_mw"
+              ],
               "default": "demand_mw"
             }
           },
@@ -473,7 +477,11 @@
             "name": "model",
             "in": "query",
             "schema": {
-              "enum": ["persistence", "autoregressive", "lstm"],
+              "enum": [
+                "persistence",
+                "autoregressive",
+                "lstm"
+              ],
               "default": "persistence"
             }
           },
@@ -522,15 +530,46 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": false,
-                "required": ["demand_mw", "generation_mw", "reserve_mw"],
+                "required": [
+                  "demand_mw",
+                  "generation_mw",
+                  "reserve_mw"
+                ],
                 "properties": {
-                  "demand_mw": {"type": "number", "minimum": 0},
-                  "generation_mw": {"type": "number", "minimum": 0},
-                  "reserve_mw": {"type": "number", "minimum": 0},
-                  "battery_soc": {"type": "number", "minimum": 0, "maximum": 1, "default": 0.5},
-                  "renewable_trend": {"type": "number", "minimum": -1, "maximum": 1, "default": 0},
-                  "fault_present": {"type": "boolean", "default": false},
-                  "valid_actions": {"type": "array", "items": {"$ref": "#/components/schemas/Action"}}
+                  "demand_mw": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "generation_mw": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "reserve_mw": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "battery_soc": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "default": 0.5
+                  },
+                  "renewable_trend": {
+                    "type": "number",
+                    "minimum": -1,
+                    "maximum": 1,
+                    "default": 0
+                  },
+                  "fault_present": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "valid_actions": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Action"
+                    }
+                  }
                 }
               }
             }
@@ -541,7 +580,9 @@
             "description": "Synthetic recommendation with executable=false",
             "content": {
               "application/json": {
-                "schema": {"type": "object"}
+                "schema": {
+                  "type": "object"
+                }
               }
             }
           },
@@ -599,11 +640,21 @@
                   "actions": {
                     "type": "array",
                     "items": {
-                      "enum": ["hold", "increase_generation", "decrease_generation", "charge_battery", "discharge_battery", "shed_load"]
+                      "enum": [
+                        "hold",
+                        "increase_generation",
+                        "decrease_generation",
+                        "charge_battery",
+                        "discharge_battery",
+                        "shed_load"
+                      ]
                     }
                   },
                   "policy": {
-                    "enum": ["baseline", "q_learning"],
+                    "enum": [
+                      "baseline",
+                      "q_learning"
+                    ],
                     "default": "baseline",
                     "description": "Cannot be combined with actions."
                   },
@@ -611,11 +662,23 @@
                     "type": "array",
                     "items": {
                       "type": "object",
-                      "required": ["step", "asset_id"],
+                      "required": [
+                        "step",
+                        "asset_id"
+                      ],
                       "properties": {
-                        "step": {"type": "integer", "minimum": 0},
-                        "asset_id": {"type": "string"},
-                        "duration_steps": {"type": "integer", "minimum": 1, "default": 4}
+                        "step": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "asset_id": {
+                          "type": "string"
+                        },
+                        "duration_steps": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "default": 4
+                        }
                       }
                     }
                   }
@@ -691,6 +754,49 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/reference-grid": {
+      "get": {
+        "summary": "Complete source-dated Delhi reference topology; independent of simulation and database availability",
+        "description": "Returns every canonical asset, circuit observation and interface assertion with deterministic schematic positions, provenance and explicit unknowns. ETag supports immutable content-version caching.",
+        "responses": {
+          "200": {
+            "description": "Reference inventory"
+          },
+          "304": {
+            "description": "Unchanged reference version"
+          },
+          "503": {
+            "description": "Reviewed export unavailable or invalid"
+          }
+        }
+      }
+    },
+    "/api/reference-grid/assets/{identifier}": {
+      "get": {
+        "summary": "Inspect one canonical reference asset and all connected evidence",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Asset, connected observations and source locators"
+          },
+          "404": {
+            "description": "Unknown reference asset"
+          },
+          "503": {
+            "description": "Reference export unavailable"
           }
         }
       }
@@ -820,7 +926,14 @@
       },
       "Action": {
         "type": "string",
-        "enum": ["hold", "increase_generation", "decrease_generation", "charge_battery", "discharge_battery", "shed_load"]
+        "enum": [
+          "hold",
+          "increase_generation",
+          "decrease_generation",
+          "charge_battery",
+          "discharge_battery",
+          "shed_load"
+        ]
       },
       "Observation": {
         "type": "object",

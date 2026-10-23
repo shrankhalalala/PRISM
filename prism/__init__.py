@@ -8,6 +8,7 @@ from werkzeug.exceptions import HTTPException
 from prism.config import DATA_DIR, ROOT
 from prism.data.gridwatch import GridWatchClient
 from prism.grid.model import load_grid, grid_summary
+from prism.grid.presentation import reference_view
 from prism.forecasting import AutoregressiveForecaster, LSTMForecaster, persistence_forecast
 from prism.forecasting.models import TARGETS
 from prism.simulation import Action, GridEnvironment, Observation, SimulationConfig, quarter_hour_profile
@@ -61,6 +62,33 @@ def create_app(test_config: dict | None = None) -> Flask:
     def grid():
         payload=topology()
         return jsonify(**payload,summary=grid_summary(payload))
+
+    def reference_payload():
+        return reference_view(app.config.get('REFERENCE_DATASET_PATH',ROOT/'data/topology/delhi/reference_dataset.json'))
+
+    @app.get('/api/reference-grid')
+    def reference_grid():
+        try:
+            payload=reference_payload()
+        except (OSError,ValueError,TypeError,KeyError):
+            return jsonify(error='reference_data_unavailable',message='The reviewed reference export is unavailable or invalid.'),503
+        response=jsonify(payload)
+        response.set_etag(payload['dataset']+'-view-v2')
+        response.headers['Cache-Control']='public, max-age=300'
+        return response.make_conditional(request)
+
+    @app.get('/api/reference-grid/assets/<identifier>')
+    def reference_asset(identifier):
+        try:
+            payload=reference_payload()
+        except (OSError,ValueError,TypeError,KeyError):
+            return jsonify(error='reference_data_unavailable',message='The reviewed reference export is unavailable or invalid.'),503
+        asset=next((a for a in payload['assets'] if a['id']==identifier),None)
+        if not asset:return jsonify(error='not_found',message='Reference asset not found.'),404
+        connections=[c for c in payload['connections'] if identifier in [c['source'],c['target']]]
+        ids=set(asset['evidence_ids'])|{e for c in connections for e in c['evidence_ids']}
+        return jsonify(dataset=payload['dataset'],mode='reference_only',asset=asset,connections=connections,
+                       evidence={e:payload['evidence'][e] for e in ids})
 
     @app.get("/api/measurements")
     def measurements():

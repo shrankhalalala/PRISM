@@ -6,6 +6,7 @@
   <title>PRISM · Grid intelligence workspace</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
   <script defer src="{{ url_for('static', filename='dashboard.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='reference-grid.js') }}"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -15,6 +16,7 @@
     <nav aria-label="Main navigation">
       <a class="active" href="#overview" data-nav-label="Grid overview"><span>▦</span> Grid overview <span class="nav-arrow">↗</span></a>
       <a href="#live-grid" data-nav-label="Delhi live grid"><span>◉</span> Delhi live grid <span class="nav-arrow">↗</span></a>
+      <a href="#reference-grid" data-nav-label="Delhi reference grid"><span>⌘</span> Delhi reference grid <span class="nav-arrow">↗</span></a>
       <a href="#measurements" data-nav-label="Measurements"><span>≋</span> Measurements <span class="nav-arrow">↗</span></a>
       <a href="#forecast" data-nav-label="Forecast lab"><span>⌁</span> Forecast lab <span class="nav-arrow">↗</span></a>
       <a href="#scenario" data-nav-label="Scenario lab"><span>◇</span> Scenario lab <span class="nav-arrow">↗</span></a>
@@ -48,7 +50,7 @@
             <div class="graph-container"><svg id="network" viewBox="0 0 760 370" role="group" aria-label="Synthetic grid topology. Select a node to view its properties."><text x="380" y="185" text-anchor="middle">Loading network…</text></svg></div>
             <div class="network-footer"><div class="legend"><span><i class="plant"></i> Plant</span><span><i class="substation"></i> Substation</span><span><i class="load"></i> Load zone</span></div><span class="small-label">SELECT A NODE TO INSPECT →</span></div>
           </section>
-          <aside class="inspector" aria-labelledby="inspector-title"><span class="eyebrow">ASSET INSPECTOR</span><h2 id="inspector-title">Node details</h2><div id="node-detail"><p class="empty">Select a node on the network to explore its properties.</p></div><div class="inspector-note">This schematic shows the reference topology. It does not display electrical line flows or the separate synthetic scenario state.</div></aside>
+          <aside class="inspector" aria-labelledby="inspector-title"><span class="eyebrow">ASSET INSPECTOR</span><h2 id="inspector-title">Node details</h2><div id="node-detail"><p class="empty">Select a node on the network to explore its properties.</p></div><div class="inspector-note">This schematic shows the synthetic teaching topology. It does not display electrical line flows or the separate synthetic scenario state.</div></aside>
         </div>
       </section>
 
@@ -62,7 +64,38 @@
           <article><span class="metric-label">SCHEDULE</span><p><strong id="live-schedule">—</strong> <span>MW</span></p><small>Published current schedule</small></article>
         </div>
         <p id="live-timestamp" class="lab-status">Source timestamp: awaiting a valid reading.</p>
-        <p class="lab-note">Source: <a href="https://delhisldc.org/grid-watch/" target="_blank" rel="noopener noreferrer">Delhi SLDC Grid Watch ↗</a> · Checks every 60 seconds while this page is open. Readings older than five minutes are marked stale. The topology, forecast lab, and scenario lab use separate synthetic research data.</p>
+        <p class="lab-note">Source: <a href="https://delhisldc.org/grid-watch/" target="_blank" rel="noopener noreferrer">Delhi SLDC Grid Watch ↗</a> · Checks every 60 seconds while this page is open. Readings older than five minutes are marked stale. The overview, forecast lab, and scenario lab use separate synthetic research data.</p>
+      </section>
+
+      <section id="reference-grid" class="lab-panel workspace-section reference-workspace" aria-labelledby="reference-title">
+        <div class="lab-heading"><div><span class="eyebrow">DELHI / SOURCE-REFERENCED TOPOLOGY</span><h2 id="reference-title">Explore the reference grid</h2><p>A dated evidence network. Inspect the assets, connections and sources behind each record.</p></div><button id="ref-retry" class="refresh" type="button">↻ Reload reference</button></div>
+        <p id="ref-status" class="lab-status" role="status" aria-live="polite">Loading the Delhi reference inventory…</p>
+        <div id="ref-error" class="error" role="alert" hidden></div>
+        <div id="ref-content" hidden>
+          <div class="ref-summary" aria-label="Reference inventory totals"><div><strong id="ref-total-assets">—</strong><span>asset identities</span></div><div><strong id="ref-total-circuits">—</strong><span>dated circuit observations</span></div><div><strong id="ref-total-assertions">—</strong><span>interface assertions</span></div><div><strong id="ref-delhi-count">—</strong><span>qualifying Delhi assets</span></div></div>
+          <div class="ref-filters" aria-label="Filter reference inventory">
+            <label class="ref-search-label"><span>Find an asset</span><input id="ref-search" type="search" placeholder="Name, ID or source alias" autocomplete="off"></label>
+            <label><span>Asset type</span><select id="ref-kind"><option value="all">All types</option><option value="substation">Substations</option><option value="plant">Plants</option></select></label>
+            <label><span>Boundary</span><select id="ref-boundary"><option value="all">All boundaries</option><option value="internal">Delhi internal</option><option value="external_boundary">External interfaces</option><option value="unresolved">Unresolved geography</option></select></label>
+            <label><span>Reference classification</span><select id="ref-classification"><option value="all">All classifications</option><option value="source">Source-referenced assets</option><option value="planned">Planned equipment</option></select></label>
+            <label><span>Connection period</span><select id="ref-period"><option value="all">All dated evidence</option><option value="2019">Historical · 2019 tables</option><option value="dtl">Later DTL tables</option><option value="other">Other dated evidence</option></select></label>
+            <button id="ref-reset" class="ref-button" type="button">Reset filters</button>
+          </div>
+          <div class="ref-workbench">
+            <div class="ref-network-column">
+              <div class="ref-diagram-header"><div><span class="eyebrow">REFERENCE SCHEMATIC</span><p id="ref-visible-count">Preparing layout…</p></div><div class="ref-zoom-controls" role="group" aria-label="Schematic view"><button id="ref-zoom-out" class="ref-button" type="button" aria-label="Zoom reference schematic out">−</button><button id="ref-zoom-in" class="ref-button" type="button" aria-label="Zoom reference schematic in">+</button><button id="ref-fit" class="ref-button" type="button">Fit</button></div></div>
+              <div class="ref-diagram-surface"><svg id="ref-network" viewBox="-60 -50 1120 800" tabindex="0" role="group" aria-label="Delhi reference schematic. Select an asset or connection. Use arrow keys to pan, plus or minus to zoom, and Home to fit." aria-describedby="ref-diagram-help"></svg><p id="ref-no-graph" class="ref-empty" hidden>No assets match these filters. Reset filters to restore the inventory.</p></div>
+              <div class="ref-diagram-footer"><div class="ref-legend"><span><i class="ref-key-substation"></i>Substation</span><span><i class="ref-key-plant"></i>Plant</span><span><i class="ref-key-planned"></i>Planned</span><span><i class="ref-key-interface"></i>Interface / section</span><span><i class="ref-key-isolated"></i>Historically isolated</span></div><p id="ref-diagram-help">Schematic layout, not geographic coordinates. Drag to pan · Ctrl + wheel to zoom · keyboard + / − and Home.</p></div>
+              <div class="ref-ledgers">
+                <section aria-labelledby="ref-asset-ledger-title"><div class="ref-ledger-heading"><h3 id="ref-asset-ledger-title">Asset directory</h3><span id="ref-asset-count" class="small-label">—</span></div><label class="ref-picker-label" for="ref-asset-select">Inspect an asset</label><select id="ref-asset-select" aria-label="Inspect a reference asset"></select><div id="ref-asset-list" class="ref-asset-list" aria-label="Matching reference assets"></div></section>
+                <section aria-labelledby="ref-connection-ledger-title"><div class="ref-ledger-heading"><h3 id="ref-connection-ledger-title">Connection evidence</h3><span id="ref-connection-count" class="small-label">—</span></div><label class="ref-picker-label" for="ref-connection-search">Find a connection record</label><input id="ref-connection-search" type="search" placeholder="Endpoint, record ID, circuit or source" autocomplete="off"><label class="ref-picker-label" for="ref-connection-select">Inspect any matching observation</label><select id="ref-connection-select" aria-label="Inspect a reference connection"></select><div id="ref-connection-list" class="ref-connection-list" aria-label="Matching connection observations"></div></section>
+              </div>
+            </div>
+            <aside class="ref-inspector" aria-labelledby="ref-inspector-title"><span class="eyebrow">REFERENCE INSPECTOR</span><h3 id="ref-inspector-title">Asset &amp; connection evidence</h3><div id="ref-detail"><p class="ref-empty">Select an asset or connection to inspect its identity and source evidence.</p></div></aside>
+          </div>
+          <details class="ref-limitations"><summary>Coverage and remaining field limitations</summary><p>Six original node cases have documented reference-model decisions. The source dates differ; this is not a verified current switching snapshot. Planned Budella is excluded from the existing-asset count. Observations and interface assertions are not counts of distinct current physical lines.</p><ul id="ref-field-questions"></ul><p id="ref-dataset" class="ref-dataset"></p></details>
+        </div>
+        <p class="lab-note">Reference evidence only · Current measurements and electrical limits remain unknown. The synthetic overview and simulation labs are separate.</p>
       </section>
 
       <section id="measurements" class="table-panel workspace-section" aria-labelledby="measurements-title">
