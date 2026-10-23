@@ -1,0 +1,50 @@
+{
+  "scope": "delhi_ehv_reference_v1",
+  "sources": [
+    {
+      "id": "SRC-28",
+      "url": "https://cea.nic.in/wp-content/uploads/2020/03/failure_dec16.pdf",
+      "format": "pdf",
+      "source_date": "2016",
+      "title": "CEA Bawana transformer failure report and plant switchyard connection",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-29",
+      "url": "https://www.forumofregulators.gov.in/Data/Meetings/Minutes/TC/5.pdf",
+      "format": "pdf",
+      "source_date": "2016-07-15",
+      "title": "Forum of Regulators fifth technical committee minutes Narela extended bus",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-30",
+      "url": "https://www.nrpc.gov.in/Meetings/OCC/OCC233/OCC233_OPA.pdf",
+      "format": "pdf",
+      "source_date": "2025-08",
+      "title": "NRPC 233rd OCC operational planning agenda",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-31",
+      "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+      "format": "pdf",
+      "source_date": "2026-04",
+      "title": "DTL April 2026 OCC minutes plant evacuation and topology changes",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-32",
+      "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/OCC%20Agenda%20%28pdf%29%20%28July%202018%29.pdf",
+      "format": "pdf",
+      "source_date": "2018-07-25",
+      "title": "DTL July 2018 OCC agenda Pragati plant bus connection",
+      "required": false,
+      "role": "reference"
+    }
+  ]
+}

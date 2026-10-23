@@ -52,9 +52,9 @@ accountability remains in [CONTRIBUTIONS.md](../CONTRIBUTIONS.md).
 | ID | Report requirement and pages | Current evidence/status | Remaining work and completion evidence |
 |---|---|---|---|
 | T01 | Delhi/India grid scope; Delhi narrowing permitted (II 4-5); minimum 50 Delhi nodes and 500+ scalability (III 2, 11) | Partial: [grid.json](../data/raw/grid.json) is explicitly fictional, with 12 nodes and 12 edges; IV 13 records this as an implementation refinement | Document the Delhi boundary, voltage levels, source dates, and external supply connections. Reconcile all source assets and report coverage against the 50-node goal; do not fabricate assets to reach it. Define a separate 500+ node scalability test. |
-| T02 | Plants and substations as graph nodes (5, 13) | Partial: four fictional plants, four substations, four load zones | Create a source-backed inventory with stable IDs, official names, aliases, types, locations/voltage/capacity where available, provenance, and verification state. Reconcile every source asset within T01. |
-| T03 | Transmission lines as graph edges; topology from CEA/NPP (5, 13-14) | Partial: 12 generated connections with synthetic MW ratings | Catalogue confirmed endpoints, circuit IDs, voltage, and verified ratings where available. Preserve parallel circuits and transformer relationships where supported by the source. Trace every edge to evidence; flag ambiguities. |
-| T04 | One-time topology ingestion into Neo4j (14) | Partial: [Neo4jStore](../prism/grid/neo4j_store.py) seeds the teaching dataset | Add a separate versioned Delhi dataset and reproducible ingestion command. Compare imported IDs/properties/counts with the inventory. Import twice without duplication or changes to synthetic data. |
+| T02 | Plants and substations as graph nodes (5, 13) | Partial: original synthetic fixture plus 66 canonical reference assets; two metadata issues and six site-level identity/modeling cases have source-backed dispositions; field limitations remain | Create a source-backed inventory with stable IDs, official names, aliases, types, locations/voltage/capacity where available, provenance, and verification state. Reconcile every source asset within T01. |
+| T03 | Transmission lines as graph edges; topology from CEA/NPP (5, 13-14) | Partial: original synthetic lines plus 245 dated circuit observations with provenance; unresolved suffixes/identities remain, and verified electrical limits are unavailable | Catalogue confirmed endpoints, circuit IDs, voltage, and verified ratings where available. Preserve parallel circuits and transformer relationships where supported by the source. Trace every edge to evidence; flag ambiguities. |
+| T04 | One-time topology ingestion into Neo4j (14) | Reference milestone implemented: separate [reference store](../prism/grid/reference_store.py) imports a versioned Delhi evidence snapshot, verifies exact persisted contents twice, and preserves existing fixtures. Full electrical topology acceptance remains pending | Add a separate versioned Delhi dataset and reproducible ingestion command. Compare imported IDs/properties/counts with the inventory. Import twice without duplication or changes to synthetic data. |
 | T05 | Real grid-state visualization (5) | Partial: [dashboard.js](../prism/static/dashboard.js) renders a small schematic | Make every imported node and connection accessible through navigation, search, pan/zoom, filters, and inspection. Identify boundary assets, provenance, and unavailable measurements. Record browser verification at desktop/mobile sizes. |
 
 ### Topology prerequisites discovered in the current code
@@ -75,11 +75,11 @@ not silently enter simulation as fully specified equipment.
 - [x] T01 boundary and reference source versions are recorded in the Step 2 scope specification; inventory completeness remains pending.
 - [ ] Every plant/substation in that reference boundary is reconciled to a stable ID.
 - [ ] Every documented connection is represented or explicitly listed as unresolved.
-- [ ] Circuit identity, aliases, duplicate records, and endpoint consistency are audited.
-- [ ] Missing values and uncertainty remain visible; no invented topology/ratings.
-- [ ] Neo4j imports reproduce the inventory and preserve other datasets.
+- [x] Circuit identity, aliases, duplicate records, and endpoint consistency are audited for the inventoried table rows; unresolved findings are preserved in the [audit](../data/topology/delhi/AUDIT.md). Full map/terminal reconciliation remains open.
+- [x] Missing values and uncertainty remain visible in the node/circuit inventories; no inferred live ratings or operating states are supplied.
+- [x] The versioned reference import reproduces asset/circuit observation records and preserves other datasets; exact properties and endpoint references verified twice in live Neo4j. This does not certify complete electrical topology.
 - [ ] Every imported asset and connection is accessible in the dashboard.
-- [ ] Coverage counts, unresolved items, source checksums, and verification evidence are saved.
+- [x] Coverage counts, unresolved items, source checksums, and inventory verification evidence are saved. This records coverage gaps; it does not certify complete topology.
 
 An inventory with unresolved connections may be a reviewable partial milestone;
 it must not be labeled a fully verified topology or electrical model. No expected
@@ -186,9 +186,9 @@ change their order. A checkpoint is checked only after its evidence is saved.
 - [x] **Step 2:** define Delhi scope, voltage levels, source boundary and dates (T01); see [DELHI_TOPOLOGY_SCOPE.md](DELHI_TOPOLOGY_SCOPE.md). This does not complete the real asset inventory or the 50-node goal.
 - [x] **Step 3:** acquire/audit topology references and preserve provenance; see the [source archive](../data/sources/delhi/README.md). All required DTL captures succeeded; optional access/coverage gaps remain recorded. This does not complete the asset inventories.
 - [x] **Step 4:** build the source-referenced node inventory (T02); see the [node inventory](../data/topology/delhi/README.md). All 47 directory rows and 258 endpoint occurrences are accounted for; unresolved identities remain explicit for Steps 5-6. No full current-Delhi completeness or 50-node verification claim.
-- [ ] **Step 5:** build and verify edge/circuit inventory (T03).
-- [ ] **Step 6:** audit completeness/uncertainty before further model integration.
-- [ ] **Step 7:** adapt schema/validation and import the Delhi graph into Neo4j (T04).
+- [x] **Step 5:** build the source-referenced circuit inventory and verify selected-source row coverage/provenance (T03); see [circuits.csv](../data/topology/delhi/circuits.csv). There are 245 dated observations, not 245 distinct current lines. Circuit/terminal ambiguities and full T03 acceptance remain open.
+- [x] **Step 6:** perform the completeness/uncertainty audit; see [AUDIT.md](../data/topology/delhi/AUDIT.md). **Outcome: acceptance gate not passed.** Resolve the recorded source/map/identity/terminal findings before Step 7 integration; no 50-node verification claim.
+- [x] **Step 7 reference milestone:** separate schema/validation and versioned Delhi evidence import into Neo4j (T04); see [reference import guide](DELHI_REFERENCE_IMPORT.md). The corrected version has 66 canonical assets, 245 circuit observations, 16 interface assertions and 522 endpoint references. The six original node cases have dispositions under ADR-017; current electrical/model acceptance and field limitations remain open.
 - [ ] **Step 8:** display and inspect every imported asset/connection (T05).
 - [ ] **Step 9:** map eligible telemetry to verified assets (D01-D02).
 - [ ] **Step 10:** implement Redis/history infrastructure (D03-D04, I03 foundation).
@@ -237,7 +237,7 @@ review only; it does not implement the requirements below or advance Step 2.
 | Forecast metrics | II 14: MAPE <5%; III 2, 9: MAPE <=7%, with <7% in III 13 | IV 13: MAE/RMSE in MW because solar has zero nighttime output | Preserve III's historical 7% target and II's older 5% target, but use IV's MAE/RMSE as the current evaluation design. Resolve normalization/any target-specific percentage goal before new experiments. MAPE is not a statistical confidence interval. |
 | Split | III 9: 80/20 train/test | IV 8, 13: 70/15/15 chronological, separate validation | Keep the chronological validation split; do not revert to 80/20 simply to match the older design. |
 | History | III 2: minimum two real years; III 3 acknowledges possibly six usable months | IV 13: 90 synthetic days, real-data integration ongoing | The smaller dataset is an acknowledged prototype limitation, not proof of seasonal/real-grid performance. Audit obtainable coverage before claiming the earlier history goal or changing it. |
-| Graph | III 2, 11: minimum 50 Delhi nodes, scalable to 500+ | IV 6-7, 13, 16: 12-node teaching network, larger real-data network ongoing | Treat 50 nodes as an unmet design goal; completeness must also reconcile the official source boundary. Do not inflate counts with invented assets or duplicate aliases. |
+| Graph | III 2, 11: minimum 50 Delhi nodes, scalable to 500+ | IV 6-7, 13, 16: 12-node teaching network, larger real-data network ongoing | The corrected source-reference inventory represents 50 qualifying Delhi asset nodes; completeness must also reconcile the official source boundary. Do not inflate counts with invented assets or duplicate aliases. |
 | Phase assignment | II/III propose an integrated system and targets | IV 2: Phase 3 integration, Phase 4 evaluation | Keep construction gates and full research evaluation separate. IV 17 specifically retains live ingestion, Redis, surrogate/SHAP, diagnosis and policy improvement as ongoing work. |
 
 ### 9.2 Additional constraints and evidence now tracked
@@ -247,7 +247,7 @@ completed merely because IV describes the earlier prototype.
 
 | ID | Additional requirement / source | Current status and required evidence |
 |---|---|---|
-| R01 | >=50 Delhi nodes and 500+ scalability (III 2-3, 11) | Partial: 12 synthetic nodes. Verify real coverage, publish counts by asset type, and separately test 500+ graph import/query/rendering. A scalability fixture must be labeled synthetic and cannot establish Delhi inventory completeness. |
+| R01 | >=50 Delhi nodes and 500+ scalability (III 2-3, 11) | Reference threshold represented: 50 qualifying Delhi asset identities, separately from the 12-node synthetic runtime. Full current coverage, visualization and 500+ graph import/query/rendering remain to be verified. A scalability fixture must be labeled synthetic and cannot establish Delhi inventory completeness. |
 | R02 | At least two real years for seasonal LSTM training (III 2); IV 13 defers real data | Unmet. Record observed date range, cadence, quality, geography, target coverage and gaps. Synthetic augmentation/interpolation is not an equivalent measured two-year history. |
 | R03 | 99.5% availability (III 2, 13) | Unmeasured. Define service boundary, observation period, probes, planned downtime and numerator/denominator. A health endpoint or successful demo is not uptime evidence. |
 | R04 | <4 GB memory per component; <=30 min per LSTM training run on a 16 GB machine (III 2) | Unmeasured. Record hardware, workload/model size, peak memory by component and complete training duration. Preserve the CPU-only prototype unless a change is justified. |
@@ -296,3 +296,15 @@ and a later 500+ scalability check. The NumPy LSTM, six-action policy and
 chronological validation split remain the current reported baseline. XGBoost is
 a Q-policy surrogate. No new topology data, runtime code, model training or
 infrastructure changes were made during this report review.
+
+## Current topology reconciliation status
+
+[RECONCILIATION.md](../data/topology/delhi/RECONCILIATION.md) supersedes the initial
+audit's unresolved-node counts. All six original node cases have source-backed
+reference-model decisions. Review III physical pages 2 and 11 require 50 Delhi
+substation/plant nodes, not 50 geographically distinct sites. The corrected reference
+count is 47 directory asset identities plus three plants, excluding aliases, the
+extra Narela ownership portion, proposed Budella and external assets. This represents
+the numerical source-reference coverage target; full current network/terminal
+coverage, 500+ scalability and electrical/model readiness remain separate gates.
+Earlier unchecked completeness claims must not be inferred as passed from this count.

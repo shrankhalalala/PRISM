@@ -176,3 +176,28 @@ Step 4 follow-up: the [node inventory](../data/topology/delhi/README.md) now
 accounts for every selected DTL directory row and circuit endpoint occurrence.
 Its unresolved site identities are retained explicitly. Edge inventory and the
 combined completeness audit remain pending; the gate above is not yet complete.
+
+Steps 5–6 follow-up: the [circuit inventory and audit](../data/topology/delhi/AUDIT.md)
+retain 245 dated observations and seven separate narrative claims. All selected
+2019/later DTL circuit-table rows are accounted for, and three named BBMB circuits
+are recorded. The completeness audit **does not pass** the integration gate:
+map-only and other-owner interfaces, physical identity, terminal semantics and
+source contradictions remain unresolved. The combined Steps 4–6 reconciliation
+checkbox above stays open. Step 7 has not begun.
+
+Reconciliation/Step 7 follow-up: additional official DTL documents corroborate
+SOW attribution and Timarpur nominal voltage, leaving six node issues in the
+reference overlay. Under ADR-016, the [reference importer](DELHI_REFERENCE_IMPORT.md)
+stores versioned evidence in separate Neo4j labels. This advances source inspection
+without claiming electrical completeness. The earlier audit's electrical/model
+hold remains in force; no simulation fixture or live dashboard was replaced.
+
+Current identity correction: [RECONCILIATION.md](../data/topology/delhi/RECONCILIATION.md)
+records the six dispositions. The report's threshold concerns substation/plant
+asset nodes, not geographically distinct sites; the earlier stricter interpretation
+is corrected by ADR-017. The 50 qualifying Delhi reference identities exclude
+duplicate aliases, planned Budella, external assets and the additional Narela owner
+portion. New direct boundary evidence adds BBMB 220 kV Ballabhgarh, NTPC Dadri,
+Alwar, Bhiwani and Bahadurgarh interfaces. This is not recursive national expansion;
+the earlier Bhiwani exclusion concerned upstream 765 kV context. Sources retain
+their own dates, and complete current operating coverage remains unverified.

@@ -1,0 +1,41 @@
+{
+  "scope": "delhi_ehv_reference_v1",
+  "sources": [
+    {
+      "id": "SRC-17",
+      "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/OCC%20Agenda%20%28pdf%29%20%28March%202026%29.pdf",
+      "format": "pdf",
+      "source_date": "2026-03",
+      "title": "DTL March 2026 OCC agenda",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-18",
+      "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20Steering%20Commitee%20meeting%20for%20JUNE-2025%2825-06-2025%29%28PDF%29.pdf",
+      "format": "pdf",
+      "source_date": "2025-06-25",
+      "title": "DTL June 2025 steering committee minutes",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-19",
+      "url": "https://www.dtl.gov.in/TenderDetails.aspx?TenderId=15979",
+      "format": "html",
+      "source_date": "2022-05-30",
+      "title": "DTL Timarpur transformer tender",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-20",
+      "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/DTL-Petition-For-ARR-FY-2023-24.pdf",
+      "format": "pdf",
+      "source_date": "2023-24",
+      "title": "DTL ARR petition FY2023-24",
+      "required": false,
+      "role": "reference"
+    }
+  ]
+}

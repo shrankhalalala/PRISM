@@ -1,0 +1,210 @@
+{
+  "issues": [
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-03-11",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-03-400-011"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-8a59f30749b953d6"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-03-12",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-03-400-012"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-7772dcd723fea77b"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-25",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-025"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-6008327bc8a9b04d"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-26",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-026"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-2bb8b3009b497bc9"
+      ]
+    },
+    {
+      "id": "CIRCUIT-LABEL-SRC-04-27",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-027"
+      ],
+      "reason": "Source circuit suffix is absent/incomplete; a single circuit number is not inferred.",
+      "required_evidence": "An official circuit/terminal identifier.",
+      "evidence_ids": [
+        "cev-dbc2c1605496a110"
+      ]
+    },
+    {
+      "id": "CIRCUIT-LABEL-SRC-04-40",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-040"
+      ],
+      "reason": "Source circuit suffix is absent/incomplete; a single circuit number is not inferred.",
+      "required_evidence": "An official circuit/terminal identifier.",
+      "evidence_ids": [
+        "cev-480541328d925db2"
+      ]
+    },
+    {
+      "id": "CIRCUIT-LABEL-SRC-04-41",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-041"
+      ],
+      "reason": "Source circuit suffix is absent/incomplete; a single circuit number is not inferred.",
+      "required_evidence": "An official circuit/terminal identifier.",
+      "evidence_ids": [
+        "cev-4a93d30ade73569b"
+      ]
+    },
+    {
+      "id": "CIRCUIT-LABEL-SRC-04-57",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-057"
+      ],
+      "reason": "Source circuit suffix is absent/incomplete; a single circuit number is not inferred.",
+      "required_evidence": "An official circuit/terminal identifier.",
+      "evidence_ids": [
+        "cev-c1817f4e407c329a"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-58",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-058"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-d4e9e7200612478e"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-59",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-059"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-de12f04639302158"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-64",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-064"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-a13c7b29aad0ca7f"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-65",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-065"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-2fe95af5c8f7d10c"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-66",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-066"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-5490bbf646fcc0ec"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-67",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-067"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-d2b183b94911da81"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-111",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-111"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-fcc1eef6fa77b3ed"
+      ]
+    },
+    {
+      "id": "CIRCUIT-ENDPOINT-SRC-04-112",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-112"
+      ],
+      "reason": "At least one site identity is unresolved in the node register.",
+      "required_evidence": "Resolve the linked Dwarka/Ballabhgarh node issue before electrical import.",
+      "evidence_ids": [
+        "cev-dd8c28dc2a72d76e"
+      ]
+    },
+    {
+      "id": "DUPLICATE-circuit-observation-src-04-220-088",
+      "status": "open",
+      "circuit_observation_ids": [
+        "circuit-observation-src-04-220-088",
+        "circuit-observation-src-04-220-089"
+      ],
+      "reason": "Same source, endpoint pair, voltage and circuit label occur more than once. Distinct physical circuits not established.",
+      "required_evidence": "Independent terminal/circuit record; do not relabel or collapse observations automatically.",
+      "evidence_ids": [
+        "cev-28f8dfa0bddc5e6b",
+        "cev-966ae9bdee787be1"
+      ]
+    }
+  ]
+}

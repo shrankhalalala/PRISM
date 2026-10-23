@@ -1,0 +1,277 @@
+{
+  "schema_version": "1.0",
+  "scope": "delhi_ehv_reference_v1",
+  "audit_performed": true,
+  "integration_gate": "not_passed",
+  "full_reference_completeness_verified": false,
+  "goal_50_verified_delhi_nodes_achieved": false,
+  "independently_verified_delhi_physical_site_count": null,
+  "inventory_record_count": 64,
+  "dated_circuit_observation_count": 245,
+  "later_table_rows_by_voltage": {
+    "400": 14,
+    "220": 115
+  },
+  "historical_table_rows_by_voltage": {
+    "400": 12,
+    "220": 101
+  },
+  "bbmb_report_circuit_observations": 3,
+  "source_row_coverage": {
+    "dtl_directory": "47/47",
+    "later_circuit_tables": "129/129",
+    "historical_circuit_tables": "113/113",
+    "transformation_tables": "46/46 retained; SOW unassigned"
+  },
+  "later_endpoint_mentions": 258,
+  "later_rows_with_unresolved_endpoints": 12,
+  "open_node_issue_ids": [
+    "NODE-TIMARPUR-VOLTAGE",
+    "IDENTITY-CANDIDATE-DWARKA",
+    "IDENTITY-CANDIDATE-BALLABHGARH-400",
+    "TRANSFORM-SRC-06-35",
+    "NODE-NARELA-SITES",
+    "NODE-WAZIRABAD-SITES",
+    "NODE-BUDELLA-STATUS",
+    "NODE-PLANT-TERMINALS"
+  ],
+  "open_circuit_issue_ids": [
+    "CIRCUIT-ENDPOINT-SRC-03-11",
+    "CIRCUIT-ENDPOINT-SRC-03-12",
+    "CIRCUIT-ENDPOINT-SRC-04-25",
+    "CIRCUIT-ENDPOINT-SRC-04-26",
+    "CIRCUIT-LABEL-SRC-04-27",
+    "CIRCUIT-LABEL-SRC-04-40",
+    "CIRCUIT-LABEL-SRC-04-41",
+    "CIRCUIT-LABEL-SRC-04-57",
+    "CIRCUIT-ENDPOINT-SRC-04-58",
+    "CIRCUIT-ENDPOINT-SRC-04-59",
+    "CIRCUIT-ENDPOINT-SRC-04-64",
+    "CIRCUIT-ENDPOINT-SRC-04-65",
+    "CIRCUIT-ENDPOINT-SRC-04-66",
+    "CIRCUIT-ENDPOINT-SRC-04-67",
+    "CIRCUIT-ENDPOINT-SRC-04-111",
+    "CIRCUIT-ENDPOINT-SRC-04-112",
+    "DUPLICATE-circuit-observation-src-04-220-088"
+  ],
+  "source_gap_ids": [
+    "GAP-01",
+    "GAP-02",
+    "GAP-03",
+    "GAP-04",
+    "GAP-05",
+    "GAP-06",
+    "GAP-07",
+    "GAP-08"
+  ],
+  "later_table_adjacency": {
+    "interpretation": "Diagnostic of dated table observations including unresolved candidates; not an operating connectivity assessment.",
+    "connected_components": [
+      [
+        "candidate-ballabhgarh-400",
+        "candidate-dwarka",
+        "plant-gtps",
+        "ss-bamnauli",
+        "ss-bawana-dtl",
+        "ss-btps",
+        "ss-budella",
+        "ss-dev-nagar",
+        "ss-dial",
+        "ss-dsidc-bawana",
+        "ss-electric-lane",
+        "ss-gazipur",
+        "ss-geeta-colony",
+        "ss-gopalpur",
+        "ss-harsh-vihar",
+        "ss-indraprastha",
+        "ss-jhatikara-pgcil",
+        "ss-kanjhawala",
+        "ss-kashmere-gate",
+        "ss-lodhi-road",
+        "ss-maharani-bagh",
+        "ss-mandola-pgcil",
+        "ss-masjid-moth",
+        "ss-mehrauli",
+        "ss-najafgarh",
+        "ss-naraina",
+        "ss-narela-dtl",
+        "ss-okhla",
+        "ss-pappankalan-1",
+        "ss-pappankalan-2",
+        "ss-pappankalan-3",
+        "ss-park-street",
+        "ss-patparganj",
+        "ss-peeragarhi",
+        "ss-pragati",
+        "ss-preet-vihar",
+        "ss-rajghat",
+        "ss-ridge-valley",
+        "ss-rk-puram",
+        "ss-rohini-1",
+        "ss-rohini-2",
+        "ss-sarita-vihar",
+        "ss-sgtn",
+        "ss-shalimar-bagh",
+        "ss-south-of-wazirabad",
+        "ss-subzi-mandi",
+        "ss-tikri-kalan",
+        "ss-trauma-centre",
+        "ss-tughlakabad",
+        "ss-vasant-kunj",
+        "ss-wazirabad",
+        "ss-wazirpur"
+      ],
+      [
+        "plant-jhajjar"
+      ],
+      [
+        "plant-pps1"
+      ],
+      [
+        "plant-pps3-bawana"
+      ],
+      [
+        "ss-dadri-pgcil"
+      ],
+      [
+        "ss-dwarka-sector-5"
+      ],
+      [
+        "ss-narela-bbmb"
+      ],
+      [
+        "ss-noida"
+      ],
+      [
+        "ss-noida-62"
+      ],
+      [
+        "ss-panipat-bbmb"
+      ],
+      [
+        "ss-rohtak-road-bbmb"
+      ],
+      [
+        "ss-samaypur-pgcil"
+      ],
+      [
+        "ss-timarpur"
+      ]
+    ],
+    "isolated_node_ids": [
+      "plant-jhajjar",
+      "plant-pps1",
+      "plant-pps3-bawana",
+      "ss-dadri-pgcil",
+      "ss-dwarka-sector-5",
+      "ss-narela-bbmb",
+      "ss-noida",
+      "ss-noida-62",
+      "ss-panipat-bbmb",
+      "ss-rohtak-road-bbmb",
+      "ss-samaypur-pgcil",
+      "ss-timarpur"
+    ]
+  },
+  "historical_rows_without_exact_later_identity": [
+    "circuit-observation-src-01-400-001",
+    "circuit-observation-src-01-400-002",
+    "circuit-observation-src-01-400-007",
+    "circuit-observation-src-01-400-008",
+    "circuit-observation-src-01-220-013",
+    "circuit-observation-src-01-220-014",
+    "circuit-observation-src-01-220-015",
+    "circuit-observation-src-01-220-018",
+    "circuit-observation-src-01-220-020",
+    "circuit-observation-src-01-220-031",
+    "circuit-observation-src-01-220-032",
+    "circuit-observation-src-01-220-076",
+    "circuit-observation-src-01-220-087",
+    "circuit-observation-src-01-220-092",
+    "circuit-observation-src-01-220-093"
+  ],
+  "historical_comparison_note": "A missing exact match can reflect spelling/identity, changed circuit labels, changed wiring or source coverage. It is not evidence of retirement. Matched rows do not establish unchanged lengths/status.",
+  "remaining_evidence_tasks": [
+    {
+      "id": "AUDIT-MAP-COVERAGE",
+      "sources": [
+        "SRC-01"
+      ],
+      "locators": {
+        "physical_pages": [
+          29,
+          30
+        ]
+      },
+      "task": "Reconcile every in-scope historical ring/map connection and terminal against tables; map crossings are not junctions. External Dadri/Noida/Jhajjar and plant interfaces are not fully covered by DTL-owned tables."
+    },
+    {
+      "id": "AUDIT-BBMB-COVERAGE",
+      "sources": [
+        "SRC-01",
+        "SRC-13"
+      ],
+      "locators": {
+        "SRC-01_physical_pages": [
+          33,
+          35
+        ],
+        "SRC-13_physical_pages": [
+          82,
+          86,
+          87
+        ]
+      },
+      "task": "Three named BBMB maintenance observations are recorded (Panipat–Narela III and Narela–Rohtak Road I/II). Confirm exact buses, full interface coverage and snapshot alignment before electrical import."
+    },
+    {
+      "id": "AUDIT-HISTORICAL-DIFFERENCES",
+      "sources": [
+        "SRC-01",
+        "SRC-03",
+        "SRC-04"
+      ],
+      "task": "Resolve the listed historical-only observations and source date/length conflicts without mixing snapshots."
+    },
+    {
+      "id": "AUDIT-TRANSFORMER-TERMINALS",
+      "sources": [
+        "SRC-05",
+        "SRC-06"
+      ],
+      "task": "Resolve SOW; define voltage-level buses and transformer terminal semantics. Site-level MVA observations are not inter-site transmission edges."
+    },
+    {
+      "id": "AUDIT-NODE-IDENTITY",
+      "sources": [
+        "SRC-01",
+        "SRC-02",
+        "SRC-04",
+        "SRC-13"
+      ],
+      "task": "Resolve the eight node issues, physical-site counting and Delhi geography. Do not claim the 50-node or 500+ scalability goals from record counts."
+    },
+    {
+      "id": "AUDIT-CIRCUIT-IDENTITY",
+      "sources": [
+        "SRC-03",
+        "SRC-04"
+      ],
+      "task": "Resolve duplicate/incomplete circuit labels and endpoint candidates; obtain independent current owner/terminal records."
+    }
+  ],
+  "import_decision": "Hold Step 7 electrical/model integration. Inventory review artifacts are usable; topology completeness is not established.",
+  "runtime_changed": false,
+  "nodes_sha256": "f6dccb0ee80f6891c2389719d830856dd78841210b671ec7a0196940604d4fd0",
+  "source_manifest_sha256": "29800df0a862d48b83356545bf172f0b1f76d4676b0972c404b7fdea863f7340",
+  "circuit_document_sha256": "891c7bed64f6fec07d2c00d38ba5a20ae1529f46b44dd53909af8470aea05f17",
+  "reference_connection_claim_ids": [
+    "REF-2019-RING",
+    "REF-2019-CENTRAL-SECTION",
+    "REF-2019-STATE-SECTION",
+    "REF-2019-TUGHLAKABAD-LILO",
+    "REF-2019-DWARKA-LILO",
+    "REF-2019-BALLABHGARH-BTPS",
+    "REF-2019-NARELA-ROHTAK"
+  ]
+}

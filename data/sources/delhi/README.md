@@ -98,3 +98,42 @@ cryptographically signed publisher attestations.
 No application endpoint, runtime fixture or trained artifact was changed for
 Step 3. Node/circuit normalization and inference belong to the next inventory
 steps, using these source references and the unresolved-items register.
+
+## Follow-up reconciliation captures
+
+`reconciliation_catalog.json` selects four additional official DTL references:
+March 2026 OCC agenda, June 2025 steering minutes, the Timarpur transformer tender,
+and the FY2023-24 ARR petition. `2026-10-22-reconciliation` preserves the initial
+sandbox DNS failures. `2026-10-22-reconciliation-verified` preserves the separate
+successful verified-TLS captures (four of four). Neither earlier snapshot was
+rewritten. The original 17-source archive counts above are unchanged.
+
+The petition's `2023-24` catalog date denotes its fiscal reference period, not an
+independently verified filing/publication date. March 2026 refers to the OCC agenda
+period; its cover gives the meeting date 24 March 2026. PDF physical page locators
+and interpreted conclusions are in the project's `reconciliation_review.json`.
+Raw originals stay ignored under the same archive rules. Verify the follow-up:
+
+```bash
+python -m scripts.acquire_topology_sources --verify data/sources/delhi/2026-10-22-reconciliation-verified
+```
+
+SRC-19's catalog date `2022-05-30` follows the dated tender reference
+`DTL-8650-300522`; it is not an independently verified publication timestamp.
+The captured page explicitly gives the tender opening as 20 June 2022. Neither
+date establishes commissioning or current operating status.
+
+## Identity and terminal evidence follow-up
+
+The `identity`, `terminals`, `terminal-followup` and `cea` snapshots dated
+2026-10-22 record subsequent official reference attempts. Failed legacy CEA/NRPC
+routes remain failed captures; they are not used as resolved identity evidence.
+The regulator PDF was recovered at its official hostname without `www` and is
+captured as SRC-33. Review decisions use captured, hash-matching sources only.
+
+`identity_resolution.json` records exact page/table locators, source dates and
+retrieval metadata. The June 2019 schematic was visually reviewed; page 133 of the
+DTL transformer tender supplies the old Wazirabad address; the regulator report's
+physical page 122 describes Narela's extended-bus portions; the November 2025
+DTL minutes' physical page 7 names the PPCL/DTL Bawana bus interconnector.
+The original 17-source acquisition figures are historical and unchanged.

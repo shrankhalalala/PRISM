@@ -1,0 +1,1112 @@
+{
+  "schema_version": "1.0",
+  "scope": "delhi_ehv_reference_v1",
+  "identity_resolutions": [
+    {
+      "issue_id": "IDENTITY-CANDIDATE-DWARKA",
+      "decision": "merge_reference_identity",
+      "merged_id": "candidate-dwarka",
+      "canonical_id": "ss-dwarka-sector-5",
+      "finding": "Sector-5 evacuation table explicitly names the same Dwarka–PPK-I/III, Naraina, Budella and PPK-II feeders. DPR distinguishes the new Sector-5 site from existing PPK-I. Represent the site as one complex with voltage/owner assertions; do not imply planned 66 kV works are commissioned.",
+      "evidence": [
+        {
+          "source_id": "SRC-27",
+          "archive": "2026-10-22-identity",
+          "sha256": "84d01828e80dad75ed049c861ab7ddae305d6e4d8b13852a246935885499230c",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20Steering%20Commitee%20meeting%20for%20JULY-2018%2804-07-2018%29%28PDF%29.pdf",
+          "source_date": "2018-07-04",
+          "retrieved_at": "2026-10-22T16:19:21.424801+00:00",
+          "locator": {
+            "physical_pages": [
+              42,
+              43,
+              44
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-24",
+          "archive": "2026-10-22-identity",
+          "sha256": "738718585bd6511508c3b03e3e3382bc842a4b6563e2b6bca9a8b789088d2aab",
+          "url": "https://forestsclearance.nic.in/DownloadPdfFile.aspx?FileName=0_0_3117123412111DPR1.pdf&FilePath=..%2Fwritereaddata%2FAddinfo%2F",
+          "source_date": "2015-01",
+          "retrieved_at": "2026-10-22T16:19:17.721437+00:00",
+          "locator": {
+            "physical_pages": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-18",
+          "archive": "2026-10-22-reconciliation-verified",
+          "sha256": "1c360b6f01134a031c63137cb17e4eef48acf31b0855c50a0fa90af5335593ff",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20Steering%20Commitee%20meeting%20for%20JUNE-2025%2825-06-2025%29%28PDF%29.pdf",
+          "source_date": "2025-06-25",
+          "retrieved_at": "2026-10-22T15:09:05.737977+00:00",
+          "locator": {
+            "physical_pages": [
+              13
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-01",
+          "archive": "2026-10-22",
+          "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+          "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+          "source_date": "2019-10",
+          "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+          "locator": {
+            "physical_pages": [
+              13
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "issue_id": "IDENTITY-CANDIDATE-BALLABHGARH-400",
+      "decision": "merge_reference_identity",
+      "merged_id": "candidate-ballabhgarh-400",
+      "canonical_id": "ss-samaypur-pgcil",
+      "finding": "POWERGRID identifies its 400/220 kV facility at Samaypur, Ballabgarh. June 2019 DTL line table explicitly calls the endpoint Samaypur (Ballabgarh). BBMB independently lists a different 220 kV Ballabhgarh station; it is added separately.",
+      "evidence": [
+        {
+          "source_id": "SRC-23",
+          "archive": "2026-10-22-identity",
+          "sha256": "811e8b79a17be555622d532b6a734ad88c30a2cafe99c5c324279161c8316739",
+          "url": "https://apps.powergrid.in/pgciltenders/Files/1739a5ff-f1ad-41b1-a4df-7ce4f6e8dcb6/Final_published_GeM-Bidding-6416513.pdf",
+          "source_date": "2025",
+          "retrieved_at": "2026-10-22T16:19:17.315415+00:00",
+          "locator": {
+            "physical_pages": [
+              13
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-01",
+          "archive": "2026-10-22",
+          "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+          "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+          "source_date": "2019-10",
+          "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+          "locator": {
+            "physical_pages": [
+              31
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-21",
+          "archive": "2026-10-22-identity",
+          "sha256": "456cde976cac9d9a839583cbb0ca23559f3b11df3f584b070a5b47eec59bbff2",
+          "url": "https://bbmb.gov.in/transmission-network.htm",
+          "source_date": null,
+          "retrieved_at": "2026-10-22T16:19:17.691372+00:00",
+          "locator": {
+            "section": "Sub Stations, 220 kV Ballabhgarh and Samaypur"
+          }
+        }
+      ]
+    },
+    {
+      "issue_id": "NODE-WAZIRABAD-SITES",
+      "decision": "merge_reference_identity",
+      "merged_id": "ss-wazirabad",
+      "canonical_id": "ss-south-of-wazirabad",
+      "finding": "The 2019 DTL Wazirabad asset address matches the later directory South of Wazirabad address at Garhi/Khajuri Khas. The same Gopalpur, Mandola, Kashmere Gate and Geeta Colony connections corroborate the site mapping. Preserve Wazirabad as a source alias, not a second counted facility.",
+      "evidence": [
+        {
+          "source_id": "SRC-22",
+          "archive": "2026-10-22-identity",
+          "sha256": "1168b2e2f02605ac713ad24f21ed0bdab372e419196b75e32abc21b94583ff10",
+          "url": "https://www.dtl.gov.in/WriteReadData/Tender/DTL-6866-290819%281%29.PDF",
+          "source_date": "2019-08-29",
+          "retrieved_at": "2026-10-22T16:19:21.919912+00:00",
+          "locator": {
+            "physical_pages": [
+              133
+            ],
+            "source_serial": 17
+          }
+        },
+        {
+          "source_id": "SRC-02",
+          "archive": "2026-10-22",
+          "sha256": "42804e21018739814b651770f49cc95de5bca162b3095ca7205abfe0c4361dc3",
+          "url": "https://dtl.gov.in/content/326_1_ListofSubstations.aspx",
+          "source_date": "2025-05-14",
+          "retrieved_at": "2026-10-22T12:42:48.616428+00:00",
+          "locator": {
+            "table": 2,
+            "source_serial": 37
+          }
+        },
+        {
+          "source_id": "SRC-17",
+          "archive": "2026-10-22-reconciliation-verified",
+          "sha256": "258b3ec81e29ea2d73989194e060af57513147dee5d6a7f3d0d8d816c8b54845",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/OCC%20Agenda%20%28pdf%29%20%28March%202026%29.pdf",
+          "source_date": "2026-03",
+          "retrieved_at": "2026-10-22T15:09:00.647689+00:00",
+          "locator": {
+            "physical_pages": [
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "issue_id": "NODE-NARELA-SITES",
+      "decision": "retain_owner_sections_group_count",
+      "finding": "BBMB describes extension of two DVB/DTL 220 kV buses. The regulator report explicitly identifies DTL and BBMB portions on an extended bus. Preserve two owner-specific assets in one reference counting group; do not count two geographically separate sites or invent a transmission line between bus sections.",
+      "evidence": [
+        {
+          "source_id": "SRC-21",
+          "archive": "2026-10-22-identity",
+          "sha256": "456cde976cac9d9a839583cbb0ca23559f3b11df3f584b070a5b47eec59bbff2",
+          "url": "https://bbmb.gov.in/transmission-network.htm",
+          "source_date": null,
+          "retrieved_at": "2026-10-22T16:19:17.691372+00:00",
+          "locator": {
+            "section": "Sub Stations, 220kV Narela"
+          }
+        },
+        {
+          "source_id": "SRC-33",
+          "archive": "2026-10-22-terminal-followup",
+          "sha256": "c1774c8f31cdafcab220d2d00a6f1cd769fc7f8914a153ecc11280d21910372b",
+          "url": "https://forumofregulators.gov.in/Data/Meetings/Minutes/TC/5.pdf",
+          "source_date": "2016-07-15",
+          "retrieved_at": "2026-10-22T16:22:23.453676+00:00",
+          "locator": {
+            "physical_pages": [
+              122
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-25",
+          "archive": "2026-10-22-identity",
+          "sha256": "86641aac7eac331225848447ade7659726d7cb32084e3f703d149b47901c044e",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/2014_Sept_Minutes.pdf",
+          "source_date": "2014-09",
+          "retrieved_at": "2026-10-22T16:19:21.761676+00:00",
+          "locator": {
+            "physical_pages": [
+              10
+            ],
+            "section": "2.11"
+          }
+        }
+      ]
+    },
+    {
+      "issue_id": "NODE-BUDELLA-STATUS",
+      "decision": "classify_planned_as_of_source_date",
+      "finding": "June 2025 minutes identify the Budella 220/66 kV scheme as under tendering with tentative FY2028-29 commissioning. Retain the named cable observations but exclude the planned terminal from existing-asset coverage. This is dated classification, not a claim about October 2026 commissioning.",
+      "evidence": [
+        {
+          "source_id": "SRC-18",
+          "archive": "2026-10-22-reconciliation-verified",
+          "sha256": "1c360b6f01134a031c63137cb17e4eef48acf31b0855c50a0fa90af5335593ff",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20Steering%20Commitee%20meeting%20for%20JUNE-2025%2825-06-2025%29%28PDF%29.pdf",
+          "source_date": "2025-06-25",
+          "retrieved_at": "2026-10-22T15:09:05.737977+00:00",
+          "locator": {
+            "physical_pages": [
+              13
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "issue_id": "NODE-PLANT-TERMINALS",
+      "decision": "resolve_site_level_interfaces",
+      "finding": "Station-level evacuation is documented for all four plant identities. Preserve plant assets separately from receiving substations and record known bus/transformer detail; unit-level dynamic and current breaker states remain outside topology identity acceptance.",
+      "evidence": [
+        {
+          "source_id": "SRC-31",
+          "archive": "2026-10-22-terminals",
+          "sha256": "da89a3a0af1a2e4a152cb063baf80969876a3b660041201528360566af668932",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+          "source_date": "2026-04",
+          "retrieved_at": "2026-10-22T16:20:29.930669+00:00",
+          "locator": {
+            "physical_pages": [
+              8
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-32",
+          "archive": "2026-10-22-terminals",
+          "sha256": "eee38ad8f2efb980e9d091932996fd0230e1e2af06f75cf704ae552ab8bf2cca",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/OCC%20Agenda%20%28pdf%29%20%28July%202018%29.pdf",
+          "source_date": "2018-07-25",
+          "retrieved_at": "2026-10-22T16:20:29.964774+00:00",
+          "locator": {
+            "physical_pages": [
+              7
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-34",
+          "archive": "2026-10-22-terminal-followup",
+          "sha256": "a51ad19aee388f660126c954b07c2851833f5b3563457e13ec97f7a5aeb35cfc",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20NOVEMBER-2025%28PDF%29.pdf",
+          "source_date": "2025-11",
+          "retrieved_at": "2026-10-22T16:22:27.136975+00:00",
+          "locator": {
+            "physical_pages": [
+              7
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-30",
+          "archive": "2026-10-22-terminals",
+          "sha256": "f620238cc690f3e2b90d23629ae69900d0e12725309e284731d3b5a8a9dcad99",
+          "url": "https://www.nrpc.gov.in/Meetings/OCC/OCC233/OCC233_OPA.pdf",
+          "source_date": "2025-08",
+          "retrieved_at": "2026-10-22T16:20:32.541220+00:00",
+          "locator": {
+            "physical_pages": [
+              11
+            ],
+            "source_rows": [
+              89,
+              90
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "new_assets": [
+    {
+      "id": "ss-ballabhgarh-bbmb",
+      "name": "Ballabhgarh (BBMB 220 kV)",
+      "owner": "BBMB",
+      "voltage_kv": 220,
+      "boundary": "external_boundary",
+      "evidence": {
+        "source_id": "SRC-21",
+        "archive": "2026-10-22-identity",
+        "sha256": "456cde976cac9d9a839583cbb0ca23559f3b11df3f584b070a5b47eec59bbff2",
+        "url": "https://bbmb.gov.in/transmission-network.htm",
+        "source_date": null,
+        "retrieved_at": "2026-10-22T16:19:17.691372+00:00",
+        "locator": {
+          "section": "Sub Stations, 220 kV Ballabhgarh"
+        }
+      }
+    },
+    {
+      "id": "ss-alwar-rvpn",
+      "name": "Alwar (RVPN interface)",
+      "owner": "RVPN",
+      "voltage_kv": 220,
+      "boundary": "external_boundary",
+      "evidence": {
+        "source_id": "SRC-31",
+        "archive": "2026-10-22-terminals",
+        "sha256": "da89a3a0af1a2e4a152cb063baf80969876a3b660041201528360566af668932",
+        "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+        "source_date": "2026-04",
+        "retrieved_at": "2026-10-22T16:20:29.930669+00:00",
+        "locator": {
+          "physical_pages": [
+            9
+          ]
+        }
+      }
+    },
+    {
+      "id": "ss-bhiwani-pgcil",
+      "name": "Bhiwani (POWERGRID 400 kV interface)",
+      "owner": "POWERGRID",
+      "voltage_kv": 400,
+      "boundary": "external_boundary",
+      "evidence": {
+        "source_id": "SRC-34",
+        "archive": "2026-10-22-terminal-followup",
+        "sha256": "a51ad19aee388f660126c954b07c2851833f5b3563457e13ec97f7a5aeb35cfc",
+        "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20NOVEMBER-2025%28PDF%29.pdf",
+        "source_date": "2025-11",
+        "retrieved_at": "2026-10-22T16:22:27.136975+00:00",
+        "locator": {
+          "physical_pages": [
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "ss-bahadurgarh-pgcil",
+      "name": "Bahadurgarh (POWERGRID 400 kV interface)",
+      "owner": "POWERGRID",
+      "voltage_kv": 400,
+      "boundary": "external_boundary",
+      "evidence": {
+        "source_id": "SRC-34",
+        "archive": "2026-10-22-terminal-followup",
+        "sha256": "a51ad19aee388f660126c954b07c2851833f5b3563457e13ec97f7a5aeb35cfc",
+        "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20NOVEMBER-2025%28PDF%29.pdf",
+        "source_date": "2025-11",
+        "retrieved_at": "2026-10-22T16:22:27.136975+00:00",
+        "locator": {
+          "physical_pages": [
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "ss-dadri-ntpc",
+      "name": "Dadri (NTPC switchyard interface)",
+      "owner": "NTPC",
+      "voltage_kv": 400,
+      "boundary": "external_boundary",
+      "evidence": {
+        "source_id": "SRC-31",
+        "archive": "2026-10-22-terminals",
+        "sha256": "da89a3a0af1a2e4a152cb063baf80969876a3b660041201528360566af668932",
+        "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+        "source_date": "2026-04",
+        "retrieved_at": "2026-10-22T16:20:29.930669+00:00",
+        "locator": {
+          "physical_pages": [
+            5,
+            6
+          ]
+        }
+      }
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "interface-pps1-pragati",
+      "endpoint_node_ids": [
+        "plant-pps1",
+        "ss-pragati"
+      ],
+      "voltage_kv": 220,
+      "kind": "generation_bus_interface",
+      "evidence": [
+        {
+          "source_id": "SRC-31",
+          "archive": "2026-10-22-terminals",
+          "sha256": "da89a3a0af1a2e4a152cb063baf80969876a3b660041201528360566af668932",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+          "source_date": "2026-04",
+          "retrieved_at": "2026-10-22T16:20:29.930669+00:00",
+          "locator": {
+            "physical_pages": [
+              8
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-32",
+          "archive": "2026-10-22-terminals",
+          "sha256": "eee38ad8f2efb980e9d091932996fd0230e1e2af06f75cf704ae552ab8bf2cca",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/OCC%20Agenda%20%28pdf%29%20%28July%202018%29.pdf",
+          "source_date": "2018-07-25",
+          "retrieved_at": "2026-10-22T16:20:29.964774+00:00",
+          "locator": {
+            "physical_pages": [
+              7
+            ]
+          }
+        }
+      ],
+      "detail": "2018 bus arrangement: GT2/STG on Bus-I and GT1 on Bus-II. This is a historical arrangement, not current switching state.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-gtps-pragati",
+      "endpoint_node_ids": [
+        "plant-gtps",
+        "ss-pragati"
+      ],
+      "voltage_kv": 220,
+      "kind": "generation_transformer_interface",
+      "evidence": [
+        {
+          "source_id": "SRC-31",
+          "archive": "2026-10-22-terminals",
+          "sha256": "da89a3a0af1a2e4a152cb063baf80969876a3b660041201528360566af668932",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+          "source_date": "2026-04",
+          "retrieved_at": "2026-10-22T16:20:29.930669+00:00",
+          "locator": {
+            "physical_pages": [
+              8
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-32",
+          "archive": "2026-10-22-terminals",
+          "sha256": "eee38ad8f2efb980e9d091932996fd0230e1e2af06f75cf704ae552ab8bf2cca",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/OCC%20Agenda%20%28pdf%29%20%28July%202018%29.pdf",
+          "source_date": "2018-07-25",
+          "retrieved_at": "2026-10-22T16:20:29.964774+00:00",
+          "locator": {
+            "physical_pages": [
+              7
+            ]
+          }
+        }
+      ],
+      "detail": "GTPS evacuation through Pragati; retain the existing I/II feeder observations. No extra physical circuits inferred.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-pps3-bawana",
+      "endpoint_node_ids": [
+        "plant-pps3-bawana",
+        "ss-bawana-dtl"
+      ],
+      "voltage_kv": 400,
+      "kind": "bus_interconnector",
+      "evidence": [
+        {
+          "source_id": "SRC-34",
+          "archive": "2026-10-22-terminal-followup",
+          "sha256": "a51ad19aee388f660126c954b07c2851833f5b3563457e13ec97f7a5aeb35cfc",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20NOVEMBER-2025%28PDF%29.pdf",
+          "source_date": "2025-11",
+          "retrieved_at": "2026-10-22T16:22:27.136975+00:00",
+          "locator": {
+            "physical_pages": [
+              7
+            ]
+          }
+        }
+      ],
+      "detail": "PPCL Bus-II to DTL Bus-I interconnector, Bay 419. Scheduled shutdown evidence is not current status.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-jhajjar-mundka",
+      "endpoint_node_ids": [
+        "plant-jhajjar",
+        "ss-tikri-kalan"
+      ],
+      "voltage_kv": 400,
+      "kind": "transmission_double_circuit",
+      "evidence": [
+        {
+          "source_id": "SRC-30",
+          "archive": "2026-10-22-terminals",
+          "sha256": "f620238cc690f3e2b90d23629ae69900d0e12725309e284731d3b5a8a9dcad99",
+          "url": "https://www.nrpc.gov.in/Meetings/OCC/OCC233/OCC233_OPA.pdf",
+          "source_date": "2025-08",
+          "retrieved_at": "2026-10-22T16:20:32.541220+00:00",
+          "locator": {
+            "physical_pages": [
+              11
+            ],
+            "source_rows": [
+              89,
+              90
+            ],
+            "request_ids": [
+              "RQ228410",
+              "RQ228409"
+            ]
+          }
+        }
+      ],
+      "detail": "Jhajjar(APCL)–Mundka(DV) Ckt-2 and Ckt-1; diagram generation label matches the receiving station. No association with Jhajjar CLP inferred.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-narela-extended-bus",
+      "endpoint_node_ids": [
+        "ss-narela-dtl",
+        "ss-narela-bbmb"
+      ],
+      "voltage_kv": 220,
+      "kind": "bus_extension",
+      "evidence": [
+        {
+          "source_id": "SRC-21",
+          "archive": "2026-10-22-identity",
+          "sha256": "456cde976cac9d9a839583cbb0ca23559f3b11df3f584b070a5b47eec59bbff2",
+          "url": "https://bbmb.gov.in/transmission-network.htm",
+          "source_date": null,
+          "retrieved_at": "2026-10-22T16:19:17.691372+00:00",
+          "locator": {
+            "section": "Sub Stations, Narela"
+          }
+        },
+        {
+          "source_id": "SRC-33",
+          "archive": "2026-10-22-terminal-followup",
+          "sha256": "c1774c8f31cdafcab220d2d00a6f1cd769fc7f8914a153ecc11280d21910372b",
+          "url": "https://forumofregulators.gov.in/Data/Meetings/Minutes/TC/5.pdf",
+          "source_date": "2016-07-15",
+          "retrieved_at": "2026-10-22T16:22:23.453676+00:00",
+          "locator": {
+            "physical_pages": [
+              122
+            ]
+          }
+        }
+      ],
+      "detail": "Shared extended bus, not an invented inter-site transmission circuit.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-ballabhgarh-btps",
+      "endpoint_node_ids": [
+        "ss-ballabhgarh-bbmb",
+        "ss-btps"
+      ],
+      "voltage_kv": 220,
+      "kind": "transmission_double_circuit",
+      "evidence": [
+        {
+          "source_id": "SRC-21",
+          "archive": "2026-10-22-identity",
+          "sha256": "456cde976cac9d9a839583cbb0ca23559f3b11df3f584b070a5b47eec59bbff2",
+          "url": "https://bbmb.gov.in/transmission-network.htm",
+          "source_date": null,
+          "retrieved_at": "2026-10-22T16:19:17.691372+00:00",
+          "locator": {
+            "section": "Sub Stations, Ballabhgarh"
+          }
+        },
+        {
+          "source_id": "SRC-01",
+          "archive": "2026-10-22",
+          "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+          "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+          "source_date": "2019-10",
+          "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+          "locator": {
+            "physical_pages": [
+              30,
+              34
+            ]
+          }
+        }
+      ],
+      "detail": "BBMB 220 kV Ballabhgarh–BTPS two circuits. Distinct from 400 kV POWERGRID Samaypur.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-btps-alwar",
+      "endpoint_node_ids": [
+        "ss-btps",
+        "ss-alwar-rvpn"
+      ],
+      "voltage_kv": 220,
+      "kind": "historical_isolated_line",
+      "evidence": [
+        {
+          "source_id": "SRC-31",
+          "archive": "2026-10-22-terminals",
+          "sha256": "da89a3a0af1a2e4a152cb063baf80969876a3b660041201528360566af668932",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+          "source_date": "2026-04",
+          "retrieved_at": "2026-10-22T16:20:29.930669+00:00",
+          "locator": {
+            "physical_pages": [
+              9
+            ]
+          }
+        }
+      ],
+      "detail": "Reported physical isolation and zero load since November 2023. Exclude as an assumed conducting path; do not infer an energized source-to-source connection.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-bawana-bhiwani",
+      "endpoint_node_ids": [
+        "ss-bawana-dtl",
+        "ss-bhiwani-pgcil"
+      ],
+      "voltage_kv": 400,
+      "kind": "transmission_line_group",
+      "evidence": [
+        {
+          "source_id": "SRC-34",
+          "archive": "2026-10-22-terminal-followup",
+          "sha256": "a51ad19aee388f660126c954b07c2851833f5b3563457e13ec97f7a5aeb35cfc",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20NOVEMBER-2025%28PDF%29.pdf",
+          "source_date": "2025-11",
+          "retrieved_at": "2026-10-22T16:22:27.136975+00:00",
+          "locator": {
+            "physical_pages": [
+              7
+            ]
+          }
+        }
+      ],
+      "detail": "Direct Bawana interface named in 2025; circuit suffix and full rating not supplied here.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-bawana-bahadurgarh",
+      "endpoint_node_ids": [
+        "ss-bawana-dtl",
+        "ss-bahadurgarh-pgcil"
+      ],
+      "voltage_kv": 400,
+      "kind": "transmission_line_group",
+      "evidence": [
+        {
+          "source_id": "SRC-34",
+          "archive": "2026-10-22-terminal-followup",
+          "sha256": "a51ad19aee388f660126c954b07c2851833f5b3563457e13ec97f7a5aeb35cfc",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20NOVEMBER-2025%28PDF%29.pdf",
+          "source_date": "2025-11",
+          "retrieved_at": "2026-10-22T16:22:27.136975+00:00",
+          "locator": {
+            "physical_pages": [
+              7
+            ]
+          }
+        }
+      ],
+      "detail": "Direct Bawana interface named in 2025; circuit suffix and full rating not supplied here.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-bamnauli-dwarka",
+      "endpoint_node_ids": [
+        "ss-bamnauli",
+        "ss-dwarka-sector-5"
+      ],
+      "voltage_kv": 400,
+      "kind": "transmission_single_circuit",
+      "evidence": [
+        {
+          "source_id": "SRC-20",
+          "archive": "2026-10-22-reconciliation-verified",
+          "sha256": "12e45adb618bc5da469d90a9930c6bbbbf3f7b8ba6a8d2deca967c156f477356",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/DTL-Petition-For-ARR-FY-2023-24.pdf",
+          "source_date": "2023-24",
+          "retrieved_at": "2026-10-22T15:09:10.899172+00:00",
+          "locator": {
+            "physical_pages": [
+              36
+            ],
+            "source_serial": 3
+          }
+        }
+      ],
+      "detail": "Petition reports re-energized as Bamnauli–Dwarka after LILO on 7 February 2022. Do not expand ambiguous commissioning columns into additional circuits.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "map-mandola-dadri",
+      "endpoint_node_ids": [
+        "ss-mandola-pgcil",
+        "ss-dadri-pgcil"
+      ],
+      "voltage_kv": 400,
+      "kind": "historical_ring_section",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "archive": "2026-10-22",
+          "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+          "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+          "source_date": "2019-10",
+          "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+          "locator": {
+            "physical_pages": [
+              29,
+              30
+            ]
+          }
+        }
+      ],
+      "detail": "June 2019 400 kV ring narrative; a dated section claim, not independent current circuit verification.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "map-dadri-maharani",
+      "endpoint_node_ids": [
+        "ss-dadri-pgcil",
+        "ss-maharani-bagh"
+      ],
+      "voltage_kv": 400,
+      "kind": "historical_ring_section",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "archive": "2026-10-22",
+          "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+          "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+          "source_date": "2019-10",
+          "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+          "locator": {
+            "physical_pages": [
+              29,
+              30
+            ]
+          }
+        }
+      ],
+      "detail": "June 2019 400 kV ring narrative; a dated section claim, not independent current circuit verification.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "map-maharani-samaypur",
+      "endpoint_node_ids": [
+        "ss-maharani-bagh",
+        "ss-samaypur-pgcil"
+      ],
+      "voltage_kv": 400,
+      "kind": "historical_ring_section",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "archive": "2026-10-22",
+          "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+          "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+          "source_date": "2019-10",
+          "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+          "locator": {
+            "physical_pages": [
+              29,
+              30
+            ]
+          }
+        }
+      ],
+      "detail": "June 2019 400 kV ring narrative; a dated section claim, not independent current circuit verification.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "map-gazipur-noida62",
+      "endpoint_node_ids": [
+        "ss-gazipur",
+        "ss-noida-62"
+      ],
+      "voltage_kv": 220,
+      "kind": "historical_diagram_connection",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "archive": "2026-10-22",
+          "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+          "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+          "source_date": "2019-10",
+          "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+          "locator": {
+            "physical_pages": [
+              30
+            ]
+          }
+        }
+      ],
+      "detail": "June 2019 diagram site-level endpoint trace; no circuit suffix, limit or current state inferred.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "map-btps-noida",
+      "endpoint_node_ids": [
+        "ss-btps",
+        "ss-noida"
+      ],
+      "voltage_kv": 220,
+      "kind": "historical_diagram_connection",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "archive": "2026-10-22",
+          "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+          "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+          "source_date": "2019-10",
+          "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+          "locator": {
+            "physical_pages": [
+              30
+            ]
+          }
+        },
+        {
+          "source_id": "SRC-31",
+          "archive": "2026-10-22-terminals",
+          "sha256": "da89a3a0af1a2e4a152cb063baf80969876a3b660041201528360566af668932",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+          "source_date": "2026-04",
+          "retrieved_at": "2026-10-22T16:20:29.930669+00:00",
+          "locator": {
+            "physical_pages": [
+              9
+            ]
+          }
+        }
+      ],
+      "detail": "2019 map Noida label; 2026 minutes name Noida Sec-86A in the BTPS interface list. Exact Noida terminal naming remains an explicit field-level question.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    },
+    {
+      "id": "interface-dadri-ntpc-harsh-vihar",
+      "endpoint_node_ids": [
+        "ss-dadri-ntpc",
+        "ss-harsh-vihar"
+      ],
+      "voltage_kv": 400,
+      "kind": "transmission_double_circuit",
+      "evidence": [
+        {
+          "source_id": "SRC-31",
+          "archive": "2026-10-22-terminals",
+          "sha256": "da89a3a0af1a2e4a152cb063baf80969876a3b660041201528360566af668932",
+          "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20APRIL-2026%28PDF%29.pdf",
+          "source_date": "2026-04",
+          "retrieved_at": "2026-10-22T16:20:29.930669+00:00",
+          "locator": {
+            "physical_pages": [
+              5,
+              6
+            ]
+          }
+        }
+      ],
+      "detail": "NTPC Dadri agenda names Dadri–Harsh Vihar Ckt-1/2; keep this NTPC endpoint distinct from the POWERGRID ring reference.",
+      "operational_status": "unknown",
+      "simulation_eligible": false
+    }
+  ],
+  "map_review": {
+    "evidence": {
+      "source_id": "SRC-01",
+      "archive": "2026-10-22",
+      "sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "url": "https://www.dtl.gov.in/WriteReadData/CMS/13thBusinessPlan_2017-18_2021-22_Rev-02.pdf",
+      "source_date": "2019-10",
+      "retrieved_at": "2026-10-22T12:43:09.270174+00:00",
+      "locator": {
+        "physical_pages": [
+          30
+        ]
+      }
+    },
+    "represented_asset_ids": [
+      "ss-panipat-bbmb",
+      "ss-narela-dtl",
+      "ss-narela-bbmb",
+      "ss-dsidc-bawana",
+      "ss-bawana-dtl",
+      "ss-rohini-1",
+      "ss-rohini-2",
+      "ss-shalimar-bagh",
+      "ss-kanjhawala",
+      "ss-wazirpur",
+      "ss-gopalpur",
+      "ss-south-of-wazirabad",
+      "ss-mandola-pgcil",
+      "ss-subzi-mandi",
+      "ss-kashmere-gate",
+      "ss-geeta-colony",
+      "ss-rajghat",
+      "ss-indraprastha",
+      "ss-park-street",
+      "ss-pragati",
+      "ss-patparganj",
+      "ss-gazipur",
+      "ss-noida-62",
+      "ss-noida",
+      "ss-maharani-bagh",
+      "ss-lodhi-road",
+      "ss-electric-lane",
+      "ss-masjid-moth",
+      "ss-sarita-vihar",
+      "ss-btps",
+      "ss-ballabhgarh-bbmb",
+      "ss-samaypur-pgcil",
+      "ss-tughlakabad",
+      "ss-okhla",
+      "ss-mehrauli",
+      "ss-vasant-kunj",
+      "ss-rk-puram",
+      "ss-trauma-centre",
+      "ss-ridge-valley",
+      "ss-naraina",
+      "ss-pappankalan-1",
+      "ss-pappankalan-2",
+      "ss-pappankalan-3",
+      "ss-dial",
+      "ss-najafgarh",
+      "ss-tikri-kalan",
+      "ss-jhatikara-pgcil",
+      "ss-bamnauli",
+      "ss-harsh-vihar",
+      "ss-preet-vihar",
+      "plant-pps3-bawana",
+      "plant-pps1",
+      "plant-jhajjar",
+      "ss-rohtak-road-bbmb"
+    ],
+    "note": "Visual node/legend review of June 2019 schematic. Narela owner sections share a map symbol. RK Puram marker has no completed line trace in this historical schematic; later tables supply its connections. Map is representative and not to scale."
+  },
+  "field_questions": [
+    {
+      "id": "NOIDA-TERMINAL",
+      "reason": "2019 Noida map label versus 2026 Noida Sec-86A naming needs an exact bus/station identifier; no automatic rename."
+    },
+    {
+      "id": "CIRCUIT-SUFFIXES",
+      "reason": "Four single-circuit labels and duplicate R.K. Puram–Trauma Centre source labels remain unchanged."
+    },
+    {
+      "id": "CURRENT-SNAPSHOT",
+      "reason": "Evidence is versioned by source date; no complete current switching snapshot established."
+    },
+    {
+      "id": "ELECTRICAL-PARAMETERS",
+      "reason": "Flow limits, impedance, breaker states and measured node telemetry require separate evidence and are not topology identity requirements."
+    }
+  ],
+  "report_count_basis": {
+    "report": "PBL-II Review-III (2).pdf",
+    "physical_pages": [
+      2,
+      11
+    ],
+    "requirement": "Minimum 50 Delhi substation/plant nodes; not 50 geographically separate sites.",
+    "count_policy": "Count the 47 directory assets plus three independently identified Delhi plants; exclude extra BBMB Narela owner portion, external interfaces and planned Budella from the minimum."
+  },
+  "historical_changes": {
+    "entries": [
+      {
+        "observation_id": "circuit-observation-src-01-400-001",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "The 2023 Form-2 records 2022 Maharani Bagh LILO of the Bawana–Mandola path. Preserve the 2019 direct connection as historical, not an extra current path."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-400-002",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "The 2023 Form-2 records 2022 Maharani Bagh LILO of the Bawana–Mandola path. Preserve the 2019 direct connection as historical, not an extra current path."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-400-007",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Samaypur (Ballabgarh) is now reconciled with the later 400 kV Ballabhgarh label, distinct from BBMB 220 kV Ballabhgarh."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-400-008",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Samaypur (Ballabgarh) is now reconciled with the later 400 kV Ballabhgarh label, distinct from BBMB 220 kV Ballabhgarh."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-013",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Sector-5 Dwarka evacuation and 2020 LILO records explain the changed PPK-I/PPK-III/Naraina endpoint arrangement."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-014",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Sector-5 Dwarka evacuation and 2020 LILO records explain the changed PPK-I/PPK-III/Naraina endpoint arrangement."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-015",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Sector-5 Dwarka evacuation and 2020 LILO records explain the changed PPK-I/PPK-III/Naraina endpoint arrangement."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-018",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Later source omits the circuit suffix; Form-2 confirms a single circuit. Do not invent a suffix. The 2019 Mundka/Kanjhawala/Najafgarh length discrepancies remain separate source-value conflicts."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-020",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Later source omits the circuit suffix; Form-2 confirms a single circuit. Do not invent a suffix. The 2019 Mundka/Kanjhawala/Najafgarh length discrepancies remain separate source-value conflicts."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-031",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Wazirabad and South of Wazirabad are reconciled source names for the same station."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-032",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Wazirabad and South of Wazirabad are reconciled source names for the same station."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-076",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Later source omits the circuit suffix; Form-2 confirms a single circuit. Do not invent a suffix. The 2019 Mundka/Kanjhawala/Najafgarh length discrepancies remain separate source-value conflicts."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-087",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Later source omits the circuit suffix; Form-2 confirms a single circuit. Do not invent a suffix. The 2019 Mundka/Kanjhawala/Najafgarh length discrepancies remain separate source-value conflicts."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-092",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Ridge Valley–AIIMS/Trauma path was LILOed at R.K. Puram in March 2021 per Form-2 rows 55–56."
+      },
+      {
+        "observation_id": "circuit-observation-src-01-220-093",
+        "disposition": "accounted_for_as_dated_observation",
+        "reason": "Ridge Valley–AIIMS/Trauma path was LILOed at R.K. Puram in March 2021 per Form-2 rows 55–56."
+      }
+    ],
+    "evidence": [
+      {
+        "source_id": "SRC-20",
+        "archive": "2026-10-22-reconciliation-verified",
+        "sha256": "12e45adb618bc5da469d90a9930c6bbbbf3f7b8ba6a8d2deca967c156f477356",
+        "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/DTL-Petition-For-ARR-FY-2023-24.pdf",
+        "source_date": "2023-24",
+        "retrieved_at": "2026-10-22T15:09:10.899172+00:00",
+        "locator": {
+          "physical_pages": [
+            36
+          ],
+          "source_serial": 3
+        }
+      },
+      {
+        "source_id": "SRC-27",
+        "archive": "2026-10-22-identity",
+        "sha256": "84d01828e80dad75ed049c861ab7ddae305d6e4d8b13852a246935885499230c",
+        "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20Steering%20Commitee%20meeting%20for%20JULY-2018%2804-07-2018%29%28PDF%29.pdf",
+        "source_date": "2018-07-04",
+        "retrieved_at": "2026-10-22T16:19:21.424801+00:00",
+        "locator": {
+          "physical_pages": [
+            42,
+            43,
+            44
+          ]
+        }
+      }
+    ],
+    "note": "Explains the initial exact-identity comparison findings; it does not certify retirement or an unchanged operating topology."
+  }
+}

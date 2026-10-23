@@ -1,0 +1,36 @@
+{
+  "project": "prism-phase3-reference",
+  "database_uri": "bolt://127.0.0.1:7687",
+  "first_import": {
+    "dataset": "delhi_reference_8da0bd2a16599cc21a9ef97b11b4cc91b58ffb2259488c17a297232b650fc6af",
+    "assets": 64,
+    "circuit_observations": 245,
+    "endpoint_relationships": 490,
+    "verified": true,
+    "mode": "reference_only"
+  },
+  "second_import": {
+    "dataset": "delhi_reference_8da0bd2a16599cc21a9ef97b11b4cc91b58ffb2259488c17a297232b650fc6af",
+    "assets": 64,
+    "circuit_observations": 245,
+    "endpoint_relationships": 490,
+    "verified": true,
+    "mode": "reference_only"
+  },
+  "source_reconciliation": {
+    "resolved_metadata_issue_ids": [
+      "NODE-TIMARPUR-VOLTAGE",
+      "TRANSFORM-SRC-06-35"
+    ],
+    "remaining_node_issue_ids": [
+      "IDENTITY-CANDIDATE-BALLABHGARH-400",
+      "IDENTITY-CANDIDATE-DWARKA",
+      "NODE-BUDELLA-STATUS",
+      "NODE-NARELA-SITES",
+      "NODE-PLANT-TERMINALS",
+      "NODE-WAZIRABAD-SITES"
+    ]
+  },
+  "electrical_integration_gate": "not_passed",
+  "dashboard_changed": false
+}

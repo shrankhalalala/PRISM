@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "scope": "delhi_ehv_reference_v1",
+  "started_at": "2026-10-22T16:23:25.925309+00:00",
+  "completed_at": "2026-10-22T16:23:26.107515+00:00",
+  "catalog_sha256": "d0aa9af7cdcebc1cd069b736c17ee5cd7b7eaeb97b1950c037d885f5b88e9884",
+  "assurance": "Source captures only; suitability requires manual review. No runtime grid changes.",
+  "sources": [
+    {
+      "id": "SRC-36",
+      "url": "https://www.cea.nic.in/old/reports/committee/failure_equipment/failure_22042016.pdf",
+      "format": "pdf",
+      "source_date": "2016-04-22",
+      "title": "CEA Bawana transformer investigation official legacy link",
+      "required": false,
+      "role": "reference",
+      "attempted_at": "2026-10-22T16:23:25.925532+00:00",
+      "status": "failed",
+      "path": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "URLError: <urlopen error ('\u201ccea.nic.in\u201d certificate name does not match input',)>"
+    }
+  ]
+}

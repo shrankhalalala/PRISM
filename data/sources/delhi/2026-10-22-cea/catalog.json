@@ -1,0 +1,14 @@
+{
+  "scope": "delhi_ehv_reference_v1",
+  "sources": [
+    {
+      "id": "SRC-36",
+      "url": "https://www.cea.nic.in/old/reports/committee/failure_equipment/failure_22042016.pdf",
+      "format": "pdf",
+      "source_date": "2016-04-22",
+      "title": "CEA Bawana transformer investigation official legacy link",
+      "required": false,
+      "role": "reference"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "supplemental_archive": "2026-10-22-reconciliation-verified",
+  "conclusions": [
+    {
+      "id": "REC-SOW",
+      "issue_id": "TRANSFORM-SRC-06-35",
+      "status": "resolved_metadata_only",
+      "source_id": "SRC-17",
+      "locator": {
+        "physical_pages": [
+          1,
+          2
+        ]
+      },
+      "node_ids": [
+        "ss-south-of-wazirabad"
+      ],
+      "finding": "DTL explicitly expands South of Wazirabad (SOW). SRC-06 SOW transformation metadata can be attributed to that node; current capacity and Wazirabad co-location are not established.",
+      "effect": {
+        "transformation_source": "SRC-06",
+        "source_serial": 35,
+        "assigned_node_id": "ss-south-of-wazirabad"
+      },
+      "source_sha256": "258b3ec81e29ea2d73989194e060af57513147dee5d6a7f3d0d8d816c8b54845",
+      "source_url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/OCC%20Agenda%20%28pdf%29%20%28March%202026%29.pdf",
+      "source_date": "2026-03",
+      "retrieved_at": "2026-10-22T15:09:00.647689+00:00"
+    },
+    {
+      "id": "REC-TIMARPUR",
+      "issue_id": "NODE-TIMARPUR-VOLTAGE",
+      "status": "resolved_metadata_only",
+      "source_id": "SRC-19",
+      "locator": {
+        "section": "Tender reference DTL-8650-300522; title and work description"
+      },
+      "node_ids": [
+        "ss-timarpur"
+      ],
+      "finding": "Independent DTL tender explicitly identifies 220 kV Timarpur and 220/33/11 kV transformer works. Use 220 kV as corroborated nominal metadata; preserve the directory address typo as original evidence. Tender does not establish operating status or completed installation.",
+      "effect": {
+        "nominal_voltage_kv": 220
+      },
+      "source_sha256": "509a5e50a808868aedf4b9eb34d6d5752f2202a4567bf4ac7290a44ff5f34f61",
+      "source_url": "https://www.dtl.gov.in/TenderDetails.aspx?TenderId=15979",
+      "source_date": "2022-05-30",
+      "retrieved_at": "2026-10-22T15:09:00.867275+00:00"
+    },
+    {
+      "id": "REC-BUDELLA",
+      "issue_id": "NODE-BUDELLA-STATUS",
+      "status": "open_with_clarification",
+      "source_id": "SRC-18",
+      "locator": {
+        "physical_pages": [
+          13
+        ],
+        "printed_pages": [
+          12
+        ]
+      },
+      "node_ids": [
+        "ss-budella"
+      ],
+      "finding": "June 2025 minutes describe the 220/66 kV Budella scheme as under tendering with tentative FY2028-29 commissioning. Earlier named cables do not prove an operating substation.",
+      "effect": {
+        "dated_scheme_status": "under_tendering_2025_06",
+        "operating_status": "unknown"
+      },
+      "source_sha256": "1c360b6f01134a031c63137cb17e4eef48acf31b0855c50a0fa90af5335593ff",
+      "source_url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20Steering%20Commitee%20meeting%20for%20JUNE-2025%2825-06-2025%29%28PDF%29.pdf",
+      "source_date": "2025-06-25",
+      "retrieved_at": "2026-10-22T15:09:05.737977+00:00"
+    },
+    {
+      "id": "REC-SINGLE-CIRCUITS",
+      "issue_id": null,
+      "status": "multiplicity_clarified_label_unresolved",
+      "source_id": "SRC-20",
+      "locator": {
+        "physical_pages": [
+          37,
+          38
+        ],
+        "form": "Form-2",
+        "source_serials": [
+          22,
+          29,
+          30,
+          39
+        ]
+      },
+      "node_ids": [],
+      "finding": "The 2023-24 petition identifies Gazipur–Patparganj, Kanjhawala–Tikri Kalan, Kanjhawala–Najafgarh and Naraina–Ridge Valley as single circuits. Missing circuit suffixes in SRC-04 remain unchanged; single does not authorize inventing Ckt-I.",
+      "effect": {
+        "source_id": "SRC-04",
+        "source_serials": [
+          27,
+          40,
+          41,
+          57
+        ],
+        "source_declared_multiplicity": "single"
+      },
+      "source_sha256": "12e45adb618bc5da469d90a9930c6bbbbf3f7b8ba6a8d2deca967c156f477356",
+      "source_url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/DTL-Petition-For-ARR-FY-2023-24.pdf",
+      "source_date": "2023-24",
+      "retrieved_at": "2026-10-22T15:09:10.899172+00:00"
+    },
+    {
+      "id": "REC-RK-TRAUMA",
+      "issue_id": null,
+      "status": "duplicate_label_unresolved",
+      "source_id": "SRC-20",
+      "locator": {
+        "physical_pages": [
+          38
+        ],
+        "form": "Form-2",
+        "source_serial": 56
+      },
+      "node_ids": [
+        "ss-rk-puram",
+        "ss-trauma-centre"
+      ],
+      "finding": "Petition lists a double circuit with separate I/II commissioning entries. This supports two historical circuits but does not identify which repeated Ckt-I HTML row corresponds to II. Preserve both rows as observations.",
+      "effect": {
+        "source_id": "SRC-04",
+        "source_serials": [
+          88,
+          89
+        ],
+        "source_declared_multiplicity": "double"
+      },
+      "source_sha256": "12e45adb618bc5da469d90a9930c6bbbbf3f7b8ba6a8d2deca967c156f477356",
+      "source_url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/DTL-Petition-For-ARR-FY-2023-24.pdf",
+      "source_date": "2023-24",
+      "retrieved_at": "2026-10-22T15:09:10.899172+00:00"
+    },
+    {
+      "id": "REC-DWARKA",
+      "issue_id": "IDENTITY-CANDIDATE-DWARKA",
+      "status": "open_with_clarification",
+      "source_id": "SRC-18",
+      "locator": {
+        "physical_pages": [
+          13
+        ],
+        "printed_pages": [
+          12
+        ]
+      },
+      "node_ids": [
+        "candidate-dwarka",
+        "ss-dwarka-sector-5"
+      ],
+      "finding": "DTL reports 220 kV GIS Dwarka already commissioned and distinguishes planned 66 kV additions. Exact identity between the directory site, every feeder endpoint and ISTS terminals still requires reconciliation.",
+      "effect": {},
+      "source_sha256": "1c360b6f01134a031c63137cb17e4eef48acf31b0855c50a0fa90af5335593ff",
+      "source_url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20Steering%20Commitee%20meeting%20for%20JUNE-2025%2825-06-2025%29%28PDF%29.pdf",
+      "source_date": "2025-06-25",
+      "retrieved_at": "2026-10-22T15:09:05.737977+00:00"
+    }
+  ]
+}

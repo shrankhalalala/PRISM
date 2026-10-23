@@ -1,0 +1,32 @@
+{
+  "scope": "delhi_ehv_reference_v1",
+  "sources": [
+    {
+      "id": "SRC-33",
+      "url": "https://forumofregulators.gov.in/Data/Meetings/Minutes/TC/5.pdf",
+      "format": "pdf",
+      "source_date": "2016-07-15",
+      "title": "FoR Narela extended bus official hostname alternative",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-34",
+      "url": "https://www.dtl.gov.in/WriteReadData/userfiles/file/MOM%20of%20OCC%20meeting%20for%20NOVEMBER-2025%28PDF%29.pdf",
+      "format": "pdf",
+      "source_date": "2025-11",
+      "title": "DTL November 2025 OCC Bawana CCGT switchyard",
+      "required": false,
+      "role": "reference"
+    },
+    {
+      "id": "SRC-35",
+      "url": "https://cea.nic.in/old/reports/others/ps/psetd/failure_dec16.pdf",
+      "format": "pdf",
+      "source_date": "2016",
+      "title": "CEA legacy Bawana failure report",
+      "required": false,
+      "role": "reference"
+    }
+  ]
+}

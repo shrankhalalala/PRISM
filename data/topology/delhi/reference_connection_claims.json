@@ -1,0 +1,191 @@
+{
+  "reviewed_circuit_observations": [
+    {
+      "source_id": "SRC-13",
+      "source_sha256": "9f113df2e693052546e47679e71bc0e312124b8842d9fbd593399a0fdcfb4b06",
+      "review_serial": 1,
+      "physical_page": 86,
+      "section": "J. Miscellaneous Works I",
+      "voltage_kv": 220,
+      "circuit_label": "III",
+      "endpoint_node_ids": [
+        "ss-panipat-bbmb",
+        "ss-narela-bbmb"
+      ],
+      "endpoint_source_labels": [
+        "Panipat",
+        "Narela"
+      ],
+      "description": "Panipat - Narela Ckt-III",
+      "note": "Owner-qualified project endpoint interpretation from the BBMB annual report. Maintenance evidence during the report period does not certify 2026 status or exact bus wiring."
+    },
+    {
+      "source_id": "SRC-13",
+      "source_sha256": "9f113df2e693052546e47679e71bc0e312124b8842d9fbd593399a0fdcfb4b06",
+      "review_serial": 2,
+      "physical_page": 86,
+      "section": "J. Miscellaneous Works II",
+      "voltage_kv": 220,
+      "circuit_label": "I",
+      "endpoint_node_ids": [
+        "ss-narela-bbmb",
+        "ss-rohtak-road-bbmb"
+      ],
+      "endpoint_source_labels": [
+        "Narela",
+        "Rohtak Road"
+      ],
+      "description": "Narela - Rohtak Road Ckt-I",
+      "note": "Owner-qualified project endpoint interpretation from the BBMB annual report. Maintenance evidence during the report period does not certify 2026 status or exact bus wiring."
+    },
+    {
+      "source_id": "SRC-13",
+      "source_sha256": "9f113df2e693052546e47679e71bc0e312124b8842d9fbd593399a0fdcfb4b06",
+      "review_serial": 3,
+      "physical_page": 86,
+      "section": "J. Miscellaneous Works II",
+      "voltage_kv": 220,
+      "circuit_label": "II",
+      "endpoint_node_ids": [
+        "ss-narela-bbmb",
+        "ss-rohtak-road-bbmb"
+      ],
+      "endpoint_source_labels": [
+        "Narela",
+        "Rohtak Road"
+      ],
+      "description": "Narela - Rohtak Road Ckt-II",
+      "note": "Owner-qualified project endpoint interpretation from the BBMB annual report. Maintenance evidence during the report period does not certify 2026 status or exact bus wiring."
+    }
+  ],
+  "reference_connection_claims": [
+    {
+      "id": "REF-2019-RING",
+      "source_id": "SRC-01",
+      "physical_page": 29,
+      "kind": "historical_double_circuit_ring",
+      "source_labels": [
+        "Mandola",
+        "Dadri",
+        "Maharani Bagh",
+        "Samaypur",
+        "Tuglakhabad",
+        "Bamnauli",
+        "Jhatikara More",
+        "Mundka",
+        "Bawana",
+        "Mandola"
+      ],
+      "note": "Historical ring narrative only. No per-circuit suffixes or terminal/bus identifiers asserted.",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "status": "requires_terminal_and_snapshot_reconciliation",
+      "electrical_edges_created": false,
+      "evidence_id": "cev-886088f925a3102f"
+    },
+    {
+      "id": "REF-2019-CENTRAL-SECTION",
+      "source_id": "SRC-01",
+      "physical_page": 29,
+      "kind": "historical_double_circuit_section",
+      "source_labels": [
+        "Mandola",
+        "Dadri",
+        "Maharanibagh",
+        "Samaypur"
+      ],
+      "note": "Historical central-sector portion; compare against the ring and later records without creating extra parallel circuits.",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "status": "requires_terminal_and_snapshot_reconciliation",
+      "electrical_edges_created": false,
+      "evidence_id": "cev-e17647bf0c692da2"
+    },
+    {
+      "id": "REF-2019-STATE-SECTION",
+      "source_id": "SRC-01",
+      "physical_page": 29,
+      "kind": "historical_double_circuit_section",
+      "source_labels": [
+        "Mandola",
+        "Bawana",
+        "Mundka",
+        "Jhatikalan More",
+        "Bamnauli",
+        "Samaypur"
+      ],
+      "note": "Narrative omits Tughlakabad on the last segment while the ring/LILO passage includes it. Retain the discrepancy, not a direct present-day link.",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "status": "requires_terminal_and_snapshot_reconciliation",
+      "electrical_edges_created": false,
+      "evidence_id": "cev-c7d69a39006832d6"
+    },
+    {
+      "id": "REF-2019-TUGHLAKABAD-LILO",
+      "source_id": "SRC-01",
+      "physical_page": 29,
+      "kind": "lilo_narrative",
+      "source_labels": [
+        "Samaypur",
+        "Bamnauli",
+        "Tughlakabad"
+      ],
+      "note": "Historical double-circuit LILO passage; terminal/circuit identities and chronology require reconciliation.",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "status": "requires_terminal_and_snapshot_reconciliation",
+      "electrical_edges_created": false,
+      "evidence_id": "cev-a8d0a8f9bc045657"
+    },
+    {
+      "id": "REF-2019-DWARKA-LILO",
+      "source_id": "SRC-01",
+      "physical_page": 29,
+      "kind": "proposed_lilo_narrative",
+      "source_labels": [
+        "Bamnauli",
+        "Jhatikalan",
+        "Dwarka"
+      ],
+      "note": "Historical scheduled single-circuit LILO at an ISTS Dwarka site; not proof of commissioning or identity with the later Dwarka feeder label.",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "status": "requires_terminal_and_snapshot_reconciliation",
+      "electrical_edges_created": false,
+      "evidence_id": "cev-7e3d2f1688bcb5a2"
+    },
+    {
+      "id": "REF-2019-BALLABHGARH-BTPS",
+      "source_id": "SRC-01",
+      "physical_page": 34,
+      "kind": "historical_double_circuit_interface",
+      "source_labels": [
+        "Ballabhgarh",
+        "BTPS"
+      ],
+      "note": "220 kV interface narrative; exact terminal and owner-qualified Ballabhgarh identity unresolved. The historical supply quantity is not a line thermal rating.",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "status": "requires_terminal_and_snapshot_reconciliation",
+      "electrical_edges_created": false,
+      "evidence_id": "cev-d7d6c317471590b6"
+    },
+    {
+      "id": "REF-2019-NARELA-ROHTAK",
+      "source_id": "SRC-01",
+      "physical_page": 33,
+      "kind": "historical_double_circuit_interface",
+      "source_labels": [
+        "Narela",
+        "Rohtak road"
+      ],
+      "note": "BBMB ownership stated; compare with SRC-13 p86 named I/II maintenance observations. Approximate 26 km is not assigned to each circuit or treated as a rating.",
+      "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+      "status": "requires_terminal_and_snapshot_reconciliation",
+      "electrical_edges_created": false,
+      "evidence_id": "cev-09684ac4fa72bb13"
+    }
+  ],
+  "unreconciled_map_scope": {
+    "source_id": "SRC-01",
+    "physical_page": 30,
+    "source_sha256": "54b6a73bc2a89522df97245820f027ac19e6dbda314d84fda738644fc5d88026",
+    "status": "not_fully_reconciled",
+    "note": "Map-only external/generation terminals and graphical junctions are not automatically converted into circuits. Full map coverage remains an acceptance gap."
+  }
+}

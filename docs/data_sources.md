@@ -110,3 +110,32 @@ Rules and evidence bind each record to the saved-source checksum and locator.
 Historical MVA metadata is separate from current MW, coordinates and operational
 status. No new source download, runtime topology replacement or electrical
 validation was performed during this offline inventory step.
+
+## Phase 3 Steps 5–6: circuits and completeness audit — 2026-10-22
+
+The [circuit inventory](../data/topology/delhi/circuits.csv) preserves 129 rows
+from SRC-03/SRC-04, 113 June 2019 rows from SRC-01 physical pages 31–33 and three
+named maintenance observations from SRC-13 physical page 86. Each row retains
+its own source date, byte hash and locator. Across-date observations are not
+summed as distinct physical circuits. DTL-portion lengths, missing components,
+conductor strings and unknown limits remain separate.
+
+The historical PDF transcription and source-specific spelling interpretations
+are saved as reviewed inputs, pinned to source hashes. Seven historical
+ring/section/interface/LILO narratives are separate claims requiring terminal
+and snapshot reconciliation. Planned Dwarka work is not treated as commissioned.
+
+The [audit](../data/topology/delhi/AUDIT.md) lists unresolved endpoints, repeated
+and missing circuit suffixes, historical differences, nodes absent from later
+DTL circuit tables, and remaining map/other-owner/plant-terminal evidence tasks.
+No complete 2026 network, 50 verified Delhi physical sites, line MW ratings or
+simulation eligibility is asserted. The audit outcome holds Step 7 integration.
+
+## Reconciliation follow-up and reference ingestion
+
+The additional four-document archive and source-hash-bound conclusions are
+explained in [DELHI_REFERENCE_IMPORT.md](DELHI_REFERENCE_IMPORT.md). The source
+rows remain untouched; the versioned export applies a separate overlay. SOW
+attribution and Timarpur nominal voltage have corroboration. Budella, Dwarka,
+physical-site identities and terminal completeness retain explicit limitations.
+The Neo4j import contains dated observations, not a current operating dataset.

@@ -137,6 +137,9 @@ The dated acquisition manifest, source locators, access gaps and local-archive
 verification commands are in [`data/sources/delhi/README.md`](data/sources/delhi/README.md).
 The source-referenced node inventory, coverage counts and open identity issues
 are in [`data/topology/delhi/README.md`](data/topology/delhi/README.md).
+The dated circuit inventory and Steps 5–6 completeness findings are in
+[`data/topology/delhi/AUDIT.md`](data/topology/delhi/AUDIT.md). The audit currently
+holds electrical/model integration pending unresolved topology evidence.
 All phase-wise individual work is recorded in the single root-level
 [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
 
@@ -272,3 +275,13 @@ available dependencies. Editable installation and all 42 tests passed there.
 create an isolated environment on a new machine. See docs/verification.md for
 the final validation record. Restart the server after template changes when
 running with debug mode disabled.
+
+## Delhi reference dataset
+
+The [Step 7 reference import guide](docs/DELHI_REFERENCE_IMPORT.md) describes
+source-supported reconciliation and the independent, versioned Neo4j dataset.
+Validate/export with `python -m scripts.import_delhi_reference`; import with
+`--import-neo4j` after configuring the optional driver and credentials. This
+reference dataset retains unknowns and unresolved identities and is separate
+from the synthetic website/simulation. The electrical-completeness gate remains
+open. Non-secret local import evidence is in `reports/phase3_reference_import.json`.

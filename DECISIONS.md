@@ -337,3 +337,73 @@ current asset status. Preserve provenance and unresolved differences.
   distinct properties; unknown values are not filled with fixture assumptions.
 - Retain the reproducible synthetic dataset and its experimental results. Source
   acquisition, inventory, reconciliation, import and display remain separate gates.
+
+## ADR-016: Import uncertain topology as immutable reference evidence
+
+**Date:** 2026-10-22
+**Status:** Accepted
+
+### Context
+
+The Step 6 audit found unresolved site, circuit-label and terminal coverage.
+Additional DTL documents resolve SOW attribution and Timarpur nominal voltage,
+but cannot certify a complete current operating graph. Implementation needs to
+progress while preserving the report's evidence requirements and Phase 2 results.
+
+### Decision
+
+Add a separate reference schema and content-addressed Neo4j dataset. Store assets
+and circuit observations as distinct entities with source endpoint references,
+including unknowns and unresolved candidates. Preserve original extraction records
+and apply source-qualified reconciliation as a separate review overlay. Do not
+create simulation `LINE` relationships from dated observations.
+
+Reference import can proceed with explicit unresolved evidence. Electrical/model
+integration remains gated on completeness, site/terminal reconciliation and the
+required operating parameters. No unknown rating, output or flow is filled from
+the synthetic fixture. Repeated imports verify immutable contents and never
+replace existing datasets. Exact persisted properties and endpoint references
+must match the exported snapshot.
+
+### Consequences
+
+The database can support source/date inspection in Step 8 without implying a
+verified operating network. The 50-node physical-site goal and 500+ scalability
+target remain separately unverified. See `docs/DELHI_REFERENCE_IMPORT.md` for
+reconciliation, schema, local setup and verification commands.
+
+## ADR-017: Reconcile site identities and correct the report's node-count interpretation
+
+**Date:** 2026-10-22
+**Status:** Accepted
+
+### Context
+
+The reference import advanced before six identity/modeling discrepancies were
+settled. Rechecking Review III physical pages 2 and 11 confirms a minimum of
+50 Delhi substation/plant nodes, not 50 geographically separate sites. The earlier
+extra site-count condition overstated the report's acceptance requirement.
+
+### Decision
+
+Apply source-hash-qualified identity review as a reproducible layer over immutable
+source observations. Merge proven Dwarka, Wazirabad and 400 kV Ballabhgarh aliases;
+keep BBMB 220 kV Ballabhgarh separate; retain Narela owner portions on an extended
+bus; classify Budella by its dated planning status; record supported plant evacuation
+interfaces and historical terminal details. Preserve original IDs and source values.
+
+Count the 47 directory asset identities plus three identified Delhi plants for the
+50-node reference coverage requirement. Exclude the extra BBMB Narela portion,
+external assets, proposed Budella and aliases from that count. A plant and receiving
+substation may be distinct electrical assets within one complex. Physical-site
+counts remain separate. This corrects the stricter geographic-site interpretation
+in earlier notes without implying a complete current operating network.
+
+### Consequences
+
+The six original node cases have dispositions at the declared reference abstraction.
+Exact circuit suffixes, some terminal naming, source length conflicts and real operating
+parameters remain explicit field limitations. Current switching completeness and
+simulation readiness must not be inferred from node counts or reference connectivity.
+The corrected immutable snapshot is imported twice and earlier database versions
+are checked for preservation. See `data/topology/delhi/RECONCILIATION.md`.

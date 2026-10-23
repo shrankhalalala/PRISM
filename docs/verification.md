@@ -134,3 +134,80 @@ operational control remain outside Phase 2.
 - The 64 record IDs are not certified as 64 unique operating sites. The 50-node
   goal remains unverified; edge and completeness validation remain later gates.
 - Runtime grid bytes, models, API and dashboard are unchanged by Step 4.
+
+## Phase 3 Steps 5–6 circuit inventory and completeness audit — 2026-10-22
+
+- All 76 automated tests pass. Nine new tests cover portion-length parsing,
+  incomplete circuit suffixes, row/parallel-circuit preservation, source duplicate
+  handling, provenance fingerprints, cross-date/owner-qualified identities,
+  coverage gaps, acceptance status and rejection of fabricated electrical inputs.
+- The circuit builder verifies the archive and regenerates/compares the complete
+  Step 4 outputs before using its node identities. It checks all 129 later and
+  113 historical DTL row identities and retains three named BBMB observations.
+- The 2019 PDF line-table transcription is a manually reviewed source-bound input;
+  full PDF re-extraction is not part of the rebuild. Seven historical narrative
+  claims are retained separately, not expanded into inferred circuit IDs.
+- `python -m scripts.build_delhi_circuit_inventory --check` reproduces JSON/CSV
+  and the readable audit without writing. Source and manual-review fingerprints
+  are pinned; archive originals remain ignored by Git.
+- The audit finds 12 later rows with unresolved endpoints, four incomplete labels,
+  one duplicate-label group (SRC-04 rows 88–89), 15 historical observations without
+  exact later identity matches, and 12 nodes absent from later DTL table adjacency.
+  These are evidence gaps, not proof of retirement or real-world disconnection.
+- The acceptance gate remains `not_passed`. The 50-node physical-site goal,
+  complete map/external/plant coverage and electrical terminal reconciliation
+  remain unverified. Runtime files, models, API, dashboard and Neo4j are unchanged.
+
+## Phase 3 reconciliation and Step 7 reference import — 2026-10-22
+
+- All 82 automated tests pass. Six reference-schema tests verify deterministic
+  versioning, parallel observations/islands, simulation separation, narrowly
+  supported metadata resolutions, lossless Neo4j encoding and invalid-data rejection.
+- Four additional official DTL documents were captured successfully with verified
+  TLS in a separate follow-up archive. Original snapshots remain unchanged.
+  SOW attribution and Timarpur nominal voltage are corroborated; six node issues
+  remain. Circuit multiplicity is clarified without replacing unknown suffixes.
+- The reference exporter applies a source-bound reconciliation overlay and retains
+  original extraction/audit records. `reference_dataset.json` is deterministic
+  and content-addressed; no operating measurements or electrical limits are invented.
+- Live Neo4j 5.26 verification imported the snapshot twice and compared exact IDs,
+  nested record JSON, snapshot contents and all 490 endpoint references. Both the
+  synthetic and unrelated fixture datasets retained identical properties/lines.
+  A deliberately corrupted persisted snapshot was rejected. The disposable
+  verification container was removed after the test.
+- The dedicated local Compose project `prism-phase3-reference` contains the same
+  snapshot, imported twice with identical verified results. Its generated password
+  is in the ignored root `.env` file with mode 0600; credentials are not committed.
+  See `reports/phase3_reference_import.json` for non-secret import evidence.
+- The database stores 64 asset entities and 245 circuit-observation entities with
+  490 endpoint references. These are dated evidence records, not 245 confirmed
+  current physical lines. The electrical-integration gate stays `not_passed`.
+- The existing synthetic grid, models, simulation validation, API and website
+  were not changed. Step 8 reference visualization has not begun.
+
+## Topology identity correction — 2026-10-22
+
+- All 87 automated tests pass. Five added contracts cover alias redirection with
+  retained original records, owner/voltage distinctions, correct report counting,
+  documented plant interfaces, historical isolated-line classification and
+  rejection of a mismatched evidence checksum.
+- The six original node cases now have source-backed modeling dispositions for
+  the declared site-level reference graph. The original audit and source extraction
+  are preserved; corrected CSV, coverage and a readable review are generated.
+- Review III physical pages 2 and 11 were rechecked. The 50-node reference count is
+  47 directory asset identities plus three Delhi plants. It excludes aliases,
+  the extra Narela owner portion, planned Budella and external nodes. It is not a
+  count of separate geographic sites or proof of complete current network coverage.
+- The corrected version has 66 canonical assets, 245 dated circuit observations,
+  16 interface/section assertions and 522 endpoint references. Three duplicate
+  identities are merged; five documented boundary assets are added. Original
+  labels, source endpoint IDs, dates and source value conflicts remain available.
+- The 15 initial historical identity-comparison findings are accounted for in
+  the dated change register. Twelve unresolved source endpoint warnings have
+  reviewed canonical mappings; missing/duplicate circuit suffixes remain unchanged.
+- Live Neo4j import verified the corrected version twice and verified the prior
+  version before and after import. Exact contents and endpoint relationships match;
+  the prior dataset remains unchanged. Evidence is in `reports/phase3_reference_import.json`.
+- Field limitations remain for precise Noida terminal naming, circuit suffixes,
+  source lengths and current electrical state/parameters. The electrical simulation
+  gate remains closed. The website, runtime teaching grid and trained models are unchanged.

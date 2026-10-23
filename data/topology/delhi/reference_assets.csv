@@ -1,0 +1,67 @@
+id,name,kind,boundary,classification,site_group,merged_inventory_ids,current_status
+plant-gtps,Gas Turbine Power Station (GTPS),plant,internal,source_referenced,,,unknown
+plant-jhajjar,Jhajjar (APCL) generation interface,plant,external_boundary,source_referenced,,,unknown
+plant-pps1,Pragati Power Station-I (PPS-I),plant,internal,source_referenced,,,unknown
+plant-pps3-bawana,Pragati-III / Bawana power station,plant,internal,source_referenced,,,unknown
+ss-alwar-rvpn,Alwar (RVPN interface),substation,external_boundary,source_referenced,,,unknown
+ss-bahadurgarh-pgcil,Bahadurgarh (POWERGRID 400 kV interface),substation,external_boundary,source_referenced,,,unknown
+ss-ballabhgarh-bbmb,Ballabhgarh (BBMB 220 kV),substation,external_boundary,source_referenced,,,unknown
+ss-bamnauli,Bamnauli,substation,internal,source_referenced,,,unknown
+ss-bawana-dtl,Bawana,substation,internal,source_referenced,,,unknown
+ss-bhiwani-pgcil,Bhiwani (POWERGRID 400 kV interface),substation,external_boundary,source_referenced,,,unknown
+ss-btps,BTPS,substation,internal,source_referenced,,,unknown
+ss-budella,Budella,substation,unresolved,planned_as_of_2025_06_25,,,unknown
+ss-dadri-ntpc,Dadri (NTPC switchyard interface),substation,external_boundary,source_referenced,,,unknown
+ss-dadri-pgcil,Dadri (PGCIL interface),substation,unresolved,source_referenced,,,unknown
+ss-dev-nagar,Dev Nagar,substation,internal,source_referenced,,,unknown
+ss-dial,DIAL,substation,internal,source_referenced,,,unknown
+ss-dsidc-bawana,DSIDC Bawana,substation,internal,source_referenced,,,unknown
+ss-dwarka-sector-5,"Dwarka, Sec-05",substation,internal,source_referenced,,candidate-dwarka,unknown
+ss-electric-lane,Electric Lane,substation,internal,source_referenced,,,unknown
+ss-gazipur,Gazipur,substation,internal,source_referenced,,,unknown
+ss-geeta-colony,Geeta Colony,substation,internal,source_referenced,,,unknown
+ss-gopalpur,Gopalpur,substation,internal,source_referenced,,,unknown
+ss-harsh-vihar,Harsh Vihar,substation,internal,source_referenced,,,unknown
+ss-indraprastha,Indraprastha,substation,internal,source_referenced,,,unknown
+ss-jhatikara-pgcil,Jhatikara (PGCIL),substation,unresolved,source_referenced,,,unknown
+ss-kanjhawala,Khanjawala,substation,internal,source_referenced,,,unknown
+ss-kashmere-gate,Kashmere Gate,substation,internal,source_referenced,,,unknown
+ss-lodhi-road,Lodhi Road,substation,internal,source_referenced,,,unknown
+ss-maharani-bagh,Maharani Bagh,substation,internal,source_referenced,,,unknown
+ss-mandola-pgcil,Mandola (PGCIL),substation,unresolved,source_referenced,,,unknown
+ss-masjid-moth,Masjid Moth,substation,internal,source_referenced,,,unknown
+ss-mehrauli,Mehrauli,substation,internal,source_referenced,,,unknown
+ss-najafgarh,Najafgarh,substation,internal,source_referenced,,,unknown
+ss-naraina,Naraina,substation,internal,source_referenced,,,unknown
+ss-narela-bbmb,Narela (BBMB),substation,internal,source_referenced,narela-extended-bus-complex,,unknown
+ss-narela-dtl,Narela,substation,internal,source_referenced,narela-extended-bus-complex,,unknown
+ss-noida,Noida (map endpoint),substation,unresolved,source_referenced,,,unknown
+ss-noida-62,Noida 62 (map endpoint),substation,unresolved,source_referenced,,,unknown
+ss-okhla,Okhla,substation,internal,source_referenced,,,unknown
+ss-panipat-bbmb,Panipat (BBMB),substation,unresolved,source_referenced,,,unknown
+ss-pappankalan-1,Pappankalan-I,substation,internal,source_referenced,,,unknown
+ss-pappankalan-2,Pappankalan-II,substation,internal,source_referenced,,,unknown
+ss-pappankalan-3,Pappankalan-III,substation,internal,source_referenced,,,unknown
+ss-park-street,Park Street,substation,internal,source_referenced,,,unknown
+ss-patparganj,Patparganj,substation,internal,source_referenced,,,unknown
+ss-peeragarhi,Peeragarhi,substation,internal,source_referenced,,,unknown
+ss-pragati,Pragati,substation,internal,source_referenced,,,unknown
+ss-preet-vihar,Preet Vihar,substation,internal,source_referenced,,,unknown
+ss-rajghat,Rajghat Power House,substation,internal,source_referenced,,,unknown
+ss-ridge-valley,Ridge Valley,substation,internal,source_referenced,,,unknown
+ss-rk-puram,R. K. Puram,substation,internal,source_referenced,,,unknown
+ss-rohini-1,Rohini-I,substation,internal,source_referenced,,,unknown
+ss-rohini-2,Rohini-II,substation,internal,source_referenced,,,unknown
+ss-rohtak-road-bbmb,Rohtak Road (BBMB),substation,unresolved,source_referenced,,,unknown
+ss-samaypur-pgcil,Samaypur (PGCIL),substation,unresolved,source_referenced,,candidate-ballabhgarh-400,unknown
+ss-sarita-vihar,Sarita Vihar,substation,internal,source_referenced,,,unknown
+ss-sgtn,Sanjay Gandhi Transport Nagar,substation,internal,source_referenced,,,unknown
+ss-shalimar-bagh,Shalimar Bagh,substation,internal,source_referenced,,,unknown
+ss-south-of-wazirabad,South of Wazirabad,substation,internal,source_referenced,,ss-wazirabad,unknown
+ss-subzi-mandi,Subzi Mandi,substation,internal,source_referenced,,,unknown
+ss-tikri-kalan,Tikri Kalan (Mundka),substation,internal,source_referenced,,,unknown
+ss-timarpur,Timarpur,substation,internal,source_referenced,,,unknown
+ss-trauma-centre,Trauma Centre,substation,internal,source_referenced,,,unknown
+ss-tughlakabad,Tughlakabad,substation,internal,source_referenced,,,unknown
+ss-vasant-kunj,Vasant Kunj,substation,internal,source_referenced,,,unknown
+ss-wazirpur,Wazirpur,substation,internal,source_referenced,,,unknown

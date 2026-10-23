@@ -180,3 +180,62 @@ historical/proposed status and an unassigned SOW observation remain explicit.
 The full suite passes 67 tests, and inventory regeneration matches the saved
 outputs. This step does not claim 64 distinct verified sites, 50 verified nodes,
 validated circuits, individual review completion, or a changed live dashboard.
+
+### Phase 3 Steps 5–6: circuit observations and completeness audit — 2026-10-22
+
+The offline circuit builder retains all 129 later and 113 historical DTL line-table
+rows plus three named BBMB circuit observations. Separate source-qualified
+narrative claims preserve historical ring, LILO and boundary references without
+creating inferred electrical links. JSON/CSV, provenance fingerprints and a
+readable audit document the evidence and uncertainty.
+
+| Member | Continuing review responsibility | Reviewable artifact and evidence |
+|---|---|---|
+| Nishtha Jain | Source dates, historical transcription and numerical-unit handling | Dated observations, archive fingerprints, portion-length handling and unknown MW limits |
+| Himangi Mishra | Electrical/model eligibility and report acceptance limits | No inferred operating parameters; explicit hold on electrical/model import |
+| Shrankhala Singh | Parallel circuits, duplicate labels, endpoint/site reconciliation and coverage | Circuit inventory, source-specific aliases, issue register and historical comparisons |
+| Gaurangi Tyagi | Reproducible extraction, inspectable outputs and integration boundary | Rebuild/check command, CSV, audit Markdown and contract tests |
+
+The audit was performed and its acceptance gate has not passed. Individual review
+completion, complete real-network coverage, 50 verified nodes, current operating
+connectivity and website/database/model integration are not claimed.
+
+### Phase 3 reconciliation and Step 7 reference ingestion — 2026-10-22
+
+Four additional DTL references support a separate review overlay: SOW attribution
+and Timarpur nominal voltage are corroborated, circuit multiplicities are clarified,
+and Budella/Dwarka status limitations remain visible. Six node issues still require
+reconciliation. Original source extraction and the initial audit stay preserved.
+
+| Member | Continuing review responsibility | Reviewable artifact and evidence |
+|---|---|---|
+| Nishtha Jain | Follow-up source dates and reconciliation evidence | Four verified captures, review locators and unchanged original records |
+| Himangi Mishra | Reference/electrical eligibility boundaries | Unknown operating fields, simulation rejection and electrical gate held open |
+| Shrankhala Singh | Versioned reference schema, circuit identities and Neo4j consistency | MultiGraph validation, immutable dataset namespace and exact endpoint/property checks |
+| Gaurangi Tyagi | Local import workflow, repeatability and preservation checks | Export/import CLI, setup guide, live repeat-import verification and non-secret evidence report |
+
+All 82 tests pass. Live Neo4j checks verify repeat import, preservation of both
+existing test fixtures and rejection of a corrupted snapshot. The dedicated local
+reference database contains the reviewed snapshot. Individual review completion,
+full electrical topology, 50 verified sites and website integration are not claimed.
+
+### Topology identity correction and report-count reconciliation — 2026-10-22
+
+Official DTL, POWERGRID, BBMB, NRPC and regulator documents now support decisions
+for all six original node cases. The corrected reference export merges supported
+aliases, preserves owner-specific portions and raw source records, classifies planned
+Budella separately and records documented generation/bus/boundary interfaces.
+Review III's 50 Delhi substation/plant node requirement is distinguished from
+geographic-site counting. Corrected reference coverage contains 50 qualifying
+Delhi asset identities without aliases, the extra Narela portion or external assets.
+
+| Member | Continuing review responsibility | Reviewable artifact and evidence |
+|---|---|---|
+| Nishtha Jain | Source dates, archive integrity and historical change records | Captured evidence, page locators, fiscal/date limitations and dated observations |
+| Himangi Mishra | Topology identity versus electrical simulation requirements | Explicit source-value unknowns, planned asset handling and preserved simulation boundary |
+| Shrankhala Singh | Alias/ownership/bus identities, plant interfaces and report coverage | Canonical mappings, corrected asset CSV, 15 historical findings and 50-node counting list |
+| Gaurangi Tyagi | Reproducible exports, immutable import and inspection artifacts | Generated reconciliation review, reference CLI and repeat-import preservation report |
+
+All 87 tests pass. The corrected local Neo4j version was imported twice and the
+prior version verified unchanged. Individual review completion, complete current
+operating coverage and real electrical model readiness are not claimed.

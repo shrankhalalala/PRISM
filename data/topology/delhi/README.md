@@ -1,3 +1,7 @@
+> **Current review:** [RECONCILIATION.md](RECONCILIATION.md) and
+> [reference_assets.csv](reference_assets.csv) contain the corrected identities and
+> node count. The sections below preserve the earlier extraction milestones.
+
 # Delhi node inventory — Step 4
 
 Built offline from the [2026-10-22 source archive](../../sources/delhi/README.md)
@@ -108,3 +112,62 @@ The runtime still reads `data/raw/grid.json`. No real-network graph, Neo4j data,
 simulation profile, trained model, API or dashboard was changed in Step 4.
 Step 5 will construct the source-backed circuit inventory; Step 6 will review
 the combined node/circuit coverage and unresolved identities before import.
+
+## Steps 5–6 follow-up
+
+The [circuit inventory](circuits.csv) and [completeness audit](AUDIT.md) now record
+245 dated circuit observations: 129 later DTL rows, 113 historical DTL rows and
+three named BBMB report observations. Parallel circuit labels are retained.
+Duplicate/incomplete labels and unresolved endpoints are explicit in
+[circuit_issues.json](circuit_issues.json). Seven historical ring/interface/LILO
+narratives are retained as [reference claims](reference_connection_claims.json),
+without inventing individual circuits or treating planned work as commissioned.
+
+`coverage.json` above is the Step 4 extraction summary. The current combined
+assessment is [topology_audit.json](topology_audit.json). The audit has been
+performed, but the completeness acceptance gate **has not passed**. The 2019 map,
+other-owner interfaces, physical-site identities and exact terminals need further
+reconciliation before Step 7. No website/database/model integration occurred.
+
+Rebuild/check the circuit and audit artifacts using the local source originals:
+
+```bash
+python -m scripts.build_delhi_circuit_inventory
+python -m scripts.build_delhi_circuit_inventory --check
+```
+
+`historical_circuit_review.json` is a source-hash-qualified transcription of the
+2019 line tables, with explicit source-specific spelling mappings. The builder
+checks all 12 historical 400 kV and 101 historical 220 kV row identities. It does
+not re-extract the PDF or independently verify a changed manual transcription.
+`supplemental_connection_review.json` preserves the manually reviewed BBMB rows
+and historical connection narratives. Their input hashes are included in the
+circuit document. A clone can run contract tests without redistributing the
+ignored official source originals; regeneration requires the matching archive.
+
+## Reconciliation and Step 7 reference dataset
+
+The [reference import guide](../../../docs/DELHI_REFERENCE_IMPORT.md) describes
+source-supported corrections and the separate Neo4j schema. The original audit
+above is preserved as a pre-reconciliation record. Its eight node issues become
+six remaining issues in [reference_dataset.json](reference_dataset.json): SOW
+attribution and Timarpur nominal voltage have independent corroboration.
+
+The original node/circuit files are unchanged. The reference export contains a
+review overlay from `reconciliation_review.json`, including clarified single/double
+circuit multiplicity without fabricated circuit suffixes. The electrical gate
+still has not passed; reference import does not certify an operating topology.
+
+## Current corrected identity review
+
+The previous sections describe earlier extraction/import milestones. The current
+[reconciliation review](RECONCILIATION.md), [corrected asset CSV](reference_assets.csv)
+and [coverage](reconciled_coverage.json) supersede their unresolved-node counts.
+All six original node cases have reference-model dispositions. The current export
+has 66 canonical assets, 245 dated circuit observations and 16 interface assertions.
+
+The report asks for 50 Delhi substation/plant nodes, not 50 separate geographic
+sites. The qualifying list is 47 directory asset identities plus three Delhi plants;
+aliases, external assets, planned Budella and the extra BBMB Narela portion are
+excluded. Current electrical state and complete current network coverage remain
+separate, unverified requirements. See ADR-017 and the reference import guide.
