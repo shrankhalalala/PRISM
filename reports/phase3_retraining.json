@@ -1,0 +1,22 @@
+{
+  "version": "e56be03f49e6a78beae9d40f521ebd41a9d4ac9b50157b43a66395600695ee44",
+  "promoted": false,
+  "candidate_validation_rmse": 361.882042,
+  "incumbent_validation_rmse": 361.882042,
+  "minimum_relative_improvement": 0.01,
+  "basis": "same validation origins only; test metrics do not select promotion",
+  "selected": "autoregressive",
+  "incumbent": "autoregressive",
+  "training_data_sha256": "2a57f1dea0d3590708885397396be8a694c845cb0c1e7dbec15025ecd6c28a28",
+  "drift": {
+    "status": "measured",
+    "trigger": false,
+    "standardized_mean_shift": 0.12586301374845113,
+    "threshold": 2.0,
+    "recent_hours": 168,
+    "base_hourly_sha256": "7f23141a127b95eb40724a441d0bf74d982fcd40b419a80245b2f6dccdaab556",
+    "limitation": "Season-sensitive mean-shift proxy, not measured forecast-error drift or proof that retraining will help."
+  },
+  "elapsed_seconds": 7.856449207989499,
+  "test_used_for_promotion": false
+}

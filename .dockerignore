@@ -1,0 +1,12 @@
+.git
+.venv
+.env
+__pycache__
+**/__pycache__
+*.pyc
+.prism-ppt-build
+artifacts
+output
+.agents
+.codex
+data/sources/**/raw

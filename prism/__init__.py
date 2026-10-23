@@ -1,5 +1,6 @@
 """Flask application factory for the PRISM research prototype."""
 import json
+import os
 from dataclasses import asdict
 from pathlib import Path
 import pandas as pd
@@ -14,6 +15,7 @@ from prism.dispatch.api import api as surrogate_api
 from prism.explain.api import api as explanation_api
 from prism.simulation.runner import run_scenario
 from prism.operations.api import api as operations_api
+from prism.streaming.live import DurableLiveClient
 from prism.grid.model import load_grid, grid_summary
 from prism.grid.presentation import reference_view
 from prism.forecasting import AutoregressiveForecaster, LSTMForecaster, persistence_forecast
@@ -24,10 +26,10 @@ from prism.dispatch.evaluation import baseline_action, q_action
 from prism.dispatch.q_learning import QLearningAgent, state_index
 
 MODULES = [
-    dict(id="data",name="Data & forecasting",status="phase2_complete",description="Audited 90-day synthetic series with persistence, autoregressive, and LSTM comparison."),
-    dict(id="dispatch",name="Dispatch & Q-learning",status="phase2_complete",description="Rule-based and reviewed tabular Q-learning recommendations with paired multi-seed evidence."),
-    dict(id="grid",name="Graph & simulation",status="phase2_complete",description="Versioned scenarios and deterministic 15-minute generator, battery, shedding, and fault dynamics."),
-    dict(id="api",name="API & dashboard",status="phase2_complete",description="Interactive forecasting and policy-comparison workflows with explicit synthetic labels."),
+    dict(id="data",name="Data & forecasting",status="phase3_integrated",description="Audited real Delhi demand forecasts with gaps and a separate synthetic three-target baseline."),
+    dict(id="dispatch",name="Dispatch & Q-learning",status="phase3_integrated",description="Frozen Q-policy, six-action surrogate, actual TreeSHAP and advisory decision records."),
+    dict(id="grid",name="Graph & simulation",status="phase3_integrated",description="Source-qualified reference graph and separate synthetic simulation; electrical eligibility stays gated."),
+    dict(id="api",name="API & dashboard",status="phase3_integrated",description="Durable ingestion, recoverable background jobs, alerts and explicit operator review."),
 ]
 
 
@@ -44,7 +46,21 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.register_blueprint(explanation_api)
     app.register_blueprint(operations_api)
 
-    app.extensions["gridwatch"] = app.config.get("GRIDWATCH_CLIENT") or GridWatchClient()
+    app.extensions["gridwatch"] = app.config.get("GRIDWATCH_CLIENT") or (DurableLiveClient() if os.environ.get("PRISM_USE_DURABLE_LIVE")=="1" else GridWatchClient())
+
+    app.extensions['model_warmup']={'status':'not_requested','elapsed_ms':0}
+    if os.environ.get('PRISM_WARM_MODELS')=='1':
+        from time import perf_counter
+        started=perf_counter()
+        try:
+            from prism.explain.attribution import _explainer,BACKGROUND,MODEL
+            _explainer(MODEL.stat().st_mtime_ns,BACKGROUND.stat().st_mtime_ns)
+            if os.environ.get('PRISM_DIAGNOSIS_STORE')=='neo4j':
+                from prism.explain.reference_input import diagnostic_view
+                diagnostic_view()
+            app.extensions['model_warmup']={'status':'ready','elapsed_ms':(perf_counter()-started)*1000}
+        except Exception:
+            app.extensions['model_warmup']={'status':'unavailable','elapsed_ms':(perf_counter()-started)*1000}
 
     @app.get("/api/live/gridwatch")
     def live_gridwatch():
@@ -54,7 +70,7 @@ def create_app(test_config: dict | None = None) -> Flask:
         response.headers["Cache-Control"] = "no-store"
         return response
 
-    app.extensions['stations'] = app.config.get('STATION_CLIENT') or StationClient()
+    app.extensions['stations'] = app.config.get('STATION_CLIENT') or (DurableLiveClient(station=True) if os.environ.get('PRISM_USE_DURABLE_LIVE')=='1' else StationClient())
 
     @app.get('/api/live/stations')
     def live_stations():
@@ -98,11 +114,11 @@ def create_app(test_config: dict | None = None) -> Flask:
 
     @app.get("/api/health")
     def health():
-        return jsonify(status="ok",phase=2,data_source="synthetic")
+        return jsonify(status="ok",phase=3,data_source="mixed_reference_live_and_synthetic",advisory_only=True)
 
     @app.get("/api/status")
     def status():
-        return jsonify(phase=2,modules=MODULES)
+        return jsonify(phase=3,modules=MODULES)
 
     @app.get("/api/grid")
     def grid():
@@ -135,6 +151,24 @@ def create_app(test_config: dict | None = None) -> Flask:
         ids=set(asset['evidence_ids'])|{e for c in connections for e in c['evidence_ids']}
         return jsonify(dataset=payload['dataset'],mode='reference_only',asset=asset,connections=connections,
                        evidence={e:payload['evidence'][e] for e in ids})
+
+    @app.get('/api/readiness')
+    def readiness():
+        checks={'reference':'unavailable','redis':'not_required','postgres':'not_required','neo4j':'not_required'}
+        try:
+            reference_payload();checks['reference']='ok'
+            if os.environ.get('PRISM_REQUIRE_SERVICES')=='1':
+                from prism.streaming.store import connections
+                client,db=connections()
+                try:client.ping();db.execute('SELECT 1');db.commit();checks.update(redis='ok',postgres='ok')
+                finally:client.close();db.close()
+                from neo4j import GraphDatabase
+                with GraphDatabase.driver(os.environ['NEO4J_URI'],auth=(os.environ.get('NEO4J_USER','neo4j'),os.environ['NEO4J_PASSWORD']),connection_timeout=3) as driver:
+                    driver.verify_connectivity();checks['neo4j']='ok'
+            checks['models']=app.extensions['model_warmup']['status']
+            if checks['models']=='unavailable':return jsonify(status='not_ready',checks=checks),503
+            return jsonify(status='ready',checks=checks,model_initialization=app.extensions['model_warmup']),200
+        except Exception:return jsonify(status='not_ready',checks=checks),503
 
     @app.get("/api/measurements")
     def measurements():

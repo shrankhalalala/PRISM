@@ -1,0 +1,55 @@
+{
+  "forecast": {
+    "geography": "Delhi aggregate demand",
+    "cohort": "46 held-out daily origins, 24 frozen hours each",
+    "samples": 1104,
+    "test_peak_mw": 8122.563636,
+    "normalization": "100 * MW error / maximum actual MW across the same evaluated test cohort",
+    "mape_policy": "Exclude actual <1 MW; exclusion count reported; no solar/wind percentage claim",
+    "models": {
+      "persistence": {
+        "mae": 579.325826,
+        "rmse": 732.41591,
+        "mae_percent_test_peak": 7.132302705913821,
+        "rmse_percent_test_peak": 9.017053516870718,
+        "mape_percent": 11.788158540943213,
+        "mape_excluded": 0
+      },
+      "autoregressive": {
+        "mae": 310.393454,
+        "rmse": 426.538771,
+        "mae_percent_test_peak": 3.8213730037682407,
+        "rmse_percent_test_peak": 5.251282601339536,
+        "mape_percent": 6.051173548947246,
+        "mape_excluded": 0
+      },
+      "lstm": {
+        "mae": 600.52841,
+        "rmse": 758.399158,
+        "mae_percent_test_peak": 7.393335859363405,
+        "rmse_percent_test_peak": 9.336943260606793,
+        "mape_percent": 11.760957696576357,
+        "mape_excluded": 0
+      }
+    }
+  },
+  "dispatch": {
+    "source": "synthetic aggregate simulator",
+    "paired_episodes": 14,
+    "costs": {
+      "baseline": {
+        "mean_cost": 663999.5535714285,
+        "reduction_percent_of_mean_baseline": 0.0
+      },
+      "q_learning": {
+        "mean_cost": 759893.3035714285,
+        "reduction_percent_of_mean_baseline": -14.441839528990648
+      },
+      "surrogate": {
+        "mean_cost": 725750.4464285715,
+        "reduction_percent_of_mean_baseline": -9.299839514199345
+      }
+    },
+    "limitation": "Simulator operating cost units and counterfactual dynamics are synthetic. Surrogate fidelity is not dispatch optimality or real cost savings."
+  }
+}

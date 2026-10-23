@@ -56,9 +56,9 @@ def health():
 @safe
 def create_job():
     body=request.get_json()
-    if not isinstance(body,dict) or set(body)!={'kind','request'} or body['kind'] not in {'scenario','forecast'}:raise ValueError('Provide kind scenario/forecast and request')
+    if not isinstance(body,dict) or set(body)!={'kind','request'} or body['kind'] not in {'scenario','forecast','retrain'}:raise ValueError('Provide kind scenario/forecast/retrain and request')
     if body['kind']=='scenario':prepare_scenario(body['request'],current_app.config['DATA_DIR'])
-    elif body['request']!={}:raise ValueError('Forecast request must be empty')
+    elif body['request']!={}:raise ValueError('Forecast/retraining request must be empty')
     key=request.headers.get('Idempotency-Key')
     if key and len(key)>100:raise ValueError('Idempotency key too long')
     job=store.create_job(body['kind'],body['request'],key)
@@ -122,3 +122,23 @@ def alerts():
     except Exception:records.append(dict(id='history-unavailable',category='service',severity='warning',message='Durable operations history is unavailable.',observed_at=now,data_source='application'))
     return jsonify(alerts=records,checked_at=now,status='degraded' if records else 'ok',advisory_only=True,
         limitation='Data-quality and application alerts only; no inferred overload or grid fault without verified limits/measurements.')
+
+
+@api.post('/api/models/rollback')
+@mutation
+@safe
+def rollback_model():
+    if request.get_json()!={}:raise ValueError('Rollback body must be empty')
+    from prism.forecasting.registry import rollback
+    return jsonify(rollback())
+
+
+@api.get('/api/models/status')
+@safe
+def models_status():
+    from prism.forecasting.registry import active_bundle
+    from prism.forecasting.lifecycle import drift
+    active=active_bundle()
+    return jsonify(version=active['version'] if active else 'reviewed_baseline',previous=active['previous'] if active else None,
+        selected=active['report']['selected_on_validation'] if active else 'autoregressive',drift=drift(),
+        promotion='at least 1% lower RMSE on same validation origins, minimum 10 origins; test excluded',advisory_only=True)

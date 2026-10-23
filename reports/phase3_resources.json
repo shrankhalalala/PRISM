@@ -1,0 +1,62 @@
+{
+  "measured_at": "2026-10-23T17:03:51.013173+00:00",
+  "host": {
+    "system": "Darwin",
+    "architecture": "arm64",
+    "physical_memory_bytes": 8589934592
+  },
+  "components": {
+    "web": {
+      "running": true,
+      "restart_count": 0,
+      "peak_cgroup_memory_bytes": 441765888,
+      "memory_limit_bytes": 1073741824,
+      "below_4_gib": true
+    },
+    "worker": {
+      "running": true,
+      "restart_count": 0,
+      "peak_cgroup_memory_bytes": 223940608,
+      "memory_limit_bytes": 1073741824,
+      "below_4_gib": true
+    },
+    "beat": {
+      "running": true,
+      "restart_count": 0,
+      "peak_cgroup_memory_bytes": 90570752,
+      "memory_limit_bytes": 268435456,
+      "below_4_gib": true
+    },
+    "collector": {
+      "running": true,
+      "restart_count": 0,
+      "peak_cgroup_memory_bytes": 89538560,
+      "memory_limit_bytes": 536870912,
+      "below_4_gib": true
+    },
+    "redis": {
+      "running": true,
+      "restart_count": 0,
+      "peak_cgroup_memory_bytes": 24383488,
+      "memory_limit_bytes": 268435456,
+      "below_4_gib": true
+    },
+    "postgres": {
+      "running": true,
+      "restart_count": 0,
+      "peak_cgroup_memory_bytes": 114606080,
+      "memory_limit_bytes": 1073741824,
+      "below_4_gib": true
+    },
+    "neo4j": {
+      "running": true,
+      "restart_count": 0,
+      "peak_cgroup_memory_bytes": 1284517888,
+      "memory_limit_bytes": 3221225472,
+      "below_4_gib": true
+    }
+  },
+  "image_id": "sha256:fd6cc6f649a3595d43a95e40305e1502581d79dc2e84d0448d7f3e3b25c3371d",
+  "app_user": "prism",
+  "scope": "cgroup lifetime peaks after local verification, including cache; memory limits are configuration, not observed demand. Short workload, not a saturation or long-duration test."
+}

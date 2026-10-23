@@ -1,0 +1,19 @@
+{
+  "data_source": "synthetic_benchmark",
+  "scheduled_rate_per_second": 20,
+  "duration_seconds": 60.00469345797319,
+  "attempted": 1200,
+  "persisted": 1200,
+  "failed": 0,
+  "dropped": 0,
+  "persisted_events_per_second": 19.998435636380187,
+  "latency_ms": {
+    "p50": 9.926291997544467,
+    "p95": 15.68350029992871,
+    "max": 75.31629095319659
+  },
+  "final_pending": 0,
+  "final_unread": 0,
+  "upstream_requests": 0,
+  "scope": "Single local producer/consumer, 60 seconds at controlled20 events/s; serial Redis publication through PostgreSQL commit/ack. Not saturation capacity or long-term availability."
+}

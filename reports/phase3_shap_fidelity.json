@@ -1,0 +1,51 @@
+{
+  "protocol": "Spearman correlation across ten features between mean absolute raw-score SHAP (all six classes) and mean increase in Q-label log loss after independent feature permutation",
+  "heldout_episode_days": [
+    76,
+    89
+  ],
+  "sampled_states": 100,
+  "seed": 42,
+  "permutation_repeats": 5,
+  "background_samples": 100,
+  "mean_absolute_shap": {
+    "demand_mw": 0.017842552359588443,
+    "generation_mw": 0.01986494616467874,
+    "reserve_mw": 0.021084385205611282,
+    "battery_soc": 0.25995333401642085,
+    "renewable_trend": 0.36069547294553106,
+    "fault_present": 0.36690679884773747,
+    "imbalance_mw": 0.12030909647787984,
+    "generation_demand_ratio": 0.899843768030195,
+    "reserve_demand_ratio": 0.01054913424663828,
+    "valid_action_mask": 0.0315217036506355
+  },
+  "permutation_logloss_increase": {
+    "demand_mw": 0.001519867777824402,
+    "generation_mw": 0.0029310330748558043,
+    "reserve_mw": 0.001422882080078125,
+    "battery_soc": 0.7554609775543213,
+    "renewable_trend": 0.9590184092521667,
+    "fault_present": 1.2936141610145568,
+    "imbalance_mw": 0.012663722038269043,
+    "generation_demand_ratio": 2.681091010570526,
+    "reserve_demand_ratio": 0.0006586328148841858,
+    "valid_action_mask": 0.015168166160583496
+  },
+  "permutation_repeat_std": {
+    "demand_mw": 0.002144457142908666,
+    "generation_mw": 0.002252801824715012,
+    "reserve_mw": 0.0005461981279404787,
+    "battery_soc": 0.07617153937704069,
+    "renewable_trend": 0.09720662257082902,
+    "fault_present": 0.14333421349019412,
+    "imbalance_mw": 0.0031456029708121923,
+    "generation_demand_ratio": 0.1884141457569733,
+    "reserve_demand_ratio": 0.0014457465896728736,
+    "valid_action_mask": 0.002243589211106409
+  },
+  "spearman_correlation": 0.9515151515151514,
+  "target_strictly_greater_than": 0.85,
+  "target_met": true,
+  "limitation": "Ranking probe only. Correlated/derived features and action masks create off-manifold permutations; this is not a universal SHAP fidelity guarantee, local causal test or operator trust measurement."
+}

@@ -17,7 +17,9 @@ three attempts are permitted. Transient failures return to queued; invalid input
 fail. Broker failures retain queued work. Recovery requires a live beat/worker.
 Scenario runs are bounded to 96 steps and share the synchronous preview runner;
 cancellation is checked every four steps. Cancelled jobs cannot be overwritten
-by late completion. No arbitrary code or file path is accepted as job input.
+by late completion. Retraining checks cancellation before promotion; cancellation
+closes at the atomic 90% promotion stage so a late request cannot falsely report
+that an activating model was cancelled. No arbitrary code or file path is accepted as job input.
 
 The hourly job requests three recent public Delhi demand days, at one request per
 second or slower. It preserves checksummed recent originals under ignored

@@ -2,7 +2,7 @@
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask 3.1](https://img.shields.io/badge/Flask-3.1-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![NumPy 1.26](https://img.shields.io/badge/NumPy-1.26-013243?logo=numpy&logoColor=white)](https://numpy.org/)
+[![NumPy 2.2](https://img.shields.io/badge/NumPy-2.2-013243?logo=numpy&logoColor=white)](https://numpy.org/)
 [![pandas 2.2](https://img.shields.io/badge/pandas-2.2-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![NetworkX 3.3](https://img.shields.io/badge/NetworkX-3.3-2C5BB4)](https://networkx.org/)
 [![Neo4j 5.26](https://img.shields.io/badge/Neo4j-5.26-4581C3?logo=neo4j&logoColor=white)](https://neo4j.com/)
@@ -15,30 +15,27 @@ intended system combines time-series forecasting, constraint-aware dispatch,
 Q-learning, explainable machine learning, and graph-based fault diagnosis in one
 operator-facing workflow.
 
-Phase 2 completes the reproducible simulation-and-learning layer built on the
-Phase 1 foundation. It provides an audited 90-day synthetic series, three forecast
-methods including a compact LSTM, a constrained simulator, five versioned fault
-scenarios, multi-seed Q-learning evidence, reviewed model artifacts, and an
-interactive forecast and scenario dashboard.
+Phase 3 integrates a source-qualified Delhi reference graph, public live aggregate
+and station measurements, durable Redis/PostgreSQL ingestion, audited real demand
+forecasts, a six-action policy surrogate, actual TreeSHAP, graph investigation,
+recoverable background jobs and an advisory operator workflow.
 
-> **Research status:** all bundled measurements and grid assets are synthetic.
-> Phase 2 contains no live grid feed, SHAP explanation, power-flow solver, or
-> operational switching capability. Its trained models and all displayed values
-> use generated development data and must not be interpreted as results for the
-> Delhi or Indian grid.
+**Current status:** integration milestones are implemented. The reference inventory
+contains 66 assets and 50 qualifying Delhi identities; 49 source stations have exact
+telemetry mappings. The two-year requested demand range retains its missing data.
+The validated local deployment runs at `http://127.0.0.1:5053/`.
 
-**Current status:** Phase 2 is complete. The reviewed Q-table is exposed only as a
-selectable, non-executable recommendation policy. On held-out synthetic scenarios,
-it did not improve overall reward over the rule baseline; the complete positive
-and negative results remain in `reports/phase2_dispatch.json`. Real-time ingestion
-and XGBoost/SHAP begin in Phase 3.
+**Research boundary:** reference evidence is not a complete electrical operating
+model. Scenarios and dispatch policy remain synthetic; real solar/wind history,
+physical frequency/cascade validation, qualified operator surveys and long-term
+availability are outstanding. LSTM accuracy and learned-policy cost targets are
+not met. All recommendations remain non-executable. Phase 2 artifacts and negative
+comparisons remain intact.
 
-**Phase 3 live-data increment:** the dashboard now includes a separate **Delhi live
-grid** panel backed by the public Delhi SLDC Grid Watch JSON feed. It displays
-current demand, frequency, drawal, and schedule, checks once per minute while the
-page is visible, shows the source timestamp in IST, and marks old or unavailable
-readings explicitly. The topology, forecast models, and scenario simulator still
-use the synthetic Phase 2 dataset.
+Read [the current completion and target register](docs/PHASE3_COMPLETION.md),
+[deployment instructions](docs/PHASE3_DEPLOYMENT.md), and
+[demo guide](docs/PHASE3_DEMO.md). The editable demo deck is
+[PRISM_Phase 3_Demo.pptx](deliverables/PRISM_Phase 3_Demo.pptx).
 
 ## Technology stack
 
@@ -49,9 +46,11 @@ use the synthetic Phase 2 dataset.
 | [NumPy](https://numpy.org/) | Numerical operations, Q-table storage, metrics, and the compact LSTM |
 | [pandas](https://pandas.pydata.org/) | Measurement validation, chronological datasets, and scenario profiles |
 | [NetworkX](https://networkx.org/) | Topology validation, connectivity, and fault reachability |
-| [Neo4j](https://neo4j.com/) | Optional graph persistence and import verification |
+| [Neo4j](https://neo4j.com/) | Immutable reference evidence and verified diagnostic input |
+| Redis / PostgreSQL / Celery | Durable streaming/history and recoverable background lifecycle |
+| XGBoost / SHAP | Six-action Q-policy surrogate and actual score attribution |
 | [HTML, CSS, and JavaScript](https://developer.mozilla.org/en-US/docs/Web) | Responsive dashboard, charts, themes, and interactions |
-| [Docker Compose](https://docs.docker.com/compose/) | Optional local Neo4j service |
+| [Docker Compose](https://docs.docker.com/compose/) | Seven-service local deployment |
 
 ## Research motivation
 
@@ -261,20 +260,19 @@ demonstrations. See `docs/architecture.md` for implementation boundaries,
 `docs/dispatch_rl_design.md` for the detailed RL contract, and
 `docs/dashboard.md` for interface behavior.
 
-Phase 2 is complete: forecasting, simulation, Q-learning, comparative evidence,
-reviewed artifacts, APIs, and dashboard workflows are implemented. Phase 3
-integrates real-time streaming, background simulation, XGBoost/SHAP, and the full
-operator flow. Phase 4 evaluates all modules and assembles final evidence. No
-real-grid accuracy, superiority, or latency target is reported as achieved.
+Phase 2 remains the frozen synthetic baseline. Phase 3 now implements the
+integration workflows and records evidence for each report target. Phase 4 research
+acceptance still requires the field/data/operator validation listed in the
+completion register; implementation alone does not establish those results.
 
 ## Verification environment
 
-The local `.venv` was created with access to existing system packages to reuse
-available dependencies. Editable installation and all 42 tests passed there.
-`requirements-tested.txt` records the core versions used; the commands above
-create an isolated environment on a new machine. See docs/verification.md for
-the final validation record. Restart the server after template changes when
-running with debug mode disabled.
+The local Python 3.12 suite passes 108 tests. The complete Linux container stack was
+built from constrained dependencies and exercised through actual HTTP/worker/
+Redis/PostgreSQL/Neo4j paths. Desktop/mobile and independent interface review pass.
+`requirements-tested.txt` retains the historical Phase 2 environment;
+`requirements-phase3-tested.txt` records current constrained versions.
+See [verification](docs/verification.md) and the current report register for scope.
 
 ## Delhi reference dataset
 
@@ -282,6 +280,6 @@ The [Step 7 reference import guide](docs/DELHI_REFERENCE_IMPORT.md) describes
 source-supported reconciliation and the independent, versioned Neo4j dataset.
 Validate/export with `python -m scripts.import_delhi_reference`; import with
 `--import-neo4j` after configuring the optional driver and credentials. This
-reference dataset retains unknowns and unresolved identities and is separate
-from the synthetic website/simulation. The electrical-completeness gate remains
+reference dataset retains unknown fields and unresolved terminal details and is
+visible in its own website view, separate from synthetic simulation. The electrical-completeness gate remains
 open. Non-secret local import evidence is in `reports/phase3_reference_import.json`.

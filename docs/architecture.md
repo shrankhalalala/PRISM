@@ -89,3 +89,37 @@ not train or silently select a policy in an HTTP request. `/api/dispatch` return
 non-executable recommendation, while `/api/scenario` requires an explicit baseline
 or Q-learning policy choice. The dashboard adds forecast and scenario workspaces.
 The explanation boundary remains unavailable until Phase 3.
+
+## Phase 3 integrated architecture
+
+```mermaid
+flowchart LR
+  Public[Public SLDC feeds] --> Collector[Dedicated minute collector]
+  Collector --> Stream[Validated Redis stream]
+  Stream --> Consumer[Commit then acknowledge]
+  Consumer --> PG[PostgreSQL observations and history]
+  Evidence[Archived dated topology] --> Ref[Immutable Neo4j reference snapshot]
+  Ref --> Diagnose[Verified snapshot and graph hypotheses]
+  PG --> Real[Eligible hourly demand context]
+  Real --> Forecast[Versioned24-hour forecasts]
+  Forecast --> Registry[Validation review and atomic model registry]
+  Synthetic[Separate teaching profiles and topology] --> Policy[Frozen Q-policy and six-action surrogate]
+  Policy --> SHAP[Actual surrogate TreeSHAP]
+  Synthetic --> Worker[Celery scenario worker]
+  Beat[Outbox and hourly/weekly scheduler] --> Worker
+  PG --> API[Gunicorn and Flask]
+  Diagnose --> API
+  Forecast --> API
+  SHAP --> API
+  Worker --> API
+  API --> UI[Reference inspection and advisory operations]
+  UI --> Audit[Append advisory decisions in PostgreSQL]
+```
+
+The production web processes read durable observations rather than independently
+polling upstream. Collector health includes unmapped/rejected source labels and
+failed/expired checks, so retained measurements cannot hide source failure.
+The immutable evidence snapshot and synthetic simulation namespaces remain separate.
+Graph algorithms run in memory on verified Neo4j evidence; no Neo4j GDS deployment,
+physical causal propagation or directional real-time flows are implied. See
+PHASE3_COMPLETION.md for the current acceptance register.

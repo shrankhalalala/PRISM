@@ -5,7 +5,7 @@ import networkx as nx
 import numpy as np
 from prism.config import ROOT
 from prism.grid.model import load_grid
-from prism.grid.presentation import reference_view
+from prism.explain.reference_input import diagnostic_view
 
 
 def graph_view(mode):
@@ -16,13 +16,14 @@ def graph_view(mode):
         for edge in data['edges']:graph.add_edge(edge['source'],edge['target'],weight=1.,relation='CONNECTED_TO',evidence_ids=[edge['id']])
         return graph,'phase2_synthetic','Synthetic aggregate topology; no physical flow validation.'
     if mode!='reference':raise ValueError('dataset must be synthetic or reference')
-    data=reference_view(ROOT/'data/topology/delhi/reference_dataset.json')
+    data=diagnostic_view()
     for asset in data['assets']:
         if not str(asset.get('reference_classification','')).startswith('planned'):graph.add_node(asset['id'])
     for edge in data['connections']:
         if edge['temporal_class']=='historical_2019_table':continue
         if edge['source'] in graph and edge['target'] in graph:
             graph.add_edge(edge['source'],edge['target'],weight=1.,relation='CONNECTED_TO',evidence_ids=edge['evidence_ids'])
+    graph.graph['source_store']=data['source_store']
     return graph,data['dataset'],'Dated reference connectivity, excluding 2019-only records and planned assets; not current switching/flow state.'
 
 
@@ -82,7 +83,7 @@ def diagnose(body):
             first_observed_at=observed[candidate].isoformat() if candidate in observed else None,
             pagerank=ranks[candidate],paths=paths,timing_residual_seconds=timing_residual,fitted_seconds_per_hop=fitted_lag))
     results.sort(key=lambda row:(-row['heuristic_score'],row['asset_id']))
-    return dict(dataset=dataset,hypotheses=results[:10],alarms_received=len(alarms),
+    return dict(dataset=dataset,source_store=graph.graph.get('source_store','synthetic_fixture'),hypotheses=results[:10],alarms_received=len(alarms),
         method='BFS connectivity + nonnegative linear hop-time consistency + fixed-iteration PageRank',damping=.85,iterations=10,
         pagerank_l1_change=residual,pagerank_converged=residual<1e-6,
         relationship_semantics='Undirected CONNECTED_TO, constant structural weight 1 in [0,1]; no SUPPLIES_TO/SERVES direction without evidence.',

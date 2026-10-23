@@ -313,3 +313,21 @@ records passed. Desktop/mobile and independent browser review passed, with 107
 tests passing. Operator labels remain assertions; these software checks are not
 operator survey evidence, tamper-proof external auditing or equipment commands.
 The existing four-member review responsibilities continue.
+
+### Phase 3 Step 15: lifecycle, deployment and final evidence — 2026-10-23
+
+Weekly/drift candidate review, validation-gated retention/promotion, immutable
+bundles, rollback and records are implemented. The real non-improving candidate
+retained the incumbent; isolated fixtures verify promotion/rollback mechanics.
+The seven-service local deployment verifies container worker execution, durable
+live readers, source-quality retention, recent forecasting, advisory APIs and
+actual Neo4j diagnostic input. All108 tests pass. Separate600-node/1,200-connection
+import/query/browser checks and resource/latency measurements retain their scope.
+
+Nishtha's source/history audit, Himangi's electrical/research eligibility review,
+Shrankhala's mapping/model/graph coverage review and Gaurangi's reproducibility/
+deployment/demo review remain individual review responsibilities. A full target
+register, reproducible outcomes, demo walkthrough and editable eight-slide deck
+are delivered. Current electrical completeness, real renewable history, improved
+learned-policy outcomes, physical frequency/cascade validation, operator feedback
+and long-term availability are not claimed as achieved.

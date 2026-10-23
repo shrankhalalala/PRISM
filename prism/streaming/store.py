@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS prism_measurements (
  observed_at timestamptz NOT NULL, ingested_at timestamptz NOT NULL DEFAULT now(),
  payload jsonb NOT NULL);
 CREATE INDEX IF NOT EXISTS prism_measurements_asset_time ON prism_measurements(asset_id, observed_at);
+CREATE TABLE IF NOT EXISTS prism_collector_status (
+ source_key text PRIMARY KEY, checked_at timestamptz NOT NULL, payload jsonb NOT NULL);
 CREATE TABLE IF NOT EXISTS prism_rejected_events (
  stream_id text PRIMARY KEY, reason text NOT NULL, payload text NOT NULL,
  rejected_at timestamptz NOT NULL DEFAULT now());

@@ -1,0 +1,7 @@
+{
+  "cancelled_candidate_not_promoted": true,
+  "active_model_unchanged": true,
+  "pre_promotion_cancel_prevents_stage_entry": true,
+  "atomic_promotion_stage_rejects_late_cancel": true,
+  "verification_records_not_operator_acceptance": true
+}

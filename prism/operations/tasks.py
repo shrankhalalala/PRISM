@@ -5,13 +5,15 @@ from prism.operations import store
 from prism.simulation.runner import run_scenario,ScenarioCancelled
 
 celery=Celery('prism',broker=os.environ.get('PRISM_REDIS_URL','redis://127.0.0.1:6380/0'),backend=os.environ.get('PRISM_REDIS_URL','redis://127.0.0.1:6380/0'))
-celery.conf.update(task_serializer='json',result_serializer='json',accept_content=['json'],timezone='UTC',
+celery.conf.update(task_default_queue=os.environ.get('PRISM_TASK_QUEUE','prism-phase3-v3'),task_serializer='json',result_serializer='json',accept_content=['json'],timezone='UTC',
     task_acks_late=True,task_reject_on_worker_lost=True,worker_prefetch_multiplier=1,
     broker_connection_timeout=1,task_publish_retry=False,
     broker_transport_options={'socket_connect_timeout':1,'socket_timeout':1,'max_retries':0,'visibility_timeout':660},
     result_expires=86400,task_time_limit=600,task_soft_time_limit=540,broker_connection_retry_on_startup=True,
     beat_schedule={'recover-outbox':{'task':'prism.recover','schedule':30.},
                    'hourly-forecast':{'task':'prism.hourly_forecast','schedule':3600.}})
+from celery.schedules import crontab
+celery.conf.beat_schedule['weekly-retrain']={'task':'prism.weekly_retrain','schedule':crontab(minute=0,hour=2,day_of_week=1)}
 
 
 @celery.task(name='prism.run_job',acks_late=True,reject_on_worker_lost=True)
@@ -29,7 +31,19 @@ def run_job(identifier):
                 response=client.get('/api/forecast/real')
                 if response.status_code!=200:raise ValueError('Forecast unavailable')
                 result=response.get_json()
+            from prism.forecasting.lifecycle import drift
+            assessment=drift();result['drift_review']=assessment
+            if assessment.get('trigger'):
+                from datetime import datetime,timezone
+                key='drift-retrain:'+datetime.now(timezone.utc).strftime('%Y-%m-%d')
+                review=store.create_job('retrain',{},key);run_job.delay(review['id'])
+        elif job['kind']=='retrain':
+            from prism.forecasting.lifecycle import retrain
+            result=retrain(checkpoint=lambda:store.checkpoint(identifier,90,100))
         else:raise ValueError('Unknown job kind')
+        import socket
+        from pathlib import Path
+        result['execution']={'worker_hostname':socket.gethostname(),'containerized':Path('/.dockerenv').exists(),'software_version':'0.3.0'}
         store.finish(identifier,result=result)
     except ScenarioCancelled:return {'status':'cancelled'}
     except Exception as exc:
@@ -49,7 +63,8 @@ def recover():
 def hourly_forecast():
     from datetime import datetime,timezone
     key='hourly-forecast:'+datetime.now(timezone.utc).strftime('%Y-%m-%dT%H')
-    job=store.create_job('forecast',{},key);run_job.delay(job['id']);return {'id':job['id']}
+    job=store.create_job('forecast',{},key);run_job.delay(job['id'])
+    return {'id':job['id']}
 
 from celery.signals import heartbeat_sent,worker_ready
 
@@ -62,3 +77,10 @@ def heartbeat(**_):
         client=redis.Redis.from_url(celery.conf.broker_url,socket_timeout=1,socket_connect_timeout=1)
         client.setex('prism:worker:heartbeat',120,datetime.now(timezone.utc).isoformat());client.close()
     except Exception:pass
+
+
+@celery.task(name='prism.weekly_retrain')
+def weekly_retrain():
+    from datetime import datetime,timezone
+    key='weekly-retrain:'+datetime.now(timezone.utc).strftime('%G-W%V')
+    job=store.create_job('retrain',{},key);run_job.delay(job['id']);return {'id':job['id']}

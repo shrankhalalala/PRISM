@@ -407,3 +407,43 @@ parameters remain explicit field limitations. Current switching completeness and
 simulation readiness must not be inferred from node counts or reference connectivity.
 The corrected immutable snapshot is imported twice and earlier database versions
 are checked for preservation. See `data/topology/delhi/RECONCILIATION.md`.
+
+## ADR-018: Preserve data eligibility across Phase 3 integration
+
+**Date:** 2026-10-23
+**Status:** Accepted
+
+Reference identity, published station loading, real demand forecasting and synthetic
+dispatch are separate contracts. Loading cannot become plant generation, line
+capacity or physical state by renaming a field. Unknown current limits remain
+unknown. Real demand is usable with measured gaps; real renewable histories and
+counterfactual dispatch dynamics are not supplied by that feed. Policy artifacts
+stay frozen while a six-action surrogate is independently evaluated. Negative
+forecast/cost outcomes and unmeasured operator/physical targets remain visible.
+
+## ADR-019: Verified graph evidence and declared diagnostic semantics
+
+**Date:** 2026-10-23
+**Status:** Accepted
+
+Production diagnosis reads and verifies the actual immutable Neo4j snapshot, then
+uses an in-memory undirected CONNECTED_TO projection. Constant structural weights
+are not risk probabilities. SUPPLIES_TO/SERVES direction is withheld when source
+evidence cannot establish it. Snapshot caching is content-version-bound; startup
+verification and readiness remain distinct from current switching/flow state.
+Graph/time/PageRank rankings prioritize investigation; they do not certify causes.
+
+## ADR-020: Validation-gated model lifecycle and bounded local deployment
+
+**Date:** 2026-10-23
+**Status:** Accepted
+
+Weekly/drift candidate review uses explicit chronological windows and the same
+validation origins for candidate/incumbent comparison. A minimum1% RMSE improvement
+and ten origins are required; reserved tests cannot select promotion. Immutable
+bundles, atomic pointers, locks, append logs and prior-baseline registration support
+rollback. Actual non-improvement retains the incumbent. The local non-root stack
+warms models and the diagnostic snapshot before readiness, separates production
+queues from preview workers, uses persistent volumes and bounds component memory.
+Deployment targets require measured scope; none implies a public production release
+or full research acceptance.

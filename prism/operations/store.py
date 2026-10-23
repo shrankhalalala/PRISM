@@ -62,7 +62,7 @@ def get_job(identifier):
 
 def cancel_job(identifier):
     with database() as db:
-        db.execute("UPDATE prism_jobs SET status='cancelled',updated_at=now() WHERE id=%s AND status IN ('queued','running')",(identifier,));db.commit()
+        db.execute("UPDATE prism_jobs SET status='cancelled',updated_at=now() WHERE id=%s AND status IN ('queued','running') AND (kind<>'retrain' OR progress<90)",(identifier,));db.commit()
     return get_job(identifier)
 
 

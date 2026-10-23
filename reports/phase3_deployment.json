@@ -1,0 +1,85 @@
+{
+  "started_at": "2026-10-23T17:03:34.217522+00:00",
+  "finished_at": "2026-10-23T17:03:50.077566+00:00",
+  "base_url": "http://127.0.0.1:5053",
+  "probes": {
+    "/api/readiness": {
+      "status_code": 200,
+      "elapsed_ms": 73.91937501961365
+    },
+    "/api/health": {
+      "status_code": 200,
+      "elapsed_ms": 2.366208005696535
+    },
+    "/api/reference-grid": {
+      "status_code": 200,
+      "elapsed_ms": 39.402667025569826
+    },
+    "/api/live/stations": {
+      "status_code": 200,
+      "elapsed_ms": 154.26408301573247
+    },
+    "/api/live/gridwatch": {
+      "status_code": 200,
+      "elapsed_ms": 7.517833029851317
+    },
+    "/api/operations/health": {
+      "status_code": 200,
+      "elapsed_ms": 7.052958011627197
+    },
+    "/api/forecast/real": {
+      "status_code": 200,
+      "elapsed_ms": 54.88479201449081
+    }
+  },
+  "operator_token_required": true,
+  "container_worker_verified": {
+    "containerized": true,
+    "software_version": "0.3.0",
+    "worker_hostname": "3fd06e6ff3ba"
+  },
+  "job_id": "b2bb60bd-1e61-43e7-b064-8a246654bbe0",
+  "recent_forecast_job_id": "dc17d322-be91-48cb-9ef7-b22e82b84b7f",
+  "recent_forecast_origin": "2026-10-23T15:30:00+00:00",
+  "retraining_job_id": "865b34a5-e4a5-4e70-8731-3c6371c962a8",
+  "retraining_promoted": false,
+  "model_initialization": {
+    "elapsed_ms": 3579.0146670042304,
+    "status": "ready"
+  },
+  "latency": {
+    "/api/explain": {
+      "samples": 21,
+      "first_http_ms_after_readiness": 44.697250006720424,
+      "warm_p50_ms": 18.71689601102844,
+      "warm_p95_ms": 23.736543767154217,
+      "max_ms": 44.697250006720424,
+      "failures": 0
+    },
+    "/api/forecast/real": {
+      "samples": 21,
+      "first_http_ms_after_readiness": 36.45795799093321,
+      "warm_p50_ms": 17.975333495996892,
+      "warm_p95_ms": 25.692707695998266,
+      "max_ms": 42.643875000067055,
+      "failures": 0
+    },
+    "/api/reference-grid": {
+      "samples": 21,
+      "first_http_ms_after_readiness": 14.849250030238181,
+      "warm_p50_ms": 7.588292006403208,
+      "warm_p95_ms": 11.878764306311497,
+      "max_ms": 14.849250030238181,
+      "failures": 0
+    },
+    "/api/diagnose": {
+      "samples": 21,
+      "first_http_ms_after_readiness": 9.835582983214408,
+      "warm_p50_ms": 1.8153954879380763,
+      "warm_p95_ms": 3.2817451923619974,
+      "max_ms": 9.835582983214408,
+      "failures": 0
+    }
+  },
+  "limitation": "Short local composed-stack verification, not a long-term uptime/load test. Model warmup occurs before readiness; measured requests include actual uncached explanations and Redis forecast cache. Startup initialization remains separately reported. No physical switching."
+}

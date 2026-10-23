@@ -9,16 +9,23 @@ from prism.streaming.store import DurableStream,connections,event
 
 def collect(stream,grid,stations):
     count=0
-    snapshot=grid.snapshot()
+    snapshots={}
+    snapshot=grid.snapshot();snapshots['aggregate']=snapshot
     if snapshot['status']=='live':
         r=snapshot['reading']
         stream.publish(event('delhi-system',r['observed_at'],{k:r[k] for k in ('demand_mw','frequency_hz','drawal_mw','schedule_mw')},snapshot['feed_url'],context={'measurement_role':'city_aggregate'}))
         count+=1
-    snapshot=stations.snapshot()
+    snapshot=stations.snapshot();snapshots['stations']=snapshot
     for r in snapshot['readings']:
         if r['status']=='live':
             stream.publish(event(r['asset_id'],r['observed_at'],{k:r[k] for k in ('mw','mvar','voltage_kv')},snapshot['source_url'],context={k:r[k] for k in ('measurement_role','source_label','quality_flags','source_status_raw')}))
             count+=1
+    from psycopg.types.json import Jsonb
+    for key,snapshot in snapshots.items():
+        quality={k:v for k,v in snapshot.items() if k not in {'reading','readings'}}
+        stream.db.execute('INSERT INTO prism_collector_status(source_key,checked_at,payload) VALUES (%s,%s,%s) ON CONFLICT(source_key) DO UPDATE SET checked_at=EXCLUDED.checked_at,payload=EXCLUDED.payload',
+                          (key,snapshot['checked_at'],Jsonb(quality)))
+    stream.db.commit()
     return count
 
 

@@ -235,3 +235,39 @@ energy (743.862043 versus 755.006330 MWh) but has worse mean return (-154.285003
 versus -120.584628), curtailment, cost, and emissions. These outcomes are retained
 without post-test retuning. Phase 2 therefore demonstrates a complete reproducible
 comparison pipeline, not forecast dominance or dispatch superiority.
+
+## Phase 3 protocols and claim boundaries — 2026-10-23
+
+Real demand acquisition/quality and frozen-origin evaluation are specified in
+REAL_FORECASTING.md and the reproducible scripts. Calendar70/15/15 partitions,
+train-only normalization, complete24-hour context/target blocks and validation-only
+selection precede test assessment. A horizon receives no future actual values.
+Normalized error uses the evaluated test cohort's actual peak; MAPE excludes
+actual<1 MW and reports counts. The supplementary normalization does not retune
+models or change the primary IV MAE/RMSE design.
+
+Surrogate episodes use chronological63/13/14 complete days and distinct seeds;
+validation log loss selects depth/boost length. The six-action Q-policy is frozen.
+A0.75 uncalibrated score defines abstention; masking never creates a claim of real
+electrical feasibility. Paired held-out operating costs remain synthetic.
+
+TreeSHAP uses100 training-only background rows and actual raw-score additivity.
+The supplementary fidelity protocol was defined before its run: sample100 held-out
+states with seed42; aggregate mean absolute SHAP across samples/classes; independently
+permute each feature five times; compare the mean Q-label log-loss increase to
+SHAP ranks using Spearman correlation across ten features. Derived/correlated
+features may produce off-manifold permutations. This is a bounded ranking probe,
+not a universal faithfulness or causal guarantee. The>0.85 target and all outcomes
+are retained without selecting a more favorable probe after seeing results.
+
+Graph fixtures generate hop-distance alarm times and hide their source identity
+from engine input. The engine's equal-hop timing assumption is a heuristic. These
+fixtures exercise behavior under that assumption; they do not provide independent
+physical fault/cascade ground truth or establish M09/M11 success.
+
+Deployment timing distinguishes process initialization before readiness, actual
+uncached attribution, cached prediction arrays, HTTP time and source age. Resource
+checks use actual cgroup peaks and host RAM; short checks are not99.5% uptime.
+Retraining compares candidates/incumbent on the same validation origins, requiring
+at least1% improvement and ten origins. Reserved test observations never select
+promotion. Rejected candidates stay rejected; fixture promotion/rollback is labeled.

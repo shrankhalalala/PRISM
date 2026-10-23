@@ -1,5 +1,8 @@
 # Phase 3 requirements and completion checklist
 
+Original audit date: 2026-10-22. Current implementation/evidence: 2026-10-23; see
+[PHASE3_COMPLETION.md](PHASE3_COMPLETION.md), which supersedes historical missing-implementation labels below. Research and electrical acceptance gates remain separate.
+
 Audit date: 2026-10-22. Work is isolated on the dedicated Phase 3 branch.
 Pushed Phase 2 baseline: `e4209a4` (includes the Phase 2 completion commit
 `e698de0` and subsequent setup documentation).
@@ -189,15 +192,17 @@ change their order. A checkpoint is checked only after its evidence is saved.
 - [x] **Step 5:** build the source-referenced circuit inventory and verify selected-source row coverage/provenance (T03); see [circuits.csv](../data/topology/delhi/circuits.csv). There are 245 dated observations, not 245 distinct current lines. Circuit/terminal ambiguities and full T03 acceptance remain open.
 - [x] **Step 6:** perform the completeness/uncertainty audit; see [AUDIT.md](../data/topology/delhi/AUDIT.md). **Outcome: acceptance gate not passed.** Resolve the recorded source/map/identity/terminal findings before Step 7 integration; no 50-node verification claim.
 - [x] **Step 7 reference milestone:** separate schema/validation and versioned Delhi evidence import into Neo4j (T04); see [reference import guide](DELHI_REFERENCE_IMPORT.md). The corrected version has 66 canonical assets, 245 circuit observations, 16 interface assertions and 522 endpoint references. The six original node cases have dispositions under ADR-017; current electrical/model acceptance and field limitations remain open.
-- [ ] **Step 8:** display and inspect every imported asset/connection (T05).
-- [ ] **Step 9:** map eligible telemetry to verified assets (D01-D02).
-- [ ] **Step 10:** implement Redis/history infrastructure (D03-D04, I03 foundation).
-- [ ] **Step 11:** audit real history, train and evaluate 24-hour forecasts (F01-F02).
-- [ ] **Step 12:** apply IV's policy/surrogate roles; adapt/retrain/evaluate dispatch (P01-P03).
-- [ ] **Step 13:** implement SHAP and graph diagnosis with independent evidence (X01, G01).
-- [ ] **Step 14:** background simulations, alerts and complete operator flow (S01-S02, I01-I02).
-- [ ] **Step 15:** retraining lifecycle, deployment, full metric evaluation and final
-  evidence/report/PPT/demo (F03, I03-I04, M01-M14).
+- [x] **Step 8:** display and inspect every imported asset/connection (T05).
+- [x] **Step 9:** map eligible telemetry to verified assets (D01-D02).
+- [x] **Step 10:** implement Redis/history infrastructure (D03-D04, I03 foundation).
+- [x] **Step 11:** audit real history, train and evaluate 24-hour forecasts (F01-F02).
+- [x] **Step 12:** apply IV's policy/surrogate roles; adapt/retrain/evaluate dispatch (P01-P03).
+- [x] **Step 13:** implement SHAP and graph diagnosis with independent evidence (X01, G01).
+- [x] **Step 14:** background simulations, alerts and complete operator flow (S01-S02, I01-I02).
+- [x] **Step 15:** retraining lifecycle, deployment, full metric evaluation and final
+  evidence/report/PPT/demo (F03, I03-I04, M01-M14). Results include failed,
+  partial and not-evaluable targets; see the completion register. A checked step
+  records delivered implementation/evaluation, not universal research acceptance.
 
 Keep legacy synthetic scenarios reproducible while building the real graph. A
 real asset inventory does not by itself provide power-flow parameters, fault

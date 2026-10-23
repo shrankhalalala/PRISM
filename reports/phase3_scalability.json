@@ -1,0 +1,74 @@
+{
+  "data_source": "synthetic_scalability_fixture",
+  "nodes": 600,
+  "edges": 1200,
+  "validation_seconds": 0.002421499986667186,
+  "first_import_seconds": 1.2632471669930965,
+  "query_seconds": 0.03778883401537314,
+  "repeat_import_equal": true,
+  "reference_namespace_counts_preserved": true,
+  "limitation": "600-node synthetic import/query and separate browser-render fixture; does not increase Delhi inventory or validate electrical models.",
+  "browser": {
+    "fixture": "explicitly synthetic scale fixture; not Delhi inventory",
+    "url": "http://127.0.0.1:5062/?scale=1#reference-grid",
+    "desktop_viewport": [
+      1440,
+      1000
+    ],
+    "mobile_viewport": [
+      375,
+      900
+    ],
+    "asset_options": 600,
+    "asset_select_total_options_including_placeholder": 601,
+    "connection_options": 1200,
+    "connection_select_total_options_including_placeholder": 1201,
+    "graph_nodes": 600,
+    "graph_connection_elements": 1200,
+    "search": {
+      "query": "Synthetic scale asset 599",
+      "matching_asset_options": 1,
+      "selected_id": "scale-599",
+      "inspector_id": "scale-599",
+      "inspector_name": "Synthetic scale asset 599"
+    },
+    "desktop": {
+      "document_horizontal_overflow": false,
+      "zoom_changed_viewbox": true,
+      "pointer_drag_changed_viewbox": true
+    },
+    "mobile": {
+      "document_horizontal_overflow": false,
+      "zoom_changed_viewbox": true,
+      "pointer_drag_changed_viewbox": true,
+      "asset_options": 600,
+      "connection_options": 1200,
+      "graph_nodes": 600,
+      "graph_connection_elements": 1200
+    },
+    "timing": {
+      "single_run": true,
+      "navigation_dom_content_loaded_ms": 1172.1000000238419,
+      "navigation_load_ms": 1177.9000000357628,
+      "reference_api_resource_durations_ms": [
+        14.200000047683716,
+        17.299999952316284
+      ],
+      "reference_api_response_ends_ms_from_navigation": [
+        1182.2000000476837,
+        1189
+      ],
+      "mobile_search_synchronous_render_layout_ms": 22.700000047683716,
+      "mobile_inspection_synchronous_render_layout_ms": 5.699999988079071
+    },
+    "browser_errors": [],
+    "persistent_frontend_changes": false,
+    "limitations": [
+      "Single local browser run; not a production load/concurrency benchmark or rendering SLA.",
+      "Navigation load timing excludes asynchronous completion of the graph. Search/inspection timing measures synchronous event handling plus forced layout and excludes paint/keystroke/network time.",
+      "Mobile-width drag was tested through browser pointer/mouse emulation, not physical touch hardware.",
+      "All 600 assets and 1200 connections remained inspectable; default graph labels use existing collision filtering.",
+      "Port 5060 was blocked by Chromium unsafe-port rules; fixture was moved to 5062."
+    ]
+  }
+}

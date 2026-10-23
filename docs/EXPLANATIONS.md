@@ -29,8 +29,12 @@ reference still does not establish current switching or power flows.
 All relationships in this diagnostic projection are undirected CONNECTED_TO.
 SUPPLIES_TO/SERVES flow direction is not fabricated for reference circuits whose
 current direction is unknown. The original immutable Neo4j evidence graph remains
-separate. Graph diagnosis currently computes from the validated reference export;
-a deployed Neo4j-backed diagnostic projection is not claimed.
+separate. Local previews compute from the validated export. The composed deployment reads
+the actual immutable Neo4j snapshot, independently verifies all records and endpoint
+relations, then runs the documented NetworkX algorithms. The immutable snapshot cache is version-bound and initialized before production
+readiness. A failed initial database verification returns unavailable; an already
+verified cached reference is not a claim of current database or grid state.
+Readiness independently probes current database connectivity. Neo4j GDS/PageRank execution is not claimed.
 
 The evaluation uses procedural graph-distance alarm fixtures. The hidden source
 is excluded from engine input; this checks behavior under declared toy assumptions.

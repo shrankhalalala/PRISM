@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "PRISM Phase 2 API",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Completed Phase 2 synthetic prototype with three forecast methods, constrained scenarios, and non-executable Q-learning recommendations. No operational switching. Phase 3 increment: read-only Delhi SLDC public measurements with freshness metadata."
   },
   "servers": [
@@ -962,6 +962,47 @@
           "503": {
             "description": "Operations infrastructure unavailable"
           }
+        },
+        "security": [
+          {
+            "OperatorToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "request"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "scenario",
+                      "forecast",
+                      "retrain"
+                    ]
+                  },
+                  "request": {
+                    "type": "object"
+                  }
+                }
+              },
+              "example": {
+                "kind": "scenario",
+                "request": {
+                  "steps": 8,
+                  "seed": 42,
+                  "policy": "baseline"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -1010,6 +1051,11 @@
               "format": "uuid"
             }
           }
+        ],
+        "security": [
+          {
+            "OperatorToken": []
+          }
         ]
       }
     },
@@ -1023,7 +1069,12 @@
           "503": {
             "description": "Operations infrastructure unavailable"
           }
-        }
+        },
+        "security": [
+          {
+            "OperatorToken": []
+          }
+        ]
       }
     },
     "/api/advisories/{identifier}/decisions": {
@@ -1072,7 +1123,65 @@
           "400": {
             "description": "Invalid decision"
           }
+        },
+        "security": [
+          {
+            "OperatorToken": []
+          }
+        ]
+      }
+    },
+    "/api/readiness": {
+      "get": {
+        "summary": "Dependency/reference/model readiness; startup cost separated",
+        "responses": {
+          "200": {
+            "description": "Declared readiness/model state"
+          },
+          "400": {
+            "description": "Invalid rollback/no previous model"
+          },
+          "503": {
+            "description": "Unavailable dependencies or artifact"
+          }
         }
+      }
+    },
+    "/api/models/status": {
+      "get": {
+        "summary": "Active forecast version, drift proxy and promotion gate",
+        "responses": {
+          "200": {
+            "description": "Declared readiness/model state"
+          },
+          "400": {
+            "description": "Invalid rollback/no previous model"
+          },
+          "503": {
+            "description": "Unavailable dependencies or artifact"
+          }
+        }
+      }
+    },
+    "/api/models/rollback": {
+      "post": {
+        "summary": "Restore previous verified forecast bundle",
+        "responses": {
+          "200": {
+            "description": "Declared readiness/model state"
+          },
+          "400": {
+            "description": "Invalid rollback/no previous model"
+          },
+          "503": {
+            "description": "Unavailable dependencies or artifact"
+          }
+        },
+        "security": [
+          {
+            "OperatorToken": []
+          }
+        ]
       }
     }
   },
@@ -1424,6 +1533,14 @@
             ]
           }
         }
+      }
+    },
+    "securitySchemes": {
+      "OperatorToken": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-PRISM-Operator-Token",
+        "description": "Required for production advisory mutations; optional only in explicitly allowed loopback preview."
       }
     }
   }

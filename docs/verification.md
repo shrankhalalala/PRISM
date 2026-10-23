@@ -211,3 +211,36 @@ operational control remain outside Phase 2.
 - Field limitations remain for precise Noida terminal naming, circuit suffixes,
   source lengths and current electrical state/parameters. The electrical simulation
   gate remains closed. The website, runtime teaching grid and trained models are unchanged.
+
+## Phase 3 final integration verification — 2026-10-23
+
+The current record is docs/PHASE3_COMPLETION.md and reports/phase3_*.json.
+The dedicated branch preserves the Phase2 baseline; each delivered integration
+step is committed/pushed separately. All108 unit/API checks pass, Python compiles,
+and three frontend scripts pass syntax checks. Intentional missing-fixture tests
+log a diagnostic while verifying HTTP503 behavior.
+
+Actual Redis/PostgreSQL checks verify duplicates, commit-before-ack crash replay,
+quarantine, protected retention, observed real station history and sustained
+synthetic load without additional source polling. Neo4j reference repeat-import,
+namespace preservation, verified diagnostic input and a separate600-node fixture
+are exercised. All600 assets/1,200 connections remain accessible in the scaling
+browser test; search/inspection and desktop/mobile pan/zoom work without overflow.
+
+The seven-service non-root deployment runs behind Gunicorn at localhost5053;
+service readiness, token rejection, actual container worker completion, hourly
+recent demand refresh and candidate review are exercised over HTTP. Model/reference
+initialization occurs before readiness and its duration is retained. Actual HTTP
+latency, failures, host RAM, cgroup memory peaks and caps are recorded without
+substituting configured limits for measured usage. This is a short local workload,
+not an availability, physical-grid or production saturation certification.
+
+Independent frontend review passes complete reference/telemetry/operations/forecast/
+diagnosis/retraining flows and mobile containment. Different-provider review was
+unavailable, and no such claim is made. The eight-slide demo deck was rendered and
+individually inspected; editable chart/workbook, package integrity, layout/font and
+first-party import checks pass. Native PowerPoint execution was not checked.
+
+Negative results, missing real renewable history, unknown current electrical
+parameters and absent operator/physical ground truth remain explicit in the final
+acceptance register. They are not converted into passed requirements by tests.

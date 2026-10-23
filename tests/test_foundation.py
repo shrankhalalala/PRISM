@@ -119,11 +119,11 @@ class APITests(unittest.TestCase):
             with self.subTest(route=route):
                 self.assertEqual(self.client.get(route).status_code,200)
         self.assertEqual(self.client.get('/api/grid').json['summary']['nodes'],12)
-        self.assertEqual(self.client.get('/api/health').json['phase'],2)
-        self.assertEqual(self.client.get('/api/openapi.json').json['info']['version'],'0.2.0')
+        self.assertEqual(self.client.get('/api/health').json['phase'],3)
+        self.assertEqual(self.client.get('/api/openapi.json').json['info']['version'],'0.3.0')
         modules=self.client.get('/api/status').json['modules']
         self.assertTrue(all('owner' not in module for module in modules))
-        self.assertTrue(all(module['status']=='phase2_complete' for module in modules))
+        self.assertTrue(all(module['status']=='phase3_integrated' for module in modules))
 
     def test_limits(self):
         for limit in ['-1','0','2161','abc']:
