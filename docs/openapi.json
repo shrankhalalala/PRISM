@@ -925,6 +925,155 @@
           }
         }
       }
+    },
+    "/api/operations/health": {
+      "get": {
+        "summary": "Redis/PostgreSQL/worker health",
+        "responses": {
+          "200": {
+            "description": "Advisory workflow result"
+          },
+          "503": {
+            "description": "Operations infrastructure unavailable"
+          }
+        }
+      }
+    },
+    "/api/alerts": {
+      "get": {
+        "summary": "Data-quality and application alerts",
+        "responses": {
+          "200": {
+            "description": "Advisory workflow result"
+          },
+          "503": {
+            "description": "Operations infrastructure unavailable"
+          }
+        }
+      }
+    },
+    "/api/jobs": {
+      "post": {
+        "summary": "Queue a bounded advisory scenario or recent forecast",
+        "responses": {
+          "202": {
+            "description": "Advisory workflow result"
+          },
+          "503": {
+            "description": "Operations infrastructure unavailable"
+          }
+        }
+      }
+    },
+    "/api/jobs/{identifier}": {
+      "get": {
+        "summary": "Poll a durable job",
+        "responses": {
+          "200": {
+            "description": "Advisory workflow result"
+          },
+          "503": {
+            "description": "Operations infrastructure unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/api/jobs/{identifier}/cancel": {
+      "post": {
+        "summary": "Cancel queued or running job",
+        "responses": {
+          "200": {
+            "description": "Advisory workflow result"
+          },
+          "503": {
+            "description": "Operations infrastructure unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/api/advisories": {
+      "post": {
+        "summary": "Persist a supplied synthetic-policy advisory and explanation",
+        "responses": {
+          "201": {
+            "description": "Advisory workflow result"
+          },
+          "503": {
+            "description": "Operations infrastructure unavailable"
+          }
+        }
+      }
+    },
+    "/api/advisories/{identifier}/decisions": {
+      "get": {
+        "summary": "Read immutable advisory decision records",
+        "responses": {
+          "200": {
+            "description": "Advisory workflow result"
+          },
+          "503": {
+            "description": "Operations infrastructure unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      },
+      "post": {
+        "summary": "Append an advisory accept/override with operator and reason; no control command",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Decision recorded"
+          },
+          "401": {
+            "description": "Operator token required"
+          },
+          "400": {
+            "description": "Invalid decision"
+          }
+        }
+      }
     }
   },
   "components": {

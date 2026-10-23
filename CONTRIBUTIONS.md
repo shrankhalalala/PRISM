@@ -301,3 +301,15 @@ uses evidence paths, a declared timing heuristic and ten PageRank iterations wit
 convergence residuals. Procedural fixtures do not establish real causal accuracy.
 All 104 tests pass. Existing four-member review responsibilities continue; no
 operator trust, physical propagation or live switching validation is claimed.
+
+### Phase 3 Step 14: worker jobs and operator workflow — 2026-10-23
+
+Celery now runs durable bounded scenarios and hourly recent-demand refreshes with
+outbox recovery, leases, cancellation and safe retries. Health/alerts, actual
+surrogate explanations and explicit human accept/override records are integrated
+in the Operations page. Live worker completion, duplicate requests, cancellation,
+expired-lease recovery, token rejection and labeled software-verification audit
+records passed. Desktop/mobile and independent browser review passed, with 107
+tests passing. Operator labels remain assertions; these software checks are not
+operator survey evidence, tamper-proof external auditing or equipment commands.
+The existing four-member review responsibilities continue.

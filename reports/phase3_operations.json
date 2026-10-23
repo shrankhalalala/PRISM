@@ -1,0 +1,29 @@
+{
+  "job_id": "f5ab8856-3563-4f86-8aea-b3215bf60269",
+  "worker_completion": "succeeded",
+  "duplicate_request_same_id": true,
+  "cancelled_job_not_executed": true,
+  "advisory_id": "bf8c9a9d-ff52-4598-b01c-0a656d87fae7",
+  "append_only_decision_records": 2,
+  "explicit_software_verification_records": true,
+  "operator_token_rejection_verified": true,
+  "advisory_only": true,
+  "health": {
+    "advisory_only": true,
+    "services": {
+      "postgres": "ok",
+      "redis": "ok",
+      "worker": "ok"
+    },
+    "status": "ok"
+  },
+  "hourly_refresh_verification": {
+    "origin": "2026-10-23T08:30:00+00:00",
+    "status": "recent_history_preview",
+    "history_context_sha256": "c11298d14d17234013aeb33d1d032ffbf98b5d07330ea0f8cdd505ee081e78ca"
+  },
+  "expired_worker_lease_recovery": {
+    "verified": true,
+    "attempts": 2
+  }
+}

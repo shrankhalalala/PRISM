@@ -12,6 +12,8 @@ from prism.streaming.api import api as durable_api
 from prism.forecasting.real_api import api as real_forecast_api
 from prism.dispatch.api import api as surrogate_api
 from prism.explain.api import api as explanation_api
+from prism.simulation.runner import run_scenario
+from prism.operations.api import api as operations_api
 from prism.grid.model import load_grid, grid_summary
 from prism.grid.presentation import reference_view
 from prism.forecasting import AutoregressiveForecaster, LSTMForecaster, persistence_forecast
@@ -40,6 +42,7 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.register_blueprint(real_forecast_api)
     app.register_blueprint(surrogate_api)
     app.register_blueprint(explanation_api)
+    app.register_blueprint(operations_api)
 
     app.extensions["gridwatch"] = app.config.get("GRIDWATCH_CLIENT") or GridWatchClient()
 
@@ -205,69 +208,10 @@ def create_app(test_config: dict | None = None) -> Flask:
     def scenario():
         if not request.is_json:
             return jsonify(error="invalid_request",message="Use application/json"),415
-        body=request.get_json()
-        if not isinstance(body,dict):
-            return jsonify(error="invalid_request",message="Expected a scenario object"),400
-        unknown=set(body).difference({"steps","seed","actions","faults","policy"})
-        if unknown:
-            return jsonify(error="invalid_request",message=f"Unknown scenario fields: {', '.join(sorted(unknown))}"),400
-        steps=body.get("steps",8)
-        seed=body.get("seed",42)
-        actions=body.get("actions")
-        faults=body.get("faults",[])
-        policy=body.get("policy","baseline")
-        if isinstance(steps,bool) or not isinstance(steps,int) or not 1 <= steps <= 96:
-            return jsonify(error="invalid_request",message="steps must be an integer between 1 and 96"),400
-        if isinstance(seed,bool) or not isinstance(seed,int):
-            return jsonify(error="invalid_request",message="seed must be an integer"),400
-        if actions is not None and (not isinstance(actions,list) or len(actions)!=steps):
-            return jsonify(error="invalid_request",message="actions must contain exactly one action per step"),400
-        if not isinstance(faults,list):
-            return jsonify(error="invalid_request",message="faults must be an array"),400
-        if policy not in {"baseline","q_learning"}:
-            return jsonify(error="invalid_request",message="policy must be baseline or q_learning"),400
-        if actions is not None and "policy" in body:
-            return jsonify(error="invalid_request",message="Provide actions or policy, not both"),400
         try:
-            selected_actions=[Action(value) for value in actions] if actions is not None else None
-            learned_agent=QLearningAgent.load(model_root / "q_learning/phase2_policy.json") if policy=="q_learning" and selected_actions is None else None
-            frame=pd.read_csv(Path(app.config["DATA_DIR"]) / "processed/measurements.csv")
-            profile=quarter_hour_profile(frame,hours=24)[:steps]
-            environment=GridEnvironment(
-                topology(),
-                profile=profile,
-                faults=faults,
-                config=SimulationConfig(episode_steps=steps),
-                seed=seed,
-            )
-            trajectory=[]
-            totals={"return":0.0,"unserved_mwh":0.0,"curtailed_mwh":0.0,"operating_cost":0.0,"emissions_kg":0.0}
-            observation=Observation(**environment.reset(seed=seed))
-            for index in range(steps):
-                if selected_actions is None:
-                    action=q_action(learned_agent)(observation,environment.valid_actions()) if learned_agent else baseline_action(observation,environment.valid_actions())
-                else:
-                    action=selected_actions[index]
-                next_raw,reward,terminated,info=environment.step(action)
-                trajectory.append({"observation":asdict(observation),"reward":reward,**info})
-                totals["return"]+=reward
-                for key in ("unserved_mwh","curtailed_mwh","operating_cost","emissions_kg"):
-                    totals[key]+=info["metrics"][key]
-                observation=Observation(**next_raw)
-                if terminated:
-                    break
+            return jsonify(run_scenario(request.get_json(),app.config['DATA_DIR']))
         except (TypeError,ValueError) as error:
-            return jsonify(error="invalid_request",message=str(error)),400
-        return jsonify(
-            data_source="synthetic",
-            policy="provided_actions" if selected_actions is not None else ("q_learning_phase2" if learned_agent else "rule_based_prototype"),
-            seed=seed,
-            steps=len(trajectory),
-            totals={key:round(value,6) for key,value in totals.items()},
-            final_observation=asdict(observation),
-            trajectory=trajectory,
-            assurance="Synthetic aggregate simulation; no AC/DC power flow or operational switching.",
-        )
+            return jsonify(error='invalid_request',message=str(error)),400
 
     @app.post("/api/dispatch")
     def learned_dispatch():

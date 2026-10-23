@@ -1,6 +1,6 @@
 """Audit original SLDC demand captures; no interpolation or synthetic filling."""
 from collections import Counter,defaultdict
-from datetime import datetime,timedelta
+from datetime import datetime,timedelta,timezone
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -21,6 +21,7 @@ def prepare_history(root):
         for row in rows:
             try:
                 local=datetime.strptime(row['FORDATE']+' '+row['TIMESLOT'],'%d/%m/%Y %H:%M').replace(tzinfo=ZoneInfo('Asia/Kolkata'))
+                if local.astimezone(timezone.utc)>datetime.now(timezone.utc)+timedelta(seconds=120):raise ValueError('Future observation')
                 value=row['VALUE']
                 if row['ENTITY']!='Delhi' or row['TYPE']!='MW' or local.date().isoformat()!=record['date'] or local.minute%5:
                     raise ValueError('Unexpected source domain')
