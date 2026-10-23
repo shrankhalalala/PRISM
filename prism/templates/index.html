@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PRISM · Grid intelligence workspace</title>
+  <title>PRISM · Delhi grid workspace</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
   <script defer src="{{ url_for('static', filename='dashboard.js') }}"></script>
   <script defer src="{{ url_for('static', filename='reference-grid.js') }}"></script>
@@ -12,15 +12,14 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
-    <a class="brand" href="#overview" aria-label="PRISM overview"><span class="brand-mark">◈</span> PRISM<span class="brand-caption">INTELLIGENT GRID SYSTEMS</span></a>
+    <a class="brand" href="#reference-grid" aria-label="PRISM Delhi grid"><span class="brand-mark">◈</span> PRISM<span class="brand-caption">INTELLIGENT GRID SYSTEMS</span></a>
     <div class="nav-label">WORKSPACE</div>
     <nav aria-label="Main navigation">
-      <a class="active" href="#overview" data-nav-label="Grid overview"><span>▦</span> Grid overview <span class="nav-arrow">↗</span></a>
-      <a href="#live-grid" data-nav-label="Delhi live grid"><span>◉</span> Delhi live grid <span class="nav-arrow">↗</span></a>
-      <a href="#reference-grid" data-nav-label="Delhi reference grid"><span>⌘</span> Delhi reference grid <span class="nav-arrow">↗</span></a>
-      <a href="#measurements" data-nav-label="Measurements"><span>≋</span> Measurements <span class="nav-arrow">↗</span></a>
-      <a href="#forecast" data-nav-label="Forecast lab"><span>⌁</span> Forecast lab <span class="nav-arrow">↗</span></a>
-      <a href="#scenario" data-nav-label="Scenario lab"><span>◇</span> Scenario lab <span class="nav-arrow">↗</span></a>
+      <a class="active" href="#reference-grid" data-nav-label="Delhi grid"><span>⌘</span> Delhi grid <span class="nav-arrow">↗</span></a>
+      <a href="#live-grid" data-nav-label="Delhi live readings"><span>◉</span> Delhi live readings <span class="nav-arrow">↗</span></a>
+      <a href="#measurements" data-nav-label="Synthetic measurements"><span>≋</span> Synthetic measurements <span class="nav-arrow">↗</span></a>
+      <a href="#forecast" data-nav-label="Synthetic forecast lab"><span>⌁</span> Synthetic forecast lab <span class="nav-arrow">↗</span></a>
+      <a href="#scenario" data-nav-label="Synthetic scenario lab"><span>◇</span> Synthetic scenario lab <span class="nav-arrow">↗</span></a>
       <a href="#operations" data-nav-label="Operations desk"><span>▤</span> Operations desk <span class="nav-arrow">↗</span></a>
     </nav>
     <div class="sidebar-foot"><p>From grid visibility<br>to explainable decisions.</p><span class="phase-tag">PHASE 03 · INTEGRATED</span></div>
@@ -29,48 +28,13 @@
 
   <div class="workspace">
     <header class="topbar">
-      <div class="topbar-start"><button id="sidebar-toggle" class="icon-button" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="Collapse navigation">☰</button><span class="breadcrumb">Workspace <span class="slash">/</span> <span id="breadcrumb-section">Grid overview</span></span></div>
+      <div class="topbar-start"><button id="sidebar-toggle" class="icon-button" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="Collapse navigation">☰</button><span class="breadcrumb">Workspace <span class="slash">/</span> <span id="breadcrumb-section">Delhi grid</span></span></div>
       <div class="topbar-actions"><span class="source-badge"><i></i> RESEARCH WORKSPACE</span><button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme"><span id="theme-icon" aria-hidden="true">☾</span><span id="theme-label">Dark</span></button></div>
     </header>
 
     <main id="main">
-      <section id="overview" class="workspace-section" aria-labelledby="page-title">
-        <div class="page-heading"><div><p class="eyebrow">OPERATIONS / SYNTHETIC NETWORK BLUEPRINT</p><h1 id="page-title">Grid overview<span class="orange">.</span></h1><p class="subtitle">Synthetic reference network for grid resilience research.</p></div><button id="refresh" class="refresh" type="button"><span aria-hidden="true">↻</span> Refresh data</button></div>
-        <p id="load-status" role="status" aria-live="polite">Loading workspace data…</p>
-        <div id="error" class="error" role="alert" hidden></div>
-        <div class="metrics" aria-label="Grid totals">
-          <article><span class="metric-label">GENERATION</span><p><strong id="generation">—</strong> <span>MW</span></p><small>Combined plant output</small></article>
-          <article><span class="metric-label">DEMAND</span><p><strong id="demand">—</strong> <span>MW</span></p><small>Combined load requirement</small></article>
-          <article><span class="metric-label">POWER BALANCE</span><p><strong id="balance">—</strong> <span>MW</span></p><small>Generation minus demand</small></article>
-          <article><span class="metric-label">NETWORK SIZE</span><p><strong id="nodes">—</strong> <span>nodes</span></p><small id="edges">— transmission connections</small></article>
-        </div>
-        <div class="network-layout">
-          <section class="network-panel" aria-labelledby="network-title">
-            <div class="panel-heading"><div><span class="eyebrow">NETWORK / 01</span><h2 id="network-title">Grid topology</h2></div><span class="small-label">ILLUSTRATIVE NETWORK</span></div>
-            <div class="network-controls" role="group" aria-label="Highlight asset type"><button type="button" data-kind="all" aria-pressed="true">All assets</button><button type="button" data-kind="plant" aria-pressed="false">Plants</button><button type="button" data-kind="substation" aria-pressed="false">Substations</button><button type="button" data-kind="load" aria-pressed="false">Loads</button></div>
-            <div class="mobile-asset-picker"><label for="asset-select">Inspect asset</label><select id="asset-select" disabled><option>Loading assets…</option></select><p>Scroll the schematic horizontally to explore the full network.</p></div>
-            <div class="graph-container"><svg id="network" viewBox="0 0 760 370" role="group" aria-label="Synthetic grid topology. Select a node to view its properties."><text x="380" y="185" text-anchor="middle">Loading network…</text></svg></div>
-            <div class="network-footer"><div class="legend"><span><i class="plant"></i> Plant</span><span><i class="substation"></i> Substation</span><span><i class="load"></i> Load zone</span></div><span class="small-label">SELECT A NODE TO INSPECT →</span></div>
-          </section>
-          <aside class="inspector" aria-labelledby="inspector-title"><span class="eyebrow">ASSET INSPECTOR</span><h2 id="inspector-title">Node details</h2><div id="node-detail"><p class="empty">Select a node on the network to explore its properties.</p></div><div class="inspector-note">This schematic shows the synthetic teaching topology. It does not display electrical line flows or the separate synthetic scenario state.</div></aside>
-        </div>
-      </section>
-
-      <section id="live-grid" class="lab-panel workspace-section" aria-labelledby="live-title">
-        <div class="lab-heading"><div><span class="eyebrow">DELHI SLDC / PUBLIC MEASUREMENTS</span><h2 id="live-title">Delhi live grid</h2><p>Latest published demand, frequency, and power drawal from Grid Watch.</p></div><button id="live-refresh" class="refresh" type="button">↻ Refresh readings</button></div>
-        <p id="live-status" class="lab-status" role="status" aria-live="polite">Connecting to Delhi SLDC…</p>
-        <div class="metrics live-metrics" aria-label="Delhi SLDC measurements">
-          <article><span class="metric-label">DELHI DEMAND</span><p><strong id="live-demand">—</strong> <span>MW</span></p><small>Published current load</small></article>
-          <article><span class="metric-label">FREQUENCY</span><p><strong id="live-frequency">—</strong> <span>Hz</span></p><small>Published grid frequency</small></article>
-          <article><span class="metric-label">DRAWAL</span><p><strong id="live-drawal">—</strong> <span>MW</span></p><small>Published current drawal</small></article>
-          <article><span class="metric-label">SCHEDULE</span><p><strong id="live-schedule">—</strong> <span>MW</span></p><small>Published current schedule</small></article>
-        </div>
-        <p id="live-timestamp" class="lab-status">Source timestamp: awaiting a valid reading.</p>
-        <p class="lab-note">Source: <a href="https://delhisldc.org/grid-watch/" target="_blank" rel="noopener noreferrer">Delhi SLDC Grid Watch ↗</a> · Checks every 60 seconds while this page is open. Readings older than five minutes are marked stale. The overview, forecast lab, and scenario lab use separate synthetic research data.</p>
-      </section>
-
       <section id="reference-grid" class="lab-panel workspace-section reference-workspace" aria-labelledby="reference-title">
-        <div class="lab-heading"><div><span class="eyebrow">DELHI / SOURCE-REFERENCED TOPOLOGY</span><h2 id="reference-title">Explore the reference grid</h2><p>A dated evidence network. Inspect the assets, connections and sources behind each record.</p></div><button id="ref-retry" class="refresh" type="button">↻ Reload reference</button></div>
+        <div class="lab-heading"><div><span class="eyebrow">DELHI / SOURCE-REFERENCED TOPOLOGY</span><h1 id="reference-title">Delhi grid<span class="orange">.</span></h1><p>A dated evidence network. Inspect the assets, connections and sources behind each record.</p></div><button id="ref-retry" class="refresh" type="button">↻ Reload reference</button></div>
         <p id="ref-status" class="lab-status" role="status" aria-live="polite">Loading the Delhi reference inventory…</p>
         <div id="ref-error" class="error" role="alert" hidden></div>
         <div id="ref-content" hidden>
@@ -99,11 +63,24 @@
           </div>
           <details class="ref-limitations"><summary>Coverage and remaining field limitations</summary><p>Six original node cases have documented reference-model decisions. The source dates differ; this is not a verified current switching snapshot. Planned Budella is excluded from the existing-asset count. Observations and interface assertions are not counts of distinct current physical lines.</p><ul id="ref-field-questions"></ul><p id="ref-dataset" class="ref-dataset"></p></details>
         </div>
-        <p class="lab-note">Reference topology evidence · Published station loading is shown separately when mapped. Electrical limits and verified operating state remain unknown. The synthetic overview and simulation labs are separate.</p>
+        <p class="lab-note">Reference topology evidence · Published station loading is shown separately when mapped. Electrical limits and verified operating state remain unknown. The synthetic research labs use separate simulation data.</p>
+      </section>
+
+      <section id="live-grid" class="lab-panel workspace-section" aria-labelledby="live-title">
+        <div class="lab-heading"><div><span class="eyebrow">DELHI SLDC / PUBLIC MEASUREMENTS</span><h2 id="live-title">Delhi live grid</h2><p>Latest published demand, frequency, and power drawal from Grid Watch.</p></div><button id="live-refresh" class="refresh" type="button">↻ Refresh readings</button></div>
+        <p id="live-status" class="lab-status" role="status" aria-live="polite">Connecting to Delhi SLDC…</p>
+        <div class="metrics live-metrics" aria-label="Delhi SLDC measurements">
+          <article><span class="metric-label">DELHI DEMAND</span><p><strong id="live-demand">—</strong> <span>MW</span></p><small>Published current load</small></article>
+          <article><span class="metric-label">FREQUENCY</span><p><strong id="live-frequency">—</strong> <span>Hz</span></p><small>Published grid frequency</small></article>
+          <article><span class="metric-label">DRAWAL</span><p><strong id="live-drawal">—</strong> <span>MW</span></p><small>Published current drawal</small></article>
+          <article><span class="metric-label">SCHEDULE</span><p><strong id="live-schedule">—</strong> <span>MW</span></p><small>Published current schedule</small></article>
+        </div>
+        <p id="live-timestamp" class="lab-status">Source timestamp: awaiting a valid reading.</p>
+        <p class="lab-note">Source: <a href="https://delhisldc.org/grid-watch/" target="_blank" rel="noopener noreferrer">Delhi SLDC Grid Watch ↗</a> · Checks every 60 seconds while this page is open. Readings older than five minutes are marked stale. The measurement, forecast and scenario labs use separate synthetic research data.</p>
       </section>
 
       <section id="measurements" class="table-panel workspace-section" aria-labelledby="measurements-title">
-        <div class="panel-heading"><div><span class="eyebrow">DATA PIPELINE / 02</span><h2 id="measurements-title">Measurement preview</h2></div><span id="record-count" class="small-label">LOADING RECORDS</span></div>
+        <div class="panel-heading"><div><span class="eyebrow">DATA PIPELINE / 02</span><h2 id="measurements-title">Synthetic measurement preview</h2></div><div class="measurement-heading-actions"><span id="record-count" class="small-label">LOADING RECORDS</span><button id="measurement-refresh" class="refresh" type="button">↻ Refresh measurements</button></div></div>
         <div class="chart-controls"><div class="segmented" role="group" aria-label="Measurement series"><button type="button" data-series="demand_mw" aria-pressed="true">Demand</button><button type="button" data-series="solar_mw" aria-pressed="false">Solar</button><button type="button" data-series="wind_mw" aria-pressed="false">Wind</button></div><div class="segmented" role="group" aria-label="Measurement range"><button type="button" data-hours="24" aria-pressed="true">24 hours</button><button type="button" data-hours="168" aria-pressed="false">7 days</button></div></div>
         <p id="chart-status" class="chart-status" role="status" aria-live="polite">Loading measurement series…</p>
         <figure class="measurement-figure"><div class="chart-scroll"><svg id="measurement-chart" viewBox="0 0 900 220" role="img" aria-labelledby="chart-caption"></svg></div><figcaption id="chart-caption">Synthetic hourly observations. Time shown in UTC.</figcaption></figure>
@@ -112,7 +89,7 @@
       </section>
 
       <section id="forecast" class="lab-panel workspace-section" aria-labelledby="forecast-title">
-        <div class="lab-heading"><div><span class="eyebrow">MODELLING / 03</span><h2 id="forecast-title">Forecast lab</h2><p>Compare Phase 2 models against the same synthetic history.</p></div><span class="completion-stamp">MODEL BENCH</span></div>
+        <div class="lab-heading"><div><span class="eyebrow">MODELLING / 03</span><h2 id="forecast-title">Synthetic forecast lab</h2><p>Compare Phase 2 models against the same synthetic history.</p></div><span class="completion-stamp">MODEL BENCH</span></div>
         <form id="forecast-form" class="control-deck">
           <label><span>Target</span><select id="forecast-target" name="target"><option value="demand_mw">Demand · MW</option><option value="solar_mw">Solar · MW</option><option value="wind_mw">Wind · MW</option></select></label>
           <label><span>Model</span><select id="forecast-model" name="model"><option value="persistence">Persistence</option><option value="autoregressive">Autoregressive</option><option value="lstm">LSTM</option></select></label>
@@ -129,7 +106,8 @@
       </section>
 
       <section id="scenario" class="lab-panel workspace-section" aria-labelledby="scenario-title">
-        <div class="lab-heading"><div><span class="eyebrow">SIMULATION / 04</span><h2 id="scenario-title">Scenario lab</h2><p>Run identical conditions through the rule baseline or learned Q policy.</p></div><span class="completion-stamp">15-MINUTE STEPS</span></div>
+        <div class="lab-heading"><div><span class="eyebrow">SIMULATION / 04</span><h2 id="scenario-title">Synthetic scenario lab</h2><p>Run identical conditions through the rule baseline or learned Q policy.</p></div><span class="completion-stamp">15-MINUTE STEPS</span></div>
+        <div class="scenario-fixture-status"><p id="scenario-fixture-status" class="lab-status" role="status">Loading synthetic fault-injection assets…</p><button id="scenario-assets-retry" class="ref-button" type="button">Reload simulation assets</button></div>
         <form id="scenario-form" class="scenario-controls">
           <label><span>Policy</span><select id="scenario-policy" name="policy"><option value="baseline">Rule baseline</option><option value="q_learning">Q-learning</option></select></label>
           <label><span>Steps</span><input id="scenario-steps" name="steps" type="number" min="1" max="96" value="24" inputmode="numeric"></label>
@@ -168,7 +146,7 @@
             </div>
           </section>
         </div>
-        <section id="ops-investigation" class="ops-investigation" aria-labelledby="ops-investigation-title"><span class="eyebrow">03 / MANUAL GRAPH INVESTIGATION</span><h3 id="ops-investigation-title">Trace alarm connections</h3><p class="ops-copy">Add alarms you supply, with qualified timestamps. Connectivity and timing produce ranked investigation hypotheses. They do not establish a physical cause, power-flow direction or causal probability. No alarms are generated automatically.</p><div class="ops-investigation-controls ops-form"><label><span>Topology dataset</span><select id="ops-diag-dataset"><option value="reference">Delhi reference · dated connectivity</option><option value="synthetic">Synthetic teaching network</option></select></label><button id="ops-diag-reload" class="ref-button" type="button">Reload asset choices</button></div><p id="ops-diag-assets-status" class="ops-status" role="status">Loading eligible asset choices…</p><form id="ops-alarm-form" class="ops-form"><label><span>Alarm asset</span><select id="ops-diag-asset" required disabled><option value="">Loading assets…</option></select></label><label><span>Observed time · include timezone</span><input id="ops-diag-time" type="text" placeholder="YYYY-MM-DDTHH:mm:ss+05:30" aria-describedby="ops-diag-time-help" required></label><p id="ops-diag-time-help" class="ops-copy ops-wide">Use an ISO timestamp with Z or a timezone offset. Enter actual supplied alarm times, not future times.</p><button id="ops-alarm-add" class="ref-button" type="submit" disabled>Add supplied alarm +</button></form><div class="ops-section-heading"><h4>Supplied alarms · <span id="ops-alarm-count">0 / 100</span></h4><button id="ops-alarm-clear" class="ref-button" type="button" disabled>Clear alarms</button></div><ol id="ops-alarms" class="ops-alarms"><li>No alarms added.</li></ol><button id="ops-diag-run" class="run-control" type="button" disabled>Investigate connections →</button><p id="ops-diag-status" class="ops-status" role="status" aria-live="polite">Add at least one supplied alarm to begin.</p><div id="ops-diag-error" class="error" role="alert" hidden></div><div id="ops-diag-result" hidden><p id="ops-diag-limitation" class="ops-boundary"></p><dl id="ops-diag-summary" class="ops-facts"></dl><ol id="ops-diag-hypotheses" class="ops-hypotheses"></ol></div></section>
+        <section id="ops-investigation" class="ops-investigation" aria-labelledby="ops-investigation-title"><span class="eyebrow">03 / MANUAL GRAPH INVESTIGATION</span><h3 id="ops-investigation-title">Trace alarm connections</h3><p class="ops-copy">Add alarms you supply, with qualified timestamps. Connectivity and timing produce ranked investigation hypotheses. They do not establish a physical cause, power-flow direction or causal probability. No alarms are generated automatically.</p><div class="ops-investigation-controls ops-form"><div class="ops-dataset-note"><span class="small-label">Topology dataset</span><p class="ops-copy">Delhi reference · dated connectivity</p></div><button id="ops-diag-reload" class="ref-button" type="button">Reload asset choices</button></div><p id="ops-diag-assets-status" class="ops-status" role="status">Loading eligible asset choices…</p><form id="ops-alarm-form" class="ops-form"><label><span>Alarm asset</span><select id="ops-diag-asset" required disabled><option value="">Loading assets…</option></select></label><label><span>Observed time · include timezone</span><input id="ops-diag-time" type="text" placeholder="YYYY-MM-DDTHH:mm:ss+05:30" aria-describedby="ops-diag-time-help" required></label><p id="ops-diag-time-help" class="ops-copy ops-wide">Use an ISO timestamp with Z or a timezone offset. Enter actual supplied alarm times, not future times.</p><button id="ops-alarm-add" class="ref-button" type="submit" disabled>Add supplied alarm +</button></form><div class="ops-section-heading"><h4>Supplied alarms · <span id="ops-alarm-count">0 / 100</span></h4><button id="ops-alarm-clear" class="ref-button" type="button" disabled>Clear alarms</button></div><ol id="ops-alarms" class="ops-alarms"><li>No alarms added.</li></ol><button id="ops-diag-run" class="run-control" type="button" disabled>Investigate connections →</button><p id="ops-diag-status" class="ops-status" role="status" aria-live="polite">Add at least one supplied alarm to begin.</p><div id="ops-diag-error" class="error" role="alert" hidden></div><div id="ops-diag-result" hidden><p id="ops-diag-limitation" class="ops-boundary"></p><dl id="ops-diag-summary" class="ops-facts"></dl><ol id="ops-diag-hypotheses" class="ops-hypotheses"></ol></div></section>
         <p class="lab-note">Research services must be configured and running. Unavailable services and missing readings are reported explicitly. A saved decision is an audit record, not permission to operate the grid.</p>
       </section>
 

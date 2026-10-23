@@ -4,7 +4,7 @@ Start the verified stack using PHASE3_DEPLOYMENT.md and open
 http://127.0.0.1:5053/. Use the ignored local operator token for writes; do not
 paste it into reports, screenshots, source code or a recorded presentation.
 
-1. Open Reference grid. Show 66 assets / 245 dated circuits / 16 assertions and the 50
+1. The default page opens the Delhi grid (`#reference-grid`); old `#overview` links redirect here. Show 66 assets / 245 dated circuits / 16 assertions and the 50
    qualifying Delhi identities. Search Wazirabad and Dwarka; inspect alias/source
    evidence. Filter planned Budella. Inspect an external boundary and unavailable
    operating limits. Explain why reference evidence is separate from simulation.

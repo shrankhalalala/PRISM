@@ -147,16 +147,16 @@
   }
   $('ops-forecast-form').addEventListener('submit',event=>{event.preventDefault();loadForecast();});
   const investigation={alarms:[],assets:{},busy:false,loading:0};
-  const assetName=id=>investigation.assets[$('ops-diag-dataset').value]?.find(asset=>asset.id===id)?.name||id;
+  const assetName=id=>investigation.assets.reference?.find(asset=>asset.id===id)?.name||id;
   async function loadAssets(){
-    const mode=$('ops-diag-dataset').value,version=++investigation.loading;$('ops-diag-asset').disabled=true;$('ops-alarm-add').disabled=true;$('ops-diag-assets-status').textContent='Loading eligible asset choices…';
+    const mode='reference',version=++investigation.loading;$('ops-diag-asset').disabled=true;$('ops-alarm-add').disabled=true;$('ops-diag-assets-status').textContent='Loading eligible asset choices…';
     try{
-      const data=await api(mode==='reference'?'/api/reference-grid':'/api/grid');if(version!==investigation.loading)return;
-      const assets=mode==='reference'?(data.assets||[]).filter(asset=>!String(asset.reference_classification||'').startsWith('planned')):data.nodes||[];
+      const data=await api('/api/reference-grid');if(version!==investigation.loading)return;
+      const assets=(data.assets||[]).filter(asset=>!String(asset.reference_classification||'').startsWith('planned'));
       investigation.assets[mode]=assets.map(asset=>({id:asset.id,name:asset.name||asset.id})).sort((a,b)=>a.name.localeCompare(b.name));
       $('ops-diag-asset').replaceChildren();investigation.assets[mode].forEach(asset=>{const option=node('option',asset.name+' · '+asset.id);option.value=asset.id;$('ops-diag-asset').append(option);});
       $('ops-diag-asset').disabled=!assets.length;$('ops-alarm-add').disabled=!assets.length||investigation.alarms.length>=100;
-      $('ops-diag-assets-status').textContent=assets.length+' eligible assets · '+(mode==='reference'?'Dated reference connectivity; planned assets excluded.':'Synthetic teaching topology.');
+      $('ops-diag-assets-status').textContent=assets.length+' eligible assets · '+'Dated Delhi reference connectivity; planned assets excluded.';
     }catch(err){if(version!==investigation.loading)return;$('ops-diag-assets-status').textContent=err.message+' Use Reload asset choices to retry.';}
   }
   function alarmsView(){
@@ -171,19 +171,18 @@
     const id=$('ops-diag-asset').value;if(!id)return;investigation.alarms.push({asset_id:id,observed_at:stamp.replace(/z$/i,'Z')});$('ops-diag-result').hidden=true;alarmsView();$('ops-diag-status').textContent='Supplied alarms changed. Run investigation to rank their connections.';
   });
   $('ops-alarm-clear').addEventListener('click',()=>{investigation.alarms=[];$('ops-diag-result').hidden=true;alarmsView();$('ops-diag-status').textContent='Add at least one supplied alarm to begin.';});
-  $('ops-diag-dataset').addEventListener('change',()=>{investigation.alarms=[];$('ops-diag-result').hidden=true;error('ops-diag-error','');alarmsView();$('ops-diag-status').textContent='Dataset changed. Add alarms for this topology.';loadAssets();});
   $('ops-diag-reload').addEventListener('click',loadAssets);
   $('ops-diag-run').addEventListener('click',async()=>{
-    if(investigation.busy||!investigation.alarms.length)return;investigation.busy=true;alarmsView();$('ops-diag-dataset').disabled=true;$('ops-diag-reload').disabled=true;error('ops-diag-error','');$('ops-diag-status').textContent='Ranking graph investigation hypotheses…';$('ops-diag-result').hidden=true;
+    if(investigation.busy||!investigation.alarms.length)return;investigation.busy=true;alarmsView();$('ops-diag-reload').disabled=true;error('ops-diag-error','');$('ops-diag-status').textContent='Ranking graph investigation hypotheses…';$('ops-diag-result').hidden=true;
     try{
-      const data=await api('/api/diagnose','POST',{dataset:$('ops-diag-dataset').value,alarms:investigation.alarms});
+      const data=await api('/api/diagnose','POST',{dataset:'reference',alarms:investigation.alarms});
       $('ops-diag-limitation').textContent=data.limitation;$('ops-diag-status').textContent=data.hypotheses.length+' investigation hypotheses · supplied alarms '+data.alarms_received+'. Scores are heuristics, not probabilities.';
       facts($('ops-diag-summary'),[['Method',data.method],['Dataset',data.dataset],['PageRank L1 residual',String(data.pagerank_l1_change)],['PageRank convergence',data.pagerank_converged?'Converged within stated tolerance':'Fixed iterations ended before convergence'],['Iterations / damping',data.iterations+' / '+data.damping],['Elapsed',num(data.elapsed_ms)+' ms'],['Connection semantics',data.relationship_semantics]]);
       $('ops-diag-hypotheses').replaceChildren();data.hypotheses.forEach(h=>{const item=node('li'),head=node('div',undefined,'ops-section-heading');head.append(node('h4',assetName(h.asset_id)),node('strong','Heuristic score '+num(h.heuristic_score)));item.append(head,node('p',h.has_observed_alarm?'Has supplied alarm · '+date(h.first_observed_at):'No supplied alarm at this asset.','ops-copy'));
         const details=node('details'),paths=node('ol');details.append(node('summary','Inspect connection paths & timing'));
         h.paths.forEach(path=>{const record=node('li');record.append(node('p',path.path.map(assetName).join(' → ')),node('small','Alarm asset: '+assetName(path.alarm_asset)+' · evidence: '+path.connection_evidence.flat().join(', ')));paths.append(record);});
         details.append(node('p','Timing residual: '+(h.timing_residual_seconds===null?'not estimated':num(h.timing_residual_seconds)+' s')+' · fitted lag: '+(h.fitted_seconds_per_hop===null?'not estimated':num(h.fitted_seconds_per_hop)+' s/hop')+'. Equal hop delays are a heuristic.'),paths);item.append(details);$('ops-diag-hypotheses').append(item);});$('ops-diag-result').hidden=false;
-    }catch(err){error('ops-diag-error',err.message);$('ops-diag-status').textContent='Investigation unavailable. Check supplied alarms and retry.';}finally{investigation.busy=false;$('ops-diag-dataset').disabled=false;$('ops-diag-reload').disabled=false;alarmsView();}
+    }catch(err){error('ops-diag-error',err.message);$('ops-diag-status').textContent='Investigation unavailable. Check supplied alarms and retry.';}finally{investigation.busy=false;$('ops-diag-reload').disabled=false;alarmsView();}
   });
   loadAssets();
   $('ops-refresh').addEventListener('click',refresh);
