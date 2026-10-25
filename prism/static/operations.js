@@ -29,7 +29,7 @@
   });
   async function refresh(){
     if(state.refreshing)return;state.refreshing=true;$('ops-refresh').disabled=true;
-    $('ops-health').textContent='Checking services…';$('ops-alert-status').textContent='Checking alerts…';
+    $('ops-health').textContent='Checking services…';$('ops-alert-status').textContent='Checking alerts…';$('home-alert-summary').textContent='Checking…';
     await Promise.allSettled([
       api('/api/operations/health').then(data=>{
         const services=Object.entries(data.services||{}).map(([key,value])=>label(key)+': '+label(typeof value==='object'?(value?.status??'unknown'):value));
@@ -38,19 +38,19 @@
       api('/api/alerts').then(data=>{
         $('ops-alert-list').replaceChildren();$('ops-alert-history').replaceChildren();const alerts=Array.isArray(data.alerts)?data.alerts:[];
         $('ops-alert-status').textContent=alerts.length?alerts.length+' alert(s) · '+label(data.status):data.status==='ok'?'No alerts reported at this check.':'No alert records available · '+label(data.status)+'. Refresh to retry.';
-        $('ops-alert-time').textContent='Checked '+date(data.checked_at);
+        $('ops-alert-time').textContent='Checked '+date(data.checked_at);$('home-alert-summary').textContent=alerts.length+' reported · '+label(data.status);
         const alertItem=a=>{const item=node('li');item.append(node('strong',label(a.severity)+' / '+label(a.category)),node('p',a.message),node('small',date(a.observed_at)+' · '+label(a.data_source)+(a.asset_id?' · '+a.asset_id:'')));return item;};
         alerts.slice(0,2).forEach(a=>$('ops-alert-list').append(alertItem(a)));
         alerts.forEach(a=>$('ops-alert-history').append(alertItem(a)));
         $('ops-alert-history-panel').hidden=alerts.length<=2;$('ops-alert-history-label').textContent='View all '+alerts.length+' alerts';
-      }).catch(err=>{$('ops-alert-status').textContent=err.message+' Use Refresh services to retry.';$('ops-alert-time').textContent='Check failed';$('ops-alert-list').replaceChildren();$('ops-alert-history').replaceChildren();$('ops-alert-history-panel').hidden=true;})
+      }).catch(err=>{$('ops-alert-status').textContent=err.message+' Use Refresh services to retry.';$('ops-alert-time').textContent='Check failed';$('home-alert-summary').textContent='Unavailable · retry services';$('ops-alert-list').replaceChildren();$('ops-alert-history').replaceChildren();$('ops-alert-history-panel').hidden=true;})
     ]);state.refreshing=false;$('ops-refresh').disabled=false;
   }
   const activeJob=()=>state.job&&['queued','running'].includes(state.job.status);
   const jobLabel=kind=>kind==='forecast'?'Demand forecast refresh':kind==='retrain'?'Retraining review':'Synthetic scenario';
   function jobButtons(busy){['ops-job-run','ops-forecast-queue','ops-retrain-queue'].forEach(id=>$(id).disabled=busy);}
   function jobView(job){
-    state.job=job;$('ops-job-status').textContent=jobLabel(job.kind)+' · '+label(job.status)+' · ID '+job.id+(job.attempts!==undefined?' · attempts '+job.attempts:'')+(job.progress!==undefined?' · progress '+job.progress+'%':'');
+    state.job=job;$('ops-job-identity').textContent=job.id;$('ops-job-status').textContent=jobLabel(job.kind)+' · '+label(job.status)+(job.attempts!==undefined?' · attempts '+job.attempts:'')+(job.progress!==undefined?' · progress '+job.progress+'%':'');
     $('ops-job-poll').disabled=false;$('ops-job-cancel').disabled=!activeJob();jobButtons(!!activeJob());
     $('ops-job-result').hidden=job.status!=='succeeded';
     if(job.status==='succeeded'){
@@ -58,7 +58,7 @@
       const result=job.result??{};if(job.kind==='retrain'&&typeof result.promoted==='boolean')$('ops-job-result-title').textContent=result.promoted?'Validation gate passed · candidate promoted':'Validation gate not passed · current model retained';
       const summary=result.totals??result.summary??result.metrics??result;
       const totalLabels={return:'Cumulative reward',unserved_mwh:'Unserved · MWh',curtailed_mwh:'Curtailed · MWh',operating_cost:'Cost · synthetic units',emissions_kg:'Emissions · kg CO₂e'};
-      facts($('ops-job-summary'),Object.entries(summary).filter(([,v])=>['number','string','boolean'].includes(typeof v)).slice(0,12).map(([k,v])=>[totalLabels[k]||label(k),typeof v==='number'?num(v):String(v)]));
+      facts($('ops-job-summary'),Object.entries(summary).filter(([key,v])=>!/(sha256|hash|version)/i.test(key)&&['number','string','boolean'].includes(typeof v)).slice(0,12).map(([k,v])=>[totalLabels[k]||label(k),typeof v==='number'?num(v):String(v)]));
       $('ops-job-json').textContent=JSON.stringify(result,null,2);
     }
     if(job.status==='failed')error('ops-job-error','Job failed: '+label(job.error_code||'unknown error')+'. Check services; queue a new experiment to retry.');
@@ -89,9 +89,9 @@
     if(rec.limitation)target.append(node('p',rec.limitation,'ops-copy'));
     $('ops-factors').replaceChildren();(rec.factors||[]).forEach(f=>{const row=node('li');const head=node('div');head.append(node('strong',label(f.feature)),node('span',(f.contribution>0?'+':'')+num(f.contribution)));row.append(head,node('p',f.explanation),node('small','Input value '+num(f.value)+' · '+label(f.direction)));$('ops-factors').append(row);});
     if(!rec.factors?.length)$('ops-factors').append(node('li','No attribution factors returned.'));
-    facts($('ops-provenance'),[['Method',rec.method||'Unknown'],['Output space',label(rec.output_space)],['Base value',num(rec.base_value)],['Raw margin',num(rec.raw_margin)],['Additivity residual',typeof rec.additivity_residual==='number'?String(rec.additivity_residual):'Unknown'],['Background samples',num(rec.background_samples)],['Q-policy SHA-256',rec.q_policy_sha256||'Unknown'],['Surrogate SHA-256',rec.surrogate_sha256||'Unknown'],['Background SHA-256',rec.background_sha256||'Unknown']]);
+    facts($('ops-provenance'),[['Advisory ID',data.id],['Method',rec.method||'Unknown'],['Output space',label(rec.output_space)],['Base value',num(rec.base_value)],['Raw margin',num(rec.raw_margin)],['Additivity residual',typeof rec.additivity_residual==='number'?String(rec.additivity_residual):'Unknown'],['Background samples',num(rec.background_samples)],['Q-policy SHA-256',rec.q_policy_sha256||'Unknown'],['Surrogate SHA-256',rec.surrogate_sha256||'Unknown'],['Background SHA-256',rec.background_sha256||'Unknown']]);
     const valid=rec.valid_actions||actions;Array.from($('ops-override').options).forEach(o=>o.disabled=!valid.includes(o.value));$('ops-override').value=valid[0]||'';
-    $('ops-advisory-result').hidden=false;$('ops-advisory-status').textContent='Advisory '+data.id+' · generated for your supplied inputs. Review before recording a decision.';
+    $('ops-advisory-result').hidden=false;$('ops-advisory-status').textContent='Advisory generated for your supplied inputs. Review before recording a decision.';
   }
   $('ops-advisory-form').addEventListener('submit',async event=>{
     event.preventDefault();const valid=Array.from($('ops-valid-actions').querySelectorAll('input:checked')).map(input=>input.value);error('ops-advisory-error','');
@@ -103,7 +103,7 @@
   $('ops-decision').addEventListener('change',()=>{$('ops-override-label').hidden=$('ops-decision').value!=='override';});
   async function loadDecisions(){
     if(!state.advisory)return;const id=state.advisory.id;$('ops-decisions-refresh').disabled=true;
-    try{const data=await api('/api/advisories/'+encodeURIComponent(id)+'/decisions');if(state.advisory?.id!==id)return;$('ops-decisions').replaceChildren();(data.records||[]).forEach(record=>{const item=node('li');item.append(node('strong',label(record.decision)+' · '+label(record.chosen_action)),node('p',record.reason),node('small',record.operator+' · '+date(record.created_at)+' · '+record.id));$('ops-decisions').append(item);});if(!data.records?.length)$('ops-decisions').append(node('li','No decisions recorded for this advisory.'));}
+    try{const data=await api('/api/advisories/'+encodeURIComponent(id)+'/decisions');if(state.advisory?.id!==id)return;$('ops-decisions').replaceChildren();(data.records||[]).forEach(record=>{const item=node('li');item.append(node('strong',label(record.decision)+' · '+label(record.chosen_action)),node('p',record.reason),node('small',record.operator+' · '+date(record.created_at)));const technical=node('details');technical.append(node('summary','Audit record details'),node('pre',JSON.stringify(record,null,2)));item.append(technical);$('ops-decisions').append(item);});if(!data.records?.length)$('ops-decisions').append(node('li','No decisions recorded for this advisory.'));}
     catch(err){error('ops-decision-error',err.message+' Use Refresh history to retry.');}finally{$('ops-decisions-refresh').disabled=false;}
   }
   $('ops-decision-form').addEventListener('submit',async event=>{
@@ -112,7 +112,7 @@
     const body={decision:$('ops-decision').value,operator,reason};if(body.decision==='override')body.override_action=$('ops-override').value;
     const advisoryId=state.advisory.id;
     $('ops-decision-save').disabled=true;$('ops-advisory-run').disabled=true;$('ops-decision-status').textContent='Saving human decision…';
-    try{const record=await api('/api/advisories/'+encodeURIComponent(advisoryId)+'/decisions','POST',body);$('ops-decision-status').textContent='Recorded '+label(record.decision)+' · '+label(record.chosen_action)+' · audit ID '+record.id+'. No equipment command was sent.';await loadDecisions();}
+    try{const record=await api('/api/advisories/'+encodeURIComponent(advisoryId)+'/decisions','POST',body);$('ops-decision-status').textContent='Recorded '+label(record.decision)+' · '+label(record.chosen_action)+'. No equipment command was sent.';await loadDecisions();}
     catch(err){error('ops-decision-error',err.message);$('ops-decision-status').textContent='Decision save was not confirmed. Refresh history before retrying.';}finally{$('ops-decision-save').disabled=false;$('ops-advisory-run').disabled=false;}
   });
   $('ops-decisions-refresh').addEventListener('click',()=>{error('ops-decision-error','');loadDecisions();});
@@ -191,4 +191,5 @@
   $('ops-refresh').addEventListener('click',refresh);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeout(state.timer);else if(activeJob())pollJob();});
   refresh();
+  loadForecast();
 })();

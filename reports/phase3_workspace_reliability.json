@@ -1,0 +1,10 @@
+{
+  "verified_on": "2026-10-25",
+  "scope": "Local Phase3 service recovery and existing synthetic job execution",
+  "services": {"postgres": "ok", "redis": "ok", "neo4j": "ok", "worker": "ok", "model_initialization": "ready"},
+  "automated_tests": 111,
+  "startup_recovery": {"retry_cooldown_seconds": 5, "concurrent_initialization": "single attempt per web process", "failed_initialization_http_status": 503},
+  "background_smoke": {"job_id": "f06c5cb4-57bf-4a9c-99c2-6bb801b716c4", "status": "succeeded", "steps": 2, "data_source": "synthetic", "containerized": true},
+  "real_demand_forecast": {"http_status": 200, "model": "autoregressive", "horizon_hours": 24, "observed_origin": "2026-10-25T11:30:00+00:00"},
+  "limitations": ["Point-in-time service checks do not establish long-term uptime.", "Source freshness varies; retained stale readings and historical job failures remain visible.", "The background smoke is an aggregate synthetic simulation, not a Delhi electrical validation."]
+}

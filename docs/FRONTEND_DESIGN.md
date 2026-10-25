@@ -11,16 +11,30 @@ schematic beside its evidence inspector. Search, selection and source inspection
 remain functional. No stock imagery, generated measurements or new sample records
 were introduced for the redesign.
 
-Each hash destination is a separate workspace screen. Legacy overview links still
-lead to the Delhi grid. Nested Operations links and browser history remain supported.
-Phone and tablet navigation fold away, advanced topology filters open on demand,
-and motion is limited to control feedback with a reduced-motion fallback.
+The workspace is now continuous: Home brings together aggregate Delhi readings,
+application service status and a full-access alert disclosure. The network remains
+visible with its docked station/evidence rail; the system-wide demand outlook follows
+nearby and loads once automatically. Research & review uses keyboard-accessible tabs
+for simulation, policy review, supplied-alarm investigation, and models/history.
+Worker progress and results stay beside the selected tool. Inputs and node selection
+remain in the DOM when tabs change. Old hashes open the relevant panel; Home and
+legacy overview links lead to `#home`.
+
+The user explicitly approved a professional blue/teal palette over the earlier
+monochrome/3% color restriction. Home uses a soft sky-blue field, deep blue ink and
+teal on data; amber/red retain their source-quality meanings. Dark surfaces remain
+neutral. This is a deliberate user palette override, not a new direction draw.
+
+Motion uses 150 ms close/control feedback and 250 ms tab/drawer controls with smooth-out
+easing, without entrance animation or blur. The deterministic mobile drawer focus,
+Tab containment, Escape and reduced-motion behavior remain intact. Technical IDs,
+model hashes and audit record payloads are available in disclosures.
 
 The synthetic measurement, forecasting and scenario tools retain their research
 labels. Dated topology, current station measurements and electrical eligibility
 retain their existing distinctions.
 
-## Design checks
+## Previous restyle checks
 
 The requested app-screen inspector measured the built Docker preview at 1440,
 768 and 390 pixels. Before the redesign, the Delhi screen reported six failures
@@ -62,3 +76,18 @@ returned HTTP 503. Its unavailable/retry presentation was verified; successful
 real-demand predictions were not asserted for that session. Synthetic lab
 forecasts and scenarios were checked separately. Runtime source availability is
 separate from the frontend design checks.
+
+## Unified workspace verification
+
+The unified implementation passes all three JavaScript syntax checks, DOM ID
+validation and source diff checks. App lint reports zero failures; the two retained
+warnings concern identifiers/code in monospace and missing-value em dashes. Built
+responsive and backend checks are performed separately by the integration workflow;
+previous screen-route screenshot scores above do not certify this new composition.
+
+The rebuilt continuous workspace was then inspected at 1440, 768 and 390 pixels:
+zero failures, zero warnings, zero horizontal page overflow and no browser console
+errors. All seven screenshots were reviewed, plus the light-theme desktop preview.
+The final visual critique scored 7.6/10; the complete workspace is intentionally
+long, and the phone research tab strip scrolls. Keyboard tab focus was repaired
+using History API navigation and explicit focus retention.

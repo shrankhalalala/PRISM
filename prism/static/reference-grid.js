@@ -143,12 +143,12 @@
     if(!state.selected){panel.append(node('p','ref-empty','Select an asset or connection to inspect its identity and source evidence.'));return;}
     if(state.selected.type==='asset') {
       const a=state.assets.get(state.selected.id);if(!a)return;
-      panel.append(node('span','ref-status-label',`${words(a.kind)} · ${planned(a)?'Planned at source date':'Source reference'}`),node('h4',null,a.name),node('p','ref-record-id',a.id));
+      panel.append(node('span','ref-status-label',`${words(a.kind)} · ${planned(a)?'Planned at source date':'Source reference'}`),node('h4',null,a.name));
       const voltages=[...new Set([...(a.site_voltage_levels_kv||[]),a.corroborated_nominal_voltage_kv,...(a.voltage_assertions||[]).filter(v=>v.status!=='conflicted').flatMap(v=>v.levels_kv||[])].filter(v=>typeof v==='number'))].sort((x,y)=>y-x);
       const owners=[...new Set([a.reference_owner,...(a.ownership_assertions||[]).map(v=>v.owner)].filter(Boolean))];
       const aliases=[...new Set([...(a.aliases||[]).map(v=>typeof v==='string'?v:v.name),...(a.merged_inventory_ids||[])].filter(Boolean))];
       renderStationReading(panel,a);
-      const metadata=node('details');metadata.append(node('summary',null,'Reference asset details'));
+      const metadata=node('details');metadata.append(node('summary',null,'Reference asset details'),node('p','ref-record-id',a.id));
       addFields(metadata,[['Boundary',words(a.boundary_classification)],['Source-reported voltage',voltages.length?`${voltages.join(' / ')} kV`:'Unknown'],['Source-reported ownership',owners.length?owners.join(' / '):'Unknown'],['Current operating state','Unknown'],['Measured output',a.current_output_mw==null?'Unknown':`${a.current_output_mw} MW`],['Available capacity',a.available_capacity_mw==null?'Unknown':`${a.available_capacity_mw} MW`],['Coordinates','Unknown · schematic positions only'],['Source aliases / merged IDs',aliases.length?aliases.join('; '):'None recorded'],['Reference grouping',a.reference_site_group||'None recorded']]);
       panel.append(metadata);
       if(planned(a))panel.append(node('p','ref-warning','Budella is classified as planned/under tendering in the June 2025 source. Named cable observations do not establish current commissioning.'));
@@ -161,7 +161,8 @@
       if(a.notes?.length){const notes=node('details');notes.append(node('summary',null,'Original inventory notes'));a.notes.forEach(text=>notes.append(node('p',null,text)));panel.append(notes);}
     } else {
       const c=state.connections.get(state.selected.id);if(!c)return;
-      panel.append(node('span','ref-status-label',c.assertion_only?'Interface / section assertion':'Dated circuit observation'),node('h4',null,connectionName(c)),node('p','ref-record-id',c.id));
+      panel.append(node('span','ref-status-label',c.assertion_only?'Interface / section assertion':'Dated circuit observation'),node('h4',null,connectionName(c)));
+      const identity=node('details');identity.append(node('summary',null,'Record identity'),node('p','ref-record-id',c.id));panel.append(identity);
       addFields(panel,[['Record type',words(c.kind)],['Source-reported voltage',c.voltage_kv==null?'Unknown':`${c.voltage_kv} kV`],['Circuit suffix',c.circuit_label||'Unknown / not assigned'],['Source',c.source_id||'Reviewed sources below'],['Source date',c.source_date||'Unspecified; see evidence'],['Evidence period',words(c.temporal_class||'Source-qualified assertion')],['Current operating state','Unknown'],['Measured flow','Unknown'],['Thermal limit','Unknown']]);
       if(c.detail)panel.append(node('p',null,c.detail));
       if(c.kind==='historical_isolated_line')panel.append(node('p','ref-warning','Historically isolated / zero-load evidence. This record must not be treated as a conducting power path.'));

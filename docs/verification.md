@@ -244,3 +244,21 @@ first-party import checks pass. Native PowerPoint execution was not checked.
 Negative results, missing real renewable history, unknown current electrical
 parameters and absent operator/physical ground truth remain explicit in the final
 acceptance register. They are not converted into passed requirements by tests.
+
+## Phase3 workspace reliability follow-up — 2026-10-25
+
+The suite now passes 111 tests, including delayed model-dependency recovery,
+initialization concurrency and retry throttling. The full seven-service local
+stack was restored; readiness and worker/database health returned OK. A two-step
+synthetic background scenario completed in the actual container worker. The real
+Delhi demand endpoint returned 24 predictions with source/model provenance.
+Point-in-time evidence is in `reports/phase3_workspace_reliability.json`; source
+freshness and older job-failure records remain visible rather than cleared to
+manufacture a clean status.
+
+The unified Home, network, demand and research workspace also passed responsive
+inspection at desktop, tablet and phone widths with no inspector findings or
+console errors. The independent interaction review identified research-tab focus
+loss; tab routing now retains focus and handles browser history explicitly.
+The targeted retest passed consecutive arrow keys, Home/End and Back/Forward;
+form input and selected Delhi station remained preserved across tab changes.

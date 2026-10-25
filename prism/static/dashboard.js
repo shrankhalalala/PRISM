@@ -65,33 +65,41 @@ function updateSidebar(){
   $('main').inert=modal;
   document.querySelector('.topbar-actions').inert=modal;
 }
-let activeWorkspaceSection=null;
+const researchTabs=Array.from(document.querySelectorAll('[data-research-tab]'));
+let activeResearchPanel='simulation';
+function selectResearchPanel(name){
+  if(!researchTabs.some(tab=>tab.dataset.researchTab===name))return;
+  activeResearchPanel=name;
+  document.querySelectorAll('[data-research-panel]').forEach(panel=>{const active=panel.dataset.researchPanel===name;panel.hidden=!active;panel.inert=!active;});
+  researchTabs.forEach(tab=>{const active=tab.dataset.researchTab===name;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
+}
 function updateActiveNavigation(){
   let requested=location.hash.slice(1);
-  if(!requested||requested==='overview'){
-    history.replaceState(null,'','#reference-grid');requested='reference-grid';
-  }
-  const target=document.getElementById(requested);
-  const section=target?.closest('.workspace-section')?.id||'reference-grid';
-  document.querySelectorAll('#sidebar nav a').forEach(link=>{
-    const active=link.getAttribute('href')===`#${section}`;
-    link.classList.toggle('active',active);
-    if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');
-  });
-  document.querySelectorAll('main>.workspace-section').forEach(view=>{
-    const active=view.id===section;view.hidden=!active;view.inert=!active;
-    const heading=document.getElementById(view.getAttribute('aria-labelledby'));
-    const tag=active?'H1':'H2';
-    if(heading&&heading.tagName!==tag){const replacement=document.createElement(tag);for(const attr of heading.attributes)replacement.setAttribute(attr.name,attr.value);while(heading.firstChild)replacement.append(heading.firstChild);heading.replaceWith(replacement);}
-  });
-  if(activeWorkspaceSection!==section){window.scrollTo({top:0,behavior:'instant'});activeWorkspaceSection=section;}
-  if(target&&requested!==section){
-    for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
-    requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
-  }
+  if(!requested||requested==='overview'||requested==='live-grid'){requested='home';history.replaceState(null,'','#home');}
+  const target=document.getElementById(requested)||$('home');
+  const panel=target.closest('[data-research-panel]');
+  if(panel)selectResearchPanel(panel.dataset.researchPanel);
+  const section=target.closest('main>.workspace-section')?.id||'home';
+  document.querySelectorAll('#sidebar nav a').forEach(link=>{const active=link.getAttribute('href')===`#${section}`;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
   const current=document.querySelector(`#sidebar nav a[href="#${section}"]`);
-  $('breadcrumb-section').textContent=current?.dataset.navLabel||'Delhi grid';
+  $('breadcrumb-section').textContent=current?.dataset.navLabel||'Home';
+  for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
+  const destination=target.matches('[data-research-panel]')?$('research-tabs'):target;
+  requestAnimationFrame(()=>destination.scrollIntoView({block:'start'}));
 }
+researchTabs.forEach((tab,index)=>{
+  tab.addEventListener('click',()=>{
+    const hash='#'+tab.getAttribute('aria-controls');
+    if(location.hash!==hash)history.pushState(null,'',hash);
+    updateActiveNavigation();
+    tab.focus({preventScroll:true});
+  });
+  tab.addEventListener('keydown',event=>{
+    let next;if(event.key==='ArrowRight')next=(index+1)%researchTabs.length;else if(event.key==='ArrowLeft')next=(index-1+researchTabs.length)%researchTabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=researchTabs.length-1;else return;
+    event.preventDefault();researchTabs[next].focus({preventScroll:true});researchTabs[next].click();
+  });
+});
+selectResearchPanel(activeResearchPanel);
 function closeDrawer(){drawerOpen=false;updateSidebar();$('sidebar-toggle').focus();}
 $('sidebar-toggle').addEventListener('click',()=>{
   if(mobileQuery.matches)drawerOpen=!drawerOpen;
@@ -114,6 +122,7 @@ $('sidebar').querySelectorAll('a').forEach(link=>link.addEventListener('click',(
 mobileQuery.addEventListener('change',()=>{drawerOpen=false;updateSidebar();});
 updateSidebar();
 window.addEventListener('hashchange',updateActiveNavigation);
+window.addEventListener('popstate',updateActiveNavigation);
 updateActiveNavigation();
 const darkQuery=matchMedia('(prefers-color-scheme:dark)');
 let explicitTheme=preferences.get('prism-theme');

@@ -1,15 +1,24 @@
 # Interactive dashboard
 
-## Current grid view
+## Current workspace
 
-The website opens on the Delhi source-referenced grid (`#reference-grid`). Legacy
-`#overview` bookmarks redirect there, including later hash changes. The abstract teaching grid is no longer a
-website view, and graph investigation uses Delhi reference connectivity only.
-Synthetic measurements, forecasts, and scenarios remain explicitly labeled research
-labs; scenario fault choices still load the simulation fixture through `/api/grid`.
+The Flask `/` page opens Home (`#home`), followed by the complete Delhi reference
+network, system-wide demand outlook and Research & review. These are regions of one
+continuous workspace. Legacy `#overview` and `#live-grid` hashes lead to Home. The
+abstract teaching grid remains absent from the website; graph investigation uses
+Delhi reference connectivity only.
 
+Research & review has accessible tabs for simulation, policy review, alarm
+investigation and models/history, with shared worker activity alongside. `#scenario`
+opens simulation; `#measurements` and `#forecast` open models/history. Nested policy
+and investigation links open their corresponding panels. Tab changes preserve form
+inputs, graph selection and results. Operator tokens remain memory-only.
 
-The Flask `/` page serves a responsive operator workspace without external assets or a frontend build step. Start the application using the root README and visit `http://localhost:5050`.
+Synthetic measurements, forecasts, and scenarios retain explicit research labels.
+Scenario fault choices still load the teaching fixture through `/api/grid`; they
+never inherit selected Delhi station identities. The real 24-hour demand forecast
+loads once from `/api/forecast/real`, independently of the selected station, and keeps
+its own origin, age and empirical uncertainty semantics.
 
 ## Navigation and appearance
 
@@ -62,6 +71,5 @@ return, unserved and curtailed energy, synthetic cost, emissions, demand and
 generation trajectories, actions, rewards, and active faults. Policy output remains
 non-operational and the page states the aggregate simulator boundary.
 
-Navigation follows the current hash across the Delhi grid, live readings, synthetic
-research labs and Operations. Legacy Overview hashes redirect to the Delhi grid. Desktop and mobile layouts retain the collapsible sidebar,
+Navigation follows workspace anchors and research tabs. Legacy Overview hashes redirect to Home. Desktop and mobile layouts retain the collapsible sidebar,
 theme preference, keyboard behavior, chart containment, and visible status states.
