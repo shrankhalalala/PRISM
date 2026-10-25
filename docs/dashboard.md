@@ -13,6 +13,10 @@ The Flask `/` page serves a responsive operator workspace without external asset
 
 ## Navigation and appearance
 
+- Each workspace destination is a separate hash-routed screen, with one active
+  heading. Nested evidence and Operations links keep their existing destinations.
+- The Framed sheet design uses self-hosted IBM Plex Sans, neutral light/dark
+  surfaces, and compact controls. See FRONTEND_DESIGN.md for the design checks.
 - The topbar navigation toggle remains available when the sidebar is collapsed. Desktop collapse persists in local storage. On mobile, navigation becomes a drawer that closes using the toggle, Escape, the backdrop, or a navigation link. Hidden navigation is inert and removed from keyboard navigation.
 - The light/dark button persists an explicit theme preference. Without a saved preference, the page follows the operating system and subsequent OS theme changes. Storage errors do not prevent use.
 - Motion is restrained and disabled when reduced motion is requested.

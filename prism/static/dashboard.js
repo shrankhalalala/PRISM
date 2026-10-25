@@ -49,7 +49,7 @@ let measurementData = null;
 let measurementRequest = 0;
 const seriesNames = {demand_mw:'Demand',solar_mw:'Solar',wind_mw:'Wind'};
 const preferences = {get(key){try{return localStorage.getItem(key);}catch{return null;}},set(key,value){try{localStorage.setItem(key,value);}catch{}}};
-const mobileQuery=matchMedia('(max-width:800px)');
+const mobileQuery=matchMedia('(max-width:1100px)');
 let desktopCollapsed=preferences.get('prism-sidebar-collapsed')==='true';
 let drawerOpen=false;
 function updateSidebar(){
@@ -60,13 +60,16 @@ function updateSidebar(){
   $('sidebar').setAttribute('aria-hidden',String(!visible));
   $('sidebar-toggle').setAttribute('aria-expanded',String(visible));
   $('sidebar-toggle').setAttribute('aria-label',visible?'Collapse navigation':'Open navigation');
-  $('sidebar-backdrop').hidden=!(mobileQuery.matches&&drawerOpen);
+  const modal=mobileQuery.matches&&drawerOpen;
+  $('sidebar-backdrop').hidden=!modal;
+  $('main').inert=modal;
+  document.querySelector('.topbar-actions').inert=modal;
 }
+let activeWorkspaceSection=null;
 function updateActiveNavigation(){
   let requested=location.hash.slice(1);
   if(!requested||requested==='overview'){
     history.replaceState(null,'','#reference-grid');requested='reference-grid';
-    $('reference-grid').scrollIntoView({block:'start'});
   }
   const target=document.getElementById(requested);
   const section=target?.closest('.workspace-section')?.id||'reference-grid';
@@ -75,13 +78,38 @@ function updateActiveNavigation(){
     link.classList.toggle('active',active);
     if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');
   });
+  document.querySelectorAll('main>.workspace-section').forEach(view=>{
+    const active=view.id===section;view.hidden=!active;view.inert=!active;
+    const heading=document.getElementById(view.getAttribute('aria-labelledby'));
+    const tag=active?'H1':'H2';
+    if(heading&&heading.tagName!==tag){const replacement=document.createElement(tag);for(const attr of heading.attributes)replacement.setAttribute(attr.name,attr.value);while(heading.firstChild)replacement.append(heading.firstChild);heading.replaceWith(replacement);}
+  });
+  if(activeWorkspaceSection!==section){window.scrollTo({top:0,behavior:'instant'});activeWorkspaceSection=section;}
+  if(target&&requested!==section){
+    for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
+    requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
+  }
   const current=document.querySelector(`#sidebar nav a[href="#${section}"]`);
   $('breadcrumb-section').textContent=current?.dataset.navLabel||'Delhi grid';
 }
 function closeDrawer(){drawerOpen=false;updateSidebar();$('sidebar-toggle').focus();}
-$('sidebar-toggle').addEventListener('click',()=>{if(mobileQuery.matches){drawerOpen=!drawerOpen;}else{desktopCollapsed=!desktopCollapsed;preferences.set('prism-sidebar-collapsed',String(desktopCollapsed));}updateSidebar();});
+$('sidebar-toggle').addEventListener('click',()=>{
+  if(mobileQuery.matches)drawerOpen=!drawerOpen;
+  else{desktopCollapsed=!desktopCollapsed;preferences.set('prism-sidebar-collapsed',String(desktopCollapsed));}
+  updateSidebar();
+  if(mobileQuery.matches&&drawerOpen)$('sidebar').querySelector('nav a')?.focus({preventScroll:true});
+});
 $('sidebar-backdrop').addEventListener('click',closeDrawer);
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&drawerOpen)closeDrawer();});
+document.addEventListener('keydown',event=>{
+  if(!mobileQuery.matches||!drawerOpen)return;
+  if(event.key==='Escape'){event.preventDefault();closeDrawer();return;}
+  if(event.key==='Tab'){
+    const controls=[$('sidebar-toggle'),...$('sidebar').querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(control=>control.getClientRects().length&&!control.closest('[inert]'));
+    const index=controls.indexOf(document.activeElement);
+    const next=index<0?(event.shiftKey?controls.length-1:0):(index+(event.shiftKey?-1:1)+controls.length)%controls.length;
+    event.preventDefault();controls[next]?.focus({preventScroll:true});
+  }
+});
 $('sidebar').querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{if(mobileQuery.matches)closeDrawer();}));
 mobileQuery.addEventListener('change',()=>{drawerOpen=false;updateSidebar();});
 updateSidebar();
@@ -89,7 +117,12 @@ window.addEventListener('hashchange',updateActiveNavigation);
 updateActiveNavigation();
 const darkQuery=matchMedia('(prefers-color-scheme:dark)');
 let explicitTheme=preferences.get('prism-theme');
-function setTheme(theme){document.documentElement.dataset.theme=theme;const dark=theme==='dark';$('theme-icon').textContent=dark?'☀':'☾';$('theme-label').textContent=dark?'Light':'Dark';$('theme-toggle').setAttribute('aria-label',`Switch to ${dark?'light':'dark'} theme`);}
+function setTheme(theme){
+  document.documentElement.dataset.theme=theme;const dark=theme==='dark';
+  const icon=document.createElementNS('http://www.w3.org/2000/svg','svg');icon.setAttribute('class','ui-icon');icon.setAttribute('viewBox','0 0 24 24');icon.setAttribute('fill','none');icon.setAttribute('stroke','currentColor');icon.setAttribute('stroke-width','1.6');icon.setAttribute('stroke-linecap','round');icon.setAttribute('stroke-linejoin','round');
+  const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',dark?'M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z':'M20 15.5A8.5 8.5 0 0 1 8.5 4a8.5 8.5 0 1 0 11.5 11.5Z');icon.append(path);$('theme-icon').replaceChildren(icon);
+  $('theme-label').textContent=dark?'Light':'Dark';$('theme-toggle').setAttribute('aria-label',`Switch to ${dark?'light':'dark'} theme`);
+}
 setTheme(explicitTheme==='dark'||explicitTheme==='light'?explicitTheme:darkQuery.matches?'dark':'light');
 $('theme-toggle').addEventListener('click',()=>{explicitTheme=document.documentElement.dataset.theme==='dark'?'light':'dark';preferences.set('prism-theme',explicitTheme);setTheme(explicitTheme);});
 darkQuery.addEventListener('change',()=>{if(!explicitTheme)setTheme(darkQuery.matches?'dark':'light');});
@@ -108,7 +141,7 @@ function element(tag, className, content) {
 }
 function renderMeasurements(data) {
   measurementData=data;
-  $('record-count').textContent=`${data.records.length} HOURLY RECORDS`;
+  $('record-count').textContent=`${data.records.length} hourly records`;
   const body=$('measurement-rows');body.replaceChildren();
   if(!data.records.length) {const row=element('tr');const cell=element('td','','No measurements available.');cell.colSpan=6;row.append(cell);body.append(row);}
   data.records.forEach(record=>{
@@ -220,10 +253,10 @@ function renderForecast(data){
   const target=data.target||$('forecast-target').value;
   const model=data.model||$('forecast-model').value;
   const targetName=seriesNames[target]||target;
-  $('forecast-result-label').textContent=`${predictions.length}-HOUR OUTLOOK`;
-  $('forecast-result-model').textContent=(modelNames[model]||model).toUpperCase();
+  $('forecast-result-label').textContent=`${predictions.length}-hour outlook`;
+  $('forecast-result-model').textContent=modelNames[model]||model;
   const list=$('forecast-values');list.replaceChildren();
-  predictions.forEach((value,index)=>{const item=element('li');item.append(element('span','',`T + ${String(index+1).padStart(2,'0')} h`),element('strong','',precise(value)));list.append(item);});
+  predictions.forEach((value,index)=>{const item=element('li');item.append(element('span','',`T + ${index+1} h`),element('strong','',precise(value)));list.append(item);});
   lineChart($('forecast-chart'),[{name:targetName,values:predictions}],{xLabels:predictions.map((_,index)=>`T+${index+1}h`),unit:'MW',caption:`${targetName} forecast from the ${modelNames[model]||model} model`});
   const peak=Math.max(...predictions),low=Math.min(...predictions);
   $('forecast-caption').textContent=`${targetName} · ${modelNames[model]||model} · ${predictions.length} synthetic forecast values · Range ${precise(low)}–${precise(peak)} MW.`;
@@ -294,7 +327,7 @@ function renderScenario(data){
     [row.step??index,String(row.action||'hold').replaceAll('_',' '),precise(trajectoryBalance(row)),precise(row.reward),faults].forEach((value,column)=>tr.append(element('td',column===4&&faults!=='—'?'event-alert':'',value)));
     body.append(tr);
   });
-  $('event-count').textContent=`${trajectory.length} STEPS`;
+  $('event-count').textContent=`${trajectory.length} steps`;
   $('scenario-results').hidden=false;
 }
 

@@ -36,11 +36,14 @@
         $('ops-health').textContent=label(data.status)+' · '+services.join(' · ');$('ops-health').dataset.status=data.status;
       }).catch(err=>{$('ops-health').textContent=err.message;$('ops-health').dataset.status='unavailable';}),
       api('/api/alerts').then(data=>{
-        $('ops-alert-list').replaceChildren();const alerts=Array.isArray(data.alerts)?data.alerts:[];
+        $('ops-alert-list').replaceChildren();$('ops-alert-history').replaceChildren();const alerts=Array.isArray(data.alerts)?data.alerts:[];
         $('ops-alert-status').textContent=alerts.length?alerts.length+' alert(s) · '+label(data.status):data.status==='ok'?'No alerts reported at this check.':'No alert records available · '+label(data.status)+'. Refresh to retry.';
         $('ops-alert-time').textContent='Checked '+date(data.checked_at);
-        alerts.forEach(a=>{const item=node('li');item.append(node('strong',label(a.severity)+' / '+label(a.category)),node('p',a.message),node('small',date(a.observed_at)+' · '+label(a.data_source)+(a.asset_id?' · '+a.asset_id:'')));$('ops-alert-list').append(item);});
-      }).catch(err=>{$('ops-alert-status').textContent=err.message+' Use Refresh services to retry.';$('ops-alert-time').textContent='Check failed';$('ops-alert-list').replaceChildren();})
+        const alertItem=a=>{const item=node('li');item.append(node('strong',label(a.severity)+' / '+label(a.category)),node('p',a.message),node('small',date(a.observed_at)+' · '+label(a.data_source)+(a.asset_id?' · '+a.asset_id:'')));return item;};
+        alerts.slice(0,2).forEach(a=>$('ops-alert-list').append(alertItem(a)));
+        alerts.forEach(a=>$('ops-alert-history').append(alertItem(a)));
+        $('ops-alert-history-panel').hidden=alerts.length<=2;$('ops-alert-history-label').textContent='View all '+alerts.length+' alerts';
+      }).catch(err=>{$('ops-alert-status').textContent=err.message+' Use Refresh services to retry.';$('ops-alert-time').textContent='Check failed';$('ops-alert-list').replaceChildren();$('ops-alert-history').replaceChildren();$('ops-alert-history-panel').hidden=true;})
     ]);state.refreshing=false;$('ops-refresh').disabled=false;
   }
   const activeJob=()=>state.job&&['queued','running'].includes(state.job.status);
@@ -80,7 +83,7 @@
   });
   function renderAdvisory(data){
     const rec=data.recommendation||{},target=$('ops-recommendation');target.replaceChildren();
-    const headline=node('div',undefined,'ops-recommendation');headline.append(node('span','Q-POLICY RECOMMENDATION','small-label'),node('strong',label(rec.recommended_action)),node('span',rec.abstained?'SURROGATE ABSTAINS · REVIEW REQUIRED':'HUMAN REVIEW REQUIRED','ops-review-flag'));target.append(headline);
+    const headline=node('div',undefined,'ops-recommendation');headline.append(node('span','Q-policy recommendation','small-label'),node('strong',label(rec.recommended_action)),node('span',rec.abstained?'Surrogate abstains · review required':'Human review required','ops-review-flag'));target.append(headline);
     const detail=node('dl',undefined,'ops-facts');facts(detail,[['Q-policy action',label(rec.q_action)],['Surrogate action',label(rec.surrogate_action)],['Agreement',rec.agreement?'Agrees with Q-policy':'Disagrees with Q-policy'],['Surrogate score',num(rec.score)+' · uncalibrated, not a probability of safe operation'],['Abstention threshold',num(rec.threshold)],['Explained action',label(rec.explained_action)],['Source',label(data.data_source||rec.data_source)],['Executable','No · advisory record only']]);target.append(detail);
     if(rec.abstained)target.append(node('p','Surrogate confidence is below its threshold. The Q-policy action remains visible for review; this is not an operational clearance.','ops-warning'));
     if(rec.limitation)target.append(node('p',rec.limitation,'ops-copy'));

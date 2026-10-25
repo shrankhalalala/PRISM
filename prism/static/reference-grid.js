@@ -39,8 +39,8 @@
     if(!(type==='asset'?state.assets:state.connections).has(id))return;
     state.selected={type,id};renderSelection();renderInspector();
     const selected=type==='asset'?state.assets.get(id):null;
-    if(selected)el('ref-status').textContent=`Inspecting ${selected.name}. Source-reported metadata with separate published station loading below.`;
-    else el('ref-status').textContent=`Inspecting connection record ${id}. Dated source evidence; no operating flow is inferred.`;
+    if(selected)el('ref-status').textContent=`Selected ${selected.name} · source evidence and station loading.`;
+    else el('ref-status').textContent=`Selected connection ${id} · dated source evidence.`;
     el('ref-evidence-jump').hidden=false;
     labelLayout();
     if(focusInspector){el('ref-inspector-title').setAttribute('tabindex','-1');el('ref-inspector-title').focus({preventScroll:true});}
@@ -79,6 +79,7 @@
     });svg.append(layer);view();el('ref-no-graph').hidden=assets.length>0;
   }
   function labelLayout() {
+    if(!el('ref-network').getBoundingClientRect().width)return;
     if(!state.data)return;
     const svg=el('ref-network'),rect=svg.getBoundingClientRect();
     if(!rect.width||!rect.height)return;
@@ -91,7 +92,7 @@
       const text=g.querySelector('text');if(!text)continue;
       const active=g.dataset.refAsset===selected||g.matches(':hover')||g===document.activeElement;
       const readable=rect.width>=600||active||state.view.w<500;
-      const fontSize=(active?12:10)/Math.max(scale,.08);
+      const fontSize=(active?12:11)/Math.max(scale,.08);
       text.style.fontSize=`${fontSize}px`;
       text.setAttribute('x',String(11/Math.max(scale,.2)));
       text.style.display=readable?'':'none';
@@ -146,8 +147,10 @@
       const voltages=[...new Set([...(a.site_voltage_levels_kv||[]),a.corroborated_nominal_voltage_kv,...(a.voltage_assertions||[]).filter(v=>v.status!=='conflicted').flatMap(v=>v.levels_kv||[])].filter(v=>typeof v==='number'))].sort((x,y)=>y-x);
       const owners=[...new Set([a.reference_owner,...(a.ownership_assertions||[]).map(v=>v.owner)].filter(Boolean))];
       const aliases=[...new Set([...(a.aliases||[]).map(v=>typeof v==='string'?v:v.name),...(a.merged_inventory_ids||[])].filter(Boolean))];
-      addFields(panel,[['Boundary',words(a.boundary_classification)],['Source-reported voltage',voltages.length?`${voltages.join(' / ')} kV`:'Unknown'],['Source-reported ownership',owners.length?owners.join(' / '):'Unknown'],['Current operating state','Unknown'],['Measured output',a.current_output_mw==null?'Unknown':`${a.current_output_mw} MW`],['Available capacity',a.available_capacity_mw==null?'Unknown':`${a.available_capacity_mw} MW`],['Coordinates','Unknown · schematic positions only'],['Source aliases / merged IDs',aliases.length?aliases.join('; '):'None recorded'],['Reference grouping',a.reference_site_group||'None recorded']]);
       renderStationReading(panel,a);
+      const metadata=node('details');metadata.append(node('summary',null,'Reference asset details'));
+      addFields(metadata,[['Boundary',words(a.boundary_classification)],['Source-reported voltage',voltages.length?`${voltages.join(' / ')} kV`:'Unknown'],['Source-reported ownership',owners.length?owners.join(' / '):'Unknown'],['Current operating state','Unknown'],['Measured output',a.current_output_mw==null?'Unknown':`${a.current_output_mw} MW`],['Available capacity',a.available_capacity_mw==null?'Unknown':`${a.available_capacity_mw} MW`],['Coordinates','Unknown · schematic positions only'],['Source aliases / merged IDs',aliases.length?aliases.join('; '):'None recorded'],['Reference grouping',a.reference_site_group||'None recorded']]);
+      panel.append(metadata);
       if(planned(a))panel.append(node('p','ref-warning','Budella is classified as planned/under tendering in the June 2025 source. Named cable observations do not establish current commissioning.'));
       if(a.voltage_owner_note)panel.append(node('p',null,a.voltage_owner_note));
       const issues=a.open_issue_ids||[];if(issues.length)panel.append(node('p','ref-warning',`Open source flags: ${issues.join(', ')}`));
@@ -180,7 +183,7 @@
     const readings=snapshot.readings||[];
     const stale=telemetry.error||readings.some(r=>readingState(r)==='stale');
     const count=snapshot.coverage?.measured_assets??new Set(readings.map(r=>r.asset_id)).size;
-    el('ref-telemetry-status').textContent=`${stale?'Stale published':'Published'} station loading · ${count} / ${snapshot.coverage?.reference_assets??state.data?.assets.length??'—'} reference assets have source readings. Inspect an asset for source time and quality flags. Checks once per minute.`;
+    el('ref-telemetry-status').textContent=`${stale?'Stale station readings':'Published station readings'} · ${count} of ${snapshot.coverage?.reference_assets??state.data?.assets.length??'—'} assets mapped. Source time and quality notes are in the inspector.`;
   }
   function renderStationReading(parent,asset) {
     const section=node('section','ref-station-reading');section.setAttribute('aria-label','Published SLDC station loading');
@@ -242,16 +245,19 @@
       el('ref-delhi-count').textContent=data.coverage?.source_referenced_delhi_asset_count??'Unknown';
       el('ref-content').hidden=false;fit();renderFiltered();
       if(state.selected && (state.selected.type==='asset'?state.assets:state.connections).has(state.selected.id))renderInspector();
-      else {state.selected=null;renderInspector();}
+      else {state.selected=null;const initial=data.assets.find(asset=>asset.id==='ss-bamnauli')||data.assets[0];if(initial)select('asset',initial.id);else renderInspector();}
       const questions=el('ref-field-questions');questions.replaceChildren();(data.coverage?.field_questions||[]).forEach(q=>questions.append(node('li',null,`${q.id}: ${q.reason}`)));
       el('ref-dataset').textContent=`Version: ${data.dataset}`;
-      el('ref-status').textContent=`Reference inventory ready · ${data.assets.length} assets and ${data.connections.length} individually inspectable evidence records. Mapped live station loading is shown separately in the inspector.`;
+      el('ref-status').textContent=`${data.assets.length} assets · ${data.connections.length} connection evidence records available.`;
     } catch(error) {
       if(request!==state.request)return;
       el('ref-content').hidden=true;el('ref-error').hidden=false;el('ref-error').textContent=error.name==='TimeoutError'?'The reference request timed out. Use Reload reference to retry.':`${error.message} Use Reload reference to retry.`;el('ref-status').textContent='Reference inventory unavailable. The separate synthetic workflows remain available.';
     } finally {if(request===state.request)el('ref-retry').disabled=false;}
   }
   controls.forEach(id=>el(id).addEventListener(id==='ref-search'||id==='ref-connection-search'?'input':'change',renderFiltered));
+  const filterDisclosure=document.querySelector('.ref-advanced');
+  document.addEventListener('pointerdown',event=>{if(filterDisclosure.open&&!filterDisclosure.contains(event.target))filterDisclosure.open=false;});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&filterDisclosure.open){filterDisclosure.open=false;filterDisclosure.querySelector('summary').focus();}});
   el('ref-asset-select').addEventListener('change',event=>{if(event.target.value)select('asset',event.target.value);});
   el('ref-connection-select').addEventListener('change',event=>{if(event.target.value)select('connection',event.target.value);});
   el('ref-reset').addEventListener('click',()=>{controls.forEach(id=>{el(id).value=id==='ref-search'||id==='ref-connection-search'?'':'all';});state.selected=null;el('ref-evidence-jump').hidden=true;fit();renderFiltered();renderInspector();el('ref-status').textContent='Filters reset. All reference assets and evidence records are available.';});
@@ -271,4 +277,5 @@
   setInterval(updateStationAge,15000);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)loadStations();});
   new ResizeObserver(labelLayout).observe(svg);
+  document.fonts.ready.then(labelLayout);
 })();
