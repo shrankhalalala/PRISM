@@ -297,3 +297,17 @@ and retained input/history, real 24-hour forecast provenance and reduced motion.
 Source lint retains defensible warnings for technical monospace, missing-value
 marks and floating-overlay shadow declarations (including explicit shadow removal).
 No backend API, schema, electrical calculation, source or evidence data was changed.
+
+## Home and Delhi connectivity simulation — 2026-10-26
+
+The full suite passes 117 tests, including six new topology tests covering exact
+website identities, outages/restoration, parallel connection records, pre-existing
+islands, strict input validation, incremental streaming, concurrency limits and
+stream-close cleanup. The model retains the immutable reference data and electrical
+eligibility gates. Existing aggregate scenario APIs remain unchanged.
+
+A real HTTP request to the rebuilt Docker web service received a start record and
+separate step records before completion; the selected Delhi outage activated and
+restored at the requested steps. Model minutes and wall-clock update pacing remain
+separate. Browser review observed an eight-step run, Bamnauli's injected outage and
+29 blocked incident records, restoration, and Stop retaining the last computed state.

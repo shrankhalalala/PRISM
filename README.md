@@ -267,7 +267,7 @@ completion register; implementation alone does not establish those results.
 
 ## Verification environment
 
-The local Python 3.12 suite passes 111 tests. The complete Linux container stack was
+The local Python 3.12 suite passes 117 tests. The complete Linux container stack was
 built from constrained dependencies and exercised through actual HTTP/worker/
 Redis/PostgreSQL/Neo4j paths. Desktop/mobile and independent interface review pass.
 `requirements-tested.txt` retains the historical Phase 2 environment;
@@ -283,3 +283,7 @@ Validate/export with `python -m scripts.import_delhi_reference`; import with
 reference dataset retains unknown fields and unresolved terminal details and is
 visible in its own website view, separate from synthetic simulation. The electrical-completeness gate remains
 open. Non-secret local import evidence is in `reports/phase3_reference_import.json`.
+
+The Delhi topology Simulation View streams hypothetical connectivity steps using the
+website’s reference identities. See [topology simulation](docs/TOPOLOGY_SIMULATION.md)
+for model scope, clock semantics and the API.

@@ -18,6 +18,7 @@ from prism.operations.api import api as operations_api
 from prism.streaming.live import DurableLiveClient
 from prism.grid.model import load_grid, grid_summary
 from prism.grid.presentation import reference_view
+from prism.simulation.topology import api as topology_simulation_api
 from prism.forecasting import AutoregressiveForecaster, LSTMForecaster, persistence_forecast
 from prism.forecasting.models import TARGETS
 from prism.simulation import Action, GridEnvironment, Observation, SimulationConfig, quarter_hour_profile
@@ -45,6 +46,7 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.register_blueprint(surrogate_api)
     app.register_blueprint(explanation_api)
     app.register_blueprint(operations_api)
+    app.register_blueprint(topology_simulation_api)
 
     app.extensions["gridwatch"] = app.config.get("GRIDWATCH_CLIENT") or (DurableLiveClient() if os.environ.get("PRISM_USE_DURABLE_LIVE")=="1" else GridWatchClient())
 
