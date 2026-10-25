@@ -71,3 +71,11 @@ Redis 7.4 uses RSALv2/SSPLv1, not an OSI open-source license; see
 Python components and their transitive dependencies retain their own notices;
 shipping this project does not relicense them. Linux CPU installation follows
 [the official XGBoost guide](https://xgboost.readthedocs.io/en/stable/install.html).
+
+If a dependency starts after the web process, model readiness retries initialization
+on subsequent readiness probes, at most once every five seconds per process.
+Concurrent probes share one initialization attempt. Failed initialization remains
+HTTP 503 until it succeeds; exception details are not exposed. Start the complete
+Compose stack above so the collector, worker and scheduler can resolve their
+PostgreSQL/Redis/Neo4j services. Restarting the web service alone does not restore
+missing dependencies.

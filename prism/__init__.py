@@ -48,19 +48,11 @@ def create_app(test_config: dict | None = None) -> Flask:
 
     app.extensions["gridwatch"] = app.config.get("GRIDWATCH_CLIENT") or (DurableLiveClient() if os.environ.get("PRISM_USE_DURABLE_LIVE")=="1" else GridWatchClient())
 
-    app.extensions['model_warmup']={'status':'not_requested','elapsed_ms':0}
+    from prism.startup import ModelWarmup
+    warmup = ModelWarmup()
+    app.extensions['model_warmup'] = warmup.state
     if os.environ.get('PRISM_WARM_MODELS')=='1':
-        from time import perf_counter
-        started=perf_counter()
-        try:
-            from prism.explain.attribution import _explainer,BACKGROUND,MODEL
-            _explainer(MODEL.stat().st_mtime_ns,BACKGROUND.stat().st_mtime_ns)
-            if os.environ.get('PRISM_DIAGNOSIS_STORE')=='neo4j':
-                from prism.explain.reference_input import diagnostic_view
-                diagnostic_view()
-            app.extensions['model_warmup']={'status':'ready','elapsed_ms':(perf_counter()-started)*1000}
-        except Exception:
-            app.extensions['model_warmup']={'status':'unavailable','elapsed_ms':(perf_counter()-started)*1000}
+        warmup.attempt()
 
     @app.get("/api/live/gridwatch")
     def live_gridwatch():
@@ -165,6 +157,8 @@ def create_app(test_config: dict | None = None) -> Flask:
                 from neo4j import GraphDatabase
                 with GraphDatabase.driver(os.environ['NEO4J_URI'],auth=(os.environ.get('NEO4J_USER','neo4j'),os.environ['NEO4J_PASSWORD']),connection_timeout=3) as driver:
                     driver.verify_connectivity();checks['neo4j']='ok'
+            if os.environ.get('PRISM_WARM_MODELS')=='1':
+                warmup.attempt()
             checks['models']=app.extensions['model_warmup']['status']
             if checks['models']=='unavailable':return jsonify(status='not_ready',checks=checks),503
             return jsonify(status='ready',checks=checks,model_initialization=app.extensions['model_warmup']),200

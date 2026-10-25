@@ -5,6 +5,7 @@ __pycache__
 **/__pycache__
 *.pyc
 .prism-ppt-build
+.taste-skill
 artifacts
 output
 .agents
