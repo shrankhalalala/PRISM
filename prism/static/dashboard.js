@@ -10,6 +10,7 @@ function renderLiveGrid() {
   const reading = data?.reading;
   [['demand','demand_mw'],['frequency','frequency_hz'],['drawal','drawal_mw'],['schedule','schedule_mw']].forEach(([id,key]) => {
     const value = reading?.[key];
+    $(`live-${id}`).closest('article').dataset.availability=typeof value==='number'&&Number.isFinite(value)?'available':'unknown';
     $(`live-${id}`).textContent = typeof value === 'number' && Number.isFinite(value)
       ? value.toLocaleString('en-IN', {maximumFractionDigits: id === 'frequency' ? 3 : 1}) : '—';
   });
@@ -17,9 +18,14 @@ function renderLiveGrid() {
   const stale = liveRequestFailed || data?.status !== 'live' || age > 300;
   $('live-status').textContent = !reading
     ? 'Unavailable · Delhi SLDC could not be reached or has no valid reading. Retrying every minute.'
+    : liveRequestFailed ? 'Refresh failed · showing the last available reading with its original source time. Retrying every minute.'
     : stale ? 'Stale · Last available Delhi SLDC reading. Waiting for a fresh source update.'
     : 'Live · Latest published Delhi SLDC reading. Refreshes every minute.';
-  $('live-status').dataset.state = !reading ? 'unavailable' : stale ? 'stale' : 'live';
+  const sourceState=!reading?'unavailable':stale?'stale':'live';
+  $('live-status').dataset.state=sourceState;
+  $('live-state-label').dataset.state=sourceState;
+  $('live-state-label').textContent=!reading?'Unavailable':stale?'Stale reading':'Published reading';
+  document.querySelector('.live-metrics').dataset.state=sourceState;
   $('live-timestamp').textContent = reading
     ? `Source timestamp: ${new Date(reading.observed_at).toLocaleString('en-IN', {timeZone:'Asia/Kolkata',hour12:false})} IST · Reading age: ${Math.floor(age)} seconds`
     : 'Source timestamp: no valid reading received.';
@@ -27,20 +33,19 @@ function renderLiveGrid() {
 async function loadLiveGrid() {
   if (liveRequestPending || document.hidden) return;
   liveRequestPending = true;
-  $('live-refresh').disabled = true;
+  $('live-refresh').disabled=true;$('live-refresh').setAttribute('aria-busy','true');$('live-refresh').textContent='Refreshing…';document.querySelector('.live-metrics').setAttribute('aria-busy','true');
+  $('live-status').textContent=lastLiveSnapshot?.reading?'Refreshing published readings · previous values retain their source time.':'Connecting to the published Delhi SLDC feed…';
   try {
     const response = await fetch('/api/live/gridwatch', {signal:AbortSignal.timeout(12000),cache:'no-store'});
     const data = await response.json();
     if (!['live','stale','unavailable'].includes(data.status) || (!response.ok && response.status !== 503)) throw new Error('Invalid live response');
-    lastLiveSnapshot = data;
-    lastLiveReceivedAt = Date.now();
-    liveRequestFailed = false;
+    if(data.reading||!lastLiveSnapshot?.reading){lastLiveSnapshot=data;lastLiveReceivedAt=Date.now();liveRequestFailed=false;}else liveRequestFailed=true;
   } catch {
     liveRequestFailed = true;
   } finally {
     renderLiveGrid();
     liveRequestPending = false;
-    $('live-refresh').disabled = false;
+    $('live-refresh').disabled=false;$('live-refresh').setAttribute('aria-busy','false');$('live-refresh').textContent='Refresh readings';document.querySelector('.live-metrics').setAttribute('aria-busy','false');
   }
 }
 let activeSeries = 'demand_mw';
@@ -53,13 +58,14 @@ const mobileQuery=matchMedia('(max-width:1100px)');
 let desktopCollapsed=preferences.get('prism-sidebar-collapsed')==='true';
 let drawerOpen=false;
 function updateSidebar(){
-  const visible=mobileQuery.matches?drawerOpen:!desktopCollapsed;
+  const visible=mobileQuery.matches?drawerOpen:true;
+  const expanded=mobileQuery.matches?drawerOpen:!desktopCollapsed;
   document.body.classList.toggle('sidebar-collapsed',!mobileQuery.matches&&desktopCollapsed);
   document.body.classList.toggle('drawer-open',mobileQuery.matches&&drawerOpen);
   $('sidebar').inert=!visible;
   $('sidebar').setAttribute('aria-hidden',String(!visible));
-  $('sidebar-toggle').setAttribute('aria-expanded',String(visible));
-  $('sidebar-toggle').setAttribute('aria-label',visible?'Collapse navigation':'Open navigation');
+  $('sidebar-toggle').setAttribute('aria-expanded',String(expanded));
+  $('sidebar-toggle').setAttribute('aria-label',mobileQuery.matches?(drawerOpen?'Close navigation':'Open navigation'):(expanded?'Collapse navigation':'Expand navigation'));
   const modal=mobileQuery.matches&&drawerOpen;
   $('sidebar-backdrop').hidden=!modal;
   $('main').inert=modal;
@@ -73,6 +79,10 @@ function selectResearchPanel(name){
   document.querySelectorAll('[data-research-panel]').forEach(panel=>{const active=panel.dataset.researchPanel===name;panel.hidden=!active;panel.inert=!active;});
   researchTabs.forEach(tab=>{const active=tab.dataset.researchTab===name;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
 }
+function highlightRegion(section){
+  document.querySelectorAll('#sidebar nav a').forEach(link=>{const active=link.getAttribute('href')===`#${section}`;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
+  $('breadcrumb-section').textContent=document.querySelector(`#sidebar nav a[href="#${section}"]`)?.dataset.navLabel||'Home';
+}
 function updateActiveNavigation(){
   let requested=location.hash.slice(1);
   if(!requested||requested==='overview'||requested==='live-grid'){requested='home';history.replaceState(null,'','#home');}
@@ -80,9 +90,7 @@ function updateActiveNavigation(){
   const panel=target.closest('[data-research-panel]');
   if(panel)selectResearchPanel(panel.dataset.researchPanel);
   const section=target.closest('main>.workspace-section')?.id||'home';
-  document.querySelectorAll('#sidebar nav a').forEach(link=>{const active=link.getAttribute('href')===`#${section}`;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
-  const current=document.querySelector(`#sidebar nav a[href="#${section}"]`);
-  $('breadcrumb-section').textContent=current?.dataset.navLabel||'Home';
+  highlightRegion(section);
   for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
   const destination=target.matches('[data-research-panel]')?$('research-tabs'):target;
   requestAnimationFrame(()=>destination.scrollIntoView({block:'start'}));
@@ -123,11 +131,13 @@ mobileQuery.addEventListener('change',()=>{drawerOpen=false;updateSidebar();});
 updateSidebar();
 window.addEventListener('hashchange',updateActiveNavigation);
 window.addEventListener('popstate',updateActiveNavigation);
+let regionFrame=0;window.addEventListener('scroll',()=>{if(regionFrame)return;regionFrame=requestAnimationFrame(()=>{regionFrame=0;let region='home';document.querySelectorAll('main>.workspace-section').forEach(section=>{if(section.getBoundingClientRect().top<=160)region=section.id;});highlightRegion(region);});},{passive:true});
 updateActiveNavigation();
 const darkQuery=matchMedia('(prefers-color-scheme:dark)');
 let explicitTheme=preferences.get('prism-theme');
 function setTheme(theme){
   document.documentElement.dataset.theme=theme;const dark=theme==='dark';
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#111315':'#edf1f4');
   const icon=document.createElementNS('http://www.w3.org/2000/svg','svg');icon.setAttribute('class','ui-icon');icon.setAttribute('viewBox','0 0 24 24');icon.setAttribute('fill','none');icon.setAttribute('stroke','currentColor');icon.setAttribute('stroke-width','1.6');icon.setAttribute('stroke-linecap','round');icon.setAttribute('stroke-linejoin','round');
   const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',dark?'M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z':'M20 15.5A8.5 8.5 0 0 1 8.5 4a8.5 8.5 0 1 0 11.5 11.5Z');icon.append(path);$('theme-icon').replaceChildren(icon);
   $('theme-label').textContent=dark?'Light':'Dark';$('theme-toggle').setAttribute('aria-label',`Switch to ${dark?'light':'dark'} theme`);

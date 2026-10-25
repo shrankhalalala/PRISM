@@ -27,14 +27,22 @@
     const wrap=node('label'),input=node('input');input.type='checkbox';input.value=action;input.checked=true;wrap.append(input,node('span',label(action)));$('ops-valid-actions').append(wrap);
     const option=node('option',label(action));option.value=action;$('ops-override').append(option);
   });
+  function renderServices(services){
+    const list=$('service-indicators');list.replaceChildren();
+    for(const [key,name] of [['postgres','PostgreSQL'],['redis','Redis'],['worker','Worker']]){
+      const value=services?.[key],status=typeof value==='object'?value?.status:value;
+      const item=node('li'),text=status==='ok'?'Ready':status?label(status):'Unknown';item.dataset.state=status||'unknown';
+      item.append(node('span',name),node('strong',text));list.append(item);
+    }
+  }
   async function refresh(){
-    if(state.refreshing)return;state.refreshing=true;$('ops-refresh').disabled=true;
+    if(state.refreshing)return;state.refreshing=true;$('ops-refresh').disabled=true;$('ops-refresh').setAttribute('aria-busy','true');$('ops-refresh').textContent='Checking…';$('service-indicators').setAttribute('aria-busy','true');
     $('ops-health').textContent='Checking services…';$('ops-alert-status').textContent='Checking alerts…';$('home-alert-summary').textContent='Checking…';
     await Promise.allSettled([
       api('/api/operations/health').then(data=>{
-        const services=Object.entries(data.services||{}).map(([key,value])=>label(key)+': '+label(typeof value==='object'?(value?.status??'unknown'):value));
+        renderServices(data.services);const services=Object.entries(data.services||{}).map(([key,value])=>label(key)+': '+label(typeof value==='object'?(value?.status??'unknown'):value));
         $('ops-health').textContent=label(data.status)+' · '+services.join(' · ');$('ops-health').dataset.status=data.status;
-      }).catch(err=>{$('ops-health').textContent=err.message;$('ops-health').dataset.status='unavailable';}),
+      }).catch(err=>{renderServices(null);$('ops-health').textContent=err.message;$('ops-health').dataset.status='unavailable';}),
       api('/api/alerts').then(data=>{
         $('ops-alert-list').replaceChildren();$('ops-alert-history').replaceChildren();const alerts=Array.isArray(data.alerts)?data.alerts:[];
         $('ops-alert-status').textContent=alerts.length?alerts.length+' alert(s) · '+label(data.status):data.status==='ok'?'No alerts reported at this check.':'No alert records available · '+label(data.status)+'. Refresh to retry.';
@@ -44,7 +52,7 @@
         alerts.forEach(a=>$('ops-alert-history').append(alertItem(a)));
         $('ops-alert-history-panel').hidden=alerts.length<=2;$('ops-alert-history-label').textContent='View all '+alerts.length+' alerts';
       }).catch(err=>{$('ops-alert-status').textContent=err.message+' Use Refresh services to retry.';$('ops-alert-time').textContent='Check failed';$('home-alert-summary').textContent='Unavailable · retry services';$('ops-alert-list').replaceChildren();$('ops-alert-history').replaceChildren();$('ops-alert-history-panel').hidden=true;})
-    ]);state.refreshing=false;$('ops-refresh').disabled=false;
+    ]);state.refreshing=false;$('ops-refresh').disabled=false;$('ops-refresh').setAttribute('aria-busy','false');$('ops-refresh').textContent='Refresh services';$('service-indicators').setAttribute('aria-busy','false');
   }
   const activeJob=()=>state.job&&['queued','running'].includes(state.job.status);
   const jobLabel=kind=>kind==='forecast'?'Demand forecast refresh':kind==='retrain'?'Retraining review':'Synthetic scenario';
@@ -132,7 +140,7 @@
     [0,Math.floor((predictions.length-1)/2),predictions.length-1].forEach(i=>chart.append(svgNode('text',{x:x(i),y:250,'text-anchor':i===0?'start':i===predictions.length-1?'end':'middle',class:'ops-chart-label'},'+'+(i+1)+'h')));
   }
   async function loadForecast(){
-    if(forecasting)return;forecasting=true;$('ops-forecast-load').disabled=true;$('ops-forecast-model').disabled=true;error('ops-forecast-error','');$('ops-forecast-status').textContent='Loading audited demand forecast…';$('ops-forecast-result').hidden=true;
+    if(forecasting)return;forecasting=true;$('ops-forecast-load').disabled=true;$('ops-forecast-model').disabled=true;error('ops-forecast-error','');$('ops-forecast-status').textContent='Loading audited demand forecast · any previous preview retains its original source time.';$('ops-forecast-result').setAttribute('aria-busy','true');$('ops-forecast-load').setAttribute('aria-busy','true');
     try{
       const model=$('ops-forecast-model').value,data=await api('/api/forecast/real'+(model==='selected'?'':'?model='+encodeURIComponent(model)));
       if(!Array.isArray(data.predictions)||!data.predictions.length||!data.predictions.every(Number.isFinite))throw new Error('No eligible predictions returned. Retry after checking source history.');
@@ -146,7 +154,7 @@
       forecastChart(data);$('ops-forecast-values').replaceChildren();data.predictions.forEach((value,i)=>{const item=node('li');item.append(node('span',date(data.forecast_timestamps?.[i])),node('strong',num(value)+' MW'));if(interval)item.append(node('small','Interval '+num(interval.lower_mw?.[i])+'–'+num(interval.upper_mw?.[i])+' MW'));$('ops-forecast-values').append(item);});
       facts($('ops-forecast-provenance'),[['Data source',label(data.data_source)],['Training end',date(data.training_end)],['Hourly history SHA-256',data.hourly_sha256||'Unknown'],['History context SHA-256',data.history_context_sha256||'Unknown'],['Model artifact SHA-256',data.artifact_sha256||'Unknown'],['Limitation',data.limitation||'Research preview; no operational validation.']]);
       $('ops-forecast-result').hidden=false;
-    }catch(err){error('ops-forecast-error',err.message);$('ops-forecast-status').textContent='Forecast unavailable. Choose a model and load again to retry.';}finally{forecasting=false;$('ops-forecast-load').disabled=false;$('ops-forecast-model').disabled=false;}
+    }catch(err){error('ops-forecast-error',err.message);$('ops-forecast-status').textContent='Forecast refresh unavailable. Any previous preview retains its original source time. Load again to retry.';}finally{forecasting=false;$('ops-forecast-load').disabled=false;$('ops-forecast-load').setAttribute('aria-busy','false');$('ops-forecast-result').setAttribute('aria-busy','false');$('ops-forecast-model').disabled=false;}
   }
   $('ops-forecast-form').addEventListener('submit',event=>{event.preventDefault();loadForecast();});
   const investigation={alarms:[],assets:{},busy:false,loading:0};

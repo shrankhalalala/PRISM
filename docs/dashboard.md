@@ -73,3 +73,22 @@ non-operational and the page states the aggregate simulator boundary.
 
 Navigation follows workspace anchors and research tabs. Legacy Overview hashes redirect to Home. Desktop and mobile layouts retain the collapsible sidebar,
 theme preference, keyboard behavior, chart containment, and visible status states.
+
+## Monitoring controls and performance
+
+Collapsed desktop navigation retains labeled-accessible icon destinations. Scroll
+position updates the current-region indicator without rewriting browser history.
+The existing phone drawer still moves focus into navigation, contains Tab/Shift+Tab
+and restores focus on Escape; closed visibility switches immediately.
+
+Home distinguishes individual application services from SLDC source freshness.
+Refresh controls remain busy/disabled until their actual requests finish. Previous
+readings and forecast previews retain their original provenance while refreshing or
+after a failed refresh; errors and retry controls remain visible.
+
+The network fits currently filtered assets, with a larger responsive viewport and
+adjacency emphasis. Arrow/pointer panning uses frame-coalesced view updates and
+does not repeatedly remeasure labels. Zoom, selection and resize still arrange labels.
+All 66 assets and 261 connection evidence records remain individually inspectable
+when filters are reset. These are dated reference records, not verified conducting
+lines or a geographic/physical-flow model.

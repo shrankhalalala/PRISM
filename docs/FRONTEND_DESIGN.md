@@ -91,3 +91,55 @@ errors. All seven screenshots were reviewed, plus the light-theme desktop previe
 The final visual critique scored 7.6/10; the complete workspace is intentionally
 long, and the phone research tab strip scrolls. Keyboard tab focus was repaired
 using History API navigation and explicit focus retention.
+
+## Professional monitoring refinement
+
+The current pass keeps the continuous Home, Network, Demand outlook and Research
+architecture, IBM Plex Sans and the real SVG network. Its direction is a precision
+monitoring instrument: charcoal surfaces, cyan/teal data, accessible muted text and
+semantic success/warning/error states, with a coherent light theme. The user allows
+subtle shadows and broader monitoring color use; earlier monochrome/color-budget
+restrictions do not apply to this pass.
+
+Rendered public pages at Linear, Grafana Labs and Vercel were inspected on October
+25, 2026. These were their marketing websites, not authenticated dashboards. The
+references informed control consistency, monitoring hierarchy and surface discipline;
+no branding, layouts, screenshots or assets were copied. The actual baseline is saved
+at `/tmp/prism-polish-NbVa83V5/before.png`. Its main issues were hidden destinations
+when navigation collapsed, service states compressed into prose, a small network
+canvas, fixed fit bounds and collision measurement on each pan event.
+
+The refinement adds an accessible desktop icon rail and current-region highlighting
+on scroll, individual API-derived PostgreSQL/Redis/worker indicators, a source-state
+badge and true refresh busy states. Existing observations and forecasts remain on
+screen during refresh. Failure is explicit; retained observations keep their original
+source time. A failed health check marks individual states unknown rather than
+asserting every service is down. No extra polling was added.
+
+Network pan/view writes are coalesced by animation frame. Translation-only pan
+skips collision layout; zoom, selection, hover, font readiness and resize still update
+labels. Label writes, rectangle reads and collision visibility writes are batched.
+Search is debounced by 100 ms and unchanged result identities avoid graph/ledger
+rebuilds. Fit uses visible asset positions and the actual canvas aspect; the viewport
+is 520 px on desktop and 390 px on phones. Adjacency emphasis means connectivity,
+never current electrical flow. All asset and evidence selectors remain available.
+
+Controls use shared spacing, radius, shadow and motion roles. Feedback is limited to
+hover, active, focus and real request loading. The Transitions UI Generation skill
+was reviewed but not installed: a simulated generation reveal is inappropriate for
+a frequently used monitoring tool. Native disclosures stay immediate. Reduced-motion
+rules remain in force, and no metric-number or artificial power-flow animation was
+introduced.
+
+Source verification for this milestone consists of JavaScript syntax, DOM identity,
+HTML balance and diff checks. Built browser and backend checks are reported by the
+integration workflow after rebuilding; previous screenshot scores are not new-pass
+certification.
+
+The rebuilt refinement passed responsive inspection with zero findings, overflow
+or console errors at 1440/768/390. Independent browser review covered 1024 as well,
+the light/dark layouts, icon rail and phone focus behavior, graph fit/pan/zoom and
+search/reset, research keyboard/history, and refresh failure/recovery. All 66 assets
+and 261 evidence records remained available. The real demand endpoint returned
+24 predictions with original provenance. These point-in-time checks do not establish
+physical Delhi validation or long-term service uptime.

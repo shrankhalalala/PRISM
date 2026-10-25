@@ -262,3 +262,20 @@ console errors. The independent interaction review identified research-tab focus
 loss; tab routing now retains focus and handles browser history explicitly.
 The targeted retest passed consecutive arrow keys, Home/End and Back/Forward;
 form input and selected Delhi station remained preserved across tab changes.
+
+## Professional frontend refinement — 2026-10-25
+
+The existing Flask/vanilla-JavaScript/SVG architecture and backend contracts were
+retained. The three JavaScript syntax checks and diff validation passed; all nine
+targeted reference-API, operations and startup-recovery tests passed. The Docker
+web image rebuilt successfully and required-service readiness returned ready.
+Responsive inspection at 1440, 768 and 390 pixels reported zero failures, warnings,
+horizontal page overflow or console errors. All seven rendered screenshots were
+reviewed. Performance work coalesces graph updates and avoids label collision
+measurement during translation-only pan; no measured speedup is asserted.
+The independent browser review also passed four-width layout checks, the collapsed
+icon rail, phone drawer focus/Escape, graph zoom/pan/filtered Fit, search/reset with
+66/261 records, evidence inspection, consecutive research-tab arrows and browser
+Back with input preservation. An injected refresh failure retained the previous
+values and source time with an explicit error, then recovered. The actual real-demand
+forecast loaded 24 values with origin, age and empirical interval semantics.
