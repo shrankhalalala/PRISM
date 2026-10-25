@@ -115,7 +115,7 @@ const darkQuery=matchMedia('(prefers-color-scheme:dark)');
 let explicitTheme=preferences.get('prism-theme');
 function setTheme(theme){
   document.documentElement.dataset.theme=theme;const dark=theme==='dark';
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#111315':'#edf1f4');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#262d32':'#e8eef1');
   const icon=document.createElementNS('http://www.w3.org/2000/svg','svg');icon.setAttribute('class','ui-icon');icon.setAttribute('viewBox','0 0 24 24');icon.setAttribute('fill','none');icon.setAttribute('stroke','currentColor');icon.setAttribute('stroke-width','1.6');icon.setAttribute('stroke-linecap','round');icon.setAttribute('stroke-linejoin','round');
   const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',dark?'M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z':'M20 15.5A8.5 8.5 0 0 1 8.5 4a8.5 8.5 0 1 0 11.5 11.5Z');icon.append(path);$('theme-icon').replaceChildren(icon);
   $('theme-label').textContent=dark?'Light':'Dark';$('theme-toggle').setAttribute('aria-label',`Switch to ${dark?'light':'dark'} theme`);

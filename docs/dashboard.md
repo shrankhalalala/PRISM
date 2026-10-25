@@ -107,3 +107,34 @@ is an icon rail on desktop and a four-destination bottom bar on phones; labels a
 keyboard links remain available. Demand uses chart/context columns; Research uses
 a vertical tool selector plus shared activity rail. Up/Down as well as Left/Right,
 Home and End navigate research tools. Light and dark themes share this geometry.
+
+
+## Home and Delhi connectivity scenarios
+
+Home introduces PRISM (Power Grid Resilience through Intelligent Smart Management),
+with direct links to the Delhi reference network and research workspace. Published
+readings now sit with the reference network; metric IDs and refresh behavior remain
+unchanged. Light and dark themes use restrained blue/teal page gradients while
+charts, controls and evidence surfaces remain flat.
+
+The PRISM logo uses the actual dependency-free transitions-ui-generation runtime
+(vendored with its license under `prism/static/vendor/prism-generation/`). It plays
+once when visible and can be replayed. Font readiness precedes measurement; resize
+cancels the reveal safely. The runtime's reduced-motion fallback is preserved. The
+animation never blocks navigation, source refreshes or application readiness.
+
+Research → Simulation now opens a Delhi **connectivity** scenario. Outage choices
+come from `/api/reference-grid`; the graph is rebuilt from the authoritative assets,
+layouts and connections in the backend stream's start event. Run consumes paced
+NDJSON snapshots from `/api/topology-scenario/stream`, updates availability colors,
+component/isolation counts and a step log, and retains the last received state on
+errors or Stop. An interrupted stream cannot be reported as completed. Each model
+step represents 15 minutes; the separately selected 100–1000 ms backend interval is
+wall-clock pacing. Baseline islands are included in isolation totals; the step log
+also reports newly isolated assets beyond the baseline. This is topology research,
+not verified Delhi electrical power flow, dispatch or physical equipment operation.
+
+The former aggregate/Q-learning tools retain their original forms, IDs, fixture
+choices and results inside the “Advanced aggregate lab · synthetic teaching model”
+disclosure. Background job activity refers to durable aggregate, forecast and
+retraining jobs; the connectivity stream has separate Run/Stop/status controls.

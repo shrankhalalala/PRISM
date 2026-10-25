@@ -311,3 +311,13 @@ separate step records before completion; the selected Delhi outage activated and
 restored at the requested steps. Model minutes and wall-clock update pacing remain
 separate. Browser review observed an eight-step run, Bamnauli's injected outage and
 29 blocked incident records, restoration, and Stop retaining the last computed state.
+
+The bundled four animation assets returned HTTP 200, logo replay completed and
+reduced-motion kept branding visible. The animated target contains only the symbol;
+the name remains static. Introductory Home navigation reaches the existing Network
+and Research regions. Both gradient themes were visually reviewed. Responsive
+checks at 1440/768/390 have no failures, with gradients explicitly allowed by the
+user and the landing headline size retained as a documented warning. Eight final
+viewport screenshots and the independent light-theme/running-scenario screenshots
+were reviewed. All five application JavaScript syntax checks pass; the web Docker
+build succeeds and required-service readiness returns ready.

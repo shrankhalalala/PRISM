@@ -17,4 +17,4 @@ phase3 = ["redis>=5,<7", "psycopg[binary]>=3.2,<4", "celery[redis]>=5.4,<6", "gu
 include = ["prism*"]
 
 [tool.setuptools.package-data]
-prism = ["templates/*.html", "static/*"]
+prism = ["templates/*.html", "static/*", "static/vendor/prism-generation/*"]
