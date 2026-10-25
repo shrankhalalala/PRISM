@@ -125,7 +125,9 @@ class GridWatchTests(unittest.TestCase):
         self.assertEqual(result.status_code, 200)
         self.assertEqual(result.json['data_source'], 'delhi_sldc')
         self.assertEqual(client.get('/api/measurements?limit=1').json['data_source'], 'synthetic')
-        self.assertIn(b'id="live-grid"', client.get('/').data)
+        page = client.get('/').data
+        self.assertIn(b'id="live-demand"', page)
+        self.assertIn(b'id="live-refresh"', page)
 
     def test_truncated_http_response_is_reported_unavailable(self):
         self.fetch.side_effect = IncompleteRead(b'{')

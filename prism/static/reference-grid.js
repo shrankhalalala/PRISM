@@ -59,7 +59,8 @@
   }
   function select(type,id,focusInspector=false) {
     if(!(type==='asset'?state.assets:state.connections).has(id))return;
-    state.selected={type,id};renderSelection();renderInspector();
+    const previous=state.selected;state.selected={type,id};renderSelection();renderInspector();
+    if(previous&&(previous.id!==id||previous.type!==type)&&!matchMedia('(prefers-reduced-motion:reduce)').matches){const panel=el('ref-detail');panel.getAnimations().forEach(animation=>animation.cancel());panel.animate([{opacity:.65},{opacity:1}],{duration:150,easing:'ease-out'});}
     const selected=type==='asset'?state.assets.get(id):null;
     if(selected)el('ref-status').textContent=`Selected ${selected.name} · source evidence and station loading.`;
     else el('ref-status').textContent=`Selected connection ${id} · dated source evidence.`;
@@ -205,7 +206,7 @@
     const readings=snapshot.readings||[];
     const stale=telemetry.error||readings.some(r=>readingState(r)==='stale');
     const count=snapshot.coverage?.measured_assets??new Set(readings.map(r=>r.asset_id)).size;
-    el('ref-telemetry-status').textContent=`${stale?'Stale station readings':'Published station readings'} · ${count} of ${snapshot.coverage?.reference_assets??state.data?.assets.length??'—'} assets mapped. Source time and quality notes are in the inspector.`;
+    el('ref-telemetry-status').textContent=`${stale?'Stale station readings':'Published station readings'} · ${count} of ${snapshot.coverage?.reference_assets??state.data?.assets.length??'—'} assets mapped. Source times and quality: inspector.`;
   }
   function renderStationReading(parent,asset) {
     const section=node('section','ref-station-reading');section.setAttribute('aria-label','Published SLDC station loading');

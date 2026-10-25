@@ -92,3 +92,18 @@ does not repeatedly remeasure labels. Zoom, selection and resize still arrange l
 All 66 assets and 261 connection evidence records remain individually inspectable
 when filters are reset. These are dated reference records, not verified conducting
 lines or a geographic/physical-flow model.
+
+## Current Data terminal layout
+
+Home is the network workbench opening: a bare telemetry band leads directly into
+the one Delhi network canvas, without a large overview card or duplicate preview.
+Network navigation anchors that same DOM. Asset/evidence directories are accessible
+through the disclosure under the canvas. The selected station inspector stays beside
+the canvas on desktop and follows it on phones.
+
+The header's Services & alerts disclosure retains every diagnostic field and source
+note. Its closed summary includes actual service state and alert count. Navigation
+is an icon rail on desktop and a four-destination bottom bar on phones; labels and
+keyboard links remain available. Demand uses chart/context columns; Research uses
+a vertical tool selector plus shared activity rail. Up/Down as well as Left/Right,
+Home and End navigate research tools. Light and dark themes share this geometry.

@@ -40,9 +40,9 @@
     $('ops-health').textContent='Checking services…';$('ops-alert-status').textContent='Checking alerts…';$('home-alert-summary').textContent='Checking…';
     await Promise.allSettled([
       api('/api/operations/health').then(data=>{
-        renderServices(data.services);const services=Object.entries(data.services||{}).map(([key,value])=>label(key)+': '+label(typeof value==='object'?(value?.status??'unknown'):value));
+        $('system-service-state').textContent=label(data.status);$('system-service-state').dataset.state=data.status;renderServices(data.services);const services=Object.entries(data.services||{}).map(([key,value])=>label(key)+': '+label(typeof value==='object'?(value?.status??'unknown'):value));
         $('ops-health').textContent=label(data.status)+' · '+services.join(' · ');$('ops-health').dataset.status=data.status;
-      }).catch(err=>{renderServices(null);$('ops-health').textContent=err.message;$('ops-health').dataset.status='unavailable';}),
+      }).catch(err=>{$('system-service-state').textContent='unavailable';$('system-service-state').dataset.state='unavailable';renderServices(null);$('ops-health').textContent=err.message;$('ops-health').dataset.status='unavailable';}),
       api('/api/alerts').then(data=>{
         $('ops-alert-list').replaceChildren();$('ops-alert-history').replaceChildren();const alerts=Array.isArray(data.alerts)?data.alerts:[];
         $('ops-alert-status').textContent=alerts.length?alerts.length+' alert(s) · '+label(data.status):data.status==='ok'?'No alerts reported at this check.':'No alert records available · '+label(data.status)+'. Refresh to retry.';

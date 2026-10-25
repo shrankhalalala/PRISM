@@ -143,3 +143,52 @@ search/reset, research keyboard/history, and refresh failure/recovery. All 66 as
 and 261 evidence records remained available. The real demand endpoint returned
 24 predictions with original provenance. These point-in-time checks do not establish
 physical Delhi validation or long-term service uptime.
+
+## Data terminal redesign — current composition
+
+The substantial redesign selects **Data terminal, seed 33077025**. It replaces the
+Framed sheet direction rather than refining its padding. The signature is the actual
+Delhi evidence network as the first-screen working canvas, with a compact selected
+station inspector. The earlier large Home banner, boxed KPI strip, wide sidebar and
+enclosing rounded sheet have been removed. No new data or physical-flow model was
+introduced.
+
+Desktop navigation is a 56 px icon rail with names/tooltips and optional expansion.
+The 48 px header carries PRISM and its Delhi scope; phones use four labeled bottom
+destinations. Bare demand-led telemetry sits above the network, while source/service
+diagnostics live in an accessible header disclosure whose closed summary still shows
+actual service status and alert count. Failures remain visible, not cosmetically
+reclassified. Network counts are metadata beside search/filter controls; full native
+asset and evidence directories remain below the canvas in a disclosure.
+
+Demand uses a two-column composition: the forecast chart and hourly predictions
+alongside source, model and uncertainty context, all within the existing result
+wrapper. Research uses a vertical tool selector beside a form/results work area and
+shared worker activity rail. Existing IDs, inputs, hashes, validation and result
+states remain in place. These three compositions stack on phones without cloning
+or replacing any of the data controls.
+
+Public Sans Regular, Medium and SemiBold are self-hosted WOFF2 files downloaded
+from the [USWDS Public Sans distribution](https://github.com/uswds/public-sans/tree/develop/fonts/webfonts).
+The original license is included as `prism/static/public-sans-LICENSE.md`. Colors
+use neutral terminal grounds, darker working panels and the product's teal for the
+shared selection line. This replaces the dealt blue with PRISM's existing hue; it
+does not invent electricity-flow direction or causal meaning.
+
+The corrected filtered-fit, frame-coalesced pan, batched label collision, debounce
+and complete ledger behavior from the preceding implementation are retained. A
+150 ms opacity update on deliberate inspector selection respects reduced motion.
+No decorative entrance, generation reveal or live-value animation is used.
+
+Source checks pass for all three JavaScript files, unique DOM IDs, required targets,
+one Home h1, HTML nesting and whitespace. First-fold geometry, responsive screenshots,
+font loading and interaction checks must be confirmed on the rebuilt preview; earlier
+Framed sheet scores do not certify this new layout.
+
+The rebuilt Data terminal layout passed the final Taste inspector at 1440, 768
+and 390 px with zero failures/warnings; all six final screenshots and a light-theme
+preview were reviewed. At 1440×900 the canvas begins at 366 px versus approximately
+860 px before. Public Sans was confirmed loaded. The final app critique scored
+7.8/10; dense smaller-screen graphs still benefit from zoom and native pickers.
+Independent browser checks passed inventory/evidence access, research state/history,
+real forecast provenance, failure presentation and tooltip focus visibility.

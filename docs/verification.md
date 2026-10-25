@@ -279,3 +279,21 @@ icon rail, phone drawer focus/Escape, graph zoom/pan/filtered Fit, search/reset 
 Back with input preservation. An injected refresh failure retained the previous
 values and source time with an explicit error, then recovered. The actual real-demand
 forecast loaded 24 values with origin, age and empirical interval semantics.
+
+## Data terminal composition verification
+
+All 111 tests pass after replacing an obsolete `live-grid` container assertion with
+checks for the live reading value and refresh control. All three JavaScript syntax
+checks and diff validation pass. The Docker web image built successfully and model,
+PostgreSQL, Redis, Neo4j and reference readiness returned ready. Served CSS hashes
+matched the repository before and after deployment, with no-cache delivery.
+
+Matching 1440×900 screenshots show the network canvas moving from approximately
+860 px to 366 px down the first view. The final Taste inspection at 1440/768/390
+reports zero failures, warnings, page overflow or console errors; Public Sans loads
+from local WOFF2 files. Independent browser review confirmed both themes, 66 assets
+and 261 evidence records, search/reset/selection, header error truth, keyboard tabs
+and retained input/history, real 24-hour forecast provenance and reduced motion.
+Source lint retains defensible warnings for technical monospace, missing-value
+marks and floating-overlay shadow declarations (including explicit shadow removal).
+No backend API, schema, electrical calculation, source or evidence data was changed.

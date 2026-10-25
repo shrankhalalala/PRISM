@@ -20,7 +20,7 @@ function renderLiveGrid() {
     ? 'Unavailable · Delhi SLDC could not be reached or has no valid reading. Retrying every minute.'
     : liveRequestFailed ? 'Refresh failed · showing the last available reading with its original source time. Retrying every minute.'
     : stale ? 'Stale · Last available Delhi SLDC reading. Waiting for a fresh source update.'
-    : 'Live · Latest published Delhi SLDC reading. Refreshes every minute.';
+    : 'Delhi SLDC · checks every minute.';
   const sourceState=!reading?'unavailable':stale?'stale':'live';
   $('live-status').dataset.state=sourceState;
   $('live-state-label').dataset.state=sourceState;
@@ -54,22 +54,17 @@ let measurementData = null;
 let measurementRequest = 0;
 const seriesNames = {demand_mw:'Demand',solar_mw:'Solar',wind_mw:'Wind'};
 const preferences = {get(key){try{return localStorage.getItem(key);}catch{return null;}},set(key,value){try{localStorage.setItem(key,value);}catch{}}};
-const mobileQuery=matchMedia('(max-width:1100px)');
-let desktopCollapsed=preferences.get('prism-sidebar-collapsed')==='true';
+const mobileQuery=matchMedia('(max-width:640px)');
+let desktopCollapsed=preferences.get('prism-terminal-nav-expanded')!=='true';
 let drawerOpen=false;
 function updateSidebar(){
-  const visible=mobileQuery.matches?drawerOpen:true;
-  const expanded=mobileQuery.matches?drawerOpen:!desktopCollapsed;
-  document.body.classList.toggle('sidebar-collapsed',!mobileQuery.matches&&desktopCollapsed);
-  document.body.classList.toggle('drawer-open',mobileQuery.matches&&drawerOpen);
-  $('sidebar').inert=!visible;
-  $('sidebar').setAttribute('aria-hidden',String(!visible));
+  const expanded=!mobileQuery.matches&&!desktopCollapsed;
+  document.body.classList.toggle('sidebar-collapsed',!expanded);
+  document.body.classList.remove('drawer-open');
+  $('sidebar').inert=false;$('sidebar').setAttribute('aria-hidden','false');
   $('sidebar-toggle').setAttribute('aria-expanded',String(expanded));
-  $('sidebar-toggle').setAttribute('aria-label',mobileQuery.matches?(drawerOpen?'Close navigation':'Open navigation'):(expanded?'Collapse navigation':'Expand navigation'));
-  const modal=mobileQuery.matches&&drawerOpen;
-  $('sidebar-backdrop').hidden=!modal;
-  $('main').inert=modal;
-  document.querySelector('.topbar-actions').inert=modal;
+  $('sidebar-toggle').setAttribute('aria-label',expanded?'Collapse navigation':'Expand navigation');
+  $('sidebar-backdrop').hidden=true;$('main').inert=false;document.querySelector('.topbar-actions').inert=false;
 }
 const researchTabs=Array.from(document.querySelectorAll('[data-research-tab]'));
 let activeResearchPanel='simulation';
@@ -103,31 +98,14 @@ researchTabs.forEach((tab,index)=>{
     tab.focus({preventScroll:true});
   });
   tab.addEventListener('keydown',event=>{
-    let next;if(event.key==='ArrowRight')next=(index+1)%researchTabs.length;else if(event.key==='ArrowLeft')next=(index-1+researchTabs.length)%researchTabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=researchTabs.length-1;else return;
+    let next;if(event.key==='ArrowRight'||event.key==='ArrowDown')next=(index+1)%researchTabs.length;else if(event.key==='ArrowLeft'||event.key==='ArrowUp')next=(index-1+researchTabs.length)%researchTabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=researchTabs.length-1;else return;
     event.preventDefault();researchTabs[next].focus({preventScroll:true});researchTabs[next].click();
   });
 });
 selectResearchPanel(activeResearchPanel);
-function closeDrawer(){drawerOpen=false;updateSidebar();$('sidebar-toggle').focus();}
-$('sidebar-toggle').addEventListener('click',()=>{
-  if(mobileQuery.matches)drawerOpen=!drawerOpen;
-  else{desktopCollapsed=!desktopCollapsed;preferences.set('prism-sidebar-collapsed',String(desktopCollapsed));}
-  updateSidebar();
-  if(mobileQuery.matches&&drawerOpen)$('sidebar').querySelector('nav a')?.focus({preventScroll:true});
-});
-$('sidebar-backdrop').addEventListener('click',closeDrawer);
-document.addEventListener('keydown',event=>{
-  if(!mobileQuery.matches||!drawerOpen)return;
-  if(event.key==='Escape'){event.preventDefault();closeDrawer();return;}
-  if(event.key==='Tab'){
-    const controls=[$('sidebar-toggle'),...$('sidebar').querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(control=>control.getClientRects().length&&!control.closest('[inert]'));
-    const index=controls.indexOf(document.activeElement);
-    const next=index<0?(event.shiftKey?controls.length-1:0):(index+(event.shiftKey?-1:1)+controls.length)%controls.length;
-    event.preventDefault();controls[next]?.focus({preventScroll:true});
-  }
-});
-$('sidebar').querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{if(mobileQuery.matches)closeDrawer();}));
-mobileQuery.addEventListener('change',()=>{drawerOpen=false;updateSidebar();});
+$('sidebar-toggle').addEventListener('click',()=>{if(mobileQuery.matches)return;desktopCollapsed=!desktopCollapsed;preferences.set('prism-terminal-nav-expanded',String(!desktopCollapsed));updateSidebar();});
+mobileQuery.addEventListener('change',updateSidebar);
+document.addEventListener('keydown',event=>{const status=$('system-status');if(event.key==='Escape'&&status.open){status.open=false;status.querySelector('summary').focus();}});
 updateSidebar();
 window.addEventListener('hashchange',updateActiveNavigation);
 window.addEventListener('popstate',updateActiveNavigation);
