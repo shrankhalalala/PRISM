@@ -43,6 +43,22 @@ class TopologySimulationTests(unittest.TestCase):
             with self.subTest(body=body), self.assertRaises(ValueError):
                 prepare_topology_scenario(self.reference, body)
 
+    def test_multiple_nodes_and_overlapping_intervals_restore_independently(self):
+        spec = prepare_topology_scenario(self.reference, dict(steps=5, faults=[
+            dict(asset_id='a', step=1, duration_steps=1),
+            dict(asset_id='b', step=1, duration_steps=2),
+            dict(asset_id='b', step=2, duration_steps=2)]))
+        rows = list(topology_steps(self.reference, spec))
+        self.assertEqual(rows[1]['failed_asset_ids'], ['a', 'b'])
+        self.assertEqual(set(rows[1]['blocked_connection_ids']), {'ab1', 'ab2', 'bc'})
+        self.assertEqual(rows[2]['failed_asset_ids'], ['b'])
+        self.assertEqual(rows[2]['events'], [dict(asset_id='a', event='restored')])
+        self.assertEqual(rows[3]['failed_asset_ids'], ['b'])
+        self.assertEqual(rows[3]['events'], [])
+        self.assertEqual(rows[4]['failed_asset_ids'], [])
+        self.assertEqual(rows[4]['events'], [dict(asset_id='b', event='restored')])
+        self.assertEqual(rows[4]['component_count'], rows[0]['component_count'])
+
     def test_stream_maps_exact_website_ids_and_computes_incrementally(self):
         sleeps = []
         app = create_app(dict(TESTING=True, TOPOLOGY_SIMULATION_SLEEP=sleeps.append))

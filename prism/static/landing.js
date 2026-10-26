@@ -1,43 +1,31 @@
-/* One deliberate brand reveal. Data, navigation and application readiness are independent. */
+/* Brand-only loop; data readiness and navigation never wait for animation. */
 import { generate } from './vendor/prism-generation/ui-generation.js';
-
 const logo=document.getElementById('prism-logo-animation');
-const replay=document.getElementById('prism-logo-replay');
-const status=document.getElementById('prism-logo-status');
-let played=false;
-let run=null;
-let preparing=false;
-
-async function revealLogo(){
-  if(!logo||run||preparing)return;
-  preparing=true;
+const motion=matchMedia('(prefers-reduced-motion: reduce)');
+let visible=false,active=true,run=null,preparing=false,timer=null,resizeTimer=null,resizing=false,cycles=0;
+const eligible=()=>logo&&visible&&active&&!document.hidden&&!motion.matches&&!resizing;
+function clearTimer(){clearTimeout(timer);timer=null;}
+function pause(){clearTimer();run?.cancel();if(logo)logo.dataset.animation='static';}
+function schedule(delay=3000){clearTimer();if(eligible()&&!run&&!preparing)timer=setTimeout(play,delay);}
+async function play(){
+ if(!eligible()||run||preparing)return;
+ preparing=true;
+ try{
   await document.fonts.ready;
-  if(!logo.getBoundingClientRect().width){preparing=false;return;}
-  replay.disabled=true;
-  replay.setAttribute('aria-busy','true');
+  if(!eligible()||!logo.getBoundingClientRect().width)return;
   logo.dataset.animation='playing';
-  try{
-    run=generate(logo,{variant:'ui',mode:'skeleton'});
-    await run.finished;
-    logo.dataset.animation='complete';
-  }catch{
-    // The static brand remains the fallback if drawing is unavailable.
-    logo.style.opacity='';logo.style.clipPath='';logo.style.filter='';
-    logo.dataset.animation='static';
-  }finally{
-    run=null;preparing=false;replay.disabled=false;replay.setAttribute('aria-busy','false');
-    status.textContent='';
-  }
+  const current=generate(logo,{variant:'ui',mode:'skeleton'});run=current;
+  await current.finished;
+  if(eligible()){cycles++;logo.dataset.completedCycles=String(cycles);logo.dataset.animation='complete';}
+ }catch{logo.dataset.animation='static';}
+ finally{run=null;preparing=false;schedule();}
 }
-
-if(logo&&replay){
-  const observer=new IntersectionObserver(entries=>{
-    if(played||!entries.some(entry=>entry.isIntersecting))return;
-    played=true;observer.disconnect();revealLogo();
-  },{threshold:.5});
-  observer.observe(logo);
-  replay.addEventListener('click',revealLogo);
-  // A resize invalidates the runtime's measured drawing; reveal the static logo immediately.
-  window.addEventListener('resize',()=>run?.cancel(),{passive:true});
-  window.addEventListener('pagehide',()=>run?.cancel());
+if(logo){
+ const observer=new IntersectionObserver(entries=>{visible=entries.some(entry=>entry.isIntersecting);if(visible)schedule(0);else pause();},{threshold:.25});
+ observer.observe(logo.closest('.landing-logo')||logo);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();else schedule(0);});
+ motion.addEventListener('change',()=>{if(motion.matches)pause();else schedule(0);});
+ window.addEventListener('resize',()=>{resizing=true;pause();clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{resizing=false;schedule(0);},180);},{passive:true});
+ window.addEventListener('pagehide',()=>{active=false;clearTimeout(resizeTimer);resizing=false;pause();});
+ window.addEventListener('pageshow',()=>{active=true;resizing=false;schedule(0);});
 }

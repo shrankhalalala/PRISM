@@ -321,3 +321,26 @@ user and the landing headline size retained as a documented warning. Eight final
 viewport screenshots and the independent light-theme/running-scenario screenshots
 were reviewed. All five application JavaScript syntax checks pass; the web Docker
 build succeeds and required-service readiness returns ready.
+
+## Viewport Home, paced logo loop and multiple disruptions — 2026-10-26
+
+All 118 tests pass, including simultaneous node outages and overlapping intervals
+with independent restoration. The existing backend accepts up to eight outages;
+the interface now exposes editable target/start/duration rows without changing that
+contract. Direct browser execution verified Bamnauli and Bawana failed together,
+restored on separate steps, and completed eight streamed snapshots. Controls locked
+during execution, unlocked afterward, capped at eight rows, retained unique IDs
+after removal, and preserved selections through reference reload.
+
+Direct browser timing measured a 3002 ms pause between a completed logo reveal and
+the next start, with one overlay at most. Replay is removed. The visibility observer
+uses the stable outer card to avoid cancelling its own animation. Offscreen and
+reduced-motion states keep the static logo visible without running overlays.
+At 1440×900, Home measures 834 px below the 48 px header and 18 px inset, and the
+Network region begins below the opening viewport. Narrow/short screens can grow
+naturally without clipping content. Phone layout has no horizontal overflow.
+These interaction checks were performed directly in the browser.
+Final responsive inspection at 1440/768/390 reports zero failures. Three retained
+warnings reflect the deliberately full-screen introduction: its larger heading,
+extra breathing room and workbench sections beginning below it. Requested gradients
+remain explicitly allowed. All eight final screenshots were visually inspected.

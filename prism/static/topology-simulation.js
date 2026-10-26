@@ -11,23 +11,45 @@
   const stamp=value=>{const date=new Date(value);return value&&Number.isFinite(date.valueOf())?date.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',hour12:false})+' IST':'Unknown emission time';};
   const error=message=>{$('topo-error').hidden=!message;$('topo-error').textContent=message||'';};
   const assetName=id=>state.source?.assets?.find(asset=>asset.id===id)?.name||id;
+  const rows=()=>Array.from($('topo-fault-rows').querySelectorAll('[data-fault-row]'));
+  let rowNumber=1;
+  function populate(select,previous=''){
+    select.replaceChildren();const none=textNode('option','No injected outage');none.value='';select.append(none);
+    for(const [label,items] of [['Delhi reference assets',state.source.assets],['Dated connection evidence',state.source.connections]]){
+      const group=document.createElement('optgroup');group.label=label;
+      items.forEach(item=>{const option=textNode('option',item.name||`${assetName(item.source)} ↔ ${assetName(item.target)} · ${item.id}`);option.value=item.id;group.append(option);});select.append(group);
+    }
+    const valid=Array.from(select.options).some(option=>option.value===previous);select.value=valid?previous:'';return !previous||valid;
+  }
   function limits(){
     const steps=Math.max(1,Math.min(96,Number($('topo-steps').value)||1));
-    $('topo-fault-step').max=String(steps-1);$('topo-fault-duration').max=String(steps);
-    if(Number($('topo-fault-step').value)>=steps)$('topo-fault-step').value=String(steps-1);
-    if(Number($('topo-fault-duration').value)>steps)$('topo-fault-duration').value=String(steps);
-    const fault=Boolean($('topo-fault-asset').value);
-    $('topo-fault-step').disabled=state.running||!fault;$('topo-fault-duration').disabled=state.running||!fault;
+    rows().forEach(row=>{
+      const target=row.querySelector('[data-fault-target]'),start=row.querySelector('[data-fault-step]'),duration=row.querySelector('[data-fault-duration]');
+      start.max=String(steps-1);duration.max=String(steps);
+      if(Number(start.value)>=steps)start.value=String(steps-1);
+      if(Number(duration.value)>steps)duration.value=String(steps);
+      target.disabled=state.running||!state.source;start.disabled=duration.disabled=state.running||!target.value;
+      row.querySelector('[data-fault-remove]').disabled=state.running||rows().length===1;
+    });
+    $('topo-fault-add').disabled=state.running||!state.source||rows().length>=8;
   }
   function lock(running){
-    state.running=running;
-    Array.from($('topo-form').elements).forEach(control=>control.disabled=running);
+    state.running=running;Array.from($('topo-form').elements).forEach(control=>control.disabled=running);
     $('topo-run').disabled=running||!state.source;$('topo-run').setAttribute('aria-busy',String(running));
     $('topo-stop').disabled=!running;$('topo-source-retry').disabled=running||state.loading;limits();
   }
   function highlightTarget(){
-    const chosen=$('topo-fault-asset').value;
-    $('topo-network').querySelectorAll('[data-topo-id]').forEach(el=>el.classList.toggle('chosen',el.dataset.topoId===chosen));
+    const chosen=new Set(rows().map(row=>row.querySelector('[data-fault-target]').value).filter(Boolean));
+    $('topo-network').querySelectorAll('[data-topo-id]').forEach(el=>el.classList.toggle('chosen',chosen.has(el.dataset.topoId)));
+  }
+  function addRow(){
+    if(state.running||rows().length>=8||!state.source)return;
+    rowNumber++;const row=rows()[0].cloneNode(true);row.querySelectorAll('[id]').forEach(el=>el.id=el.id.replace(/(?:-\d+)?$/,`-${rowNumber}`));
+    row.querySelector('label span').textContent=`Disruption ${rowNumber} · reference target`;
+    const select=row.querySelector('[data-fault-target]');populate(select);
+    row.querySelector('[data-fault-step]').value='0';row.querySelector('[data-fault-duration]').value='1';
+    row.querySelector('[data-fault-remove]').textContent=`Remove disruption ${rowNumber}`;
+    $('topo-fault-rows').append(row);limits();select.focus();
   }
   function draw(source){
     state.source=source;const svg=$('topo-network');svg.replaceChildren(svgNode('title',{id:'topo-graph-title'},'Delhi reference connectivity scenario'));
@@ -42,10 +64,9 @@
   async function loadReference(){
     if(state.loading||state.running)return;state.loading=true;$('topo-source-retry').disabled=true;error('');$('topo-source-status').textContent='Loading Delhi reference choices…';
     try{const response=await fetch('/api/reference-grid',{signal:AbortSignal.timeout(15000),headers:{Accept:'application/json'}});const data=await response.json();if(!response.ok||!Array.isArray(data.assets)||!Array.isArray(data.connections))throw new Error('Reference inventory unavailable.');
-      draw(data);const select=$('topo-fault-asset'),previous=select.value;select.replaceChildren();const none=textNode('option','No injected outage');none.value='';select.append(none);
-      const assets=document.createElement('optgroup');assets.label='Delhi reference assets';data.assets.forEach(asset=>{const option=textNode('option',asset.name);option.value=asset.id;assets.append(option);});select.append(assets);
-      const connections=document.createElement('optgroup');connections.label='Dated connection evidence';data.connections.forEach(connection=>{const option=textNode('option',`${assetName(connection.source)} ↔ ${assetName(connection.target)} · ${connection.id}`);option.value=connection.id;connections.append(option);});select.append(connections);
-      if(Array.from(select.options).some(option=>option.value===previous))select.value=previous;
+      const selected=rows().map(row=>row.querySelector('[data-fault-target]').value);draw(data);let cleared=0;
+      rows().forEach((row,i)=>{if(!populate(row.querySelector('[data-fault-target]'),selected[i]))cleared++;});
+      if(cleared)error(`${cleared} disruption target(s) are no longer in the reference inventory and were cleared. Review selections before running.`);
       $('topo-source-status').textContent=`${data.assets.length} reference assets · ${data.connections.length} connection records available. Eligibility and conducting assumptions are qualified by the scenario backend.`;
       $('topo-caption').textContent='Reference preview. All displayed positions are schematic; run a scenario for backend-computed connectivity states.';
     }catch(err){error(err.name==='TimeoutError'?'Reference request timed out. Reload reference to retry.':err.message);$('topo-source-status').textContent='Reference choices unavailable. Reload to retry.';}finally{state.loading=false;lock(false);highlightTarget();}
@@ -75,7 +96,8 @@
   }
   $('topo-form').addEventListener('submit',async event=>{
     event.preventDefault();if(state.running||!state.source)return;limits();error('');state.stopped=false;state.completed=false;state.received=0;state.total=Number($('topo-steps').value);state.controller=new AbortController();
-    const target=$('topo-fault-asset').value,body={steps:state.total,interval_ms:Number($('topo-interval').value),faults:target?[{asset_id:target,step:Number($('topo-fault-step').value),duration_steps:Number($('topo-fault-duration').value)}]:[]};
+    const faults=rows().map(row=>({asset_id:row.querySelector('[data-fault-target]').value,step:Number(row.querySelector('[data-fault-step]').value),duration_steps:Number(row.querySelector('[data-fault-duration]').value)})).filter(fault=>fault.asset_id);
+    const body={steps:state.total,interval_ms:Number($('topo-interval').value),faults};
     $('topo-progress').max=state.total;$('topo-progress').value=0;lock(true);$('topo-status').textContent='Connecting to the backend scenario stream…';let reader;
     try{const headers={'Content-Type':'application/json',Accept:'application/x-ndjson'};const token=$('ops-token')?.value.trim();if(token)headers['X-PRISM-Operator-Token']=token;
       const response=await fetch('/api/topology-scenario/stream',{method:'POST',headers,body:JSON.stringify(body),signal:state.controller.signal});
@@ -87,7 +109,7 @@
     finally{state.controller.abort();if(reader)await reader.cancel().catch(()=>{});state.controller=null;lock(false);}
   });
   $('topo-stop').addEventListener('click',()=>{if(!state.running)return;state.stopped=true;state.controller?.abort();});
-  $('topo-steps').addEventListener('input',limits);$('topo-fault-asset').addEventListener('change',()=>{limits();highlightTarget();});$('topo-source-retry').addEventListener('click',loadReference);
+  $('topo-steps').addEventListener('input',limits);$('topo-fault-add').addEventListener('click',addRow);$('topo-fault-rows').addEventListener('change',()=>{limits();highlightTarget();});$('topo-fault-rows').addEventListener('click',event=>{const button=event.target.closest('[data-fault-remove]');if(button&&!state.running&&rows().length>1){button.closest('[data-fault-row]').remove();limits();highlightTarget();$('topo-fault-add').focus();}});$('topo-source-retry').addEventListener('click',loadReference);
   window.addEventListener('pagehide',()=>state.controller?.abort());
   loadReference();
 })();

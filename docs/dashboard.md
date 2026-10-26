@@ -117,10 +117,10 @@ readings now sit with the reference network; metric IDs and refresh behavior rem
 unchanged. Light and dark themes use restrained blue/teal page gradients while
 charts, controls and evidence surfaces remain flat.
 
-The PRISM logo uses the actual dependency-free transitions-ui-generation runtime
-(vendored with its license under `prism/static/vendor/prism-generation/`). It plays
-once when visible and can be replayed. Font readiness precedes measurement; resize
-cancels the reveal safely. The runtime's reduced-motion fallback is preserved. The
+The animated PRISM mark uses the actual dependency-free transitions-ui-generation runtime
+(vendored with its license under `prism/static/vendor/prism-generation/`). It loops while visible, with one runtime instance and a three-second pause after each full reveal. Font
+readiness precedes measurement; resize, hidden documents and offscreen navigation
+cancel and clean up the reveal. Reduced-motion users see the static brand. The
 animation never blocks navigation, source refreshes or application readiness.
 
 Research → Simulation now opens a Delhi **connectivity** scenario. Outage choices
@@ -138,3 +138,20 @@ The former aggregate/Q-learning tools retain their original forms, IDs, fixture
 choices and results inside the “Advanced aggregate lab · synthetic teaching model”
 disclosure. Background job activity refers to durable aggregate, forecast and
 retraining jobs; the connectivity stream has separate Run/Stop/status controls.
+
+
+### Viewport Home and multiple disruptions
+
+Home fills the available viewport after accounting for the header, main inset and
+mobile navigation/safe area. It uses a minimum height, allowing natural scrolling
+on short devices. The static wordmark and caption remain outside the animated
+mark. The actual generation runtime loops only while the mark and document are
+visible, rests for three seconds after each completed reveal, pauses on resize/navigation, and remains static for reduced motion. No
+Replay control or animation announcements remain.
+
+Connectivity scenarios support up to eight editable disruption rows. Each selects
+an actual reference asset or connection and independent start/duration; Run includes
+every nonempty row directly. All rows lock during the stream; Stop restores them.
+Reload preserves valid choices and visibly clears missing targets. Global step
+bounds apply to each row and all selected targets highlight in the schematic.
+The backend faults-array contract and electrical-model limitations are unchanged.
