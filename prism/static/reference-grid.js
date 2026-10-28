@@ -39,10 +39,27 @@
     if(state.map)return;
     if(!window.L)throw new Error('The local map library could not load. Reload this page to retry.');
     state.map=L.map('ref-network',{zoomControl:false,scrollWheelZoom:true,keyboard:true,minZoom:5,maxZoom:19,fadeAnimation:false,zoomAnimation:!matchMedia('(prefers-reduced-motion:reduce)').matches}).setView([28.64,77.16],10);
-    let tileFailures=0;state.tiles=null;
-    const tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>',crossOrigin:true});
-    tiles.on('tileerror',()=>{if(++tileFailures>=3){el('ref-map-error').textContent='Street-map tiles are unavailable. Geographic asset positions remain usable. Reload reference to retry.';el('ref-map-error').hidden=false;}});
-    tiles.on('tileload',()=>{tileFailures=0;el('ref-map-error').hidden=true;});tiles.addTo(state.map);state.tiles=tiles;
+    const osmCredit='&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>';
+    const providers=[
+      {url:'https://tile.openstreetmap.org/{z}/{x}/{y}.png',maxNativeZoom:19,attribution:osmCredit},
+      {url:'https://a.tile.opentopomap.org/{z}/{x}/{y}.png',maxNativeZoom:17,attribution:`${osmCredit}, SRTM | Map: <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)`}
+    ];
+    function useProvider(index){
+      if(state.tiles){state.tiles.off();state.map.removeLayer(state.tiles);}
+      let failures=0;
+      const provider=providers[index];
+      const tiles=L.tileLayer(provider.url,{maxZoom:19,maxNativeZoom:provider.maxNativeZoom,attribution:provider.attribution});
+      state.tiles=tiles;
+      tiles.on('tileerror',()=>{
+        if(state.tiles!==tiles||++failures<3)return;
+        if(index+1<providers.length){useProvider(index+1);return;}
+        el('ref-map-error').textContent='Street-map providers could not be reached. Check your network or HTTPS certificate settings, then reload reference. Geographic asset positions remain usable.';
+        el('ref-map-error').hidden=false;
+      });
+      tiles.on('tileload',()=>{if(state.tiles===tiles){failures=0;el('ref-map-error').hidden=true;}});
+      tiles.addTo(state.map);
+    }
+    useProvider(0);
     state.map.on('keydown',event=>{if(event.originalEvent.key==='Home'){event.originalEvent.preventDefault();fit();}});
   }
   function select(type,id,focusInspector=false) {

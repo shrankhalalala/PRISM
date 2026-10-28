@@ -227,7 +227,10 @@ make up
 ```
 
 Open **[http://127.0.0.1:5050](http://127.0.0.1:5050)**. Keep existing database
-passwords when reusing volumes. Do not run a second standalone Flask server.
+passwords when reusing volumes. For VS Code development, run `make dev` and open
+[http://127.0.0.1:5051](http://127.0.0.1:5051). This starts Docker dependencies
+and runs the local Python web server with `.env` loaded automatically.
+Docker web stays on 5050; the local server uses 5051 to avoid a port conflict.
 
 ```sh
 make status       # Service health and ports

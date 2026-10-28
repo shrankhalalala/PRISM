@@ -1,7 +1,7 @@
 # Run PRISM
 
 The supported local application is the complete Docker stack, served at
-[http://127.0.0.1:5050](http://127.0.0.1:5050). There is one web endpoint.
+[http://127.0.0.1:5050](http://127.0.0.1:5050). The optional VS Code development server uses port 5051.
 Ports 5433, 6380, 7474 and 7687 belong to its supporting services.
 
 ## First setup
@@ -40,8 +40,14 @@ make down         # Remove containers and network; keep named volumes
 
 Changes to shared backend/worker code require `make up`, so worker processes also
 receive the updated image. `make restart` is appropriate for frontend-only changes.
-Do not run a second `python -m prism` process or use old port 5053. Stop any stale
-local preview before starting the Docker web container on port 5050.
+For VS Code development, install the Python dependencies from README, then run
+`make dev` and open http://127.0.0.1:5051. This starts/initializes the Docker
+dependencies and runs `python -m prism` locally. If the supporting containers are
+already running, `.venv/bin/python -m prism` is sufficient. The local server loads
+`.env` automatically, uses host-published database/Redis ports, and reads durable
+live data from the collector. `PRISM_PORT` overrides 5051 when explicitly set.
+Do not set it to 5050 while Docker web is running. Ctrl+C stops only local web;
+`make stop` stops Docker services.
 
 Never use `docker compose down -v` for routine cleanup. It deletes database/artifact
 volumes. Never open `prism/templates/index.html` directly; Flask must serve it.
@@ -57,8 +63,8 @@ volumes. Never open `prism/templates/index.html` directly; Flask must serve it.
 | Neo4j Bolt | `bolt://127.0.0.1:7687` | `neo4j:7687` |
 
 Compose reads `.env` and supplies the web/worker service URLs automatically.
-Standalone Python does not auto-load `.env`, which is why the earlier direct Flask
-preview reported unavailable services despite healthy Docker databases.
+`python -m prism` also loads `.env`, preserving values already exported in the
+shell. Other host research scripts still require exported variables.
 
 The top-bar Operator access field accepts `PRISM_OPERATOR_TOKEN` for protected
 advisory/review mutations. It stays in browser memory. Do not paste secrets into
@@ -91,7 +97,7 @@ macOS/Docker workload measurements.
 | Services unavailable | Use Docker's port 5050, run `make status`, then check `make logs`. Confirm `.env` and existing volume passwords match. |
 | Reference/model error | Check readiness and logs. Preserve data/models; follow the relevant verification guide instead of regenerating them blindly. |
 | Changes not visible | Run `make restart`, then hard-refresh the browser. |
-| Map background missing | Street tiles require internet; sourced geographic pins and the directory remain usable. |
+| Map background missing | OSM tiles fall back to OpenTopoMap on repeated failures. Both require internet. Check HTTPS inspection/certificate trust if both fail; sourced pins remain usable. |
 | Source readings stale/unavailable | Inspect the source timestamp and collector logs. Never substitute synthetic data for a failed public feed. |
 | Worker startup fails | Check database/Redis health and the worker log with the same Compose project/files. |
 

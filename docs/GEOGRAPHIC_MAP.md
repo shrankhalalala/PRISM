@@ -1,7 +1,7 @@
 # Geographic asset map
 
 The Network evidence view uses a local Leaflet 1.9.4 library and an OpenStreetMap
-street basemap. This is a geographic presentation layer; backend reference records,
+street basemap with an OpenTopoMap fallback. This is a geographic presentation layer; backend reference records,
 schematic simulation positions, connectivity algorithms and API schemas are unchanged.
 
 `prism/static/delhi-asset-locations.json` contains 49 sourced WGS 84 site points:
@@ -36,7 +36,9 @@ The 17 assets below have no matched location and are not assigned guessed coordi
 - `ss-timarpur` — Timarpur
 
 Street tiles require internet; bundled coordinates and selection continue to work if
-tiles fail. The inspector shows the location source and precision. Original inventory
+tiles fail. After three tile errors the map switches to OpenTopoMap over HTTPS,
+with provider attribution and native zoom capped at 17 (higher zooms scale tiles).
+TLS verification is never disabled. The inspector shows the location source and precision. Original inventory
 notes remain in the backend dataset but are omitted from the frontend as requested.
 
 The background-job panel and its dependent queue controls are temporarily hidden.
@@ -46,9 +48,10 @@ without changing the application navigation or overall layout.
 ## Application services
 
 The canonical application is now the complete Docker stack at localhost:5050.
-The earlier unconfigured standalone Flask preview and Docker web port 5053 are
-retired. `make up` supplies PostgreSQL/Redis/Neo4j connections inside Docker; host
-research scripts use the published service ports in `.env.example`.
+`make up` supplies PostgreSQL/Redis/Neo4j connections inside Docker. For VS Code,
+`make dev` starts dependencies and a local web server on port 5051;
+`python -m prism` loads `.env` automatically and uses published service ports.
+Docker web can continue on 5050. Other host research scripts need exported settings.
 
 The 17 assets listed above remain directory-only by user decision until coordinate
 sources become available. No town-centre guesses or schematic fallback pins are used.
