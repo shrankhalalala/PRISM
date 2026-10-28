@@ -11,6 +11,7 @@ from prism.config import ROOT
 from prism.forecasting import AutoregressiveForecaster,LSTMForecaster,LSTMConfig,forecast_metrics
 from prism.forecasting.registry import REGISTRY,active_bundle,promote,verify_bundle,bootstrap
 from prism.forecasting.evaluation import origins,evaluate
+from prism.forecasting.direct import DirectDayAheadForecaster,load_autoregressive
 
 
 def history_frame():
@@ -47,7 +48,7 @@ def load_incumbent():
         lstm=ROOT/'models/forecasting/phase3_demand_lstm.json';ar=ROOT/'models/forecasting/phase3_demand_ar.json'
     if name=='lstm':return name,LSTMForecaster.load(lstm),report
     if name=='persistence':return name,None,report
-    payload=json.loads(ar.read_text());model=AutoregressiveForecaster(lags=24);model.target='demand_mw';model.coefficients=np.asarray(payload['coefficients'])
+    model=load_autoregressive(ar)
     return name,model,report
 
 
@@ -55,8 +56,14 @@ def retrain(checkpoint=None):
     start=perf_counter();bootstrap();frame,base_hash=history_frame()
     if frame.demand_mw.notna().sum()<1000:raise ValueError('Insufficient real training history')
     train_end=int(len(frame)*.70);val_end=int(len(frame)*.85);train=frame.iloc[:train_end].dropna(subset=['demand_mw'])
-    config=LSTMConfig();lstm=LSTMForecaster(config).fit(train,'demand_mw');ar=AutoregressiveForecaster(lags=24).fit(train,'demand_mw')
-    models={'persistence':None,'autoregressive':ar,'lstm':lstm};indices=origins(frame,train_end,val_end)
+    config=LSTMConfig(seasonal_residual=True);lstm=LSTMForecaster(config).fit(train,'demand_mw')
+    indices=origins(frame,train_end,val_end)
+    variants={'recursive':AutoregressiveForecaster(lags=24).fit(train,'demand_mw'),
+              'direct_day_ahead':DirectDayAheadForecaster(ridge=1.).fit(train,'demand_mw')}
+    variant_actual,variant_predictions=evaluate(frame,indices,variants)
+    ar_variant=min(variants,key=lambda name:forecast_metrics(variant_actual,variant_predictions[name])['rmse'])
+    ar=variants[ar_variant]
+    models={'persistence':None,'autoregressive':ar,'lstm':lstm}
     actual,pred=evaluate(frame,indices,models)
     metrics={name:{'validation':forecast_metrics(actual,pred[name])} for name in models};selected=min(models,key=lambda name:metrics[name]['validation']['rmse'])
     incumbent_name,incumbent,incumbent_report=load_incumbent()
@@ -67,12 +74,16 @@ def retrain(checkpoint=None):
     report=dict(hourly_sha256=data_hash,base_hourly_sha256=base_hash,data_source='delhi_sldc',target='demand_mw',selected_on_validation=selected,
         split={'method':'chronological_70_15_15','training_end':frame.timestamp.iloc[train_end-1],'validation_end':frame.timestamp.iloc[val_end-1],'test_end':frame.timestamp.iloc[-1]},
         validation_origins=len(indices),test_reserved_hours=len(frame)-val_end,test_used_for_promotion=False,metrics=metrics,model_config=asdict(config),
+        model_variants={'autoregressive':ar_variant,'lstm':'seasonal_residual'},
         interval={'method':'validation absolute-residual 90th percentile per horizon','nominal_coverage':.9,'half_width_mw':widths.tolist(),'guarantee':False},
         limitation='Real demand candidate; reserved test not used for promotion. Solar/wind and physical dispatch eligibility remain unavailable.')
     REGISTRY.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=REGISTRY,prefix='candidate-') as temporary:
         folder=Path(temporary);lstm.save(folder/'lstm.json',metadata={'hourly_sha256':data_hash,'training_end':report['split']['training_end']})
-        (folder/'autoregressive.json').write_text(json.dumps({'target':'demand_mw','lags':24,'coefficients':ar.coefficients.tolist(),'hourly_sha256':data_hash},indent=2)+'\n')
+        if isinstance(ar,DirectDayAheadForecaster):
+            ar.save(folder/'autoregressive.json',{'hourly_sha256':data_hash})
+        else:
+            (folder/'autoregressive.json').write_text(json.dumps({'target':'demand_mw','lags':24,'coefficients':ar.coefficients.tolist(),'hourly_sha256':data_hash},indent=2)+'\n')
         (folder/'forecast_report.json').write_text(json.dumps(report,indent=2)+'\n')
         hashes={path.name:sha256(path.read_bytes()).hexdigest() for path in folder.iterdir()};version=sha256(json.dumps(hashes,sort_keys=True).encode()).hexdigest()
         (folder/'manifest.json').write_text(json.dumps({'files':hashes},indent=2)+'\n');target=REGISTRY/version

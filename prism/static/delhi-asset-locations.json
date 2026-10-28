@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-10-26",
+  "sources": {
+    "opencity-dtl-2025": {
+      "title": "Delhi Electrical Substations \u2014 OpenCity, based on DTL station inventory",
+      "url": "https://data.opencity.in/dataset/delhi-electricity-data/resource/e4a0101a-73f8-4fb2-92ef-783efe90bd97",
+      "license": "Other (Public Domain)",
+      "updated_on": "2025-11-25"
+    },
+    "gatishakti-mop": {
+      "title": "Ministry of Power / GatiShakti \u2014 station locations",
+      "url": "https://github.com/ramSeraph/indian_power_infra/releases/tag/power-stations",
+      "upstream_url": "https://ugi.pmgatishakti.gov.in/ugi-public-api-3/gis/wms99",
+      "license": "CC0 1.0; credit DataMeet and Ministry of Power",
+      "artifact_sha256": "e41ca0e1e0f61a3731dc809c02610a9a1e96076d98cb133eca989eca6bdcd32c"
+    },
+    "vedas-isro": {
+      "title": "ISRO VEDAS Energy Map \u2014 power-plant locations",
+      "url": "https://github.com/ramSeraph/indian_power_infra/releases/tag/power-sources",
+      "upstream_url": "https://vedas.sac.gov.in/energymap/view/powergis.jsp",
+      "license": "CC0 1.0; credit DataMeet and ISRO VEDAS",
+      "artifact_sha256": "d8e6f930b9898378c341ffcd0160e6f68e9488d12b2b3a9d38946a8e627d4627"
+    }
+  },
+  "locations": {
+    "plant-gtps": {
+      "latitude": 28.6194,
+      "longitude": 77.2504,
+      "source_id": "vedas-isro",
+      "source_record": "natural_gas_power_plants_public.18: Delhi  CC GT",
+      "precision": "published station/site point"
+    },
+    "plant-pps1": {
+      "latitude": 28.6146,
+      "longitude": 77.2528,
+      "source_id": "vedas-isro",
+      "source_record": "natural_gas_power_plants_public.21: Pragati CCPP",
+      "precision": "published station/site point"
+    },
+    "plant-pps3-bawana": {
+      "latitude": 28.7962,
+      "longitude": 77.0706,
+      "source_id": "vedas-isro",
+      "source_record": "natural_gas_power_plants_public.22: Pragati CCGT - III",
+      "precision": "published station/site point"
+    },
+    "ss-bahadurgarh-pgcil": {
+      "latitude": 28.66768056,
+      "longitude": 76.83610278,
+      "source_id": "gatishakti-mop",
+      "source_record": "substation_mop.138: BAHADURGARH",
+      "precision": "published station/site point"
+    },
+    "ss-bamnauli": {
+      "latitude": 28.5447,
+      "longitude": 77.03269,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Bamnauli",
+      "precision": "published site point"
+    },
+    "ss-bawana-dtl": {
+      "latitude": 28.79568,
+      "longitude": 77.0723,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Bawana",
+      "precision": "published site point"
+    },
+    "ss-bhiwani-pgcil": {
+      "latitude": 28.72061111,
+      "longitude": 76.15701944,
+      "source_id": "gatishakti-mop",
+      "source_record": "substation_mop.150: BHIWANI (765 KV)",
+      "precision": "published station/site point"
+    },
+    "ss-btps": {
+      "latitude": 28.50765,
+      "longitude": 77.30015,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "BTPS",
+      "precision": "published site point"
+    },
+    "ss-dial": {
+      "latitude": 28.55616,
+      "longitude": 77.09995,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "DIAL",
+      "precision": "published site point"
+    },
+    "ss-dsidc-bawana": {
+      "latitude": 28.80361,
+      "longitude": 77.05284,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "DSIDC Bawana",
+      "precision": "published site point"
+    },
+    "ss-electric-lane": {
+      "latitude": 28.62174,
+      "longitude": 77.21969,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Electric Lane",
+      "precision": "published site point"
+    },
+    "ss-gazipur": {
+      "latitude": 28.62961,
+      "longitude": 77.31898,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Gazipur",
+      "precision": "published site point"
+    },
+    "ss-geeta-colony": {
+      "latitude": 28.65226,
+      "longitude": 77.26774,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Geeta Colony",
+      "precision": "published site point"
+    },
+    "ss-gopalpur": {
+      "latitude": 28.72189,
+      "longitude": 77.21667,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Gopalpur",
+      "precision": "published site point"
+    },
+    "ss-harsh-vihar": {
+      "latitude": 28.71185,
+      "longitude": 77.29044,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Harsh Vihar",
+      "precision": "published site point"
+    },
+    "ss-indraprastha": {
+      "latitude": 28.62711,
+      "longitude": 77.24726,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Indraprastha",
+      "precision": "published site point"
+    },
+    "ss-jhatikara-pgcil": {
+      "latitude": 28.53331389,
+      "longitude": 76.93749722,
+      "source_id": "gatishakti-mop",
+      "source_record": "substation_mop.153: JHATIKARA",
+      "precision": "published station/site point"
+    },
+    "ss-kanjhawala": {
+      "latitude": 28.69137,
+      "longitude": 76.99758,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Khanjawala",
+      "precision": "published site point"
+    },
+    "ss-kashmere-gate": {
+      "latitude": 28.66657,
+      "longitude": 77.22906,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Kashmere Gate",
+      "precision": "published site point"
+    },
+    "ss-lodhi-road": {
+      "latitude": 28.59262,
+      "longitude": 77.23759,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Lodhi Road",
+      "precision": "published site point"
+    },
+    "ss-maharani-bagh": {
+      "latitude": 28.58704,
+      "longitude": 77.26738,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Maharani Bagh",
+      "precision": "published site point"
+    },
+    "ss-mandola-pgcil": {
+      "latitude": 28.824825,
+      "longitude": 77.26378889,
+      "source_id": "gatishakti-mop",
+      "source_record": "substation_mop.133: MANDOLA",
+      "precision": "published station/site point"
+    },
+    "ss-masjid-moth": {
+      "latitude": 28.54181,
+      "longitude": 77.23242,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Masjid Moth",
+      "precision": "published site point"
+    },
+    "ss-mehrauli": {
+      "latitude": 28.51996,
+      "longitude": 77.16834,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Mehrauli",
+      "precision": "published site point"
+    },
+    "ss-najafgarh": {
+      "latitude": 28.61277,
+      "longitude": 76.99618,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Najafgarh",
+      "precision": "published site point"
+    },
+    "ss-naraina": {
+      "latitude": 28.61292,
+      "longitude": 77.13663,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Naraina",
+      "precision": "published site point"
+    },
+    "ss-narela-dtl": {
+      "latitude": 28.86308,
+      "longitude": 77.09617,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Narela",
+      "precision": "published site point"
+    },
+    "ss-okhla": {
+      "latitude": 28.52724,
+      "longitude": 77.26601,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Okhla",
+      "precision": "published site point"
+    },
+    "ss-pappankalan-1": {
+      "latitude": 28.6083,
+      "longitude": 77.05726,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Pappankalan-I",
+      "precision": "published site point"
+    },
+    "ss-pappankalan-2": {
+      "latitude": 28.60205,
+      "longitude": 77.02661,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Papankalan-II",
+      "precision": "published site point"
+    },
+    "ss-pappankalan-3": {
+      "latitude": 28.57641,
+      "longitude": 77.04328,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Papankalan-III",
+      "precision": "published site point"
+    },
+    "ss-park-street": {
+      "latitude": 28.62529,
+      "longitude": 77.19523,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Park Street",
+      "precision": "published site point"
+    },
+    "ss-patparganj": {
+      "latitude": 28.62779,
+      "longitude": 77.2942,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Patparganj",
+      "precision": "published site point"
+    },
+    "ss-peeragarhi": {
+      "latitude": 28.67118,
+      "longitude": 77.09605,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Peeragarhi",
+      "precision": "published site point"
+    },
+    "ss-pragati": {
+      "latitude": 28.61508,
+      "longitude": 77.25007,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Pragati",
+      "precision": "published site point"
+    },
+    "ss-preet-vihar": {
+      "latitude": 28.63854,
+      "longitude": 77.29483,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Preet Vihar",
+      "precision": "published site point"
+    },
+    "ss-rajghat": {
+      "latitude": 28.64062,
+      "longitude": 77.2556,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Rajghat Power House",
+      "precision": "published site point"
+    },
+    "ss-rk-puram": {
+      "latitude": 28.55539,
+      "longitude": 77.17773,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "R. K. Puram",
+      "precision": "published site point"
+    },
+    "ss-rohini-1": {
+      "latitude": 28.73254,
+      "longitude": 77.10797,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Rohini-I",
+      "precision": "published site point"
+    },
+    "ss-rohini-2": {
+      "latitude": 28.72751,
+      "longitude": 77.1428,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Rohini-II",
+      "precision": "published site point"
+    },
+    "ss-samaypur-pgcil": {
+      "latitude": 28.31069722,
+      "longitude": 77.27973889,
+      "source_id": "gatishakti-mop",
+      "source_record": "substation_mop.131: BALLABHGARH",
+      "precision": "published station/site point"
+    },
+    "ss-sarita-vihar": {
+      "latitude": 28.52751,
+      "longitude": 77.303,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Sarita Vihar",
+      "precision": "published site point"
+    },
+    "ss-shalimar-bagh": {
+      "latitude": 28.72746,
+      "longitude": 77.14096,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Shalimar Bagh",
+      "precision": "published site point"
+    },
+    "ss-subzi-mandi": {
+      "latitude": 28.66661,
+      "longitude": 77.19888,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Subzi Mandi",
+      "precision": "published site point"
+    },
+    "ss-tikri-kalan": {
+      "latitude": 28.67671,
+      "longitude": 76.98639,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Tikri Kalan(Mundka)",
+      "precision": "published site point"
+    },
+    "ss-trauma-centre": {
+      "latitude": 28.56818,
+      "longitude": 77.20068,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Trauma Centre",
+      "precision": "published site point"
+    },
+    "ss-tughlakabad": {
+      "latitude": 28.50568,
+      "longitude": 77.26196,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Tughlakabad",
+      "precision": "published site point"
+    },
+    "ss-vasant-kunj": {
+      "latitude": 28.53959,
+      "longitude": 77.14348,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Vasant Kunj",
+      "precision": "published site point"
+    },
+    "ss-wazirpur": {
+      "latitude": 28.69892,
+      "longitude": 77.16073,
+      "source_id": "opencity-dtl-2025",
+      "source_record": "Wazirpur",
+      "precision": "published site point"
+    }
+  }
+}

@@ -1,3 +1,11 @@
+# Current deployment entry point
+
+The current integrated stack uses Docker Compose and one web address,
+http://127.0.0.1:5050 (`make up`). See [deployment](../INSTRUCTIONS.md#deployment-boundaries) and
+[frontend structure](FRONTEND_DESIGN.md). The phase-by-phase architecture below
+is retained as a dated implementation record; earlier optional-service statements
+refer to the respective phase, not the supported full-stack startup.
+
 # Phase 1 architecture
 
 ```mermaid
@@ -122,4 +130,4 @@ failed/expired checks, so retained measurements cannot hide source failure.
 The immutable evidence snapshot and synthetic simulation namespaces remain separate.
 Graph algorithms run in memory on verified Neo4j evidence; no Neo4j GDS deployment,
 physical causal propagation or directional real-time flows are implied. See
-PHASE3_COMPLETION.md for the current acceptance register.
+PHASES.md for the current acceptance register.

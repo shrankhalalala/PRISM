@@ -10,11 +10,13 @@ from uuid import uuid4
 import numpy as np
 
 
+BASE_URL=os.environ.get('PRISM_BASE_URL','http://127.0.0.1:5050').rstrip('/')
+
 def call(path,body=None,authorized=False):
     headers={'Accept':'application/json'}
     if body is not None:headers['Content-Type']='application/json'
     if authorized:headers['X-PRISM-Operator-Token']=os.environ['PRISM_OPERATOR_TOKEN']
-    request=Request('http://127.0.0.1:5053'+path,data=json.dumps(body).encode() if body is not None else None,headers=headers)
+    request=Request(BASE_URL+path,data=json.dumps(body).encode() if body is not None else None,headers=headers)
     start=perf_counter()
     try:
         with urlopen(request,timeout=15) as response:return response.status,json.load(response),(perf_counter()-start)*1000
@@ -54,7 +56,7 @@ def main():
             if path=='/api/diagnose' and code==200:assert payload['source_store']=='neo4j_verified_snapshot'
         latency[path]=dict(samples=21,first_http_ms_after_readiness=samples[0],warm_p50_ms=float(np.percentile(samples[1:],50)),warm_p95_ms=float(np.percentile(samples[1:],95)),max_ms=max(samples),failures=sum(code!=200 for code in codes))
         assert not latency[path]['failures']
-    report=dict(started_at=started,finished_at=datetime.now(timezone.utc).isoformat(),base_url='http://127.0.0.1:5053',
+    report=dict(started_at=started,finished_at=datetime.now(timezone.utc).isoformat(),base_url=BASE_URL,
         probes=probes,operator_token_required=True,container_worker_verified=completed['result']['execution'],job_id=job['id'],
         recent_forecast_job_id=forecast['id'],recent_forecast_origin=refreshed['result']['origin'],retraining_job_id=review['id'],retraining_promoted=retrained['result']['promoted'],
         model_initialization=results.get('model_initialization'),latency=latency,limitation='Short local composed-stack verification, not a long-term uptime/load test. Model warmup occurs before readiness; measured requests include actual uncached explanations and Redis forecast cache. Startup initialization remains separately reported. No physical switching.')

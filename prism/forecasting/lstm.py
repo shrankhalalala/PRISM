@@ -23,9 +23,12 @@ class LSTMConfig:
     learning_rate: float = 0.01
     max_windows_per_epoch: int = 384
     seed: int = 42
+    seasonal_residual: bool = False
 
     def __post_init__(self) -> None:
         integer_fields = (self.window, self.hidden_size, self.epochs, self.max_windows_per_epoch)
+        if not isinstance(self.seasonal_residual, bool) or (self.seasonal_residual and self.window < 24):
+            raise ValueError('Seasonal residual requires a boolean flag and at least 24 hours')
         if any(isinstance(value, bool) or not isinstance(value, int) or value < 1 for value in integer_fields):
             raise ValueError("LSTM sizes, epochs, and sample limit must be positive integers")
         if not isinstance(self.learning_rate, (int, float)) or not math.isfinite(self.learning_rate) or self.learning_rate <= 0:
@@ -81,6 +84,8 @@ class LSTMForecaster:
             for endpoint in selected:
                 sequence = scaled[endpoint - self.config.window : endpoint]
                 expected = float(scaled[endpoint])
+                if self.config.seasonal_residual:
+                    expected = float((values[endpoint] - values[endpoint-24]) / self.scale)
                 prediction, cache = self._forward(sequence)
                 error = float(np.clip(prediction - expected, -5.0, 5.0))
                 total_loss += error * error
@@ -153,7 +158,8 @@ class LSTMForecaster:
         for _ in range(horizon):
             sequence = (np.asarray(values[-self.config.window :]) - self.mean) / self.scale
             scaled_prediction, _ = self._forward(sequence)
-            prediction = max(0.0, float(scaled_prediction * self.scale + self.mean))
+            anchor = values[-24] if self.config.seasonal_residual else self.mean
+            prediction = max(0.0, float(scaled_prediction * self.scale + anchor))
             values.append(prediction)
             predictions.append(prediction)
         return predictions

@@ -40,3 +40,19 @@ class HistoryTests(unittest.TestCase):
         c=create_app({'TESTING':True}).test_client()
         self.assertEqual(c.get('/api/forecast/real?target=solar_mw').status_code,422)
         self.assertEqual(c.get('/api/forecast/real?target=bogus').status_code,400)
+
+    def test_recaptures_count_days_once_and_reject_conflicts(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            rows=[dict(FORDATE='01/01/2025',TIMESLOT=f'00:{i*5:02d}',ENTITY='Delhi',TYPE='MW',VALUE=100) for i in range(12)]
+            records=[]
+            for index in range(2):
+                if index: rows[0]['VALUE']=200
+                raw=json.dumps(rows).encode();name=f'{index}.json';(root/name).write_bytes(raw)
+                records.append(dict(date='2025-01-01',status='captured',path=name,sha256=sha256(raw).hexdigest()))
+            (root/'manifest.json').write_text(json.dumps(dict(requested_start='2025-01-01',requested_end='2025-01-01',status='recovered_with_gaps',records=records)))
+            frame,report=prepare_history(root)
+            self.assertEqual(report['day_statuses'],{'captured':1})
+            self.assertEqual(report['capture_statuses'],{'captured':2})
+            self.assertEqual(report['conflicting_timestamps'],1)
+            self.assertEqual(frame.sample_count.iloc[0],11)

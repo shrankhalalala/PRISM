@@ -26,12 +26,12 @@ x-app: &app
     redis:
       condition: service_healthy
     neo4j:
-      condition: service_started
+      condition: service_healthy
 services:
   web:
     <<: *app
     ports:
-      - "127.0.0.1:5053:5050"
+      - "127.0.0.1:5050:5050"
     mem_limit: 1g
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5050/api/readiness',timeout=5)"]

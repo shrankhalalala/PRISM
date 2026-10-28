@@ -11,9 +11,10 @@ import pandas as pd
 
 def prepare_history(root):
     root=Path(root);manifest=json.loads((root/'manifest.json').read_text())
-    points={};conflicts=set();invalid=0;captured=0;days=Counter()
+    points={};conflicts=set();invalid=0;captured=0;captures=Counter();day_records=defaultdict(set)
     for record in manifest['records']:
-        days[record['status']]+=1
+        captures[record['status']]+=1
+        day_records[record['date']].add(record['status'])
         if record['status'] not in {'captured','empty'}:continue
         raw=(root/record['path']).read_bytes()
         if sha256(raw).hexdigest()!=record['sha256']:raise ValueError('Raw source checksum mismatch')
@@ -42,11 +43,14 @@ def prepare_history(root):
         records.append(dict(timestamp=stamp.isoformat(),demand_mw=sum(values)/len(values) if eligible else None,
             sample_count=len(values),quality='observed_hourly_mean' if eligible else 'insufficient_observations'))
     frame=pd.DataFrame(records)
+    # Recovery can retain multiple captures of one day; count calendar days once.
+    days=Counter('captured' if 'captured' in statuses else 'empty' if 'empty' in statuses else 'failed'
+                 for statuses in day_records.values())
     report=dict(source='delhi_sldc',target='demand_mw',geography='Delhi system aggregate',
         source_url='https://delhisldc.org/api/load-curve-discom',timezone_assumption='Asia/Kolkata for FORDATE/TIMESLOT',
         manifest_sha256=sha256((root/'manifest.json').read_bytes()).hexdigest(),
         requested_start=manifest['requested_start'],requested_end=manifest['requested_end'],
-        requested_days=(last-first).days+1,acquisition_status=manifest['status'],day_statuses=dict(days),
+        requested_days=(last-first).days+1,acquisition_status=manifest['status'],day_statuses=dict(days),capture_statuses=dict(captures),
         raw_rows=captured,valid_unique_5min_observations=len(points),invalid_rows=invalid,conflicting_timestamps=len(conflicts),
         expected_hours=len(frame),eligible_hours=int(frame.demand_mw.notna().sum()),missing_hours=int(frame.demand_mw.isna().sum()),
         minimum_samples_per_hour=10,expected_samples_per_hour=12,imputation=False,

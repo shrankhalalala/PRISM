@@ -1,4 +1,44 @@
-# Phase 1 verification record
+# Verification record
+
+## Grid/history/model refinement — 2026-10-27
+
+126 automated tests pass, including source/voltage separation, gap rejection,
+recapture conflicts, model serialization and dispatch fallback/masking. Python
+compilation and whitespace checks pass. Docker readiness and operations health
+return HTTP 200; all three real-demand model options return 24 predictions from
+the promoted bundle, preserving historical-preview labels. Scheduled retraining
+candidate preparation and cancellation were executed in Docker; cancellation
+left the active bundle unchanged. The promotion gate compared validation RMSE
+314.539981 MW against incumbent 355.156441 MW and retained rollback history.
+Measured research results and remaining gates are in PHASES.md.
+
+## Current deployment and cleanup — 2026-10-26
+
+The canonical application is Docker at `http://127.0.0.1:5050`, using project
+`prism-phase3-reference` and both Compose files. Ports 5051 and 5053 were confirmed
+closed after consolidation. Older deployment URLs below are historical records.
+
+| Check | Result |
+|---|---|
+| Full `make up` workflow | Passed; initialization preserved existing datasets |
+| Docker web and database readiness | Web, PostgreSQL, Redis and Neo4j healthy; worker, beat and collector running |
+| Readiness and operations APIs | HTTP 200; readiness ready; PostgreSQL, Redis and worker reported ok |
+| Unit and API tests | 121 passed with `.venv/bin/python -m unittest discover -s tests -v` |
+| JavaScript syntax | Passed for dashboard, reference grid, operations, topology simulation and landing scripts |
+| Browser checks against Docker | 15 assertions passed; no JavaScript exceptions |
+| Geographic map | 49 sourced points; selection, zoom, pan, filtering and reset checked; unresolved assets remain directory-only |
+| Responsive layout | No page overflow at 1440, 768 and 390px |
+| Documentation links and whitespace | No broken local Markdown links; `git diff --check` passed |
+| Deployment verifier default | Read-only health call confirmed default port 5050; full job-submitting verifier was not run |
+
+Generated presentation, screenshot and design scratch directories were archived
+outside the repository as `../PRISM-local-workfiles-2026-10-26.tar.gz`. All 145
+archived files (19.4 MiB uncompressed) were verified before the originals were
+removed. Unused Plex fonts were removed. The Python environment, raw source
+evidence, models, runtime artifacts, final presentation and Docker volumes were
+retained. Service readiness is not evidence of electrical-grid health.
+
+## Phase 1 verification record (historical)
 
 Verified 2026-09-12 on macOS with Python 3.12.
 
@@ -214,7 +254,7 @@ operational control remain outside Phase 2.
 
 ## Phase 3 final integration verification — 2026-10-23
 
-The current record is docs/PHASE3_COMPLETION.md and reports/phase3_*.json.
+The current record is docs/PHASES.md and reports/phase3_*.json.
 The dedicated branch preserves the Phase2 baseline; each delivered integration
 step is committed/pushed separately. All108 unit/API checks pass, Python compiles,
 and three frontend scripts pass syntax checks. Intentional missing-fixture tests

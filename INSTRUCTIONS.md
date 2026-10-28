@@ -1,193 +1,147 @@
-# Download and Run PRISM
+# Run PRISM
 
-This guide installs the completed Phase 2 project on a local computer. PRISM runs
-as a Flask development application and includes the synthetic dataset and reviewed
-model artifacts needed for the dashboard. Docker and Neo4j are optional.
+The supported local application is the complete Docker stack, served at
+[http://127.0.0.1:5050](http://127.0.0.1:5050). There is one web endpoint.
+Ports 5433, 6380, 7474 and 7687 belong to its supporting services.
 
-## 1. Prerequisites
+## First setup
 
-Install:
+1. Install and start Docker Desktop, or Docker Engine with Compose.
+2. Open a terminal in the repository directory containing `compose.yaml`.
+3. Copy `.env.example` to `.env` and replace the three secret placeholders:
+   `NEO4J_PASSWORD`, `POSTGRES_PASSWORD`, `PRISM_OPERATOR_TOKEN`.
+4. Run `make up`, then open port 5050.
 
-- [Python 3.11 or newer](https://www.python.org/downloads/)
-- [Git](https://git-scm.com/downloads) if you want to clone the repository
-- A current browser such as Chrome, Edge, Firefox, or Safari
+Use existing database passwords when data volumes already exist. Changing a
+password in `.env` does not migrate an existing database account.
 
-Confirm Python and Git from a terminal:
+On Windows or without `make`, run the equivalent commands in order:
 
-```bash
-python3 --version
-git --version
+```sh
+docker compose -p prism-phase3-reference -f compose.yaml -f compose.phase3.yaml build web
+docker compose -p prism-phase3-reference -f compose.yaml -f compose.phase3.yaml up -d postgres redis neo4j
+docker compose -p prism-phase3-reference -f compose.yaml -f compose.phase3.yaml run --rm initialize
+docker compose -p prism-phase3-reference -f compose.yaml -f compose.phase3.yaml up -d --no-build web worker beat collector
 ```
 
-On Windows, the Python command may be `py` instead of `python3`.
+Always use the same project name and both Compose files. Starting another project
+creates a second stack/volume set rather than repairing this one.
 
-## 2. Download the project
+## Daily use
 
-### Option A: clone with Git
-
-```bash
-git clone https://github.com/shrankhalalala/PRISM.git
-cd PRISM
+```sh
+make status       # Service state and published ports
+make logs         # Web, worker and collector logs; Ctrl+C exits log viewing
+make restart      # Rebuild/recreate only web after template/CSS/JS changes
+make stop         # Stop services; data remains
+make up           # Start/rebuild and initialize idempotently
+make down         # Remove containers and network; keep named volumes
 ```
 
-To update an existing clone later:
+Changes to shared backend/worker code require `make up`, so worker processes also
+receive the updated image. `make restart` is appropriate for frontend-only changes.
+Do not run a second `python -m prism` process or use old port 5053. Stop any stale
+local preview before starting the Docker web container on port 5050.
 
-```bash
-git pull origin main
+Never use `docker compose down -v` for routine cleanup. It deletes database/artifact
+volumes. Never open `prism/templates/index.html` directly; Flask must serve it.
+
+## Service connections
+
+| Service | Browser / host | Inside Docker |
+|---|---|---|
+| PRISM | `http://127.0.0.1:5050` | `web:5050` |
+| PostgreSQL | `127.0.0.1:5433` | `postgres:5432` |
+| Redis | `127.0.0.1:6380` | `redis:6379` |
+| Neo4j Browser | `http://127.0.0.1:7474` | `neo4j:7474` |
+| Neo4j Bolt | `bolt://127.0.0.1:7687` | `neo4j:7687` |
+
+Compose reads `.env` and supplies the web/worker service URLs automatically.
+Standalone Python does not auto-load `.env`, which is why the earlier direct Flask
+preview reported unavailable services despite healthy Docker databases.
+
+The top-bar Operator access field accepts `PRISM_OPERATOR_TOKEN` for protected
+advisory/review mutations. It stays in browser memory. Do not paste secrets into
+source files, reports, screenshots or recordings.
+
+## Verify
+
+Open `/api/health` for liveness, `/api/readiness` for configured dependencies, and
+`/api/operations/health` for PostgreSQL/Redis/worker state on port 5050. These checks
+describe application services, not electrical-grid health.
+
+Run automated tests from a host research environment configured as in README:
+
+```sh
+make test
 ```
 
-### Option B: download a ZIP
+The optional `scripts.verify_deployment` integration script makes writes and queues
+experiments and writes its report; it is not a read-only health check. It defaults
+to port 5050; `PRISM_BASE_URL` overrides it for an intentionally different deployment.
+Host scripts need exported service URLs and the operator token; Compose loads `.env`
+only for its own services. `scripts.measure_deployment_resources` records actual
+macOS/Docker workload measurements.
 
-1. Open the [PRISM GitHub repository](https://github.com/shrankhalalala/PRISM).
-2. Select **Code → Download ZIP**.
-3. Extract the ZIP archive.
-4. Open a terminal in the extracted `PRISM` directory.
+## Troubleshooting
 
-All commands below must be run from the repository root—the directory containing
-`pyproject.toml`, `README.md`, and the `prism` folder.
-
-## 3. Create an isolated Python environment
-
-### macOS or Linux
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements-tested.txt
-python -m pip install -e .
-```
-
-### Windows PowerShell
-
-```powershell
-py -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -r requirements-tested.txt
-python -m pip install -e .
-```
-
-If PowerShell prevents activation, use Command Prompt:
-
-```bat
-.venv\Scripts\activate.bat
-```
-
-The prompt normally shows `(.venv)` after activation. Reactivate this environment
-whenever you open a new terminal for the project.
-
-## 4. Start the application
-
-```bash
-python -m prism
-```
-
-Open [http://127.0.0.1:5050](http://127.0.0.1:5050) in a browser. Keep the terminal
-running while using the dashboard. Stop the server with **Ctrl+C**.
-
-For the Phase 3 live-data increment, install the updated requirements and restart
-Flask, then select **Delhi live grid** in the sidebar. Internet access to
-`https://delhisldc.org/api/dynamic-data` is required for this panel. It refreshes
-every minute while the page is visible. Source timestamps appear in IST. Old
-readings and connection failures are labeled; the remaining synthetic labs work
-offline. No API key or additional background service is required.
-
-Always open PRISM through the Flask address above. Opening
-`prism/templates/index.html` directly with a `file://` address bypasses Flask, so
-styles, scripts, and API data will not load correctly.
-
-## 5. Use another port
-
-If port 5050 is already in use, choose another port before starting PRISM.
-
-macOS or Linux:
-
-```bash
-export PRISM_PORT=5051
-python -m prism
-```
-
-Windows PowerShell:
-
-```powershell
-$env:PRISM_PORT="5051"
-python -m prism
-```
-
-Then open [http://127.0.0.1:5051](http://127.0.0.1:5051). To identify a process
-already using port 5050, use `lsof -i :5050` on macOS/Linux or
-`netstat -ano | findstr :5050` on Windows.
-
-## 6. Verify the installation
-
-With the virtual environment active, run:
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-The completed Phase 2 repository contains 42 automated tests. You can also start
-the server and check these URLs:
-
-- [Health](http://127.0.0.1:5050/api/health)
-- [Module status](http://127.0.0.1:5050/api/status)
-- [OpenAPI contract](http://127.0.0.1:5050/api/openapi.json)
-
-## 7. Regenerate data and experiments
-
-The repository already includes the fixtures, reports, and reviewed models required
-to run the application. Regeneration is optional:
-
-```bash
-python -m scripts.generate_sample
-python -m scripts.prepare_data
-python -m scripts.evaluate_forecasting
-python -m scripts.evaluate_q_learning --episodes 500
-```
-
-The last two commands retrain models and can take longer than normal startup. They
-overwrite the local Phase 2 reports and model artifacts with deterministic results.
-
-## 8. Optional Neo4j with Docker
-
-The dashboard does not require Neo4j. To test the graph persistence adapter, first
-install [Docker Desktop](https://www.docker.com/products/docker-desktop/) and start
-Docker. Then run the following from the repository root.
-
-macOS or Linux:
-
-```bash
-python -m pip install -e '.[neo4j]'
-export NEO4J_PASSWORD='choose-a-local-password'
-docker compose up -d neo4j
-python -m scripts.seed_neo4j
-```
-
-Windows PowerShell:
-
-```powershell
-python -m pip install -e ".[neo4j]"
-$env:NEO4J_PASSWORD="choose-a-local-password"
-docker compose up -d neo4j
-python -m scripts.seed_neo4j
-```
-
-Neo4j Browser is available at [http://127.0.0.1:7474](http://127.0.0.1:7474).
-Stop it with `docker compose down`. Add `-v` only when you intentionally want to
-delete the local Neo4j volume and its data.
-
-## 9. Common problems
-
-| Problem | Resolution |
+| Symptom | Action |
 |---|---|
-| `python` or `python3` is not found | Install Python 3.11+ and reopen the terminal; on Windows try `py` |
-| `No module named prism` | Activate `.venv`, return to the repository root, and run `python -m pip install -e .` |
-| Port 5050 is already in use | Set `PRISM_PORT=5051` using the command for your operating system |
-| The page has no styling or data | Use `http://127.0.0.1:5050`; do not open the HTML template directly |
-| A model or fixture is missing | Run the four regeneration commands in section 7 |
-| Neo4j authentication fails | Export `NEO4J_PASSWORD`, restart `docker compose`, and seed again |
+| Port 5050 occupied | Inspect `lsof -nP -iTCP:5050 -sTCP:LISTEN` (macOS/Linux) or `netstat -ano` (Windows). Stop the identified stale PRISM preview; keep one Docker web endpoint. |
+| Services unavailable | Use Docker's port 5050, run `make status`, then check `make logs`. Confirm `.env` and existing volume passwords match. |
+| Reference/model error | Check readiness and logs. Preserve data/models; follow the relevant verification guide instead of regenerating them blindly. |
+| Changes not visible | Run `make restart`, then hard-refresh the browser. |
+| Map background missing | Street tiles require internet; sourced geographic pins and the directory remain usable. |
+| Source readings stale/unavailable | Inspect the source timestamp and collector logs. Never substitute synthetic data for a failed public feed. |
+| Worker startup fails | Check database/Redis health and the worker log with the same Compose project/files. |
 
-The bundled data, forecasts, policies, and scenarios are synthetic research
-artifacts. The application provides non-executable recommendations and is not an
-operational grid-control system.
+Published readings, historical forecast previews, dated connectivity evidence and
+synthetic research labs have different assurance boundaries. See the
+[dashboard guide](docs/dashboard.md) and [phase and acceptance register](docs/PHASES.md).
+
+
+## Deployment boundaries
+
+The local stack uses Gunicorn, Celery worker/beat, a dedicated collector, Redis 7.4,
+PostgreSQL 17 and Neo4j 5.26 Community. Dependencies are constrained by
+`requirements-phase3-tested.txt`. The seven services have memory limits; application
+containers run unprivileged with a read-only root, writable artifact volume and
+`/tmp`. Redis AOF and PostgreSQL commits support recovery. Preserve the distinct
+database, reference and artifact volumes; back them up separately.
+
+Loopback-only ports and the operator token are local protections, not public-release
+security. Docker disables anonymous local writes (`PRISM_ALLOW_LOCAL_OPERATOR=0`).
+A remote rollout still needs organizational authentication, HTTPS, monitoring and
+backup/restore drills. The `prism-phase3-v3` queue isolates production jobs from old
+preview workers. Run only one scheduler and one collector for the same deployment.
+
+Readiness includes reference data, dependencies and model/TreeSHAP warmup. A delayed
+dependency triggers initialization retries on readiness probes at most every five
+seconds per process; concurrent probes share an attempt. Failure remains HTTP 503
+without exposing exception details. Operations health checks worker heartbeats
+separately. Health checks do not establish 99.5% long-term availability.
+
+## Forecast lifecycle
+
+Hourly refresh retains source age on failure. Weekly review runs Monday 02:00 UTC;
+a declared mean-shift proxy can request at most one drift review per day. Candidates
+use chronological partitions and at least ten validation origins. Promotion needs
+at least 1% RMSE improvement over the incumbent on the same validation origins;
+test results do not select promotion. Model files are fingerprinted, pointer changes
+are atomic/locked, and events append under `artifacts/model-registry`.
+
+Failed gates retain the incumbent. Cancellation is honored before atomic promotion;
+after 90% progress, late cancellation returns the running/terminal state. Read
+`GET /api/models/status`; an intentional operator-authenticated
+`POST /api/models/rollback` with `{}` restores the previous registered bundle.
+The original candidate was rejected; the 2026-10-27 improved bundle was promoted.
+These are demand-model mechanisms, not real dispatch or renewable retraining.
+
+## Dependencies and source access
+
+No paid cloud/model/data service is required locally. Redis 7.4 uses RSALv2/SSPLv1,
+not an OSI open-source licence; see the [Redis licence mapping](https://redis.io/legal/licenses/).
+Other components retain their notices. Linux uses xgboost-cpu; macOS may need
+libomp. Frozen hourly data supports the demo without original raw downloads;
+source re-audits require matching raw captures. Reacquisition access and reuse
+conditions remain source-specific.

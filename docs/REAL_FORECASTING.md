@@ -40,3 +40,26 @@ The historical acquisition is not a continuous current load-curve refresh. The
 hourly background cycle added later must refresh history before claiming current
 forecasts. Real solar/wind requests return 422 because no audited history exists.
 The synthetic three-target Phase 2 endpoint remains separately labeled.
+
+## Refinement and recovery — 2026-10-27
+
+`python -m scripts.refine_real_forecasting` compares two direct ridge settings and
+three seasonal-residual LSTMs against the preserved baseline. Direct regression
+predicts all 24 departures from yesterday at once using 24 observed hours and
+known calendar covariates. The LSTM predicts the departure from the same hour
+yesterday; its original behavior remains the default for old artifacts.
+Selection is written before test evaluation. The test cohort was previously
+reported, so these are retrospective results. The validation-selected direct
+model reaches 389.21 MW test RMSE; the selected LSTM reaches 498.46 MW.
+
+`python -m scripts.promote_forecast_refinement` rechecks data identity and candidate
+validation scores, refuses incumbent overlap with validation, and uses the existing
+1% promotion gate with rollback. API model names and 24-hour responses remain
+unchanged. Scheduled retraining now compares recursive/direct autoregression and
+the residual LSTM on validation, retaining the incumbent when improvement fails.
+
+`python -m scripts.recover_demand_history --output <new-directory>` recaptures days
+with insufficient hourly coverage, preserves original bytes and rejects conflicting
+timestamps across captures. The 2026-10-27 run recovered no additional hours; its
+report is `reports/phase3_history_recovery.json`. It does not overwrite the frozen
+training CSV or substitute synthetic renewable observations.

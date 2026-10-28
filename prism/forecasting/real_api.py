@@ -11,6 +11,7 @@ from prism.config import ROOT
 from prism.forecasting import AutoregressiveForecaster,LSTMForecaster
 from prism.forecasting.models import require_recent_window
 from prism.forecasting.registry import active_bundle
+from prism.forecasting.direct import load_autoregressive
 
 api=Blueprint('real_forecasting',__name__)
 
@@ -58,7 +59,7 @@ def real_forecast():
             elif model=='autoregressive':
                 payload=json.loads(artifact.read_text())
                 if payload['hourly_sha256']!=training_hash:raise ValueError('Model/history mismatch')
-                fitted=AutoregressiveForecaster(lags=24);fitted.target=target;fitted.coefficients=np.asarray(payload['coefficients']);predictions=fitted.predict(history,24)
+                fitted=load_autoregressive(artifact);predictions=fitted.predict(history,24)
             else:predictions=[float(history.demand_mw.iloc[-1])]*24
             if client:
                 try:client.setex(key,86400,json.dumps(predictions))

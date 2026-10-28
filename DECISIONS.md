@@ -447,3 +447,22 @@ warms models and the diagnostic snapshot before readiness, separates production
 queues from preview workers, uses persistent volumes and bounds component memory.
 Deployment targets require measured scope; none implies a public production release
 or full research acceptance.
+
+
+## ADR-021: One Docker-backed local application endpoint
+
+**Date:** 2026-10-26
+**Status:** Accepted
+
+Use localhost:5050 as the single PRISM web endpoint, mapped to the Gunicorn web
+container's port 5050. Retire the former external port 5053 and standalone preview
+processes. The fixed Compose project is `prism-phase3-reference`, with both Compose
+files; the Makefile provides repeatable startup/status/rebuild/shutdown commands.
+PostgreSQL/Redis/Neo4j remain separate internal services with their existing host
+ports. Neo4j readiness is checked before initialization/dependent service startup.
+
+Research inputs, reports, model history and persistent volumes are preserved.
+Generated design/presentation working files are archived outside the repository;
+build/cache working directories are ignored. Current usage documents describe one
+frontend rather than accumulating superseded design iterations. Scientific and
+phase-specific evidence remains available in its original records.

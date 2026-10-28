@@ -1,12 +1,14 @@
 # Background jobs and advisory decisions
 
-Load the ignored environment, initialize `python -c 'from prism.operations.store
-import initialize; initialize()'`, then start:
+The complete Docker stack started by `make up` includes worker, scheduler and
+collector; use its single web endpoint at http://127.0.0.1:5050. Do not launch a
+second host worker/beat against the same queue while these containers are active.
+Schemas initialize through `make up`. See [deployment](../INSTRUCTIONS.md#deployment-boundaries).
 
-```
-celery -A prism.operations.tasks:celery worker --pool=solo --concurrency=1
-celery -A prism.operations.tasks:celery beat --schedule artifacts/celerybeat-schedule
-```
+The background-job panel and its queue controls are temporarily hidden in the UI.
+The durable backend mechanisms below remain implemented and can be verified
+explicitly with the configured operator token. Policy advice and saved decisions
+remain accessible in Research; Operator access is in the top bar.
 
 PostgreSQL jobs are committed before publication (durable outbox). The 30-second
 recovery task republishes queued jobs; atomic claims prevent duplicate execution.
@@ -30,8 +32,9 @@ retain their training-data hashes. Forecasts require 24 consecutive eligible inp
 hours. Failed refreshes keep prior context and explicit source age; they do not
 pretend to produce current data. Retraining is a separate lifecycle.
 
-The Operations page provides service health, application/data-quality alerts,
-scenario jobs, actual surrogate TreeSHAP and human decision records. Alerts concern
+The top-bar Services disclosure provides health and data-quality alerts. Research
+provides actual surrogate TreeSHAP and human decision records; queued scenario
+controls are currently hidden. Alerts concern
 stale/unavailable data, mapping issues or failed jobs; unknown electrical limits
 cannot support overload/fault assertions. Health identifies Redis/PostgreSQL/worker
 separately. A heartbeat expires after two minutes; this is current service state,

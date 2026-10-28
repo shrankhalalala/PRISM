@@ -2659,3 +2659,26 @@ main { background: transparent; }
  .topo-fault-row { grid-template-columns:repeat(2,minmax(0,1fr)); }
  .topo-fault-row > button { grid-column:1/-1; justify-self:start; min-height:44px; }
 }
+
+/* Targeted hierarchy adjustment; retain the current workspace composition. */
+h2, .workspace-section>.lab-heading h2 { font-size:24px; font-weight:600; letter-spacing:-.35px; }
+h3, .ops-columns h3, .ops-investigation h3 { font-weight:600; }
+.ref-inspector>h3 { font-size:16px; font-weight:600; color:var(--ink); }
+.ref-inspector h4 { font-size:19px; font-weight:600; }
+.ref-ledger-heading h3 { font-size:15px; font-weight:600; }
+.landing-intro h1 { font-weight:600; }
+.review-layout { grid-template-columns:minmax(0,1fr); }
+@media(max-width:640px) { h2, .workspace-section>.lab-heading h2 { font-size:22px; } }
+/* Geographic asset map: coordinates are independent of the dated reference layout. */
+#ref-network { z-index:0; min-height:420px; background:var(--paper); cursor:grab; font-family:var(--font); }
+.ref-diagram-header { z-index:2; }
+.ref-location-status { position:absolute; left:12px; bottom:30px; z-index:2; max-width:min(320px,75%); background:var(--white); color:var(--muted); border:1px solid var(--line); border-radius:4px; padding:7px 10px; font-size:11px; pointer-events:none; }
+#ref-map-error { position:absolute; z-index:3; top:56px; left:12px; right:12px; background:var(--white); font-size:12px; }
+#ref-network .leaflet-control-attribution { background:var(--white); color:var(--muted); font-size:11px; }
+#ref-network .leaflet-control-attribution a { color:var(--teal); }
+#ref-network .leaflet-tooltip { font-family:var(--font); font-size:12px; font-weight:500; border:1px solid var(--control); border-radius:4px; background:var(--white); color:var(--ink); box-shadow:none; }
+#ref-network .leaflet-interactive:focus { outline:2px solid var(--teal); outline-offset:3px; }
+:root[data-theme=dark] #ref-network .leaflet-tile-pane { filter:brightness(.65) saturate(.55); }
+.ref-location-source { font-size:11px; color:var(--muted); margin:10px 0; }
+.ref-location-source a { text-decoration:underline; text-underline-offset:3px; }
+@media(max-width:640px) { #ref-network { min-height:390px; } .ref-location-status { max-width:70%; font-size:11px; } }

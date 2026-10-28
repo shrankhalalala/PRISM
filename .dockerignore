@@ -11,3 +11,12 @@ output
 .agents
 .codex
 data/sources/**/raw
+
+build
+dist
+*.egg-info
+.pytest_cache
+.ruff_cache
+.coverage
+htmlcov
+data/sources/**/hourly.csv

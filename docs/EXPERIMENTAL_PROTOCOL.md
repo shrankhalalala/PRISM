@@ -85,7 +85,11 @@ Image availability and Docker startup are external prerequisites.
 
 ## 7. Dashboard verification procedure
 
-Start the application with `python -m prism` and verify:
+For the current application, start the Docker stack with `make up` and use
+http://127.0.0.1:5050. Follow [the current dashboard guide](dashboard.md) for
+reference-map and source/service verification. The following original Phase 1–2
+checklist applies to the synthetic teaching labs, rather than defining the current
+Home/network layout:
 
 1. the synthetic-data badge and grid totals are visible;
 2. selecting plant, substation, and load assets updates the inspector;

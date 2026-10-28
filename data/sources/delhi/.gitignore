@@ -1,2 +1,4 @@
 # Preserve originals locally; source redistribution conditions need review.
 */raw/
+# Reproducible recovery output; source manifests and audit summaries remain tracked.
+*/hourly.csv

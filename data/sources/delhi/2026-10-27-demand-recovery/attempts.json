@@ -1,0 +1,1692 @@
+[
+  {
+    "date": "2024-10-22",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=22%2F10%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:08.461648+00:00",
+    "path": "raw/2024-10-22.json",
+    "sha256": "b4ca5ddfad3db4be73e5a288ac72412cdfdf956460d0827479cd3f5c662907fc",
+    "rows": 274
+  },
+  {
+    "date": "2024-10-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F10%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:10.752798+00:00",
+    "path": "raw/2024-10-23.json",
+    "sha256": "eb1d274223ac4e37134f65502c7230887229d17c8faa6190aa9ece107b6f51c8",
+    "rows": 274
+  },
+  {
+    "date": "2024-10-24",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=24%2F10%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:12.952739+00:00",
+    "path": "raw/2024-10-24.json",
+    "sha256": "0d35bbe6d4060e00d0fa35aee9f6e1e7052c0f80e25c780b4a61712866604001",
+    "rows": 274
+  },
+  {
+    "date": "2024-10-25",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=25%2F10%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:15.182276+00:00",
+    "path": "raw/2024-10-25.json",
+    "sha256": "721d0f17117145011de8817deb524640fe825c50ebc644c500cc4c6a5b0ffb48",
+    "rows": 273
+  },
+  {
+    "date": "2024-10-26",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=26%2F10%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:17.571526+00:00",
+    "path": "raw/2024-10-26.json",
+    "sha256": "a2fc6565e544e65abb5b61781fe7970cd916796f2532cd8dfc43ec54ed5aeb5f",
+    "rows": 273
+  },
+  {
+    "date": "2024-10-27",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=27%2F10%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:19.724823+00:00",
+    "path": "raw/2024-10-27.json",
+    "sha256": "dce2345523c019fcac8d9ba8b45878184ff3a673a665fdb5f6676bfc1c48eaff",
+    "rows": 285
+  },
+  {
+    "date": "2024-10-29",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=29%2F10%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:21.988693+00:00",
+    "path": "raw/2024-10-29.json",
+    "sha256": "d8fe1240a4f718d8d23063a2f3889214dd4149bcc2f839859f7e01ac55575d59",
+    "rows": 285
+  },
+  {
+    "date": "2024-10-30",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=30%2F10%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:24.060024+00:00",
+    "path": "raw/2024-10-30.json",
+    "sha256": "94ad009b0511abf2400a5621e5ca1d0a249658186e9ddbe960d3507aaf8b93bc",
+    "rows": 285
+  },
+  {
+    "date": "2024-11-04",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=04%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:26.089602+00:00",
+    "path": "raw/2024-11-04.json",
+    "sha256": "28a30e5de5ee33719f5355af6586e6890210f3f5d0ac78e170395b7ff943ddcf",
+    "rows": 204
+  },
+  {
+    "date": "2024-11-05",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=05%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:28.261240+00:00",
+    "path": "raw/2024-11-05.json",
+    "sha256": "1d46e496a9323650963fdeb59debefbe02f7ccb512a718626ad0d5ff138e73f4",
+    "rows": 270
+  },
+  {
+    "date": "2024-11-06",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=06%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:30.131248+00:00",
+    "path": "raw/2024-11-06.json",
+    "sha256": "64fce3e24db2493ec552deb0cca228aa0a25b80e8de0b178247fd260e946fea5",
+    "rows": 271
+  },
+  {
+    "date": "2024-11-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:31.922475+00:00",
+    "path": "raw/2024-11-07.json",
+    "sha256": "4a51b01941a3dd419cfbdc19f9dee90a90f5d72ec180746d41438b927c200fb2",
+    "rows": 272
+  },
+  {
+    "date": "2024-11-08",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=08%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:33.617183+00:00",
+    "path": "raw/2024-11-08.json",
+    "sha256": "10f0280c715009b35f96957496e2e62890414f77b2eecca16816dc2a5c25d82a",
+    "rows": 273
+  },
+  {
+    "date": "2024-11-09",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=09%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:35.495114+00:00",
+    "path": "raw/2024-11-09.json",
+    "sha256": "5aa6fc61250f79bb73409060863d1e1f50a8128e0018e4455cdabac30dbf1dec",
+    "rows": 270
+  },
+  {
+    "date": "2024-11-10",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=10%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:37.043941+00:00",
+    "path": "raw/2024-11-10.json",
+    "sha256": "5286a8804a2b6c3d0ad5579c764e25ea72dc5c734a20d1ae68da5221225f20de",
+    "rows": 272
+  },
+  {
+    "date": "2024-11-11",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=11%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:38.521397+00:00",
+    "path": "raw/2024-11-11.json",
+    "sha256": "79f0691cb26ddf252404a1886a9dd991c851951bcbc115960028fe41ecbd0015",
+    "rows": 273
+  },
+  {
+    "date": "2024-11-12",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=12%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:40.093781+00:00",
+    "path": "raw/2024-11-12.json",
+    "sha256": "166a6c8fcb5557cd20bb2f047ef197697361e001f90e22852a7c9fa05b0cbb0f",
+    "rows": 273
+  },
+  {
+    "date": "2024-11-13",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=13%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:41.802203+00:00",
+    "path": "raw/2024-11-13.json",
+    "sha256": "6f622c3835a5f495142757b90157c9589572900d4e4b63bd5a5928f3dd5d6b74",
+    "rows": 273
+  },
+  {
+    "date": "2024-11-14",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=14%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:43.276690+00:00",
+    "path": "raw/2024-11-14.json",
+    "sha256": "6a25979510911a312b833777a4e42bb4990c980a1da49829dcdefc7ff9caf21e",
+    "rows": 265
+  },
+  {
+    "date": "2024-11-18",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=18%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:44.778803+00:00",
+    "path": "raw/2024-11-18.json",
+    "sha256": "0fa261fc7adda73b63118895e44bafbfaa596cb6a055667b09792d6a4f8dade8",
+    "rows": 273
+  },
+  {
+    "date": "2024-11-19",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=19%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:46.171107+00:00",
+    "path": "raw/2024-11-19.json",
+    "sha256": "8bfb90d56c1cc09f823fa0b102de8f2acef6f1db73bc8b858026bed6a42d64cb",
+    "rows": 273
+  },
+  {
+    "date": "2024-11-22",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=22%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:47.923015+00:00",
+    "path": "raw/2024-11-22.json",
+    "sha256": "d236c8c8a9563100b7228c7988243115e55707889cfa66014d26f2ee6298c97a",
+    "rows": 275
+  },
+  {
+    "date": "2024-11-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:49.412329+00:00",
+    "path": "raw/2024-11-23.json",
+    "sha256": "f6fdd9224893e0bc77db7fdde37a1748567e67767ba36b3ad8937292fbb026f6",
+    "rows": 275
+  },
+  {
+    "date": "2024-11-24",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=24%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:50.935982+00:00",
+    "path": "raw/2024-11-24.json",
+    "sha256": "68586fecff0dfaf68d2ef1f9ef17b98112e42e872ecd3165e6286bd62c81d37d",
+    "rows": 274
+  },
+  {
+    "date": "2024-11-25",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=25%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:52.587802+00:00",
+    "path": "raw/2024-11-25.json",
+    "sha256": "d9cbc18e22e3ce57eadbaea5537270b38a8205c02b2c13ad254d1fb6f6fb3499",
+    "rows": 275
+  },
+  {
+    "date": "2024-11-29",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=29%2F11%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:54.385639+00:00",
+    "path": "raw/2024-11-29.json",
+    "sha256": "d2b8b84d402ba84dd118f004d218e81f6e59ea6e0a70fed52a62719c95940866",
+    "rows": 285
+  },
+  {
+    "date": "2024-12-01",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=01%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:55.924912+00:00",
+    "path": "raw/2024-12-01.json",
+    "sha256": "6eabb4d021f38d5f77b1ab9540af1ba98652aff0e15557f4f549aa0268722d3d",
+    "rows": 277
+  },
+  {
+    "date": "2024-12-03",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=03%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:57.590728+00:00",
+    "path": "raw/2024-12-03.json",
+    "sha256": "911fc00626987b0327efa6ca777527a92d0f1e277f3f00418fcb61bfcb6a11af",
+    "rows": 275
+  },
+  {
+    "date": "2024-12-04",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=04%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:27:59.069878+00:00",
+    "path": "raw/2024-12-04.json",
+    "sha256": "567bb4d2087f9037615d0b2090d58ac25124d62df8b6d42937bca7a00ac5b4af",
+    "rows": 275
+  },
+  {
+    "date": "2024-12-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:00.683345+00:00",
+    "path": "raw/2024-12-07.json",
+    "sha256": "6fe6425751dd60a35ffabbfa564fe3d8019b66b7b25ec14a921fcfd19f19e461",
+    "rows": 276
+  },
+  {
+    "date": "2024-12-08",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=08%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:02.043693+00:00",
+    "path": "raw/2024-12-08.json",
+    "sha256": "ee4b30397b98ac34d9df5beb09f6b27c77ac95c6c099a2a793cddd351cd19d10",
+    "rows": 275
+  },
+  {
+    "date": "2024-12-10",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=10%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:03.495662+00:00",
+    "path": "raw/2024-12-10.json",
+    "sha256": "faad9fe35136e8b0ce92d3bbc44610ea42841fa22e1bfc601769fe53dcd3169d",
+    "rows": 275
+  },
+  {
+    "date": "2024-12-15",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=15%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:05.005431+00:00",
+    "path": "raw/2024-12-15.json",
+    "sha256": "305de15141d7662387fbc588122b684daedb693c8cce75899d48db311641a507",
+    "rows": 275
+  },
+  {
+    "date": "2024-12-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:07.085219+00:00",
+    "path": "raw/2024-12-23.json",
+    "sha256": "e71d3f669c1b0799d566a919205fbe2f876850c20e40d4ba60bafd74f3b3d780",
+    "rows": 285
+  },
+  {
+    "date": "2024-12-24",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=24%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:08.934020+00:00",
+    "path": "raw/2024-12-24.json",
+    "sha256": "0429ddbe73b7d8f4cae413a9f1ef29ddb86df9990c715325f5b240e0faaf3134",
+    "rows": 274
+  },
+  {
+    "date": "2024-12-27",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=27%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:10.590896+00:00",
+    "path": "raw/2024-12-27.json",
+    "sha256": "f35c589dcad453e05bd7b896222991995eab4e971d2462b562859377c56992ea",
+    "rows": 275
+  },
+  {
+    "date": "2024-12-28",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=28%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:13.016675+00:00",
+    "path": "raw/2024-12-28.json",
+    "sha256": "0d3f7789fedd3371e023a6a812c4209edd775072831aa7ca80a76ebc0dd2b46f",
+    "rows": 276
+  },
+  {
+    "date": "2024-12-29",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=29%2F12%2F2024&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:14.424151+00:00",
+    "path": "raw/2024-12-29.json",
+    "sha256": "5f0e618a4022614d2c9293139901112771890fa50b4506276172373d344769bf",
+    "rows": 129
+  },
+  {
+    "date": "2025-01-03",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=03%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:16.399083+00:00",
+    "path": "raw/2025-01-03.json",
+    "sha256": "4037cc139f1ea630e5fb3d04e8808c38b7bd820765d22d6bd611daef907bcd50",
+    "rows": 285
+  },
+  {
+    "date": "2025-01-04",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=04%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:18.256176+00:00",
+    "path": "raw/2025-01-04.json",
+    "sha256": "844de217db348d698e4b5ed85d54988cf79f09e6a975630443105359550892be",
+    "rows": 285
+  },
+  {
+    "date": "2025-01-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:20.599115+00:00",
+    "path": "raw/2025-01-07.json",
+    "sha256": "6bac74743726f7dd0cafe5912d9a27534c4e49a11e32c3a514bab7f584a66170",
+    "rows": 285
+  },
+  {
+    "date": "2025-01-12",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=12%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:22.843381+00:00",
+    "path": "raw/2025-01-12.json",
+    "sha256": "5e1010f79dc5eecc22515add30f0b2fed165f792a9927d741d9ab26b78f1232b",
+    "rows": 285
+  },
+  {
+    "date": "2025-01-14",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=14%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:24.566729+00:00",
+    "path": "raw/2025-01-14.json",
+    "sha256": "7e64db8ab3ddb9933eee2b8e4a1831b60da81c9fc8be1b9aacb2c9a18afd2234",
+    "rows": 284
+  },
+  {
+    "date": "2025-01-16",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=16%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:26.309787+00:00",
+    "path": "raw/2025-01-16.json",
+    "sha256": "54c25f6317dfc6ad50cd9e244a870899d20364236eea644d6e6ef2e961676b84",
+    "rows": 276
+  },
+  {
+    "date": "2025-01-18",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=18%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:28.426203+00:00",
+    "path": "raw/2025-01-18.json",
+    "sha256": "57e5eedab43b2b79e2754db5dd52a32cea3aeb5f3c7339ad9d1e634d2e6ed8a3",
+    "rows": 274
+  },
+  {
+    "date": "2025-01-20",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=20%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:30.220945+00:00",
+    "path": "raw/2025-01-20.json",
+    "sha256": "a6c85da64f3bfdfcca30f3aee28d61993278689578c7f4451c5db6678302effc",
+    "rows": 270
+  },
+  {
+    "date": "2025-01-21",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=21%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:31.951064+00:00",
+    "path": "raw/2025-01-21.json",
+    "sha256": "dad50f45f6614adcaab414e53d5c382a0f712d6f38a8858b76feeb546470e72e",
+    "rows": 260
+  },
+  {
+    "date": "2025-01-22",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=22%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:33.572698+00:00",
+    "path": "raw/2025-01-22.json",
+    "sha256": "6480c741ef479c0fe1ee3e76f46dfd1ffec8dd2654ccab505c424575042bcc76",
+    "rows": 276
+  },
+  {
+    "date": "2025-01-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:35.269727+00:00",
+    "path": "raw/2025-01-23.json",
+    "sha256": "054aec4d42055d0bb444e50eb5c33ab66fcb3e56d9bd7f575692b97624222dd6",
+    "rows": 252
+  },
+  {
+    "date": "2025-01-24",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=24%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:36.774843+00:00",
+    "path": "raw/2025-01-24.json",
+    "sha256": "f8e446663f1ddc9ea480316385b49e50ac6bbd880ed19265c9ee5e725191a146",
+    "rows": 252
+  },
+  {
+    "date": "2025-01-30",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=30%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:38.455474+00:00",
+    "path": "raw/2025-01-30.json",
+    "sha256": "00b5cf2237c9425f5d12b8350749452fc03c52377821224044312f253435e2c8",
+    "rows": 285
+  },
+  {
+    "date": "2025-01-31",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=31%2F01%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:40.381140+00:00",
+    "path": "raw/2025-01-31.json",
+    "sha256": "a1bc9340197986de911b4adbce48bf1924b31efee77e5fa904e74f2c5cd37255",
+    "rows": 284
+  },
+  {
+    "date": "2025-02-04",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=04%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:41.921376+00:00",
+    "path": "raw/2025-02-04.json",
+    "sha256": "cf9acefef6fdf00a349baddac430ff61d76e581d1c12507755c06c41182beceb",
+    "rows": 274
+  },
+  {
+    "date": "2025-02-05",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=05%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:43.741405+00:00",
+    "path": "raw/2025-02-05.json",
+    "sha256": "13bb28b4ee97a433d9356559d7e922b79f1ad6da1bdf9ad7b533b890f81647b1",
+    "rows": 275
+  },
+  {
+    "date": "2025-02-06",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=06%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:45.479466+00:00",
+    "path": "raw/2025-02-06.json",
+    "sha256": "fb26841933e064ec81df7dd60dd7bf40a1bcc475a68b2f719cf8f2b586e090aa",
+    "rows": 274
+  },
+  {
+    "date": "2025-02-08",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=08%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:46.951516+00:00",
+    "path": "raw/2025-02-08.json",
+    "sha256": "41fe14cd339f67d40406b0b174b1ba4fd41436ab63bf1d1e43b560824bbf3e3a",
+    "rows": 284
+  },
+  {
+    "date": "2025-02-09",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=09%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:48.572558+00:00",
+    "path": "raw/2025-02-09.json",
+    "sha256": "e8ca09f825ccb9cbf382e4488db857b5783cc3006847f685b06d82dc556539e3",
+    "rows": 275
+  },
+  {
+    "date": "2025-02-10",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=10%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:50.175768+00:00",
+    "path": "raw/2025-02-10.json",
+    "sha256": "5b388c5538258c788cb2fa056d25b004b342f2d619574fb3c3a25aae1d9d0925",
+    "rows": 284
+  },
+  {
+    "date": "2025-02-12",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=12%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:51.749807+00:00",
+    "path": "raw/2025-02-12.json",
+    "sha256": "8019c107deb389bae16835bd1e76018f91c52b2f8ef0cf44718f83e8fe4c9f68",
+    "rows": 275
+  },
+  {
+    "date": "2025-02-19",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=19%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:53.453468+00:00",
+    "path": "raw/2025-02-19.json",
+    "sha256": "df328045b14288d3a738a3d718241a209a3ca1b0ec5296e3ce16b20211c069a2",
+    "rows": 275
+  },
+  {
+    "date": "2025-02-20",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=20%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:55.021724+00:00",
+    "path": "raw/2025-02-20.json",
+    "sha256": "3c349e0ef2a19fb6d30b4b1103ae43c90fc67c566f9ceeab4ed6b3d1a3fca307",
+    "rows": 274
+  },
+  {
+    "date": "2025-02-22",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=22%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:56.569934+00:00",
+    "path": "raw/2025-02-22.json",
+    "sha256": "0e20e00172799377fdbb88e21028dc4e10222f11dcb537b35e15cde67956db52",
+    "rows": 275
+  },
+  {
+    "date": "2025-02-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:28:58.241401+00:00",
+    "path": "raw/2025-02-23.json",
+    "sha256": "843ff55105a2a6bef9fd7b3a10a48538e12b1f8e9c4f94270b1eabadbacca4d8",
+    "rows": 274
+  },
+  {
+    "date": "2025-02-25",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=25%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:00.131095+00:00",
+    "path": "raw/2025-02-25.json",
+    "sha256": "c26caf2365540f556925279a3774fd2f341ea83f203da1e5bd1acf79ab05563e",
+    "rows": 274
+  },
+  {
+    "date": "2025-02-26",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=26%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:01.908266+00:00",
+    "path": "raw/2025-02-26.json",
+    "sha256": "a37f3440a662b5854fabbf9b50ce0303cfaccccd306cc9b5e396d0661d27f41a",
+    "rows": 275
+  },
+  {
+    "date": "2025-02-27",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=27%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:03.741851+00:00",
+    "path": "raw/2025-02-27.json",
+    "sha256": "874875f5d2dc1294c42c0c5e17a8bb81255a320fb06e2b4a59dd1bbf3a3d9779",
+    "rows": 276
+  },
+  {
+    "date": "2025-02-28",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=28%2F02%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:05.378940+00:00",
+    "path": "raw/2025-02-28.json",
+    "sha256": "d18f57fd397d625195151d95ff7fe93c49c6c6f83532813214ddb22667e1424f",
+    "rows": 274
+  },
+  {
+    "date": "2025-03-01",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=01%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:07.080930+00:00",
+    "path": "raw/2025-03-01.json",
+    "sha256": "3bb0bf52de0b50267ab19b4c85c8b67f7b092073db1ea9064d2785126251aeda",
+    "rows": 274
+  },
+  {
+    "date": "2025-03-02",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=02%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:08.870809+00:00",
+    "path": "raw/2025-03-02.json",
+    "sha256": "63651f305843cbc6014471d894f3fd84d1aeeebcd1dc69e8889be7ee19d952ca",
+    "rows": 285
+  },
+  {
+    "date": "2025-03-03",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=03%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:10.622079+00:00",
+    "path": "raw/2025-03-03.json",
+    "sha256": "f3a1a2f5423084d5cb1c3571edfc5759c464cc9c838aced2b76bfba0c5ee9c4e",
+    "rows": 276
+  },
+  {
+    "date": "2025-03-04",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=04%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:12.662157+00:00",
+    "path": "raw/2025-03-04.json",
+    "sha256": "817190ee43593c24c4f835bcc9233919e61242a3519961f5dddbbfd3edf3e012",
+    "rows": 274
+  },
+  {
+    "date": "2025-03-05",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=05%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:14.765077+00:00",
+    "path": "raw/2025-03-05.json",
+    "sha256": "545b3277ee7818de41686fae69e280e9d7adfa9715a975dfa2e2ef14ba48064d",
+    "rows": 273
+  },
+  {
+    "date": "2025-03-16",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=16%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:16.609601+00:00",
+    "path": "raw/2025-03-16.json",
+    "sha256": "dd37e1bd356d712db5f1fd07436b83f488c4fcc59d5c59758f4d24e0cc8e81ac",
+    "rows": 285
+  },
+  {
+    "date": "2025-03-20",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=20%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:18.345230+00:00",
+    "path": "raw/2025-03-20.json",
+    "sha256": "dee5b9ba96bb3c20c2c4f15b4fad18da58084d0f2d24d0f5be80ac48bd3e5ec1",
+    "rows": 273
+  },
+  {
+    "date": "2025-03-21",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=21%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:20.140803+00:00",
+    "path": "raw/2025-03-21.json",
+    "sha256": "e2b334c871b9951295eb9957ea1ab69a6feabea7b8e0d13cb2aff6d22e6a3536",
+    "rows": 274
+  },
+  {
+    "date": "2025-03-22",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=22%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:22.177232+00:00",
+    "path": "raw/2025-03-22.json",
+    "sha256": "664ff8765de1030acd78bf8ccb286fd076d727d5286f32d561649d100ada9415",
+    "rows": 274
+  },
+  {
+    "date": "2025-03-24",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=24%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:23.901472+00:00",
+    "path": "raw/2025-03-24.json",
+    "sha256": "12c5e5d76940bea74e347e95b790eec2c5a17493e12504e934676a34ebe66b16",
+    "rows": 274
+  },
+  {
+    "date": "2025-03-29",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=29%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:25.613211+00:00",
+    "path": "raw/2025-03-29.json",
+    "sha256": "6b58113c257392439d2b603a0ac421d36b6ad0bcbc01d81e271abde180e6a301",
+    "rows": 273
+  },
+  {
+    "date": "2025-03-30",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=30%2F03%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:27.413769+00:00",
+    "path": "raw/2025-03-30.json",
+    "sha256": "b7a84a684e4f8dca33e665fe465dc4ae68e5e34061396bb591e20c0b9c398d91",
+    "rows": 276
+  },
+  {
+    "date": "2025-04-01",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=01%2F04%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:29.226284+00:00",
+    "path": "raw/2025-04-01.json",
+    "sha256": "0abc0bf43e89871103274a7caa2d7e8e86daa1d95525a06eebf084af4200d7c7",
+    "rows": 275
+  },
+  {
+    "date": "2025-04-10",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=10%2F04%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:31.102969+00:00",
+    "path": "raw/2025-04-10.json",
+    "sha256": "df1173cd3f9ff11ee3b9125fbc5a8dac2130098cbef8bd520ba2eb1b7bff77dc",
+    "rows": 284
+  },
+  {
+    "date": "2025-04-11",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=11%2F04%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:33.018413+00:00",
+    "path": "raw/2025-04-11.json",
+    "sha256": "bd568ce81ab56737b6db72128b7a3d6fb35a6522a30d9613d174098656d6f193",
+    "rows": 285
+  },
+  {
+    "date": "2025-04-12",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=12%2F04%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:34.919914+00:00",
+    "path": "raw/2025-04-12.json",
+    "sha256": "bb1e77108e10d7d9ddd7be43ae5d7db20db2f53d57f16eab731b1ce7a094581e",
+    "rows": 285
+  },
+  {
+    "date": "2025-04-15",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=15%2F04%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:36.944070+00:00",
+    "path": "raw/2025-04-15.json",
+    "sha256": "1b54cff4ed719b68aa8617afe6ed01b2760b1050bd9fd9079b23c8b383eaa314",
+    "rows": 284
+  },
+  {
+    "date": "2025-04-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F04%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:38.958252+00:00",
+    "path": "raw/2025-04-23.json",
+    "sha256": "bef3876d3118afa24f22567bbaa01789eed4406fa4306cadb348d210b9eddf10",
+    "rows": 273
+  },
+  {
+    "date": "2025-04-28",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=28%2F04%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:41.029621+00:00",
+    "path": "raw/2025-04-28.json",
+    "sha256": "f3d97614eb0c7148415bdc7373a9ee1a631d32b86090687ae09e496e8d16134c",
+    "rows": 285
+  },
+  {
+    "date": "2025-05-17",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=17%2F05%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:43.196162+00:00",
+    "path": "raw/2025-05-17.json",
+    "sha256": "36b90b3978fb54abcc132260aa767f62f3be0e00c9de57dd14f1e94045c586b1",
+    "rows": 285
+  },
+  {
+    "date": "2025-05-20",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=20%2F05%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:44.967651+00:00",
+    "path": "raw/2025-05-20.json",
+    "sha256": "2de6b7bc3d400ab090d347e8ec0a8e1b65027d82bb9104d6b6960d59ec494f4a",
+    "rows": 285
+  },
+  {
+    "date": "2025-05-25",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=25%2F05%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:46.820163+00:00",
+    "path": "raw/2025-05-25.json",
+    "sha256": "624316a6573f2e24f8f1c74c89e37d8b47adca308c796b2c961160b7934fab56",
+    "rows": 285
+  },
+  {
+    "date": "2025-05-27",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=27%2F05%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:48.499897+00:00",
+    "path": "raw/2025-05-27.json",
+    "sha256": "132716f8fbaefc151077111a256d399c8c47a3aef2aba41d171b72cae5a9df11",
+    "rows": 285
+  },
+  {
+    "date": "2025-05-29",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=29%2F05%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:50.271545+00:00",
+    "path": "raw/2025-05-29.json",
+    "sha256": "59ca631abc158cf30e58e81a4ec28a0719d638e9c0ba0c8f8e325d8652e629d3",
+    "rows": 284
+  },
+  {
+    "date": "2025-05-31",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=31%2F05%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:51.913678+00:00",
+    "path": "raw/2025-05-31.json",
+    "sha256": "483cfea3409adb7a974d966c98e82302d1d0b79589db4010f1cf71b6cfbe5ab1",
+    "rows": 285
+  },
+  {
+    "date": "2025-06-01",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=01%2F06%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:53.859402+00:00",
+    "path": "raw/2025-06-01.json",
+    "sha256": "a32acaf2af3f6ce3c9a26021ddd5844a936860d5ea0e5c55656787905ee389cd",
+    "rows": 285
+  },
+  {
+    "date": "2025-06-10",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=10%2F06%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:55.539770+00:00",
+    "path": "raw/2025-06-10.json",
+    "sha256": "8eefa442ee181ba965e3f75824ad6560ff69bc1b66924eb50302d878e2f93f41",
+    "rows": 158
+  },
+  {
+    "date": "2025-06-19",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=19%2F06%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:57.867878+00:00",
+    "path": "raw/2025-06-19.json",
+    "sha256": "6a67c7a67f25132d08cca01c0bd5c238ac3ac196ed37ba114e4d27cf59231343",
+    "rows": 285
+  },
+  {
+    "date": "2025-06-20",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=20%2F06%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:29:59.999021+00:00",
+    "path": "raw/2025-06-20.json",
+    "sha256": "c40ebd2b9bd3bc7114f6e4a7b128fb9fff92418ba4dc9990bde98ac9f6f9416c",
+    "rows": 285
+  },
+  {
+    "date": "2025-06-25",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=25%2F06%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:02.095604+00:00",
+    "path": "raw/2025-06-25.json",
+    "sha256": "a049907d09b21d83f2e7062fe0a4a8b760d5af81aeeaf5c51897454892ea1d0e",
+    "rows": 285
+  },
+  {
+    "date": "2025-07-06",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=06%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:04.493093+00:00",
+    "path": "raw/2025-07-06.json",
+    "sha256": "b50886e85d5959711dcced03ca00bb54e6e66597be58213d250c9ef92d662532",
+    "rows": 281
+  },
+  {
+    "date": "2025-07-12",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=12%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:06.552924+00:00",
+    "path": "raw/2025-07-12.json",
+    "sha256": "61200838708d2e55bc18aa58a84242b76f3b638599fdc29aa0ab91cf6403dc55",
+    "rows": 282
+  },
+  {
+    "date": "2025-07-13",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=13%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:08.402463+00:00",
+    "path": "raw/2025-07-13.json",
+    "sha256": "015104796e6b948e4bbe036d51d6a942a8e7b80d4dafe2a4694645a6d155bbfc",
+    "rows": 285
+  },
+  {
+    "date": "2025-07-17",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=17%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:10.072114+00:00",
+    "path": "raw/2025-07-17.json",
+    "sha256": "80d1fc174fa21b5c8485fc7fd015ca00325b0c3868938f18864aa7794b6c0a69",
+    "rows": 285
+  },
+  {
+    "date": "2025-07-18",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=18%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:11.737360+00:00",
+    "path": "raw/2025-07-18.json",
+    "sha256": "ddca9cf82e708d38053aa3c6796d41082138dd46948001adc2746ee60b031747",
+    "rows": 252
+  },
+  {
+    "date": "2025-07-19",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=19%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:13.525450+00:00",
+    "path": "raw/2025-07-19.json",
+    "sha256": "51378702a13c1454c7eea83d8c4177f4b6bda90bec634d2852db7565d023e802",
+    "rows": 228
+  },
+  {
+    "date": "2025-07-20",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=20%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:15.243565+00:00",
+    "path": "raw/2025-07-20.json",
+    "sha256": "af036030ea77cb62b0e9b19df163e4f5c87d2ed8282c0206fc9478fd79656011",
+    "rows": 276
+  },
+  {
+    "date": "2025-07-21",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=21%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:17.002984+00:00",
+    "path": "raw/2025-07-21.json",
+    "sha256": "4dac55280f5894e119f7389c8d988b7fc35363c28c56c79a16ed1b21d5914b1f",
+    "rows": 204
+  },
+  {
+    "date": "2025-07-29",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=29%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:19.044782+00:00",
+    "path": "raw/2025-07-29.json",
+    "sha256": "9635b45f0dfeadc1cf05fdb80fe2a815ae308256c291d3fa6787d529b0ce5817",
+    "rows": 285
+  },
+  {
+    "date": "2025-07-31",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=31%2F07%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:21.092036+00:00",
+    "path": "raw/2025-07-31.json",
+    "sha256": "60f92b86d2d24a2e0e497297511db513ef6e7843c7fab81cea71930a6449adc2",
+    "rows": 285
+  },
+  {
+    "date": "2025-08-01",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=01%2F08%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:22.921436+00:00",
+    "path": "raw/2025-08-01.json",
+    "sha256": "4bb3fb6d90f4e5eaa61ca39d917a408818c896f4aa5724a4ba81b09d088b101e",
+    "rows": 285
+  },
+  {
+    "date": "2025-08-02",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=02%2F08%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:24.524898+00:00",
+    "path": "raw/2025-08-02.json",
+    "sha256": "f3d24603d36a882cfe623b23f9e07191ad5fea2458d8d74843e3e49d08937d60",
+    "rows": 285
+  },
+  {
+    "date": "2025-08-08",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=08%2F08%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:26.389337+00:00",
+    "path": "raw/2025-08-08.json",
+    "sha256": "8dfb129d939509285bdd55bf3156ac269aaae919c6199b26ac85432feb066644",
+    "rows": 285
+  },
+  {
+    "date": "2025-08-10",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=10%2F08%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:28.856354+00:00",
+    "path": "raw/2025-08-10.json",
+    "sha256": "b0a88c3edf9f87263fc7f091dc86da320c4368d7d8fc8e8054018fa111754726",
+    "rows": 285
+  },
+  {
+    "date": "2025-08-12",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=12%2F08%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:30.718048+00:00",
+    "path": "raw/2025-08-12.json",
+    "sha256": "5bdb40ef22553dbb46d9086b7cafa9508d66e19b2f3bdd0e1048e6869768f496",
+    "rows": 284
+  },
+  {
+    "date": "2025-08-16",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=16%2F08%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:32.544971+00:00",
+    "path": "raw/2025-08-16.json",
+    "sha256": "4c9cbd25a12e1b462e311f720d5a62d7f10d372e22c58a0f34ab5912c5b25f6b",
+    "rows": 284
+  },
+  {
+    "date": "2025-08-18",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=18%2F08%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:34.320720+00:00",
+    "path": "raw/2025-08-18.json",
+    "sha256": "4e2e60fc6f1446f8de3cf54c4641ca2f06bed21631bc1da74b925ca537055433",
+    "rows": 285
+  },
+  {
+    "date": "2025-08-19",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=19%2F08%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:36.603185+00:00",
+    "path": "raw/2025-08-19.json",
+    "sha256": "d5b1d1754b34deab006ecbbb106aea791d213c917a2b27d0b87f89fca63fca34",
+    "rows": 284
+  },
+  {
+    "date": "2025-09-05",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=05%2F09%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:39.281594+00:00",
+    "path": "raw/2025-09-05.json",
+    "sha256": "8e4d762b88c89dfa345d0fb932c74fe84c17286bf9749d7052a9cf4d45f58392",
+    "rows": 285
+  },
+  {
+    "date": "2025-09-16",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=16%2F09%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:41.226658+00:00",
+    "path": "raw/2025-09-16.json",
+    "sha256": "9052ab1a3fce501c54f7ae0577a9a5895b16cbee6f210a4ca88b209343e7a5e5",
+    "rows": 285
+  },
+  {
+    "date": "2025-09-27",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=27%2F09%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:43.154950+00:00",
+    "path": "raw/2025-09-27.json",
+    "sha256": "3556da87d3c6996050fcc5957516c908f7e9f6bc2427a258b421432528a5ca2d",
+    "rows": 285
+  },
+  {
+    "date": "2025-10-01",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=01%2F10%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:45.148576+00:00",
+    "path": "raw/2025-10-01.json",
+    "sha256": "e019cdad026274f69c20fde0d21954a7634409fa83544360ffb34b3dde23c341",
+    "rows": 284
+  },
+  {
+    "date": "2025-10-02",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=02%2F10%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:46.879959+00:00",
+    "path": "raw/2025-10-02.json",
+    "sha256": "f70f8441f1ce40fc300c8224baaec71eef9dd13c79a5a3854425b9f9b18ceb84",
+    "rows": 285
+  },
+  {
+    "date": "2025-10-03",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=03%2F10%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:48.853618+00:00",
+    "path": "raw/2025-10-03.json",
+    "sha256": "783d4045a1b05f0742f7fb60576d7f37625395700748316da8ee0f36f992d96e",
+    "rows": 285
+  },
+  {
+    "date": "2025-10-06",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=06%2F10%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:50.648189+00:00",
+    "path": "raw/2025-10-06.json",
+    "sha256": "b419e86da9b62b289417b443b3cf63a7bd318a78bc8780aebdd2f1a388862fb8",
+    "rows": 285
+  },
+  {
+    "date": "2025-10-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F10%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:52.530112+00:00",
+    "path": "raw/2025-10-07.json",
+    "sha256": "0095b30de1d85e0831464abf58d08b0b9a7d8944cb2207e99868f91d2931a1bb",
+    "rows": 280
+  },
+  {
+    "date": "2025-10-12",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=12%2F10%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:54.476884+00:00",
+    "path": "raw/2025-10-12.json",
+    "sha256": "5c78d4b17d7ebd3278b9b0a6fe6c1ebb8c7437f703318a892d0d4704eeb3a907",
+    "rows": 279
+  },
+  {
+    "date": "2025-12-19",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=19%2F12%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:56.572008+00:00",
+    "path": "raw/2025-12-19.json",
+    "sha256": "03c4f702992bf8a71b2f6f046f55fe0cbbe4a25839405d019133e1da4ef5ed42",
+    "rows": 228
+  },
+  {
+    "date": "2025-12-31",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=31%2F12%2F2025&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:30:58.778420+00:00",
+    "path": "raw/2025-12-31.json",
+    "sha256": "4702f81b9a58b4fd556bf3f01f5cdd85ff977a0e2eccbbe0c870f3b897e11320",
+    "rows": 285
+  },
+  {
+    "date": "2026-01-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F01%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:00.487511+00:00",
+    "path": "raw/2026-01-07.json",
+    "sha256": "380abb8ee4a8dee0e9c4d7db92364c5f5280acc2eeb3c69f818ca1aa70a5ba14",
+    "rows": 186
+  },
+  {
+    "date": "2026-01-21",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=21%2F01%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:02.564097+00:00",
+    "path": "raw/2026-01-21.json",
+    "sha256": "2474b35bc470c1a1fa48220c3f0326e64e609377622fcd480b9f07e9a3a38566",
+    "rows": 233
+  },
+  {
+    "date": "2026-02-24",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=24%2F02%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:04.560813+00:00",
+    "path": "raw/2026-02-24.json",
+    "sha256": "2c0e5c8d12288fae86050bb698f9c97e17c6f311b4613a0e100e346e734bf916",
+    "rows": 285
+  },
+  {
+    "date": "2026-02-27",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=27%2F02%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:06.461779+00:00",
+    "path": "raw/2026-02-27.json",
+    "sha256": "c40e29b907736ead3c6420ec37902397281b42986e6a8a7a534ad81d7786cc27",
+    "rows": 285
+  },
+  {
+    "date": "2026-03-05",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=05%2F03%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:09.141620+00:00",
+    "path": "raw/2026-03-05.json",
+    "sha256": "c7da1f538b4387adc9a0e1c7bd803aae720c1f8decb665e7ce832bd2bb893fd6",
+    "rows": 244
+  },
+  {
+    "date": "2026-03-16",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=16%2F03%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:11.204322+00:00",
+    "path": "raw/2026-03-16.json",
+    "sha256": "76fe78237bf0ae5559221d880e9fe258fc078a0699da90a21281fc0554387c6b",
+    "rows": 243
+  },
+  {
+    "date": "2026-03-18",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=18%2F03%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-05-09",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=09%2F05%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:15.968140+00:00",
+    "path": "raw/2026-05-09.json",
+    "sha256": "b78cf6aa1e2770341465ec223003dd185b227b23b7b88de1d68ffe408b0c4f2c",
+    "rows": 285
+  },
+  {
+    "date": "2026-05-13",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=13%2F05%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:18.344628+00:00",
+    "path": "raw/2026-05-13.json",
+    "sha256": "cde9ac5141cbe4b4dab2e5ee81028c0d4dca81a327a383d4893c9b2f67682eab",
+    "rows": 285
+  },
+  {
+    "date": "2026-05-16",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=16%2F05%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:20.428345+00:00",
+    "path": "raw/2026-05-16.json",
+    "sha256": "447587b91ad086defc834256b64775d2cfe474ddef03aa61cf41c323f745457b",
+    "rows": 285
+  },
+  {
+    "date": "2026-05-17",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=17%2F05%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:23.124738+00:00",
+    "path": "raw/2026-05-17.json",
+    "sha256": "f9df81496475b0241649c428783ba5a75fc5bc2519edcf57d2b895c64ccb7f79",
+    "rows": 285
+  },
+  {
+    "date": "2026-05-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F05%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:24.900904+00:00",
+    "path": "raw/2026-05-23.json",
+    "sha256": "5228c482201d1bf824a75294409e77cce91b5f59cf606ce7fea2e4f264406528",
+    "rows": 285
+  },
+  {
+    "date": "2026-05-28",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=28%2F05%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:27.222424+00:00",
+    "path": "raw/2026-05-28.json",
+    "sha256": "84b04a4634f496316e36e192b432eef9214c7d93bb184778cecc30d38b435b9c",
+    "rows": 285
+  },
+  {
+    "date": "2026-05-30",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=30%2F05%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:29.117328+00:00",
+    "path": "raw/2026-05-30.json",
+    "sha256": "bd4dda113605603c4c581ac53fd37dc1d790850dffd53fc934ed9bcbed8d8f25",
+    "rows": 285
+  },
+  {
+    "date": "2026-06-06",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=06%2F06%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:31.189404+00:00",
+    "path": "raw/2026-06-06.json",
+    "sha256": "26407adffce6649d75fadbc761b5accb7a82a919cabc04d76dfa85f2e2e1e9d0",
+    "rows": 285
+  },
+  {
+    "date": "2026-06-11",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=11%2F06%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:32.910545+00:00",
+    "path": "raw/2026-06-11.json",
+    "sha256": "9b6033e92fc82b60cfc7d1705be1bb1922f09f01861ed2be0f09b00f33b813eb",
+    "rows": 285
+  },
+  {
+    "date": "2026-06-21",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=21%2F06%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:35.302643+00:00",
+    "path": "raw/2026-06-21.json",
+    "sha256": "f24b673ee5eb6909a96ee2b5344230d87d9fc92bf5a310c9feb833b1f218c8f8",
+    "rows": 285
+  },
+  {
+    "date": "2026-06-22",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=22%2F06%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:37.737210+00:00",
+    "path": "raw/2026-06-22.json",
+    "sha256": "8b8c2020b07844cd17f888a89478b91bc5f75e489ff18ecf0e38eba84796bd15",
+    "rows": 285
+  },
+  {
+    "date": "2026-06-26",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=26%2F06%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:39.989294+00:00",
+    "path": "raw/2026-06-26.json",
+    "sha256": "eda0e61d755a59b829447eedd22bc102bd2908001f85a53db9af205842ee4e44",
+    "rows": 285
+  },
+  {
+    "date": "2026-06-28",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=28%2F06%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:42.850621+00:00",
+    "path": "raw/2026-06-28.json",
+    "sha256": "25d9f2c9ccc4d3b5ffe9aa49592df766b91879358c282f0afaba613ff844fac8",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-04",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=04%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:44.701679+00:00",
+    "path": "raw/2026-07-04.json",
+    "sha256": "814b360866069a0c5cc5115180b2c64a80bd4351bc2d9e18f8543bc069cdadfe",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:46.855442+00:00",
+    "path": "raw/2026-07-07.json",
+    "sha256": "60a353b3a023a639000068beaf7299482372c0d270c0764cf58b35b6a9f70f57",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-09",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=09%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:48.701501+00:00",
+    "path": "raw/2026-07-09.json",
+    "sha256": "024c9c534abd353f718b8aa70d09c867b5988bd5a920083504f76fdc763fcd96",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-10",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=10%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:51.716874+00:00",
+    "path": "raw/2026-07-10.json",
+    "sha256": "447db46752c893c4e49da29b467a76bfc314611c55325a42d1554264cee1a2e4",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-13",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=13%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:54.494664+00:00",
+    "path": "raw/2026-07-13.json",
+    "sha256": "9539332a0b0bd110b6e28bb86628e0acdaf36e7db409c983494aefa39b5c32a9",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-14",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=14%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:56.744764+00:00",
+    "path": "raw/2026-07-14.json",
+    "sha256": "1ac1926984e696f672e21448a991a47de62c5142510b752f7f6671e197913532",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-16",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=16%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:31:58.943922+00:00",
+    "path": "raw/2026-07-16.json",
+    "sha256": "30ccf619dfa17be2d2bef410e7f21b4f80626ca4b34d39d94a6c3dc08a3e6bbb",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-20",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=20%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:01.142283+00:00",
+    "path": "raw/2026-07-20.json",
+    "sha256": "95fdf9fd4e1a71720fbebd86b17cf7091f976198a16aadc1aaf563e6651653b9",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-21",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=21%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:03.232195+00:00",
+    "path": "raw/2026-07-21.json",
+    "sha256": "aa52105d5921ac154147047a18df7e8dce813668ec91b9c912cfe63ffcd7693e",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:04.789884+00:00",
+    "path": "raw/2026-07-23.json",
+    "sha256": "a647871c99ca1f338b8a5f9ce70086b7e48d6cdc4e12f68171d840b031bf594d",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-26",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=26%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:06.875817+00:00",
+    "path": "raw/2026-07-26.json",
+    "sha256": "bdb2f8bae81affd2849a20bc78487d39b1d7f324546b8cbc4e867914c189c0fc",
+    "rows": 285
+  },
+  {
+    "date": "2026-07-31",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=31%2F07%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:08.720408+00:00",
+    "path": "raw/2026-07-31.json",
+    "sha256": "4fc42457288cb52e9ce662abd711093b8eee68534dd15f191245cccafe521508",
+    "rows": 285
+  },
+  {
+    "date": "2026-08-06",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=06%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:10.743702+00:00",
+    "path": "raw/2026-08-06.json",
+    "sha256": "fddbdf7df62fdafe6e8e41516bd3df7e35e7d6f2310ad05cc49fa072b0d864c9",
+    "rows": 274
+  },
+  {
+    "date": "2026-08-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:12.727614+00:00",
+    "path": "raw/2026-08-07.json",
+    "sha256": "62a195e9618f58564c5fa5c354661c7831978c46dffe36a2fbf05eecdf40da54",
+    "rows": 285
+  },
+  {
+    "date": "2026-08-09",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=09%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:14.483857+00:00",
+    "path": "raw/2026-08-09.json",
+    "sha256": "9cb8de59889b58fb987ef6dc4bee2049876da35fd1fdcbfea430f4f991e0e982",
+    "rows": 285
+  },
+  {
+    "date": "2026-08-12",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=12%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:16.390220+00:00",
+    "path": "raw/2026-08-12.json",
+    "sha256": "050f55e70773a76a48d853cc763e3df8e8ee0612b8ab64f80ad55160912380c0",
+    "rows": 285
+  },
+  {
+    "date": "2026-08-17",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=17%2F08%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-08-18",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=18%2F08%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-08-19",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=19%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:20.651404+00:00",
+    "path": "raw/2026-08-19.json",
+    "sha256": "df21d58de70ae35676f7e6eeaab15f9bcf16eaef87b82f1d6807ffb2972c5130",
+    "rows": 195
+  },
+  {
+    "date": "2026-08-20",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=20%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:22.329768+00:00",
+    "path": "raw/2026-08-20.json",
+    "sha256": "2a83f0c3b64cc4cfeedfa40670695e84170bb99ce03e94bf6122ace6f0d2e787",
+    "rows": 123
+  },
+  {
+    "date": "2026-08-21",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=21%2F08%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-08-22",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=22%2F08%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-08-23",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=23%2F08%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-08-24",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=24%2F08%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-08-25",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=25%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:30.151041+00:00",
+    "path": "raw/2026-08-25.json",
+    "sha256": "1008a5f54857f4ac2e9c81a34f2f7d3ec46a5eefedd355d2c7dfb737df0e70e8",
+    "rows": 194
+  },
+  {
+    "date": "2026-08-26",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=26%2F08%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-08-27",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=27%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:33.273163+00:00",
+    "path": "raw/2026-08-27.json",
+    "sha256": "fb42ef7cbb6bb92cd2b77ccc4e47e324610ef3ed49818df3aba1d30af2f66c8c",
+    "rows": 282
+  },
+  {
+    "date": "2026-08-28",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=28%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:35.065460+00:00",
+    "path": "raw/2026-08-28.json",
+    "sha256": "9558e2a6684a7aff85c31645dd58b81a881cb2078de5c7e63d5e63e72d0168f6",
+    "rows": 281
+  },
+  {
+    "date": "2026-08-29",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=29%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:36.874233+00:00",
+    "path": "raw/2026-08-29.json",
+    "sha256": "a09e6867d2a85a4f262497f4bda302b6ee74fc8704bfdfa6880a701a6a7b9a2a",
+    "rows": 281
+  },
+  {
+    "date": "2026-08-30",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=30%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:39.059734+00:00",
+    "path": "raw/2026-08-30.json",
+    "sha256": "33a1f12268ba6d6eecebc042482529f97c8091a9747c1da927bc669c62037312",
+    "rows": 285
+  },
+  {
+    "date": "2026-08-31",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=31%2F08%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:41.539219+00:00",
+    "path": "raw/2026-08-31.json",
+    "sha256": "bbcdc5aee1a2a182b08652f8873a88a1829033e74501ff39f8be33aacd15af10",
+    "rows": 283
+  },
+  {
+    "date": "2026-09-01",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=01%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:44.654163+00:00",
+    "path": "raw/2026-09-01.json",
+    "sha256": "4643e209f497a23c53b5e2ebc0a0e870dbf9a99b712fc55061a84c0bb875705d",
+    "rows": 281
+  },
+  {
+    "date": "2026-09-02",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=02%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:46.405205+00:00",
+    "path": "raw/2026-09-02.json",
+    "sha256": "a54771ba4542bac52e7bdf453093dd672a9a93c2c7e9617dc25d4cd9804c74dd",
+    "rows": 109
+  },
+  {
+    "date": "2026-09-03",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=03%2F09%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-09-04",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=04%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:49.980985+00:00",
+    "path": "raw/2026-09-04.json",
+    "sha256": "b21ee025c9045f1bd5b68495bce8926f140970b8e0d6f9e90cce085747613baf",
+    "rows": 279
+  },
+  {
+    "date": "2026-09-05",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=05%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:51.679395+00:00",
+    "path": "raw/2026-09-05.json",
+    "sha256": "14a01f610283e7988a7fe76cc1ffb0cb66cbf5cb37f289d4498fa98f952e810e",
+    "rows": 281
+  },
+  {
+    "date": "2026-09-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:53.663718+00:00",
+    "path": "raw/2026-09-07.json",
+    "sha256": "a996f7b40d7ea7b70839c85a077eb94b878c3c30a6afe018c461be58c38ad676",
+    "rows": 206
+  },
+  {
+    "date": "2026-09-08",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=08%2F09%2F2026&entity=Delhi",
+    "status": "failed",
+    "retrieved_at": null,
+    "error": "HTTPError"
+  },
+  {
+    "date": "2026-09-21",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=21%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:56.804666+00:00",
+    "path": "raw/2026-09-21.json",
+    "sha256": "4733c3bda8d9bc601efaf5ca429a324e937786314416b3abc79d9e8e4092e338",
+    "rows": 281
+  },
+  {
+    "date": "2026-09-22",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=22%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:32:58.942776+00:00",
+    "path": "raw/2026-09-22.json",
+    "sha256": "f5ebec2dc31911fe2cce9236eb05d39d35d68afe79f8e83a0aefdf87a070b7fc",
+    "rows": 278
+  },
+  {
+    "date": "2026-09-25",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=25%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:33:00.962625+00:00",
+    "path": "raw/2026-09-25.json",
+    "sha256": "d00c820313448b462f374040d452496ab4905d5eb24fb4e835cc331ae44e66bd",
+    "rows": 283
+  },
+  {
+    "date": "2026-09-28",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=28%2F09%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:33:02.735406+00:00",
+    "path": "raw/2026-09-28.json",
+    "sha256": "dc82e9d759918195bfe04611e803c5792552416c6a91176ce849ab15195d75d5",
+    "rows": 283
+  },
+  {
+    "date": "2026-10-06",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=06%2F10%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:33:04.639838+00:00",
+    "path": "raw/2026-10-06.json",
+    "sha256": "c89fc5bbb7e5bef94393f4f3b2add995c39e68b688e733e8e49885917dd52a5a",
+    "rows": 285
+  },
+  {
+    "date": "2026-10-07",
+    "url": "https://delhisldc.org/api/load-curve-discom?fordate=07%2F10%2F2026&entity=Delhi",
+    "status": "captured",
+    "retrieved_at": "2026-10-27T03:33:06.646868+00:00",
+    "path": "raw/2026-10-07.json",
+    "sha256": "65df09c828efb60f670583775a123e37fad1eb08f732fbeb18350ef14e1a9fa6",
+    "rows": 282
+  }
+]

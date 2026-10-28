@@ -1,0 +1,41 @@
+{
+  "selected": "direct_ar_1",
+  "autoregressive": "direct_ar_1",
+  "lstm": "seasonal_lstm_12_8",
+  "validation": {
+    "persistence": {
+      "mae": 739.704697,
+      "rmse": 939.280636
+    },
+    "baseline_ar": {
+      "mae": 255.215016,
+      "rmse": 355.156441
+    },
+    "baseline_lstm": {
+      "mae": 804.655015,
+      "rmse": 974.18875
+    },
+    "direct_ar_1": {
+      "mae": 225.886922,
+      "rmse": 314.539981
+    },
+    "direct_ar_100": {
+      "mae": 241.101364,
+      "rmse": 329.521664
+    },
+    "seasonal_lstm_12_8": {
+      "mae": 293.514987,
+      "rmse": 389.196029
+    },
+    "seasonal_lstm_24_8": {
+      "mae": 301.045161,
+      "rmse": 396.17025
+    },
+    "seasonal_lstm_24_16": {
+      "mae": 307.826048,
+      "rmse": 401.981584
+    }
+  },
+  "hourly_sha256": "7f23141a127b95eb40724a441d0bf74d982fcd40b419a80245b2f6dccdaab556",
+  "test_used_for_selection": false
+}

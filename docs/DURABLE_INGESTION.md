@@ -1,14 +1,16 @@
 # Redis and PostgreSQL ingestion
 
-Install `pip install -e '.[phase3]'`. Set POSTGRES_PASSWORD in the ignored `.env`
-and PRISM_DATABASE_URL / PRISM_REDIS_URL for local processes. Never commit secrets.
-Start `docker compose -p prism-phase3-reference up -d redis postgres`.
-Load the environment into the current shell, then run
-`python -m scripts.collect_live --once` or omit `--once` for continuous collection.
-Only one dedicated collector should poll upstream; it fetches each feed at most
-once per minute. This is the observed integration cadence, not the report's
-unverified six-second claim. The dashboard's direct adapter is a separate
-per-process preview path until production service configuration is selected.
+The Docker collector is started by `make up` alongside the web/worker/databases.
+Use the single application endpoint at http://127.0.0.1:5050. Only one dedicated
+collector should poll upstream; it fetches each feed at most once per minute. This
+is the observed integration cadence, not the report's unverified six-second claim.
+The web container uses durable history; a direct unconfigured Flask process uses
+a different preview path and should not run alongside the complete application.
+
+For deliberate host-side ingestion tests, install `pip install -e '.[phase3]'`,
+export PRISM_DATABASE_URL / PRISM_REDIS_URL using localhost ports 5433/6380, and
+stop the Docker collector before running `python -m scripts.collect_live --once`.
+Restart the Docker collector afterward. Never commit connection credentials.
 
 The collector validates finite source observations and timestamps, publishes
 content-addressed events, and drains a Redis consumer group. Signed station MW

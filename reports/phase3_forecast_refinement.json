@@ -1,0 +1,168 @@
+{
+  "selected": "direct_ar_1",
+  "autoregressive": "direct_ar_1",
+  "lstm": "seasonal_lstm_12_8",
+  "validation": {
+    "persistence": {
+      "mae": 739.704697,
+      "rmse": 939.280636
+    },
+    "baseline_ar": {
+      "mae": 255.215016,
+      "rmse": 355.156441
+    },
+    "baseline_lstm": {
+      "mae": 804.655015,
+      "rmse": 974.18875
+    },
+    "direct_ar_1": {
+      "mae": 225.886922,
+      "rmse": 314.539981
+    },
+    "direct_ar_100": {
+      "mae": 241.101364,
+      "rmse": 329.521664
+    },
+    "seasonal_lstm_12_8": {
+      "mae": 293.514987,
+      "rmse": 389.196029
+    },
+    "seasonal_lstm_24_8": {
+      "mae": 301.045161,
+      "rmse": 396.17025
+    },
+    "seasonal_lstm_24_16": {
+      "mae": 307.826048,
+      "rmse": 401.981584
+    }
+  },
+  "hourly_sha256": "7f23141a127b95eb40724a441d0bf74d982fcd40b419a80245b2f6dccdaab556",
+  "test_used_for_selection": false,
+  "training_end": "2026-03-16T17:30:00+00:00",
+  "validation_end": "2026-07-04T05:30:00+00:00",
+  "test_end": "2026-10-21T17:30:00+00:00",
+  "validation_origins": 82,
+  "test_origins": 46,
+  "test": {
+    "persistence": {
+      "mae": 579.325826,
+      "rmse": 732.41591,
+      "mae_percent_peak": 7.132302705913821,
+      "rmse_percent_peak": 9.017053516870718
+    },
+    "baseline_ar": {
+      "mae": 310.393454,
+      "rmse": 426.538771,
+      "mae_percent_peak": 3.8213730037682407,
+      "rmse_percent_peak": 5.251282601339536
+    },
+    "baseline_lstm": {
+      "mae": 600.52841,
+      "rmse": 758.399158,
+      "mae_percent_peak": 7.393335859363405,
+      "rmse_percent_peak": 9.336943260606793
+    },
+    "direct_ar_1": {
+      "mae": 296.681387,
+      "rmse": 389.205887,
+      "mae_percent_peak": 3.652558481475958,
+      "rmse_percent_peak": 4.791663130529397,
+      "mape_percent": 5.732254402158589,
+      "mape_excluded": 0
+    },
+    "direct_ar_100": {
+      "mae": 298.789319,
+      "rmse": 404.234577,
+      "mae_percent_peak": 3.6785100417771597,
+      "rmse_percent_peak": 4.97668710415998
+    },
+    "seasonal_lstm_12_8": {
+      "mae": 365.48686,
+      "rmse": 498.458159,
+      "mae_percent_peak": 4.499649080988745,
+      "rmse_percent_peak": 6.136709804165577,
+      "mape_percent": 7.0895074142528856,
+      "mape_excluded": 0
+    },
+    "seasonal_lstm_24_8": {
+      "mae": 369.418833,
+      "rmse": 500.753897,
+      "mae_percent_peak": 4.548057110475558,
+      "rmse_percent_peak": 6.164973516250578
+    },
+    "seasonal_lstm_24_16": {
+      "mae": 363.951273,
+      "rmse": 493.60041,
+      "mae_percent_peak": 4.480743879763923,
+      "rmse_percent_peak": 6.076904190843325
+    }
+  },
+  "configs": {
+    "seasonal_lstm_12_8": {
+      "window": 24,
+      "hidden_size": 8,
+      "epochs": 12,
+      "learning_rate": 0.01,
+      "max_windows_per_epoch": 384,
+      "seed": 42,
+      "seasonal_residual": true
+    },
+    "seasonal_lstm_24_8": {
+      "window": 24,
+      "hidden_size": 8,
+      "epochs": 24,
+      "learning_rate": 0.01,
+      "max_windows_per_epoch": 384,
+      "seed": 42,
+      "seasonal_residual": true
+    },
+    "seasonal_lstm_24_16": {
+      "window": 24,
+      "hidden_size": 16,
+      "epochs": 24,
+      "learning_rate": 0.01,
+      "max_windows_per_epoch": 384,
+      "seed": 42,
+      "seasonal_residual": true
+    }
+  },
+  "training_seconds": {
+    "direct_ar_1": 3.8097833749779966,
+    "direct_ar_100": 3.7645329170045443,
+    "seasonal_lstm_12_8": 4.677833708003163,
+    "seasonal_lstm_24_8": 7.255851124995388,
+    "seasonal_lstm_24_16": 8.28236250000191
+  },
+  "interval": {
+    "half_width_mw": [
+      149.23620094318812,
+      206.86089259721757,
+      265.04682367158694,
+      285.68577290675967,
+      240.73362243578413,
+      251.82697702473706,
+      284.6575555193667,
+      307.1067192006726,
+      367.49385785469985,
+      426.3756545551769,
+      552.635897428685,
+      575.1748886125233,
+      598.3425905216291,
+      648.4742267952424,
+      677.9156654715371,
+      726.0398616531247,
+      673.713961829847,
+      664.6551737211603,
+      494.95663429222986,
+      435.2827275472364,
+      535.849673358277,
+      612.9719341779846,
+      698.7710145763072,
+      736.5325178399899
+    ],
+    "heldout_coverage": 0.7735507246376812,
+    "nominal_coverage": 0.9,
+    "guarantee": false
+  },
+  "limitation": "Historical held-out cohort was reported previously; this is retrospective refinement, not a new prospective trial. Candidates fixed before this run; no test-based selection. Demand only."
+}

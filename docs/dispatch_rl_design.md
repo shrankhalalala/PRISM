@@ -113,3 +113,16 @@ These results reject any Phase 2 claim that the learned policy is generally bett
 They validate the experiment path and identify reward/state design as a future
 research issue. The policy is available in `/api/dispatch` and `/api/scenario`,
 always as a non-executable synthetic recommendation.
+
+## Refinement — 2026-10-27
+
+`python -m scripts.refine_dispatch` trains a separate sparse-state candidate with
+finer gap, SOC and reserve bins, fault/trend flags and the available-action mask.
+Unseen states fall back to the rule baseline. Twenty training profiles precede
+six validation scenarios; the original two test scenarios remain excluded from
+selection. Three seeds and two rule-prior strengths run for 300 episodes each.
+Selection requires no worse unserved energy or violations on every validation
+scenario and lower mean cost. All six candidates failed this gate. The retained
+candidate and `reports/phase3_dispatch_refinement.json` support further research;
+they do not replace the frozen Q-policy, surrogate or its explanations. Real
+dispatch still requires the electrical inputs listed in the grid eligibility audit.

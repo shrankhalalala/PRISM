@@ -7,3 +7,12 @@ __pycache__/
 output/
 artifacts/
 .taste-skill/
+
+# Local builds and design/presentation working files
+build/
+dist/
+.prism-ppt-build/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/

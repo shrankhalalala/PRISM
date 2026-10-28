@@ -104,7 +104,7 @@ The local Compose project is `prism-phase3-reference`. Optional dependency setup
 
 ```bash
 python -m pip install -e '.[neo4j]'
-docker compose -p prism-phase3-reference up -d neo4j
+docker compose -p prism-phase3-reference -f compose.yaml -f compose.phase3.yaml up -d neo4j
 ```
 
 The live import report is [phase3_reference_import.json](../reports/phase3_reference_import.json).

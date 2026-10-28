@@ -1,0 +1,4238 @@
+{
+  "reference_sha256": "52179cc8a9312e8ff6141ef29fba0fa5829764be815c1b50b51d801370ea55e9",
+  "electrical_simulation_ready": false,
+  "dispatch_training_eligible": false,
+  "cohorts": {
+    "annual_report_2024_25": {
+      "voltage_layer_endpoints": 3,
+      "records": 3,
+      "evidence_components": 1,
+      "source_ids": [
+        "SRC-13"
+      ]
+    },
+    "historical_2019_table": {
+      "voltage_layer_endpoints": 52,
+      "records": 113,
+      "evidence_components": 2,
+      "source_ids": [
+        "SRC-01"
+      ]
+    },
+    "later_dtl_table": {
+      "voltage_layer_endpoints": 57,
+      "records": 129,
+      "evidence_components": 2,
+      "source_ids": [
+        "SRC-03",
+        "SRC-04"
+      ]
+    }
+  },
+  "circuit_requirements": [
+    {
+      "id": "circuit-observation-src-03-400-001",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-002",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-003",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-jhatikara-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-004",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-jhatikara-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-005",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-006",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-007",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-008",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-009",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-tikri-kalan",
+        "ss-jhatikara-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-010",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-tikri-kalan",
+        "ss-jhatikara-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-011",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-tughlakabad",
+        "ss-samaypur-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-012",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-tughlakabad",
+        "ss-samaypur-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-013",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-maharani-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-03-400-014",
+      "source_id": "SRC-03",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-maharani-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-001",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-dial"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-002",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-dial"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-003",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-najafgarh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-004",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-najafgarh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-005",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-006",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-007",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-2"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-008",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-2"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-009",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-3"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-010",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-3"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-011",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-dsidc-bawana"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-012",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-dsidc-bawana"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-013",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-kanjhawala"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-014",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-kanjhawala"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-015",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-rohini-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-016",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-rohini-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-017",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-rohini-2"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-018",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-rohini-2"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-019",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-shalimar-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-020",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-shalimar-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-021",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dial",
+        "ss-mehrauli"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-022",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dial",
+        "ss-mehrauli"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-023",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dsidc-bawana",
+        "ss-narela-dtl"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-024",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dsidc-bawana",
+        "ss-narela-dtl"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-025",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dwarka-sector-5",
+        "ss-budella"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-026",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dwarka-sector-5",
+        "ss-budella"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-027",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gazipur",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": [
+        "CIRCUIT-LABEL-SRC-04-27"
+      ]
+    },
+    {
+      "id": "circuit-observation-src-04-220-028",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-geeta-colony",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-029",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-geeta-colony",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-030",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-031",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-032",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-subzi-mandi"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-033",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-subzi-mandi"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-034",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-south-of-wazirabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-035",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-south-of-wazirabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-036",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-harsh-vihar",
+        "ss-preet-vihar"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-037",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-harsh-vihar",
+        "ss-preet-vihar"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-038",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-indraprastha",
+        "ss-rajghat"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-039",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-indraprastha",
+        "ss-rajghat"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-040",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-kanjhawala",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": [
+        "CIRCUIT-LABEL-SRC-04-40"
+      ]
+    },
+    {
+      "id": "circuit-observation-src-04-220-041",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-kanjhawala",
+        "ss-najafgarh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": [
+        "CIRCUIT-LABEL-SRC-04-41"
+      ]
+    },
+    {
+      "id": "circuit-observation-src-04-220-042",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-electric-lane"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-043",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-electric-lane"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-044",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-gazipur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-045",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-gazipur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-046",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-lodhi-road"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-047",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-lodhi-road"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-048",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-masjid-moth"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-049",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-masjid-moth"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-050",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-trauma-centre"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-051",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-trauma-centre"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-052",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-sarita-vihar"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-053",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-mehrauli",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-054",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-mehrauli",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-055",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-mehrauli",
+        "ss-vasant-kunj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-056",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-mehrauli",
+        "ss-vasant-kunj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-057",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-naraina",
+        "ss-ridge-valley"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": [
+        "CIRCUIT-LABEL-SRC-04-57"
+      ]
+    },
+    {
+      "id": "circuit-observation-src-04-220-058",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-naraina",
+        "ss-dwarka-sector-5"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-059",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-naraina",
+        "ss-dwarka-sector-5"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-060",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-narela-dtl",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-061",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-narela-dtl",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-062",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-okhla",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-063",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-okhla",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-064",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-1",
+        "ss-dwarka-sector-5"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-065",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-1",
+        "ss-dwarka-sector-5"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-066",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-3",
+        "ss-dwarka-sector-5"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-067",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-3",
+        "ss-dwarka-sector-5"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-068",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-patparganj",
+        "ss-indraprastha"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-069",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-patparganj",
+        "ss-indraprastha"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-070",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-peeragarhi",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-071",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-peeragarhi",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-072",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-peeragarhi",
+        "ss-wazirpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-073",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-peeragarhi",
+        "ss-wazirpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-074",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-indraprastha"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-075",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-indraprastha"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-076",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "plant-gtps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-077",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "plant-gtps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-078",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-park-street"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-079",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-park-street"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-080",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-sarita-vihar"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-081",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-maharani-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-082",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-preet-vihar",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-083",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-preet-vihar",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-084",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-rohini-1",
+        "ss-shalimar-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-085",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-rohini-1",
+        "ss-shalimar-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-086",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-rk-puram",
+        "ss-ridge-valley"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-087",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-rk-puram",
+        "ss-ridge-valley"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-088",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-rk-puram",
+        "ss-trauma-centre"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": [
+        "DUPLICATE-circuit-observation-src-04-220-088"
+      ]
+    },
+    {
+      "id": "circuit-observation-src-04-220-089",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-rk-puram",
+        "ss-trauma-centre"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": [
+        "DUPLICATE-circuit-observation-src-04-220-088"
+      ]
+    },
+    {
+      "id": "circuit-observation-src-04-220-090",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-shalimar-bagh",
+        "ss-wazirpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-091",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-shalimar-bagh",
+        "ss-wazirpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-092",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-shalimar-bagh",
+        "ss-sgtn"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-093",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-shalimar-bagh",
+        "ss-sgtn"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-094",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-sarita-vihar",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-095",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-sarita-vihar",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-096",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-tikri-kalan",
+        "ss-najafgarh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-097",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-tughlakabad",
+        "ss-okhla"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-098",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-tughlakabad",
+        "ss-okhla"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-099",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-tughlakabad",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-100",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-tughlakabad",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-101",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-vasant-kunj",
+        "ss-rk-puram"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-102",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-vasant-kunj",
+        "ss-rk-puram"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-103",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-geeta-colony"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-104",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-geeta-colony"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-105",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-kashmere-gate"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-106",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-kashmere-gate"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-107",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-108",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-109",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-110",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-111",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-2",
+        "ss-dwarka-sector-5"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-112",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-2",
+        "ss-dwarka-sector-5"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-113",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-rk-puram",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-114",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-rk-puram",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-04-220-115",
+      "source_id": "SRC-04",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dev-nagar",
+        "ss-park-street"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-001",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-mandola-pgcil",
+        "ss-bawana-dtl"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-002",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-mandola-pgcil",
+        "ss-bawana-dtl"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-003",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-004",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-005",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-006",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-007",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-tughlakabad",
+        "ss-samaypur-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-008",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-tughlakabad",
+        "ss-samaypur-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-009",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-tikri-kalan",
+        "ss-jhatikara-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-010",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-tikri-kalan",
+        "ss-jhatikara-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-011",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-jhatikara-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-400-012",
+      "source_id": "SRC-01",
+      "voltage_kv": 400,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-jhatikara-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-001",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-dial"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-002",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-dial"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-003",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dial",
+        "ss-mehrauli"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-004",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dial",
+        "ss-mehrauli"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-005",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-najafgarh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-006",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-najafgarh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-007",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-008",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-009",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-2"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-010",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-2"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-011",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-3"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-012",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bamnauli",
+        "ss-pappankalan-3"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-013",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-3",
+        "ss-pappankalan-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-014",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-1",
+        "ss-naraina"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-015",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pappankalan-3",
+        "ss-naraina"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-016",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-kanjhawala"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-017",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-kanjhawala"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-018",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-kanjhawala",
+        "ss-najafgarh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-019",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-tikri-kalan",
+        "ss-najafgarh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-020",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-tikri-kalan",
+        "ss-kanjhawala"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-021",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-rohini-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-022",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-rohini-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-023",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-shalimar-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-024",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-shalimar-bagh"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-025",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-dsidc-bawana"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-026",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-dsidc-bawana"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-027",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dsidc-bawana",
+        "ss-narela-dtl"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-028",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-dsidc-bawana",
+        "ss-narela-dtl"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-029",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-shalimar-bagh",
+        "ss-rohini-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-030",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-shalimar-bagh",
+        "ss-rohini-1"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-031",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-gopalpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-032",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-gopalpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-033",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-subzi-mandi"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-034",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-subzi-mandi"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-035",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-036",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-gopalpur",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-037",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-narela-dtl",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-038",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-narela-dtl",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-039",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-kashmere-gate"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-040",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-kashmere-gate"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-041",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-042",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-043",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-044",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-mandola-pgcil"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-045",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-geeta-colony"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-046",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-south-of-wazirabad",
+        "ss-geeta-colony"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-047",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-geeta-colony",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-048",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-geeta-colony",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-049",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-patparganj",
+        "ss-indraprastha"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-050",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-patparganj",
+        "ss-indraprastha"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-051",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-indraprastha",
+        "ss-rajghat"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-052",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-indraprastha",
+        "ss-rajghat"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-053",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "plant-gtps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-054",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "plant-gtps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-055",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-indraprastha"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-056",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-indraprastha"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-057",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-park-street"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-058",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-park-street"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-059",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-pragati",
+        "ss-sarita-vihar"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-060",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-sarita-vihar"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-061",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-pragati"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-062",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-sarita-vihar",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-063",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-sarita-vihar",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-064",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-okhla",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-065",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-okhla",
+        "ss-btps"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-066",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-mehrauli",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-067",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-mehrauli",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-068",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-btps",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-069",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-btps",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-070",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-mehrauli",
+        "ss-vasant-kunj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-071",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-mehrauli",
+        "ss-vasant-kunj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-072",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-okhla",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-073",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-okhla",
+        "ss-tughlakabad"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-074",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-lodhi-road"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-075",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-lodhi-road"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-076",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-naraina",
+        "ss-ridge-valley"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-077",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-masjid-moth"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-078",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-masjid-moth"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-079",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-trauma-centre"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-080",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-trauma-centre"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-081",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-electric-lane"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-082",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-electric-lane"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-083",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-gazipur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-084",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-maharani-bagh",
+        "ss-gazipur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-085",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-shalimar-bagh",
+        "ss-wazirpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-086",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-shalimar-bagh",
+        "ss-wazirpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-087",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-patparganj",
+        "ss-gazipur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-088",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-peeragarhi",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-089",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-peeragarhi",
+        "ss-tikri-kalan"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-090",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-peeragarhi",
+        "ss-wazirpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-091",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-peeragarhi",
+        "ss-wazirpur"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-092",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-trauma-centre",
+        "ss-ridge-valley"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-093",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-trauma-centre",
+        "ss-ridge-valley"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-094",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-rohini-2"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-095",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-bawana-dtl",
+        "ss-rohini-2"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-096",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-harsh-vihar",
+        "ss-preet-vihar"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-097",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-harsh-vihar",
+        "ss-preet-vihar"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-098",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-preet-vihar",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-099",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-preet-vihar",
+        "ss-patparganj"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-100",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-vasant-kunj",
+        "ss-rk-puram"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-01-220-101",
+      "source_id": "SRC-01",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-vasant-kunj",
+        "ss-rk-puram"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-13-220-001",
+      "source_id": "SRC-13",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-panipat-bbmb",
+        "ss-narela-bbmb"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-13-220-002",
+      "source_id": "SRC-13",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-narela-bbmb",
+        "ss-rohtak-road-bbmb"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    },
+    {
+      "id": "circuit-observation-src-13-220-003",
+      "source_id": "SRC-13",
+      "voltage_kv": 220,
+      "endpoint_asset_ids": [
+        "ss-narela-bbmb",
+        "ss-rohtak-road-bbmb"
+      ],
+      "missing": [
+        "thermal_limit_mw",
+        "resistance_ohm",
+        "reactance_ohm",
+        "verified_terminal_bus_ids",
+        "dated_switching_state"
+      ],
+      "open_issue_ids": []
+    }
+  ],
+  "missing_field_counts": {
+    "thermal_limit_mw": 245,
+    "resistance_ohm": 245,
+    "reactance_ohm": 245,
+    "verified_terminal_bus_ids": 245,
+    "dated_switching_state": 245
+  },
+  "field_questions": [
+    {
+      "id": "NOIDA-TERMINAL",
+      "reason": "2019 Noida map label versus 2026 Noida Sec-86A naming needs an exact bus/station identifier; no automatic rename."
+    },
+    {
+      "id": "CIRCUIT-SUFFIXES",
+      "reason": "Four single-circuit labels and duplicate R.K. Puram\u2013Trauma Centre source labels remain unchanged."
+    },
+    {
+      "id": "CURRENT-SNAPSHOT",
+      "reason": "Evidence is versioned by source date; no complete current switching snapshot established."
+    },
+    {
+      "id": "ELECTRICAL-PARAMETERS",
+      "reason": "Flow limits, impedance, breaker states and measured node telemetry require separate evidence and are not topology identity requirements."
+    }
+  ],
+  "interface_assertions_excluded": 16,
+  "limitation": "Source cohorts are not current operating snapshots. Voltage layers are not verified buses; component counts describe evidence only. No transformer, capacity, impedance or switch inferred."
+}
